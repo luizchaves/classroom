@@ -122,8 +122,6 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
 - [Exercício: IP Table](https://ifpb.github.io/exercises/problems/web-script-iptable/)
 
-## Acompanhamento de Projeto
-
 ## Build Tools e Monitor-Host
 
 - [DW: Vite](https://ifpb.github.io/dw/package/vite/)
