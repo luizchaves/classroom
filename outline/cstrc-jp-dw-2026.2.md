@@ -21,26 +21,32 @@ horarios:
 ## Fundamentos de Web e Linguagem de Marcação
 
 - [DW: Página da disciplina](https://ifpb.github.io/dw/)
-- [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
 - [DW: Linguagem de marcação](https://ifpb.github.io/dw/markup/languages/)
 - [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
+- [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
 - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
 
 ## Fundamentos de HTML
 
 - [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [Exercício: HTML | Currículo Simples em HTML](https://ifpb.github.io/exercises/problems/web-markup-curriculum-simple/)
 - [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
 - [Braincheck: Fundamentos de HTML](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-html-FisLfBWvwP)
 
 ## Fundamentos de CSS
 
 - [DW: Introdução ao CSS](https://ifpb.github.io/dw/css/introduction/)
-- [Exercício: Prática de CSS (Seu Primeiro Estilo em CSS)](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
+- [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
 - [Braincheck: Fundamentos de CSS](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
 
 ## IFTech (14/08/2026 - 4 aulas)
 
+Participe dos minicursos do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
+
 ## IFTech (15/08/2026 - 4 aulas)
+
+Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
 ## Bootstrap, Form
 

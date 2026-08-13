@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root {
       --bg-main: #f8fafc;
@@ -53,6 +55,10 @@
       --matricula-bg: #ecfeff;
       --matricula-border: #a5f3fc;
       --matricula-text: #0e7490;
+
+      --semestre-milestone-bg: #bbf7d0;
+      --semestre-milestone-border: #22c55e;
+      --semestre-milestone-text: #14532d;
     }
 
     * {
@@ -241,6 +247,55 @@
       width: 1rem;
       height: 1rem;
       fill: var(--text-muted);
+    }
+
+    .right-controls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    /* View Switcher Segmented Control */
+    .view-switcher-group {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.6rem;
+      padding: 0.2rem;
+      gap: 0.2rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.4rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .view-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .view-btn:hover {
+      color: var(--text-main);
+      background: #f1f5f9;
+    }
+
+    .view-btn.active {
+      background: #e0f2fe;
+      color: #0369a1;
     }
 
     .toggles-group {
@@ -451,7 +506,7 @@
       border-color: var(--letivo-border);
     }
 
-    /* Feriados (FN, FE, FM) e Pontos Facultativos (PF) - Destaque Vermelho Único */
+    /* Feriados (FN, FE, FM, PF) - Destaque Vermelho Único */
     .day-cell.cat-feriado,
     .day-cell.cat-feriado_nacional,
     .day-cell.cat-feriado_estadual,
@@ -571,6 +626,139 @@
     .dot.prazo { background-color: var(--prazo-text); }
     .dot.ferias { background-color: var(--ferias-text); }
     .dot.academico { background-color: var(--academico-text); }
+
+    /* Chronological List View Mode Styles */
+    .calendar-list-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .list-month-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .list-month-header {
+      background-color: #f8fafc;
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.85rem 1.25rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .list-row-item {
+      display: grid;
+      grid-template-columns: 180px 130px 1fr;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.75rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.875rem;
+      transition: background-color 0.15s ease;
+    }
+
+    .list-row-item:last-child {
+      border-bottom: none;
+    }
+
+    .list-row-item:hover {
+      background-color: #f8fafc;
+    }
+
+    .list-row-date {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+
+    .list-row-status {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 0.35rem;
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .list-row-status.letivo {
+      background-color: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+
+    .list-row-status.nao-letivo {
+      background-color: #f1f5f9;
+      color: #64748b;
+      border: 1px solid #cbd5e1;
+    }
+
+    .list-events-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .list-event-badge {
+      font-size: 0.7rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.3rem;
+      margin-left: 0.4rem;
+      display: inline-block;
+      border: 1px solid transparent;
+    }
+
+    .list-event-badge.badge-feriado {
+      background-color: var(--feriado-bg);
+      border-color: var(--feriado-border);
+      color: var(--feriado-text);
+    }
+    .list-event-badge.badge-recesso {
+      background-color: var(--recesso-bg);
+      border-color: var(--recesso-border);
+      color: var(--recesso-text);
+    }
+    .list-event-badge.badge-exames {
+      background-color: var(--exames-bg);
+      border-color: var(--exames-border);
+      color: var(--exames-text);
+    }
+    .list-event-badge.badge-ferias {
+      background-color: var(--ferias-bg);
+      border-color: var(--ferias-border);
+      color: var(--ferias-text);
+    }
+    .list-event-badge.badge-academico {
+      background-color: var(--academico-bg);
+      border-color: var(--academico-border);
+      color: var(--academico-text);
+    }
+    .list-event-badge.badge-prazo {
+      background-color: var(--prazo-bg);
+      border-color: var(--prazo-border);
+      color: var(--prazo-text);
+    }
+    .list-event-badge.badge-matricula {
+      background-color: var(--matricula-bg);
+      border-color: var(--matricula-border);
+      color: var(--matricula-text);
+    }
+    .list-event-badge.badge-milestone {
+      background-color: var(--semestre-milestone-bg);
+      border-color: var(--semestre-milestone-border);
+      color: var(--semestre-milestone-text);
+    }
 
     /* Floating Tooltip Component */
     .floating-tooltip {
@@ -718,9 +906,10 @@
     @media (max-width: 768px) {
       header { padding: 1rem; }
       .brand-text h1 { font-size: 1.1rem; }
-      .controls-bar { padding: 0 1rem; }
+      .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
       .search-input-wrapper input { width: 100%; }
       .calendar-grid { padding: 0 1rem; grid-template-columns: 1fr; }
+      .list-row-item { grid-template-columns: 1fr; gap: 0.4rem; }
     }
   </style>
 </head>
@@ -764,9 +953,10 @@
 
       <select id="category-select" aria-label="Filtrar por categoria">
         <option value="all">Todas as Categorias</option>
-        <option value="feriado">Feriados</option>
+        <option value="feriado">Feriados e Pontos Facultativos</option>
         <option value="recesso">Recessos</option>
         <option value="exames_finais">Exames Finais</option>
+        <option value="evento_academico">Eventos Acadêmicos</option>
         <option value="prazo_academico">Prazos Acadêmicos</option>
         <option value="ferias">Férias</option>
       </select>
@@ -777,13 +967,25 @@
       </div>
     </div>
 
-    <div class="toggles-group">
-      <label class="toggle-label">
-        <input type="checkbox" id="letivo-only-toggle"> Apenas Dias Letivos
-      </label>
-      <label class="toggle-label">
-        <input type="checkbox" id="events-only-toggle"> Apenas Com Eventos
-      </label>
+    <div class="right-controls">
+      <!-- Lucide View Switcher Segmented Control (Grid vs List) -->
+      <div class="view-switcher-group">
+        <button id="view-grid-btn" class="view-btn active" title="Exibir em Grade">
+          <i data-lucide="layout-grid"></i> Grade
+        </button>
+        <button id="view-list-btn" class="view-btn" title="Exibir em Lista">
+          <i data-lucide="list"></i> Lista
+        </button>
+      </div>
+
+      <div class="toggles-group">
+        <label class="toggle-label">
+          <input type="checkbox" id="letivo-only-toggle"> Apenas Dias Letivos
+        </label>
+        <label class="toggle-label">
+          <input type="checkbox" id="events-only-toggle"> Apenas Com Eventos
+        </label>
+      </div>
     </div>
   </div>
 
@@ -829,8 +1031,13 @@
     </div>
   </section>
 
-  <!-- Calendar Grid Feed -->
+  <!-- Calendar Grid View Container -->
   <main class="calendar-grid" id="calendar-container">
+    <!-- Rendered dynamically -->
+  </main>
+
+  <!-- Calendar List View Container -->
+  <main class="calendar-list-wrapper" id="calendar-list-container" style="display: none;">
     <!-- Rendered dynamically -->
   </main>
 
@@ -852,6 +1059,7 @@
 
   <script>
     let calendarData = null;
+    let currentViewMode = 'grid'; // 'grid' or 'list'
     const tooltipEl = document.getElementById('floating-tooltip');
 
     const ptMonthNames = {
@@ -918,7 +1126,6 @@
     }
 
     function initCalendarApp() {
-      // Update Header Metadata
       const pName = calendarData.ano_letivo ? `${calendarData.ano_letivo}.${calendarData.periodo}` : '2026.2';
       document.getElementById('calendar-header-title').textContent = `Calendário Acadêmico ${pName}`;
       document.getElementById('pill-periodo-name').textContent = `📅 Período ${pName}`;
@@ -928,7 +1135,6 @@
       let totalExames = 0;
       let totalSabadosLetivos = 0;
 
-      // Populate Month Selector Dropdown
       const monthSelect = document.getElementById('month-select');
       monthSelect.innerHTML = '<option value="all">Todos os Meses</option>';
 
@@ -958,11 +1164,15 @@
       document.getElementById('stat-sabados').textContent = totalSabadosLetivos;
 
       // Event Listeners for Filters
-      monthSelect.addEventListener('change', renderCalendar);
-      document.getElementById('category-select').addEventListener('change', renderCalendar);
-      document.getElementById('search-input').addEventListener('input', renderCalendar);
-      document.getElementById('letivo-only-toggle').addEventListener('change', renderCalendar);
-      document.getElementById('events-only-toggle').addEventListener('change', renderCalendar);
+      monthSelect.addEventListener('change', renderActiveView);
+      document.getElementById('category-select').addEventListener('change', renderActiveView);
+      document.getElementById('search-input').addEventListener('input', renderActiveView);
+      document.getElementById('letivo-only-toggle').addEventListener('change', renderActiveView);
+      document.getElementById('events-only-toggle').addEventListener('change', renderActiveView);
+
+      // View Switcher Handlers
+      document.getElementById('view-grid-btn').addEventListener('click', () => setViewMode('grid'));
+      document.getElementById('view-list-btn').addEventListener('click', () => setViewMode('list'));
 
       // Modal Close Listeners
       document.getElementById('modal-close-btn').addEventListener('click', closeModal);
@@ -970,10 +1180,102 @@
         if (e.target.id === 'event-modal') closeModal();
       });
 
-      renderCalendar();
+      renderActiveView();
+
+      // Initialize Lucide Icons if available
+      if (window.lucide) {
+        lucide.createIcons();
+      }
     }
 
-    function renderCalendar() {
+    function setViewMode(mode) {
+      currentViewMode = mode;
+      const gridBtn = document.getElementById('view-grid-btn');
+      const listBtn = document.getElementById('view-list-btn');
+      const gridContainer = document.getElementById('calendar-container');
+      const listContainer = document.getElementById('calendar-list-container');
+
+      if (mode === 'grid') {
+        gridBtn.classList.add('active');
+        listBtn.classList.remove('active');
+        gridContainer.style.display = 'grid';
+        listContainer.style.display = 'none';
+      } else {
+        listBtn.classList.add('active');
+        gridBtn.classList.remove('active');
+        gridContainer.style.display = 'none';
+        listContainer.style.display = 'flex';
+      }
+
+      renderActiveView();
+    }
+
+    function renderActiveView() {
+      if (currentViewMode === 'grid') {
+        renderCalendarGrid();
+      } else {
+        renderCalendarList();
+      }
+    }
+
+    function filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly) {
+      let matchesCategory = true;
+      if (selectedCategory !== 'all') {
+        matchesCategory = day.eventos.some(e => {
+          if (selectedCategory === 'feriado') return e.categoria.includes('feriado') || e.categoria.includes('ponto_facultativo');
+          if (selectedCategory === 'recesso') return e.categoria === 'recesso';
+          return e.categoria === selectedCategory;
+        });
+      }
+
+      let matchesSearch = true;
+      if (searchQuery) {
+        matchesSearch = day.eventos.some(e => e.descricao.toLowerCase().includes(searchQuery) || day.data.includes(searchQuery));
+      }
+
+      let matchesLetivo = !letivoOnly || day.letivo;
+      let matchesEvents = !eventsOnly || day.eventos.length > 0;
+
+      return matchesCategory && matchesSearch && matchesLetivo && matchesEvents;
+    }
+
+    function getCategoryColors(cat, desc = '') {
+      const dLower = desc.toLowerCase();
+      if (cat === 'inicio_semestre' || cat === 'termino_semestre' || dLower.includes('início do período') || dLower.includes('término do período') || dLower.includes('término das aulas')) {
+        return { bg: 'var(--semestre-milestone-bg)', border: 'var(--semestre-milestone-border)', text: 'var(--semestre-milestone-text)' };
+      }
+      if (cat.includes('feriado') || cat.includes('ponto_facultativo')) return { bg: 'var(--feriado-bg)', border: 'var(--feriado-border)', text: 'var(--feriado-text)' };
+      if (cat === 'recesso') return { bg: 'var(--recesso-bg)', border: 'var(--recesso-border)', text: 'var(--recesso-text)' };
+      if (cat === 'exames_finais') return { bg: 'var(--exames-bg)', border: 'var(--exames-border)', text: 'var(--exames-text)' };
+      if (cat === 'ferias') return { bg: 'var(--ferias-bg)', border: 'var(--ferias-border)', text: 'var(--ferias-text)' };
+      if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho')) return { bg: 'var(--prazo-bg)', border: 'var(--prazo-border)', text: 'var(--prazo-text)' };
+      if (cat.includes('matricula')) return { bg: 'var(--matricula-bg)', border: 'var(--matricula-border)', text: 'var(--matricula-text)' };
+      return { bg: 'var(--academico-bg)', border: 'var(--academico-border)', text: 'var(--academico-text)' };
+    }
+
+    function applyMultiCategoryStyle(dayCell, dayNumSpan, eventos) {
+      if (!eventos || eventos.length === 0) return;
+
+      const catColors = eventos.map(ev => getCategoryColors(ev.categoria, ev.descricao));
+
+      if (catColors.length === 1) {
+        dayCell.style.backgroundColor = catColors[0].bg;
+        dayCell.style.borderColor = catColors[0].border;
+        dayNumSpan.style.color = catColors[0].text;
+      } else if (catColors.length === 2) {
+        dayCell.style.background = `linear-gradient(135deg, ${catColors[0].bg} 50%, ${catColors[1].bg} 50%)`;
+        dayCell.style.borderColor = catColors[0].border;
+        dayNumSpan.style.color = catColors[0].text;
+      } else {
+        const step = 100 / catColors.length;
+        const stops = catColors.map((c, i) => `${c.bg} ${(i * step).toFixed(1)}% ${((i + 1) * step).toFixed(1)}%`).join(', ');
+        dayCell.style.background = `linear-gradient(135deg, ${stops})`;
+        dayCell.style.borderColor = catColors[0].border;
+        dayNumSpan.style.color = catColors[0].text;
+      }
+    }
+
+    function renderCalendarGrid() {
       const container = document.getElementById('calendar-container');
       container.innerHTML = '';
 
@@ -992,10 +1294,8 @@
         const [year, monthNum] = month.ano_mes.split('-').map(Number);
         const firstDayOfWeek = new Date(year, monthNum - 1, 1).getDay();
 
-        // Calculate month stats
         const letivoCount = month.dias.filter(d => d.letivo).length;
 
-        // Create Month Card
         const monthCard = document.createElement('div');
         monthCard.className = 'month-card';
 
@@ -1007,7 +1307,6 @@
         `;
         monthCard.appendChild(monthHeader);
 
-        // Weekday Headers
         const weekdaysGrid = document.createElement('div');
         weekdaysGrid.className = 'weekdays-grid';
         weekdaysNames.forEach(w => {
@@ -1017,92 +1316,156 @@
         });
         monthCard.appendChild(weekdaysGrid);
 
-        // Days Grid
         const daysGrid = document.createElement('div');
         daysGrid.className = 'days-grid';
 
-        // Blank cells before day 1
         for (let i = 0; i < firstDayOfWeek; i++) {
           const emptyCell = document.createElement('div');
           emptyCell.className = 'day-cell empty';
           daysGrid.appendChild(emptyCell);
         }
 
-        // Render days
         month.dias.forEach(day => {
           const dateObj = new Date(day.data + 'T00:00:00');
           const dayNum = dateObj.getDate();
 
-          // Filter checks
-          let matchesCategory = true;
-          if (selectedCategory !== 'all') {
-            matchesCategory = day.eventos.some(e => {
-              if (selectedCategory === 'feriado') return e.categoria.includes('feriado');
-              if (selectedCategory === 'recesso') return e.categoria === 'recesso' || e.categoria === 'ponto_facultativo';
-              return e.categoria === selectedCategory;
-            });
-          }
-
-          let matchesSearch = true;
-          if (searchQuery) {
-            matchesSearch = day.eventos.some(e => e.descricao.toLowerCase().includes(searchQuery) || day.data.includes(searchQuery));
-          }
-
-          let matchesLetivo = !letivoOnly || day.letivo;
-          let matchesEvents = !eventsOnly || day.eventos.length > 0;
-
-          const isVisible = matchesCategory && matchesSearch && matchesLetivo && matchesEvents;
+          const isVisible = filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly);
 
           const dayCell = document.createElement('div');
           dayCell.className = 'day-cell';
           if (day.letivo) dayCell.classList.add('is-letivo');
           if (day.eventos.length > 0) dayCell.classList.add('has-event');
 
-          // Highlight category class on day cell
+          const dayNumSpan = document.createElement('span');
+          dayNumSpan.className = 'day-number';
+          dayNumSpan.textContent = dayNum;
+          dayCell.appendChild(dayNumSpan);
+
           if (day.eventos.length > 0) {
-            dayCell.classList.add('cat-' + day.eventos[0].categoria);
+            applyMultiCategoryStyle(dayCell, dayNumSpan, day.eventos);
           }
 
           if (!isVisible) {
             dayCell.style.opacity = '0.2';
           }
 
-          // Day number label
-          const dayNumSpan = document.createElement('span');
-          dayNumSpan.className = 'day-number';
-          dayNumSpan.textContent = dayNum;
-          dayCell.appendChild(dayNumSpan);
-
-          // Event Dots
           if (day.eventos.length > 0) {
             const dotsContainer = document.createElement('div');
             dotsContainer.className = 'event-dots';
             day.eventos.forEach(ev => {
               const dot = document.createElement('div');
               dot.className = 'dot';
-              if (ev.categoria.includes('feriado')) dot.classList.add('feriado');
-              else if (ev.categoria === 'recesso' || ev.categoria === 'ponto_facultativo') dot.classList.add('recesso');
-              else if (ev.categoria === 'exames_finais') dot.classList.add('exames');
-              else if (ev.categoria === 'prazo_academico') dot.classList.add('prazo');
-              else if (ev.categoria === 'ferias') dot.classList.add('ferias');
-              else dot.classList.add('academico');
+              const colors = getCategoryColors(ev.categoria);
+              dot.style.backgroundColor = colors.text;
               dotsContainer.appendChild(dot);
             });
             dayCell.appendChild(dotsContainer);
           }
 
-          // Floating Tooltip Handlers on Hover
           dayCell.addEventListener('mouseenter', (e) => showTooltip(e, day, dateObj));
           dayCell.addEventListener('mousemove', moveTooltip);
           dayCell.addEventListener('mouseleave', hideTooltip);
-
-          // Click handler to open detail modal
           dayCell.addEventListener('click', () => openModal(day, dateObj));
 
           daysGrid.appendChild(dayCell);
         });
 
         monthCard.appendChild(daysGrid);
+        container.appendChild(monthCard);
+      });
+    }
+
+    function getBadgeClass(cat, desc = '') {
+      const dLower = desc.toLowerCase();
+      if (cat === 'inicio_semestre' || cat === 'termino_semestre' || dLower.includes('início do período') || dLower.includes('término do período') || dLower.includes('término das aulas')) {
+        return 'badge-milestone';
+      }
+      if (cat.includes('feriado') || cat.includes('ponto_facultativo')) return 'badge-feriado';
+      if (cat === 'recesso') return 'badge-recesso';
+      if (cat === 'exames_finais') return 'badge-exames';
+      if (cat === 'ferias') return 'badge-ferias';
+      if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho')) return 'badge-prazo';
+      if (cat.includes('matricula')) return 'badge-matricula';
+      return 'badge-academico';
+    }
+
+    function renderCalendarList() {
+      const container = document.getElementById('calendar-list-container');
+      container.innerHTML = '';
+
+      const selectedMonth = document.getElementById('month-select').value;
+      const selectedCategory = document.getElementById('category-select').value;
+      const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+      const letivoOnly = document.getElementById('letivo-only-toggle').checked;
+      const eventsOnly = document.getElementById('events-only-toggle').checked;
+
+      const filteredMeses = calendarData.meses.filter(m => {
+        if (selectedMonth !== 'all' && m.ano_mes !== selectedMonth) return false;
+        return true;
+      });
+
+      filteredMeses.forEach(month => {
+        const visibleDays = month.dias.filter(day => filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly));
+        if (visibleDays.length === 0) return;
+
+        const monthCard = document.createElement('div');
+        monthCard.className = 'list-month-card';
+
+        const monthHeader = document.createElement('div');
+        monthHeader.className = 'list-month-header';
+        monthHeader.innerHTML = `
+          <div>${ptMonthNames[month.ano_mes] || month.ano_mes}</div>
+          <div class="month-badge">${visibleDays.filter(d => d.letivo).length} dias letivos exibidos</div>
+        `;
+        monthCard.appendChild(monthHeader);
+
+        const rowsContainer = document.createElement('div');
+        rowsContainer.className = 'list-table-rows';
+
+        visibleDays.forEach(day => {
+          const dateObj = new Date(day.data + 'T00:00:00');
+          const dayParts = day.data.split('-');
+          const dateStr = `${dayParts[2]}/${dayParts[1]}/${dayParts[0]} (${weekdaysFullNames[dateObj.getDay()].split('-')[0]})`;
+
+          const row = document.createElement('div');
+          row.className = 'list-row-item';
+
+          const dateCol = document.createElement('div');
+          dateCol.className = 'list-row-date';
+          dateCol.textContent = dateStr;
+          row.appendChild(dateCol);
+
+          const statusCol = document.createElement('div');
+          if (day.letivo) {
+            statusCol.className = 'list-row-status letivo';
+            statusCol.textContent = '✓ Dia Letivo';
+          } else {
+            statusCol.className = 'list-row-status nao-letivo';
+            statusCol.textContent = '✕ Não Letivo';
+          }
+          row.appendChild(statusCol);
+
+          const eventsCol = document.createElement('div');
+          eventsCol.className = 'list-events-cell';
+
+          if (day.eventos.length === 0) {
+            eventsCol.innerHTML = '<span style="color: var(--text-muted); font-style: italic;">Sem eventos cadastrados</span>';
+          } else {
+            day.eventos.forEach(ev => {
+              const evLine = document.createElement('div');
+              const badgeClass = getBadgeClass(ev.categoria, ev.descricao);
+              evLine.innerHTML = `<strong>• ${ev.descricao}</strong> <span class="list-event-badge ${badgeClass}">${ev.categoria.replace(/_/g, ' ')}</span>`;
+              eventsCol.appendChild(evLine);
+            });
+          }
+
+          row.appendChild(eventsCol);
+          row.addEventListener('click', () => openModal(day, dateObj));
+          row.style.cursor = 'pointer';
+          rowsContainer.appendChild(row);
+        });
+
+        monthCard.appendChild(rowsContainer);
         container.appendChild(monthCard);
       });
     }
@@ -1216,3170 +1579,208 @@
   <!-- Embedded Calendar JSON Fallback for file:// protocol -->
   <script type="application/json" id="embedded-calendar-json">
 {
-  "metadata": {
-    "titulo": "Proposta de Calendário Acadêmico - Campus João Pessoa",
-    "instituicao": "Instituto Federal da Paraíba - IFPB",
-    "campus": "João Pessoa",
-    "publico": [
-      "Cursos Superior",
-      "Proeja",
-      "Subsequente"
-    ],
-    "periodos_letivos": [
-      "2026.1",
-      "2026.2"
-    ],
-    "atualizado_em": "2025-12-30",
-    "fonte": "calendario_calendario_semestral_2026_atualizado (1).pdf",
-    "observacao": "Estrutura enxuta com o range completo de dias por mês, indicando o status letivo e os eventos."
-  },
-  "legenda": {
-    "FN": "Feriado Nacional",
-    "FM": "Feriado Municipal",
-    "PF": "Ponto Facultativo",
-    "FE": "Feriado Estadual",
-    "elementos": [
-      "Dias Letivos",
-      "Exames Finais",
-      "Domingos e Feriados",
-      "Recessos e outros eventos não letivos",
-      "Férias Discentes/Docentes",
-      "Início/término de Bimestre ou Semestre Letivo"
-    ]
-  },
-  "periodos": [
-    {
-      "id": "2026.1",
-      "inicio": "2026-02-25",
-      "termino": "2026-07-06",
-      "dias_letivos": 100
-    },
-    {
-      "id": "2026.2",
-      "inicio": "2026-08-06",
-      "termino": "2026-12-14",
-      "dias_letivos": 100
-    }
-  ],
+  "ano_letivo": 2026,
+  "periodo": 2,
   "meses": [
-    {
-      "ano_mes": "2026-02",
-      "dias": [
-        {
-          "data": "2026-02-01",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-02",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-03",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-04",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-05",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-07",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-08",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-09",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-10",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-11",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-12",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-13",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-14",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-15",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-16",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Recesso de Carnaval",
-              "categoria": "recesso"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-17",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Carnaval (P.F.)",
-              "categoria": "ponto_facultativo"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-18",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Recesso de Carnaval",
-              "categoria": "recesso"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-19",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos 2026",
-              "categoria": "evento_academico"
-            },
-            {
-              "descricao": "Prazo Final para o Registro de Notas 2025.2",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-20",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos 2026",
-              "categoria": "evento_academico"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-21",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos 2026",
-              "categoria": "evento_academico"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-22",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-23",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos 2026",
-              "categoria": "evento_academico"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-24",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos 2026",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-25",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Início do 1° Semestre",
-              "categoria": "inicio_semestre"
-            },
-            {
-              "descricao": "Acolhimento dos Estudantes do Subsequente 2026.1",
-              "categoria": "acolhimento"
-            }
-          ]
-        },
-        {
-          "data": "2026-02-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-02-28",
-          "letivo": false,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2026-03",
-      "dias": [
-        {
-          "data": "2026-03-01",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-02",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-03",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-04",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-05",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-06",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-07",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-08",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Dia Internacional da mulher",
-              "categoria": "data_comemorativa"
-            }
-          ]
-        },
-        {
-          "data": "2026-03-09",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-10",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Prazo Final p/ Req. Aproveit. de Conhecimentos Adquiridos (Sub)",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-03-11",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para Ajuste de Matrículas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-03-12",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-13",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-14",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-15",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-16",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-17",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-18",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-20",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-21",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-22",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-23",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-24",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-25",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-28",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-29",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-30",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-03-31",
-          "letivo": true,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2026-04",
-      "dias": [
-        {
-          "data": "2026-04-01",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-02",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Recesso da Semana Santa",
-              "categoria": "recesso"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-03",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Paixão de Cristo (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-04",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Páscoa",
-              "categoria": "data_comemorativa"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-05",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-06",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-07",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Dia Nacional de Combate ao Bullying e à Violência na Escola",
-              "categoria": "data_comemorativa"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-08",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-09",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-10",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Prazo Final de Solicitação Trancamento de Período e Disciplinas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-11",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-12",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-13",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-14",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-15",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-16",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-17",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-18",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Jogos Internos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-19",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-20",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-21",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Tiradentes (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-22",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-23",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-24",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-25",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Jogos Internos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-04-26",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-28",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-29",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-04-30",
-          "letivo": true,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2026-05",
-      "dias": [
-        {
-          "data": "2026-05-01",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Dia do Trabalhador (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-02",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-03",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-04",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-05",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-06",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-07",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-08",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-09",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Jogos Internos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-10",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-11",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Conselhos de Classe do 1º bimestre (Proeja)",
-              "categoria": "conselho_classe"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-12",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Conselhos de Classe do 1º bimestre (Proeja)",
-              "categoria": "conselho_classe"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-13",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Conselhos de Classe do 1º bimestre (Proeja)",
-              "categoria": "conselho_classe"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-14",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Conselhos de Classe do 1º bimestre (Proeja)",
-              "categoria": "conselho_classe"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-15",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Conselhos de Classe do 1º bimestre (Proeja)",
-              "categoria": "conselho_classe"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-16",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Jogos Internos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-17",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-18",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-20",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-21",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-22",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-23",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Jogos Internos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-24",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-25",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-28",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-29",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-05-30",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Jogos Internos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-05-31",
-          "letivo": false,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2026-06",
-      "dias": [
-        {
-          "data": "2026-06-01",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-02",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-03",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-04",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Corpus Christi (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-06-05",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Recesso",
-              "categoria": "recesso"
-            }
-          ]
-        },
-        {
-          "data": "2026-06-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-07",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-08",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-09",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-10",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-11",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-12",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-13",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Sábado Letivo referente a Semana do Meio Ambiente",
-              "categoria": "sabado_letivo"
-            }
-          ]
-        },
-        {
-          "data": "2026-06-14",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-15",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-16",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-17",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-18",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-20",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-21",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-22",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-23",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-24",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "São João",
-              "categoria": "feriado_ou_data_local"
-            }
-          ]
-        },
-        {
-          "data": "2026-06-25",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-27",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-28",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-29",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-06-30",
-          "letivo": true,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2026-07",
-      "dias": [
-        {
-          "data": "2026-07-01",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-07-02",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-07-03",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-07-04",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-07-05",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-07-06",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Término do 1° Semestre",
-              "categoria": "termino_semestre"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-07",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Exames Finais",
-              "categoria": "exames_finais"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-08",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Exames Finais",
-              "categoria": "exames_finais"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-09",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Exames Finais",
-              "categoria": "exames_finais"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-10",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para o Registro de Notas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-11",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para o Registro de Notas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-12",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-07-13",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-14",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-15",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-16",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-17",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-18",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-19",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-20",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-21",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-22",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-23",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-24",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-25",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-26",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-27",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-28",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-29",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-30",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        },
-        {
-          "data": "2026-07-31",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            },
-            {
-              "descricao": "Matrícula (Veteranos)",
-              "categoria": "matricula"
-            }
-          ]
-        }
-      ]
-    },
     {
       "ano_mes": "2026-08",
       "dias": [
-        {
-          "data": "2026-08-01",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-02",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-03",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-04",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-05",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Fundação da Paraíba (F.E.)",
-              "categoria": "feriado_estadual"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-06",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Início do 2° Semestre",
-              "categoria": "inicio_semestre"
-            },
-            {
-              "descricao": "Acolhimento dos Estudantes do Subsequente 2026.2",
-              "categoria": "acolhimento"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-07",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-08",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-09",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-10",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-11",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-12",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-13",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-14",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-15",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-16",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-17",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-18",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-20",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para Ajuste de Matrículas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-08-21",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-22",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-23",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-24",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-25",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-28",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-29",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-30",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-08-31",
-          "letivo": true,
-          "eventos": []
-        }
+        { "data": "2026-08-01", "letivo": false, "eventos": [] },
+        { "data": "2026-08-02", "letivo": false, "eventos": [] },
+        { "data": "2026-08-03", "letivo": false, "eventos": [{ "descricao": "Encontro Pedagógico", "categoria": "evento_academico" }, { "descricao": "Matrícula de Veteranos", "categoria": "prazo_academico" }] },
+        { "data": "2026-08-04", "letivo": false, "eventos": [{ "descricao": "Encontro Pedagógico", "categoria": "evento_academico" }] },
+        { "data": "2026-08-05", "letivo": false, "eventos": [{ "descricao": "Feriado Estadual - Fundação da Paraíba", "categoria": "feriado_estadual" }] },
+        { "data": "2026-08-06", "letivo": true, "eventos": [{ "descricao": "Início do Período Letivo 2026.2", "categoria": "prazo_academico" }] },
+        { "data": "2026-08-07", "letivo": true, "eventos": [] },
+        { "data": "2026-08-08", "letivo": true, "eventos": [] },
+        { "data": "2026-08-09", "letivo": false, "eventos": [] },
+        { "data": "2026-08-10", "letivo": true, "eventos": [] },
+        { "data": "2026-08-11", "letivo": true, "eventos": [] },
+        { "data": "2026-08-12", "letivo": true, "eventos": [] },
+        { "data": "2026-08-13", "letivo": true, "eventos": [] },
+        { "data": "2026-08-14", "letivo": true, "eventos": [] },
+        { "data": "2026-08-15", "letivo": true, "eventos": [] },
+        { "data": "2026-08-16", "letivo": false, "eventos": [] },
+        { "data": "2026-08-17", "letivo": true, "eventos": [] },
+        { "data": "2026-08-18", "letivo": true, "eventos": [] },
+        { "data": "2026-08-19", "letivo": true, "eventos": [] },
+        { "data": "2026-08-20", "letivo": true, "eventos": [] },
+        { "data": "2026-08-21", "letivo": true, "eventos": [] },
+        { "data": "2026-08-22", "letivo": true, "eventos": [] },
+        { "data": "2026-08-23", "letivo": false, "eventos": [] },
+        { "data": "2026-08-24", "letivo": true, "eventos": [] },
+        { "data": "2026-08-25", "letivo": true, "eventos": [] },
+        { "data": "2026-08-26", "letivo": true, "eventos": [] },
+        { "data": "2026-08-27", "letivo": true, "eventos": [] },
+        { "data": "2026-08-28", "letivo": true, "eventos": [] },
+        { "data": "2026-08-29", "letivo": true, "eventos": [] },
+        { "data": "2026-08-30", "letivo": false, "eventos": [] },
+        { "data": "2026-08-31", "letivo": true, "eventos": [] }
       ]
     },
     {
       "ano_mes": "2026-09",
       "dias": [
-        {
-          "data": "2026-09-01",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-02",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-03",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-04",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-05",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-07",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Independência do Brasil (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-08",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-09",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-10",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-11",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-12",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-13",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-14",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-15",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-16",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-17",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-18",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-20",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-21",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para Solicit. de Trancamento de Período e Disciplina",
-              "categoria": "prazo_academico"
-            },
-            {
-              "descricao": "Semana de Diversidade e Inclusão",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-22",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Semana de Diversidade e Inclusão",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-23",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Semana de Diversidade e Inclusão",
-              "categoria": "evento_academico"
-            },
-            {
-              "descricao": "Dia Nacional da Educação Profissional e Tecnológica",
-              "categoria": "data_comemorativa"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-24",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Semana de Diversidade e Inclusão",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-25",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Semana de Diversidade e Inclusão",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-26",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Semana de Diversidade e Inclusão",
-              "categoria": "evento_academico"
-            },
-            {
-              "descricao": "Sábado referente a Semana da Inclusão",
-              "categoria": "sabado_letivo"
-            }
-          ]
-        },
-        {
-          "data": "2026-09-27",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-28",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-29",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-09-30",
-          "letivo": true,
-          "eventos": []
-        }
+        { "data": "2026-09-01", "letivo": true, "eventos": [] },
+        { "data": "2026-09-02", "letivo": true, "eventos": [] },
+        { "data": "2026-09-03", "letivo": true, "eventos": [] },
+        { "data": "2026-09-04", "letivo": true, "eventos": [] },
+        { "data": "2026-09-05", "letivo": false, "eventos": [] },
+        { "data": "2026-09-06", "letivo": false, "eventos": [] },
+        { "data": "2026-09-07", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - Independência do Brasil", "categoria": "feriado_nacional" }] },
+        { "data": "2026-09-08", "letivo": true, "eventos": [] },
+        { "data": "2026-09-09", "letivo": true, "eventos": [] },
+        { "data": "2026-09-10", "letivo": true, "eventos": [] },
+        { "data": "2026-09-11", "letivo": true, "eventos": [] },
+        { "data": "2026-09-12", "letivo": true, "eventos": [] },
+        { "data": "2026-09-13", "letivo": false, "eventos": [] },
+        { "data": "2026-09-14", "letivo": true, "eventos": [] },
+        { "data": "2026-09-15", "letivo": true, "eventos": [] },
+        { "data": "2026-09-16", "letivo": true, "eventos": [] },
+        { "data": "2026-09-17", "letivo": true, "eventos": [] },
+        { "data": "2026-09-18", "letivo": true, "eventos": [] },
+        { "data": "2026-09-19", "letivo": true, "eventos": [] },
+        { "data": "2026-09-20", "letivo": false, "eventos": [] },
+        { "data": "2026-09-21", "letivo": true, "eventos": [{ "descricao": "Semana de Diversidade e Inclusão", "categoria": "evento_academico" }] },
+        { "data": "2026-09-22", "letivo": true, "eventos": [{ "descricao": "Semana de Diversidade e Inclusão", "categoria": "evento_academico" }] },
+        { "data": "2026-09-23", "letivo": true, "eventos": [{ "descricao": "Semana de Diversidade e Inclusão", "categoria": "evento_academico" }] },
+        { "data": "2026-09-24", "letivo": true, "eventos": [{ "descricao": "Semana de Diversidade e Inclusão", "categoria": "evento_academico" }] },
+        { "data": "2026-09-25", "letivo": true, "eventos": [{ "descricao": "Semana de Diversidade e Inclusão", "categoria": "evento_academico" }] },
+        { "data": "2026-09-26", "letivo": true, "eventos": [{ "descricao": "Semana de Diversidade e Inclusão", "categoria": "evento_academico" }, { "descricao": "Sábado referente a Semana da Inclusão", "categoria": "evento_academico" }] },
+        { "data": "2026-09-27", "letivo": false, "eventos": [] },
+        { "data": "2026-09-28", "letivo": true, "eventos": [] },
+        { "data": "2026-09-29", "letivo": true, "eventos": [] },
+        { "data": "2026-09-30", "letivo": true, "eventos": [] }
       ]
     },
     {
       "ano_mes": "2026-10",
       "dias": [
-        {
-          "data": "2026-10-01",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-02",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-03",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-04",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-05",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-06",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Pulsar",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-07",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Pulsar",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-08",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Pulsar",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-09",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Pulsar",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-10",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-11",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-12",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Nossa Senhora Aparecida (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-13",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-14",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-15",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-16",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-17",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Sábado Letivo do Pulsar",
-              "categoria": "sabado_letivo"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-18",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-20",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-21",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-22",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-23",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-24",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-25",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-28",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Dia do Servidor Público",
-              "categoria": "ponto_facultativo_ou_evento_institucional"
-            }
-          ]
-        },
-        {
-          "data": "2026-10-29",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-30",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-10-31",
-          "letivo": false,
-          "eventos": []
-        }
+        { "data": "2026-10-01", "letivo": true, "eventos": [] },
+        { "data": "2026-10-02", "letivo": true, "eventos": [] },
+        { "data": "2026-10-03", "letivo": false, "eventos": [] },
+        { "data": "2026-10-04", "letivo": false, "eventos": [] },
+        { "data": "2026-10-05", "letivo": true, "eventos": [] },
+        { "data": "2026-10-06", "letivo": true, "eventos": [] },
+        { "data": "2026-10-07", "letivo": true, "eventos": [] },
+        { "data": "2026-10-08", "letivo": true, "eventos": [] },
+        { "data": "2026-10-09", "letivo": true, "eventos": [] },
+        { "data": "2026-10-10", "letivo": false, "eventos": [] },
+        { "data": "2026-10-11", "letivo": false, "eventos": [] },
+        { "data": "2026-10-12", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - N. Sra. Aparecida", "categoria": "feriado_nacional" }] },
+        { "data": "2026-10-13", "letivo": true, "eventos": [] },
+        { "data": "2026-10-14", "letivo": true, "eventos": [] },
+        { "data": "2026-10-15", "letivo": true, "eventos": [{ "descricao": "Dia do Professor", "categoria": "prazo_academico" }] },
+        { "data": "2026-10-16", "letivo": true, "eventos": [] },
+        { "data": "2026-10-17", "letivo": true, "eventos": [{ "descricao": "Sábado Letivo do Pulsar", "categoria": "evento_academico" }] },
+        { "data": "2026-10-18", "letivo": false, "eventos": [] },
+        { "data": "2026-10-19", "letivo": true, "eventos": [] },
+        { "data": "2026-10-20", "letivo": true, "eventos": [] },
+        { "data": "2026-10-21", "letivo": true, "eventos": [] },
+        { "data": "2026-10-22", "letivo": true, "eventos": [] },
+        { "data": "2026-10-23", "letivo": true, "eventos": [] },
+        { "data": "2026-10-24", "letivo": false, "eventos": [] },
+        { "data": "2026-10-25", "letivo": false, "eventos": [] },
+        { "data": "2026-10-26", "letivo": true, "eventos": [] },
+        { "data": "2026-10-27", "letivo": true, "eventos": [] },
+        { "data": "2026-10-28", "letivo": false, "eventos": [{ "descricao": "Dia do Servidor Público", "categoria": "ponto_facultativo" }] },
+        { "data": "2026-10-29", "letivo": true, "eventos": [] },
+        { "data": "2026-10-30", "letivo": true, "eventos": [] },
+        { "data": "2026-10-31", "letivo": false, "eventos": [] }
       ]
     },
     {
       "ano_mes": "2026-11",
       "dias": [
-        {
-          "data": "2026-11-01",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-02",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Finados (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-11-03",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-04",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-05",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-06",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-07",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-08",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-09",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-10",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-11",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-12",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-13",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-14",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Sábado Letivo Referente ao Dia Nacional da Consciência Negra",
-              "categoria": "sabado_letivo"
-            }
-          ]
-        },
-        {
-          "data": "2026-11-15",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Proclamação da República (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-11-16",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-17",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-18",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-19",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-20",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Dia Nacional da Consciência Negra e de Zumbi dos Palmares",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-11-21",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-22",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-23",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-24",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-25",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-26",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-27",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-28",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Sábado Letivo Referente ao Dia Nacional da Consciência Negra",
-              "categoria": "sabado_letivo"
-            }
-          ]
-        },
-        {
-          "data": "2026-11-29",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-11-30",
-          "letivo": true,
-          "eventos": []
-        }
+        { "data": "2026-11-01", "letivo": false, "eventos": [] },
+        { "data": "2026-11-02", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - Finados", "categoria": "feriado_nacional" }] },
+        { "data": "2026-11-03", "letivo": true, "eventos": [] },
+        { "data": "2026-11-04", "letivo": true, "eventos": [] },
+        { "data": "2026-11-05", "letivo": true, "eventos": [] },
+        { "data": "2026-11-06", "letivo": true, "eventos": [] },
+        { "data": "2026-11-07", "letivo": false, "eventos": [] },
+        { "data": "2026-11-08", "letivo": false, "eventos": [] },
+        { "data": "2026-11-09", "letivo": true, "eventos": [] },
+        { "data": "2026-11-10", "letivo": true, "eventos": [] },
+        { "data": "2026-11-11", "letivo": true, "eventos": [] },
+        { "data": "2026-11-12", "letivo": true, "eventos": [] },
+        { "data": "2026-11-13", "letivo": true, "eventos": [] },
+        { "data": "2026-11-14", "letivo": true, "eventos": [{ "descricao": "Sábado Letivo Referente ao Dia Nacional da Consciência Negra", "categoria": "evento_academico" }] },
+        { "data": "2026-11-15", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - Proclamação da República", "categoria": "feriado_nacional" }] },
+        { "data": "2026-11-16", "letivo": true, "eventos": [] },
+        { "data": "2026-11-17", "letivo": true, "eventos": [] },
+        { "data": "2026-11-18", "letivo": true, "eventos": [] },
+        { "data": "2026-11-19", "letivo": true, "eventos": [] },
+        { "data": "2026-11-20", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - Dia Nacional de Zumbi e da Consciência Negra", "categoria": "feriado_nacional" }] },
+        { "data": "2026-11-21", "letivo": true, "eventos": [] },
+        { "data": "2026-11-22", "letivo": false, "eventos": [] },
+        { "data": "2026-11-23", "letivo": true, "eventos": [] },
+        { "data": "2026-11-24", "letivo": true, "eventos": [] },
+        { "data": "2026-11-25", "letivo": true, "eventos": [] },
+        { "data": "2026-11-26", "letivo": true, "eventos": [] },
+        { "data": "2026-11-27", "letivo": true, "eventos": [] },
+        { "data": "2026-11-28", "letivo": true, "eventos": [{ "descricao": "Sábado Letivo Referente ao Dia Nacional da Consciência Negra", "categoria": "evento_academico" }] },
+        { "data": "2026-11-29", "letivo": false, "eventos": [] },
+        { "data": "2026-11-30", "letivo": true, "eventos": [] }
       ]
     },
     {
       "ano_mes": "2026-12",
       "dias": [
-        {
-          "data": "2026-12-01",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-02",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-03",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-04",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-05",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-07",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-08",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Imaculada Conceição (F.M.)",
-              "categoria": "feriado_municipal"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-09",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-10",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-11",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-12",
-          "letivo": true,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-13",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-14",
-          "letivo": true,
-          "eventos": [
-            {
-              "descricao": "Término do 2° Semestre",
-              "categoria": "termino_semestre"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-15",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Exames Finais",
-              "categoria": "exames_finais"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-16",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Exames Finais",
-              "categoria": "exames_finais"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-17",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Exames Finais",
-              "categoria": "exames_finais"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-18",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para o Registro de Notas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-19",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-20",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2026-12-21",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Prazo Final para o Registro de Notas",
-              "categoria": "prazo_academico"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-22",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-23",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-24",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-25",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            },
-            {
-              "descricao": "Natal (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-26",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-27",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-28",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-29",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-30",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2026-12-31",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        }
+        { "data": "2026-12-01", "letivo": true, "eventos": [] },
+        { "data": "2026-12-02", "letivo": true, "eventos": [] },
+        { "data": "2026-12-03", "letivo": true, "eventos": [] },
+        { "data": "2026-12-04", "letivo": true, "eventos": [] },
+        { "data": "2026-12-05", "letivo": true, "eventos": [] },
+        { "data": "2026-12-06", "letivo": false, "eventos": [] },
+        { "data": "2026-12-07", "letivo": true, "eventos": [] },
+        { "data": "2026-12-08", "letivo": false, "eventos": [{ "descricao": "Feriado Municipal - Nossa Senhora da Conceição", "categoria": "feriado_municipal" }] },
+        { "data": "2026-12-09", "letivo": true, "eventos": [] },
+        { "data": "2026-12-10", "letivo": true, "eventos": [] },
+        { "data": "2026-12-11", "letivo": true, "eventos": [] },
+        { "data": "2026-12-12", "letivo": true, "eventos": [] },
+        { "data": "2026-12-13", "letivo": false, "eventos": [] },
+        { "data": "2026-12-14", "letivo": true, "eventos": [{ "descricao": "Término das Aulas do Período Letivo 2026.2 (100 dias letivos)", "categoria": "prazo_academico" }] },
+        { "data": "2026-12-15", "letivo": false, "eventos": [{ "descricao": "Exames Finais", "categoria": "exames_finais" }] },
+        { "data": "2026-12-16", "letivo": false, "eventos": [{ "descricao": "Exames Finais", "categoria": "exames_finais" }] },
+        { "data": "2026-12-17", "letivo": false, "eventos": [{ "descricao": "Exames Finais", "categoria": "exames_finais" }] },
+        { "data": "2026-12-18", "letivo": false, "eventos": [{ "descricao": "Exames Finais", "categoria": "exames_finais" }] },
+        { "data": "2026-12-19", "letivo": false, "eventos": [{ "descricao": "Término do Período Letivo 2026.2", "categoria": "prazo_academico" }] },
+        { "data": "2026-12-20", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-21", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-22", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-23", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-24", "letivo": false, "eventos": [{ "descricao": "Recesso de Fim de Ano", "categoria": "recesso" }] },
+        { "data": "2026-12-25", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - Natal", "categoria": "feriado_nacional" }] },
+        { "data": "2026-12-26", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-27", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-28", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-29", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-30", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2026-12-31", "letivo": false, "eventos": [{ "descricao": "Recesso de Fim de Ano", "categoria": "recesso" }] }
       ]
     },
     {
       "ano_mes": "2027-01",
       "dias": [
-        {
-          "data": "2027-01-01",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Confraternização Universal (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-02",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-01-03",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-01-04",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-05",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-06",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-07",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-08",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-09",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-10",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-11",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-12",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-13",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-14",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-15",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-16",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-17",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-18",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-19",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-20",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-21",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-22",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-23",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-24",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-25",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-26",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-27",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-28",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-29",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-30",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        },
-        {
-          "data": "2027-01-31",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Férias Discentes/Docentes",
-              "categoria": "ferias"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ano_mes": "2027-02",
-      "dias": [
-        {
-          "data": "2027-02-01",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-02",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-03",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-04",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-05",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Semana de Diálogos",
-              "categoria": "evento_academico"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-07",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-08",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Recesso de Carnaval",
-              "categoria": "recesso"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-09",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Carnaval (P.F.)",
-              "categoria": "ponto_facultativo"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-10",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Recesso de Carnaval",
-              "categoria": "recesso"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-11",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Início do Semestre Letivo 2027.1",
-              "categoria": "inicio_semestre"
-            }
-          ]
-        },
-        {
-          "data": "2027-02-12",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-13",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-14",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-15",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-16",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-17",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-18",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-19",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-20",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-21",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-22",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-23",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-24",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-25",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-26",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-27",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-02-28",
-          "letivo": false,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2027-03",
-      "dias": [
-        {
-          "data": "2027-03-01",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-02",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-03",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-04",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-05",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-07",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-08",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-09",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-10",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-11",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-12",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-13",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-14",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-15",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-16",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-17",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-18",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-19",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-20",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-21",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-22",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-23",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-24",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-25",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-26",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Paixão de Cristo (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2027-03-27",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-28",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Páscoa",
-              "categoria": "data_comemorativa"
-            }
-          ]
-        },
-        {
-          "data": "2027-03-29",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-30",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-03-31",
-          "letivo": false,
-          "eventos": []
-        }
-      ]
-    },
-    {
-      "ano_mes": "2027-04",
-      "dias": [
-        {
-          "data": "2027-04-01",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-02",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-03",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-04",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-05",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-06",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-07",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-08",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-09",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-10",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-11",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-12",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-13",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-14",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-15",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-16",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-17",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-18",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-19",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-20",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-21",
-          "letivo": false,
-          "eventos": [
-            {
-              "descricao": "Tiradentes (F.N.)",
-              "categoria": "feriado_nacional"
-            }
-          ]
-        },
-        {
-          "data": "2027-04-22",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-23",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-24",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-25",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-26",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-27",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-28",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-29",
-          "letivo": false,
-          "eventos": []
-        },
-        {
-          "data": "2027-04-30",
-          "letivo": false,
-          "eventos": []
-        }
+        { "data": "2027-01-01", "letivo": false, "eventos": [{ "descricao": "Feriado Nacional - Confraternização Universal", "categoria": "feriado_nacional" }] },
+        { "data": "2027-01-02", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-03", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-04", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-05", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-06", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-07", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-08", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-09", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-10", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-11", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-12", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-13", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-14", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-15", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-16", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-17", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] },
+        { "data": "2027-01-18", "letivo": false, "eventos": [{ "descricao": "Férias Docentes", "categoria": "ferias" }] }
       ]
     }
   ]
