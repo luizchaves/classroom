@@ -8,6 +8,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Lucide Icons Library -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
   <style>
     :root {
       --bg-main: #f8fafc;
@@ -272,6 +274,14 @@
       gap: 1rem;
     }
 
+    .controls-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+      flex-wrap: wrap;
+    }
+
     .search-box {
       position: relative;
       flex: 1;
@@ -312,6 +322,48 @@
       color: var(--text-muted);
     }
 
+    /* View Switcher Segmented Control */
+    .view-switcher-group {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.6rem;
+      padding: 0.2rem;
+      gap: 0.2rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+    }
+
+    .view-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.4rem;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .view-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .view-btn:hover {
+      color: var(--text-main);
+      background: #f1f5f9;
+    }
+
+    .view-btn.active {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
     /* Topics Outline Feed */
     .outline-feed {
       max-width: 1100px;
@@ -320,6 +372,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
+      transition: gap 0.2s ease;
     }
 
     .topic-card {
@@ -328,7 +381,7 @@
       border-radius: 0.85rem;
       padding: 1.25rem 1.5rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, padding 0.2s ease;
       scroll-margin-top: 5rem;
     }
 
@@ -345,10 +398,11 @@
 
     .topic-card-header {
       display: flex;
-      flex-wrap: wrap;
+      flex-wrap: nowrap;
       align-items: center;
-      gap: 0.6rem;
+      gap: 0.65rem;
       margin-bottom: 0.85rem;
+      width: 100%;
     }
 
     .topic-number-link {
@@ -364,6 +418,8 @@
       gap: 0.35rem;
       transition: all 0.2s ease;
       cursor: pointer;
+      flex-shrink: 0;
+      order: 1;
     }
 
     .topic-number-link:hover {
@@ -381,14 +437,16 @@
       opacity: 1;
     }
 
-    .topic-date-badge {
-      background-color: #f1f5f9;
-      color: var(--text-muted);
+    .topic-title {
+      font-size: 1.05rem;
       font-weight: 700;
-      font-size: 0.8rem;
-      padding: 0.25rem 0.6rem;
-      border-radius: 0.4rem;
-      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      margin: 0;
+      flex: 0 1 auto;
+      order: 2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .badge-extra-label {
@@ -396,14 +454,25 @@
       color: #92400e;
       border-color: #fde68a;
       font-weight: 800;
+      flex-shrink: 0;
+      order: 3;
+      font-size: 0.725rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.35rem;
+      margin-left: 0;
     }
 
-    .topic-title {
-      font-size: 1.1rem;
+    .topic-date-badge:not(.badge-extra-label) {
+      background-color: #f1f5f9;
+      color: var(--text-muted);
       font-weight: 700;
-      color: var(--text-main);
-      width: 100%;
-      margin-top: 0.1rem;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.4rem;
+      border: 1px solid var(--border-color);
+      flex-shrink: 0;
+      order: 4;
+      margin-left: auto;
     }
 
     /* Lesson Text Content */
@@ -517,6 +586,87 @@
       font-style: italic;
     }
 
+    /* Compact View Mode Styles */
+    .outline-feed.compact-mode {
+      gap: 0.6rem;
+    }
+
+    .outline-feed.compact-mode .topic-card {
+      padding: 0.75rem 1.1rem;
+      border-radius: 0.6rem;
+      cursor: pointer;
+    }
+
+    .outline-feed.compact-mode .topic-card-header {
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      width: 100%;
+    }
+
+    .outline-feed.compact-mode .topic-number-link {
+      order: 1;
+      flex-shrink: 0;
+    }
+
+    .outline-feed.compact-mode .topic-title {
+      font-size: 0.95rem;
+      margin-top: 0;
+      font-weight: 700;
+      flex: 0 1 auto;
+      order: 2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .outline-feed.compact-mode .badge-extra-label {
+      order: 3;
+      flex-shrink: 0;
+      font-size: 0.725rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.35rem;
+      margin-left: 0;
+    }
+
+    .outline-feed.compact-mode .topic-date-badge:not(.badge-extra-label) {
+      order: 4;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    .outline-feed.compact-mode .topic-body-text,
+    .outline-feed.compact-mode .resources-list {
+      display: none;
+    }
+
+    .outline-feed.compact-mode .topic-card.expanded {
+      background-color: #ffffff;
+      box-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.08);
+      border-color: var(--primary);
+      padding: 0.75rem 1.1rem 1rem;
+      border-radius: 0.6rem;
+    }
+
+    .outline-feed.compact-mode .topic-card.expanded .topic-card-header {
+      margin-bottom: 0.85rem;
+      flex-wrap: nowrap;
+    }
+
+    .outline-feed.compact-mode .topic-card.expanded .topic-title {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 0 1 auto;
+      font-size: 1.05rem;
+    }
+
+    .outline-feed.compact-mode .topic-card.expanded .topic-body-text,
+    .outline-feed.compact-mode .topic-card.expanded .resources-list {
+      display: flex;
+    }
+
     /* Toast Notification */
     .toast-notification {
       position: fixed;
@@ -556,6 +706,7 @@
       header { padding: 1rem; }
       .brand-text h1 { font-size: 1.1rem; }
       .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
+      .controls-left { flex-direction: column; align-items: stretch; }
       .search-box { max-width: 100%; }
       .outline-feed { padding: 0 1rem; }
       .course-banner-container { padding: 0 1rem; }
@@ -616,18 +767,30 @@
 
   <!-- Controls Bar -->
   <div class="controls-bar">
-    <div class="search-box">
-      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-      <input type="text" id="search-input" placeholder="Buscar por aula, tópico ou recurso..." aria-label="Buscar tópicos">
+    <div class="controls-left">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <input type="text" id="search-input" placeholder="Buscar por aula, tópico ou recurso..." aria-label="Buscar tópicos">
+      </div>
+
+      <div class="search-info-text" id="search-info-text">
+        Carregando cronograma...
+      </div>
     </div>
 
-    <div class="search-info-text" id="search-info-text">
-      Carregando cronograma...
+    <!-- Lucide View Switcher (Detailed vs Compact) -->
+    <div class="view-switcher-group">
+      <button id="view-detailed-btn" class="view-btn" title="Exibição Detalhada Completa">
+        <i data-lucide="file-text"></i> Detalhado
+      </button>
+      <button id="view-compact-btn" class="view-btn active" title="Exibição Compacta (Apenas Títulos)">
+        <i data-lucide="list"></i> Compacto
+      </button>
     </div>
   </div>
 
   <!-- Topics Outline Feed -->
-  <main class="outline-feed" id="outline-feed">
+  <main class="outline-feed compact-mode" id="outline-feed">
     <!-- Rendered dynamically -->
   </main>
 
@@ -635,6 +798,7 @@
     let rawCalendarData = null;
     let targetWorkloadHours = 100; // default 100h relógio
     let targetWorkloadAulas = 120; // 100h relógio = 120 aulas (50 min)
+    let currentOutlineView = 'compact'; // 'compact' is default
 
     const weekdaysFullNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
 
@@ -946,6 +1110,13 @@
           card.classList.add('is-extra-card');
         }
 
+        // Toggle expand on click in Compact Mode
+        card.addEventListener('click', (e) => {
+          if (feed.classList.contains('compact-mode') && !e.target.closest('a')) {
+            card.classList.toggle('expanded');
+          }
+        });
+
         const header = document.createElement('div');
         header.className = 'topic-card-header';
         
@@ -959,8 +1130,8 @@
         if (topic.dateObj) {
           const clockStr = formatMinutesToHours(topic.dateObj.aulas * 50);
           if (topic.dateObj.isExtra) {
-            headerHtml += `<span class="topic-date-badge badge-extra-label">⚡ AULA EXTRA</span>`;
             headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas • ${clockStr})</span>`;
+            headerHtml += `<span class="topic-date-badge badge-extra-label">⚡ AULA EXTRA</span>`;
           } else {
             headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas • ${clockStr})</span>`;
           }
@@ -1044,6 +1215,28 @@
       document.getElementById('search-info-text').textContent = searchQuery 
         ? `Filtrado: ${count} tópico(s) (${sumDays} dias • ${sumAulas} aulas = ${sumClockStr})`
         : `Exibindo todos os ${count} tópicos cadastrados (${sumDays} dias de aula)`;
+
+      // Initialize Lucide Icons if available
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    function setOutlineView(mode) {
+      currentOutlineView = mode;
+      const feed = document.getElementById('outline-feed');
+      const btnDetailed = document.getElementById('view-detailed-btn');
+      const btnCompact = document.getElementById('view-compact-btn');
+
+      if (mode === 'compact') {
+        feed.classList.add('compact-mode');
+        btnCompact.classList.add('active');
+        btnDetailed.classList.remove('active');
+      } else {
+        feed.classList.remove('compact-mode');
+        btnDetailed.classList.add('active');
+        btnCompact.classList.remove('active');
+      }
     }
 
     function renderInlineLinks(text) {
@@ -1113,6 +1306,9 @@
       loadSubjectOutline(selectedFile);
     });
 
+    document.getElementById('view-detailed-btn').addEventListener('click', () => setOutlineView('detailed'));
+    document.getElementById('view-compact-btn').addEventListener('click', () => setOutlineView('compact'));
+
     // Start App
     const initialFile = getSelectedSubjectFile();
     loadSubjectOutline(initialFile);
@@ -1135,6 +1331,10 @@ horarios:
   - dia: Quinta
     horario: 08:40-12:20
     ambiente: Lab 03
+    aulas: 4
+aulas_extras:
+  - data: 2026-08-14
+    descricao: IFTech
     aulas: 4
 ---
 
@@ -1200,8 +1400,6 @@ Participe do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 - [DW: Módulos](https://ifpb.github.io/dw/ecma/modules/)
 - [Exercício: Soma](https://ifpb.github.io/exercises/problems/algorithms/function-sum/)
 
-## Função e Módulos
-
 ## Exercício JS Intro
 
 - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/algorithms/function-calc/)
@@ -1218,97 +1416,6 @@ Participe do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 - [Exercício: String Util](https://ifpb.github.io/exercises/problems/algorithms/string-util/)
 - [DW: Object](https://ifpb.github.io/dw/ecma/object/)
 - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
-
-## JS Web: Intro
-
-- [DW: Browser Objects](https://ifpb.github.io/dw/w3c/browser-objects/)
-- [DW: Elementos Dinâmicos](https://ifpb.github.io/dw/w3c/dynamic-elements/)
-- [DW: Manipulação de Eventos](https://ifpb.github.io/dw/w3c/event-handling/)
-- [DW: DOM API](https://ifpb.github.io/dw/w3c/dom-api/)
-
-## Acompanhamento de Projeto
-
-## JS Web: CRUD
-
-- [DW: Local Storage](https://ifpb.github.io/dw/w3c/local-storage/)
-
-## Exercício JS Web e API Rest (Fetch)
-
-- [DW: JSON Server](https://ifpb.github.io/dw/package/json-server/)
-- [DW: Fetch API](https://ifpb.github.io/dw/w3c/fetch-api/)
-- [Exercício: IPInfo API Table](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
-- [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
-- [Exercício: IP Table](https://ifpb.github.io/exercises/problems/web-script-iptable/)
-
-## Acompanhamento de Projeto
-
-## Build Tools e Monitor-Host
-
-- [DW: Vite](https://ifpb.github.io/dw/package/vite/)
-- [DW: Chart.js](https://ifpb.github.io/dw/package/chartjs/)
-
-## Projeto Etapa I
-
-- [DW: Projeto](https://ifpb.github.io/dw/project/)
-
-## Pulsar (17/10/2026 - 4 aulas)
-
-## NodeJS e Express
-
-- [DW: Introdução ao Express](https://ifpb.github.io/dw/expressjs/introduction/)
-
-## Exercício Backend
-
-- [Exercício: Web API Basic Hello](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
-- [Exercício: Web API Utils](https://ifpb.github.io/exercises/problems/web-api-utils/)
-
-## Integrar Back e Front; Construir API Rest
-
-- [DW: System Call](https://ifpb.github.io/dw/expressjs/system-call/)
-- [DW: API REST](https://ifpb.github.io/dw/expressjs/api/)
-- [DW: MVC](https://ifpb.github.io/dw/expressjs/mvc/)
-- Escolha algum comando ou arquivo para ser acessado ou manipulado usando o express.
-
-## Banco de Dados e SQL
-
-- [DW: DBMS](https://ifpb.github.io/dw/database/dbms/)
-- [DW: SQL](https://ifpb.github.io/dw/database/sql/)
-
-## Relacionamento
-
-- [DW: SQL - Relacionamentos](https://ifpb.github.io/dw/database/sql/)
-
-## DB Simple
-
-- [DW: DB Simple](https://ifpb.github.io/dw/expressjs/db-simple/)
-
-## Prisma.js
-
-- [DW: Prisma.js Simple](https://ifpb.github.io/dw/expressjs/prismajs-simple/)
-
-## Relacionamento e Cadastro de Usuário
-
-- [DW: Prisma.js User](https://ifpb.github.io/dw/expressjs/prismajs-user/)
-
-## Controle de Sessão JWT
-
-- [DW: Autenticação JWT](https://ifpb.github.io/dw/expressjs/auth/)
-
-## Documentação API
-
-## Docker
-
-## Teste
-
-## Front-end (React, Vue, Angular)
-
-## Projeto Acompanhamento e Deploy
-
-## Projeto Etapa II
-
-- [DW: Projeto](https://ifpb.github.io/dw/project/)
-
-## Recuperação
   </script>
 </body>
 </html>

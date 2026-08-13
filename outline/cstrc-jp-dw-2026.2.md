@@ -133,6 +133,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [DW: Projeto](https://ifpb.github.io/dw/project/)
 
+## Pulsar (16/10/2026 - 4 aulas)
+
 ## Pulsar (17/10/2026 - 4 aulas)
 
 ## NodeJS e Express
