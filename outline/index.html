@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plano de Aulas e Conteúdo Programático - IFPB</title>
+  <meta name="description" content="Visualizador Dinâmico de Planos de Aulas e Conteúdo Programático de Disciplinas - IFPB.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+
+      --badge-dw-bg: #e0f2fe;
+      --badge-dw-text: #0369a1;
+      --badge-dw-border: #bae6fd;
+
+      --badge-github-bg: #f1f5f9;
+      --badge-github-text: #334155;
+      --badge-github-border: #cbd5e1;
+
+      --badge-quiz-bg: #d1fae5;
+      --badge-quiz-text: #047857;
+      --badge-quiz-border: #a7f3d0;
+
+      --badge-ex-bg: #fffbe6;
+      --badge-ex-text: #b45309;
+      --badge-ex-border: #fde68a;
+
+      --badge-padlet-bg: #ffe4e6;
+      --badge-padlet-text: #be123c;
+      --badge-padlet-border: #fecdd3;
+
+      --badge-figma-bg: #f3e8ff;
+      --badge-figma-text: #6b21a8;
+      --badge-figma-border: #ddd6fe;
+
+      --badge-medium-bg: #f8fafc;
+      --badge-medium-text: #475569;
+      --badge-medium-border: #e2e8f0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding-bottom: 4rem;
+    }
+
+    /* Header / Hero */
+    header {
+      background-color: var(--bg-card);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.75rem 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .header-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .header-title h1 {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--text-main);
+      letter-spacing: -0.02em;
+    }
+
+    .header-title p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Subject Selector Dropdown */
+    .subject-selector-box {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      padding: 0.45rem 0.85rem;
+      border-radius: 0.6rem;
+    }
+
+    .subject-selector-box label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .subject-selector-box select {
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 0.4rem;
+      padding: 0.35rem 0.65rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    .subject-selector-box select:hover,
+    .subject-selector-box select:focus {
+      border-color: var(--primary);
+    }
+
+    .meta-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .pill {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.75rem;
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .pill-accent {
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+      color: #0369a1;
+    }
+
+    .pill-info {
+      background: #f0f9ff;
+      border-color: #bae6fd;
+      color: #0369a1;
+      font-weight: 700;
+    }
+
+    .pill-warning {
+      background: #fffbe6;
+      border-color: #fde68a;
+      color: #b45309;
+      font-weight: 700;
+    }
+
+    .pill-success {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #047857;
+      font-weight: 700;
+    }
+
+    /* Schedule Card Table */
+    .schedule-box {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .schedule-title {
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .schedule-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+    }
+
+    .schedule-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    .schedule-item span {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      color: var(--primary);
+    }
+
+    /* Extra Classes Box */
+    .extras-box {
+      margin-top: 0.5rem;
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.825rem;
+      color: var(--text-muted);
+    }
+
+    .extra-tag {
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      color: #92400e;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+    }
+
+    /* Controls / Search Bar */
+    .controls-bar {
+      max-width: 1100px;
+      margin: 1.75rem auto 1.25rem;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      max-width: 400px;
+    }
+
+    .search-box input {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.875rem;
+      padding: 0.65rem 1rem 0.65rem 2.5rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.6rem;
+      background-color: var(--bg-card);
+      color: var(--text-main);
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 1rem;
+      fill: var(--text-muted);
+    }
+
+    .search-info-text {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    /* Topics Outline Feed */
+    .outline-feed {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .topic-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 1.25rem 1.5rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px -2px rgba(15, 23, 42, 0.06);
+      border-color: #cbd5e1;
+    }
+
+    .topic-card.is-extra-card {
+      border-left: 4px solid #f59e0b;
+      background-color: #fffdf5;
+    }
+
+    .topic-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .topic-number {
+      background-color: #e0f2fe;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.4rem;
+    }
+
+    .topic-date-badge {
+      background-color: #f1f5f9;
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 0.4rem;
+      border: 1px solid var(--border-color);
+    }
+
+    .badge-extra-label {
+      background-color: #fef3c7;
+      color: #92400e;
+      border-color: #fde68a;
+      font-weight: 800;
+    }
+
+    .topic-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      width: 100%;
+      margin-top: 0.1rem;
+    }
+
+    /* Links / Resources List */
+    .resources-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding-left: 0.25rem;
+    }
+
+    .resource-item {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: all 0.18s ease;
+    }
+
+    .resource-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    }
+
+    /* Category Badge Colors */
+    .badge-dw {
+      background-color: var(--badge-dw-bg);
+      color: var(--badge-dw-text);
+      border-color: var(--badge-dw-border);
+    }
+    .badge-dw:hover { background-color: #bae6fd; }
+
+    .badge-github {
+      background-color: var(--badge-github-bg);
+      color: var(--badge-github-text);
+      border-color: var(--badge-github-border);
+    }
+    .badge-github:hover { background-color: #e2e8f0; }
+
+    .badge-braincheck {
+      background-color: var(--badge-quiz-bg);
+      color: var(--badge-quiz-text);
+      border-color: var(--badge-quiz-border);
+    }
+    .badge-braincheck:hover { background-color: #a7f3d0; }
+
+    .badge-exercicio {
+      background-color: var(--badge-ex-bg);
+      color: var(--badge-ex-text);
+      border-color: var(--badge-ex-border);
+    }
+    .badge-exercicio:hover { background-color: #fde68a; }
+
+    .badge-padlet {
+      background-color: var(--badge-padlet-bg);
+      color: var(--badge-padlet-text);
+      border-color: var(--badge-padlet-border);
+    }
+    .badge-padlet:hover { background-color: #fecdd3; }
+
+    .badge-figma {
+      background-color: var(--badge-figma-bg);
+      color: var(--badge-figma-text);
+      border-color: var(--badge-figma-border);
+    }
+    .badge-figma:hover { background-color: #ddd6fe; }
+
+    .badge-medium {
+      background-color: var(--badge-medium-bg);
+      color: var(--badge-medium-text);
+      border-color: var(--badge-medium-border);
+    }
+    .badge-medium:hover { background-color: #e2e8f0; }
+
+    .badge-prefix {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      opacity: 0.85;
+      padding-right: 0.3rem;
+      border-right: 1px solid rgba(0,0,0,0.15);
+    }
+
+    .no-resources {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-style: italic;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      header { padding: 1.25rem 1rem; }
+      .header-title h1 { font-size: 1.35rem; }
+      .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
+      .search-box { max-width: 100%; }
+      .outline-feed { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header / Hero Section -->
+  <header>
+    <div class="header-container">
+      <div class="header-top">
+        <div class="header-title">
+          <h1 id="meta-disciplina">Plano de Aulas</h1>
+          <p id="meta-curso">Curso Superior de Tecnologia • IFPB Campus JP</p>
+        </div>
+
+        <!-- Universal Subject Selector -->
+        <div class="subject-selector-box">
+          <label for="subject-select">📘 Disciplina:</label>
+          <select id="subject-select" aria-label="Selecionar Plano de Aula">
+            <option value="cstrc-jp-dw-2026.2.md">Desenvolvimento Web (2026.2)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="meta-pills">
+        <div class="pill pill-accent" id="meta-periodo">📅 Período --</div>
+        <div class="pill" id="meta-carga">⏱️ --</div>
+        <div class="pill" id="meta-professor">👨‍🏫 Prof. --</div>
+        <div class="pill pill-info" id="badge-aulas-ministradas">🎓 -- aulas ministradas</div>
+        <div class="pill pill-warning" id="badge-status-carga">⚠️ Status: Calculando...</div>
+      </div>
+
+      <!-- Schedule Table Box -->
+      <div class="schedule-box">
+        <div style="width: 100%;">
+          <div class="schedule-title">Horário Regular das Aulas (aulas de 50 min)</div>
+          <div class="schedule-items" id="schedule-items" style="margin-top: 0.4rem;">
+            <!-- Rendered dynamically -->
+          </div>
+          <div class="extras-box" id="extras-box" style="display: none;">
+            <span class="extra-tag">Aula Extra / Evento</span>
+            <span id="extras-text">--</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Controls Bar -->
+  <div class="controls-bar">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+      <input type="text" id="search-input" placeholder="Buscar por tópico ou recurso..." aria-label="Buscar por tópico ou recurso">
+    </div>
+    <div class="search-info-text" id="search-info-text">Exibindo todos os tópicos</div>
+  </div>
+
+  <!-- Main Outline Feed -->
+  <main class="outline-feed" id="outline-feed">
+    <!-- Rendered dynamically -->
+  </main>
+
+  <script>
+    let rawMarkdown = '';
+
+    let targetWorkloadHours = 100;
+    let targetWorkloadAulas = 120;
+
+    const weekdaysPt = { 0: 'Segunda', 1: 'Terça', 2: 'Quarta', 3: 'Quinta', 4: 'Sexta', 5: 'Sábado', 6: 'Domingo' };
+
+    function formatMinutesToHours(mins) {
+      const h = Math.floor(mins / 60);
+      const m = mins % 60;
+      if (m === 0) return `${h}h`;
+      return `${h}h ${m}min`;
+    }
+
+    function getDayOfWeekName(dateStr) {
+      let dt;
+      if (dateStr.includes('/')) {
+        const [d, m, y] = dateStr.split('/');
+        dt = new Date(`${y}-${m}-${d}T00:00:00`);
+      } else {
+        dt = new Date(`${dateStr}T00:00:00`);
+      }
+      const wIdx = dt.getDay() === 0 ? 6 : dt.getDay() - 1;
+      return weekdaysPt[wIdx] || 'Dia';
+    }
+
+    function getSelectedSubjectFile() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const paramFile = urlParams.get('subject') || urlParams.get('file');
+      if (paramFile) return paramFile;
+
+      if (window.location.hash) {
+        const hashFile = window.location.hash.replace('#', '').trim();
+        if (hashFile.endsWith('.md')) return hashFile;
+      }
+
+      return document.getElementById('subject-select').value || 'cstrc-jp-dw-2026.2.md';
+    }
+
+    async function loadSubjectOutline(fileToLoad) {
+      rawMarkdown = '';
+      const selectEl = document.getElementById('subject-select');
+      if (selectEl.value !== fileToLoad) {
+        selectEl.value = fileToLoad;
+      }
+
+      try {
+        const res = await fetch(fileToLoad);
+        if (res.ok) {
+          rawMarkdown = await res.text();
+        }
+      } catch (err) {
+        console.warn(`Fetch fallback triggered for ${fileToLoad}:`, err);
+      }
+
+      if (!rawMarkdown) {
+        const embeddedEl = document.getElementById('embedded-markdown');
+        if (embeddedEl) {
+          rawMarkdown = embeddedEl.textContent.trim();
+        }
+      }
+
+      parseAndRender();
+    }
+
+    function getLetivoClassDates() {
+      return [
+        { dateStr: '06/08/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '10/08/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '13/08/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '17/08/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '20/08/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '24/08/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '27/08/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '31/08/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '03/09/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '10/09/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '14/09/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '17/09/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '21/09/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '24/09/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '28/09/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '01/10/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '05/10/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '08/10/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '15/10/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '19/10/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '22/10/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '26/10/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '29/10/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '05/11/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '09/11/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '12/11/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '16/11/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '19/11/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '23/11/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '26/11/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '30/11/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '03/12/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '07/12/2026', diaSemana: 'Segunda', aulas: 2 },
+        { dateStr: '10/12/2026', diaSemana: 'Quinta', aulas: 4 },
+        { dateStr: '14/12/2026', diaSemana: 'Segunda', aulas: 2 }
+      ];
+    }
+
+    function parseAndRender() {
+      if (!rawMarkdown) return;
+
+      const fmMatch = rawMarkdown.match(/^---\s*\n([\s\S]*?)\n---\s*\n/);
+      let content = rawMarkdown;
+
+      if (fmMatch) {
+        content = rawMarkdown.replace(fmMatch[0], '');
+        const fmText = fmMatch[1];
+        
+        const discMatch = fmText.match(/disciplina:\s*(.*)/);
+        if (discMatch) document.getElementById('meta-disciplina').textContent = discMatch[1].trim();
+
+        const cursoMatch = fmText.match(/curso:\s*(.*)/);
+        if (cursoMatch) document.getElementById('meta-curso').textContent = cursoMatch[1].trim() + ' • IFPB Campus JP';
+
+        const perMatch = fmText.match(/periodo:\s*(.*)/);
+        if (perMatch) document.getElementById('meta-periodo').textContent = '📅 Período ' + perMatch[1].trim();
+
+        const cargaMatch = fmText.match(/carga_horaria:\s*(.*)/);
+        if (cargaMatch) {
+          const chStr = cargaMatch[1].trim();
+          const parsedCh = parseInt(chStr);
+          if (!isNaN(parsedCh)) {
+            targetWorkloadHours = parsedCh;
+            targetWorkloadAulas = Math.round((parsedCh * 60) / 50);
+          }
+          document.getElementById('meta-carga').textContent = `⏱️ ${targetWorkloadHours}h relógio (${targetWorkloadAulas} aulas)`;
+        }
+
+        const profMatch = fmText.match(/professor:\s*(.*)/);
+        if (profMatch) document.getElementById('meta-professor').textContent = '👨‍🏫 Prof. ' + profMatch[1].trim();
+
+        // Parse regular class schedule including environment (ambiente) from YAML
+        const horariosBlock = fmText.match(/horarios:\s*\n([\s\S]*?)(?=\n[a-z_]+:|\n---|$)/i);
+        if (horariosBlock) {
+          const hLines = horariosBlock[1].split('\n');
+          const scheduleContainer = document.getElementById('schedule-items');
+          scheduleContainer.innerHTML = '';
+
+          let currentH = {};
+          hLines.forEach(l => {
+            const line = l.trim();
+            if (line.startsWith('- dia:')) {
+              if (currentH.dia) renderScheduleItem(scheduleContainer, currentH);
+              currentH = { dia: line.replace('- dia:', '').trim() };
+            } else if (line.startsWith('horario:')) {
+              currentH.horario = line.replace('horario:', '').trim();
+            } else if (line.startsWith('ambiente:')) {
+              currentH.ambiente = line.replace('ambiente:', '').trim();
+            } else if (line.startsWith('aulas:')) {
+              currentH.aulas = parseInt(line.replace('aulas:', '').trim());
+            }
+          });
+          if (currentH.dia) renderScheduleItem(scheduleContainer, currentH);
+        }
+
+        // Parse extra class days from YAML
+        const extraLines = fmText.match(/- data:\s*(.*)\n\s*descricao:\s*(.*)\n\s*aulas:\s*(.*)/g);
+        if (extraLines && extraLines.length > 0) {
+          const displayItems = [];
+          extraLines.forEach(el => {
+            const dtStr = el.match(/data:\s*(.*)/)[1].trim();
+            const desc = el.match(/descricao:\s*(.*)/)[1].trim();
+            const nAulas = el.match(/aulas:\s*(.*)/)[1].trim();
+            const [y, m, d] = dtStr.split('-');
+            displayItems.push(`${d}/${m}/${y} - ${desc} (${nAulas} aulas)`);
+          });
+
+          const extrasBox = document.getElementById('extras-box');
+          const extrasText = document.getElementById('extras-text');
+          extrasBox.style.display = 'flex';
+          extrasText.textContent = displayItems.join('; ');
+        } else {
+          document.getElementById('extras-box').style.display = 'none';
+        }
+      }
+
+      const regDates = getLetivoClassDates();
+      let regIdx = 0;
+
+      const topicBlocks = content.split(/^##\s+/m).filter(b => b.trim().length > 0);
+      const topicsData = [];
+
+      topicBlocks.forEach((block) => {
+        const lines = block.trim().split('\n');
+        let rawTitleLine = lines[0].replace(/^#+\s*/, '').trim();
+        if (rawTitleLine.startsWith('CSTRC JP')) return;
+
+        let cleanTitle = rawTitleLine;
+        let explicitDate = null;
+        let isExtra = false;
+        let extraInfoStr = '';
+        let aulasCount = 2;
+
+        const dateInHeaderMatch = rawTitleLine.match(/(.*?)\s*\((.*?(\d{2}\/\d{2}\/\d{4}).*?)\)/);
+        if (dateInHeaderMatch) {
+          cleanTitle = dateInHeaderMatch[1].trim();
+          explicitDate = dateInHeaderMatch[3];
+          extraInfoStr = dateInHeaderMatch[2];
+          isExtra = true;
+          
+          const aulasMatch = extraInfoStr.match(/(\d+)\s*aulas?/);
+          if (aulasMatch) {
+            aulasCount = parseInt(aulasMatch[1]);
+          } else {
+            aulasCount = 4;
+          }
+        }
+
+        const resources = [];
+        for (let i = 1; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (line.startsWith('-')) {
+            const linkMatch = line.match(/-\s*\[(.*?)\]\((.*?)\)/);
+            if (linkMatch) {
+              const fullLabel = linkMatch[1];
+              const url = linkMatch[2];
+              let prefix = 'LINK';
+              let text = fullLabel;
+
+              if (fullLabel.includes(':')) {
+                const parts = fullLabel.split(':');
+                prefix = parts[0].trim();
+                text = parts.slice(1).join(':').trim();
+              }
+              resources.push({ prefix, text, url });
+            } else {
+              const plainText = line.replace(/^-\s*/, '').trim();
+              if (plainText) resources.push({ prefix: 'INFO', text: plainText, url: null });
+            }
+          }
+        }
+
+        let dateObj = null;
+
+        if (isExtra && explicitDate) {
+          const realDayOfWeek = getDayOfWeekName(explicitDate);
+          dateObj = {
+            dateStr: explicitDate,
+            diaSemana: realDayOfWeek,
+            isExtra: true,
+            infoStr: extraInfoStr,
+            aulas: aulasCount
+          };
+        } else if (regIdx < regDates.length) {
+          dateObj = {
+            dateStr: regDates[regIdx].dateStr,
+            diaSemana: regDates[regIdx].diaSemana,
+            isExtra: false,
+            aulas: regDates[regIdx].aulas
+          };
+          regIdx++;
+        }
+
+        topicsData.push({
+          id: topicsData.length + 1,
+          title: cleanTitle,
+          dateObj: dateObj,
+          resources: resources
+        });
+      });
+
+      window.topicsData = topicsData;
+      renderTopics();
+    }
+
+    function renderScheduleItem(container, h) {
+      const div = document.createElement('div');
+      div.className = 'schedule-item';
+      const clockStr = formatMinutesToHours((h.aulas || 2) * 50);
+      const ambStr = h.ambiente ? `${h.ambiente} • ` : '';
+      div.innerHTML = `${h.dia}-feira: ${h.horario} <span>${ambStr}${h.aulas} aulas (${clockStr})</span>`;
+      container.appendChild(div);
+    }
+
+    function renderTopics() {
+      const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+      const feed = document.getElementById('outline-feed');
+      feed.innerHTML = '';
+
+      let count = 0;
+      let sumDays = 0;
+      let sumAulas = 0;
+
+      window.topicsData.forEach((topic, index) => {
+        const matchesTitle = topic.title.toLowerCase().includes(searchQuery);
+        const matchesDate = topic.dateObj ? (topic.dateObj.dateStr.includes(searchQuery) || topic.dateObj.diaSemana.toLowerCase().includes(searchQuery)) : false;
+        const matchesResource = topic.resources.some(r => r.text.toLowerCase().includes(searchQuery) || r.prefix.toLowerCase().includes(searchQuery));
+
+        if (searchQuery && !matchesTitle && !matchesDate && !matchesResource) return;
+
+        count++;
+        sumDays += 1;
+        if (topic.dateObj && topic.dateObj.aulas) {
+          sumAulas += topic.dateObj.aulas;
+        }
+
+        const card = document.createElement('div');
+        card.className = 'topic-card';
+        if (topic.dateObj && topic.dateObj.isExtra) {
+          card.classList.add('is-extra-card');
+        }
+
+        const header = document.createElement('div');
+        header.className = 'topic-card-header';
+        
+        let headerHtml = `<span class="topic-number">Aula ${String(index + 1).padStart(2, '0')}</span>`;
+        if (topic.dateObj) {
+          const clockStr = formatMinutesToHours(topic.dateObj.aulas * 50);
+          if (topic.dateObj.isExtra) {
+            headerHtml += `<span class="topic-date-badge badge-extra-label">⚡ AULA EXTRA / EVENTO</span>`;
+            headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas • ${clockStr})</span>`;
+          } else {
+            headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas • ${clockStr})</span>`;
+          }
+        }
+
+        headerHtml += `<h2 class="topic-title">${topic.title}</h2>`;
+
+        header.innerHTML = headerHtml;
+        card.appendChild(header);
+
+        const resList = document.createElement('div');
+        resList.className = 'resources-list';
+
+        if (topic.resources.length === 0) {
+          resList.innerHTML = '<div class="no-resources">Nenhum recurso cadastrado para esta aula.</div>';
+        } else {
+          topic.resources.forEach(r => {
+            if (r.url) {
+              const a = document.createElement('a');
+              a.href = r.url;
+              a.target = '_blank';
+              a.rel = 'noopener noreferrer';
+              
+              let badgeClass = 'badge-dw';
+              const pLower = r.prefix.toLowerCase();
+              if (pLower.includes('github')) badgeClass = 'badge-github';
+              else if (pLower.includes('braincheck') || pLower.includes('quiz')) badgeClass = 'badge-braincheck';
+              else if (pLower.includes('exercício') || pLower.includes('exercicio')) badgeClass = 'badge-exercicio';
+              else if (pLower.includes('padlet')) badgeClass = 'badge-padlet';
+              else if (pLower.includes('figma')) badgeClass = 'badge-figma';
+              else if (pLower.includes('medium')) badgeClass = 'badge-medium';
+
+              a.className = `resource-link ${badgeClass}`;
+              a.innerHTML = `<span class="badge-prefix">${r.prefix}</span> <span>${r.text}</span>`;
+              resList.appendChild(a);
+            } else {
+              const div = document.createElement('div');
+              div.className = 'resource-item';
+              div.textContent = r.text;
+              resList.appendChild(div);
+            }
+          });
+        }
+
+        card.appendChild(resList);
+        feed.appendChild(card);
+      });
+
+      // Update Header Badges dynamically
+      const sumMinutes = sumAulas * 50;
+      const sumClockStr = formatMinutesToHours(sumMinutes);
+
+      const badgeAulas = document.getElementById('badge-aulas-ministradas');
+      const badgeStatus = document.getElementById('badge-status-carga');
+
+      badgeAulas.textContent = `🎓 ${sumAulas} aulas (${sumClockStr}) ministradas`;
+
+      const diffAulas = sumAulas - targetWorkloadAulas; // 108 - 120 = -12
+
+      if (diffAulas < 0) {
+        const neededAulas = Math.abs(diffAulas);
+        const neededClockStr = formatMinutesToHours(neededAulas * 50);
+        badgeStatus.className = 'pill pill-warning';
+        badgeStatus.textContent = `⚠️ Status: Faltam ${neededAulas} aulas (${neededClockStr})`;
+      } else {
+        const extraClockStr = formatMinutesToHours(diffAulas * 50);
+        const extraStr = diffAulas > 0 ? ` (+${diffAulas} aulas / ${extraClockStr} excedentes)` : ' (100% cumprida)';
+        badgeStatus.className = 'pill pill-success';
+        badgeStatus.textContent = `✅ Status: Concluída${extraStr}`;
+      }
+
+      document.getElementById('search-info-text').textContent = searchQuery 
+        ? `Filtrado: ${count} tópico(s) (${sumDays} dias • ${sumAulas} aulas = ${sumClockStr})`
+        : `Exibindo todos os ${count} tópicos cadastrados (${sumDays} dias de aula)`;
+    }
+
+    // Init Event Listeners
+    document.getElementById('search-input').addEventListener('input', renderTopics);
+
+    document.getElementById('subject-select').addEventListener('change', (e) => {
+      const selectedFile = e.target.value;
+      const newUrl = `${window.location.pathname}?subject=${encodeURIComponent(selectedFile)}`;
+      window.history.pushState({ path: newUrl }, '', newUrl);
+      loadSubjectOutline(selectedFile);
+    });
+
+    // Start App
+    const initialFile = getSelectedSubjectFile();
+    loadSubjectOutline(initialFile);
+  </script>
+
+  <!-- Embedded Markdown Fallback for file:// protocol -->
+  <script type="text/markdown" id="embedded-markdown">
+---
+disciplina: Desenvolvimento Web
+curso: Curso Superior de Tecnologia em Redes de Computadores
+periodo: 2026.2
+carga_horaria: 100h
+professor: Luiz Carlos Rodrigues Chaves
+calendario: ../calendar/2026.2.json
+horarios:
+  - dia: Segunda
+    horario: 07:00-08:40
+    ambiente: Lab 03
+    aulas: 2
+  - dia: Quinta
+    horario: 08:40-12:20
+    ambiente: Lab 03
+    aulas: 4
+aulas_extras:
+  - data: 2026-08-14
+    descricao: IFTech
+    aulas: 4
+---
+
+# CSTRC JP 2026.2
+
+## Fundamentos de Web e Linguagem de Marcação
+
+- [DW: Página da disciplina](https://ifpb.github.io/dw/)
+- [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
+- [DW: Linguagem de marcação](https://ifpb.github.io/dw/markup/languages/)
+- [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
+
+## Fundamentos de HTML
+
+- [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
+- [Braincheck: Fundamentos de HTML](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-html-FisLfBWvwP)
+
+## Fundamentos de CSS
+
+- [DW: Introdução ao CSS](https://ifpb.github.io/dw/css/introduction/)
+- [Exercício: Prática de CSS (Seu Primeiro Estilo em CSS)](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
+- [Braincheck: Fundamentos de CSS](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
+
+## IFTech (14/08/2026 - 4 aulas)
+
+## Bootstrap, Form
+
+- [DW: Bootstrap](https://ifpb.github.io/dw/package/bootstrap/)
+- [DW: Formulários](https://ifpb.github.io/dw/css/form/)
+
+## Projeto Definição
+
+- [DW: Projeto](https://ifpb.github.io/dw/project/)
+
+## Prática e Apresentação dos Projetos
+
+## ECMA: Dados, Variável, Decisão e Repetição
+
+- [DW: Introdução ao ECMA](https://ifpb.github.io/dw/ecma/introduction/)
+- [DW: Variáveis](https://ifpb.github.io/dw/ecma/variable/)
+- [DW: Expressões e Operadores](https://ifpb.github.io/dw/ecma/expression-and-operator/)
+- [DW: Comandos e Instruções](https://ifpb.github.io/dw/ecma/statements/)
+- [Exercício: Hello](https://ifpb.github.io/exercises/problems/algorithms/basic-hello/)
+- [Exercício: Notas](https://ifpb.github.io/exercises/problems/algorithms/basic-grades/)
+- [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/algorithms/basic-numbers-series/)
+
+## Projeto da Disciplina em Bootstrap
+
+- [DW: Projeto](https://ifpb.github.io/dw/project/)
+- [Padlet: Quadro do Projeto](https://padlet.com/luizchaves/dw-2026-2)
+
+## Função e Módulos
+
+- [DW: Funções](https://ifpb.github.io/dw/ecma/function/)
+- [DW: Módulos](https://ifpb.github.io/dw/ecma/module/)
+
+## Função e Módulos
+
+- [Exercício: Funções](https://ifpb.github.io/exercises/problems/algorithms/function-calc/)
+- [Braincheck: Fundamentos de JS](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-js-Yw7xLmKP9Q)
+
+## ✅ Exercício JS Intro
+
+- [Exercício: Módulos](https://ifpb.github.io/exercises/problems/algorithms/modules-calc/)
+- [GitHub: Solução](https://github.com/luizchaves/dw-2026-2/tree/main/src/js-intro)
+
+## API do JS (Array, String, Object)
+
+- [DW: Array](https://ifpb.github.io/dw/ecma/array/)
+- [DW: String](https://ifpb.github.io/dw/ecma/string/)
+- [DW: Objetos](https://ifpb.github.io/dw/ecma/object/)
+- [Exercício: Array Prática](https://ifpb.github.io/exercises/problems/algorithms/array-sum/)
+
+## JS Web: Intro
+
+- [DW: JS Web Introdução](https://ifpb.github.io/dw/jsweb/introduction/)
+- [DW: Manipulação do DOM](https://ifpb.github.io/dw/jsweb/dom/)
+- [Exercício: Contador JS Web](https://ifpb.github.io/exercises/problems/web/js-counter/)
+
+## Acompanhamento de Projeto
+
+- [Padlet: Acompanhamento de Projeto](https://padlet.com/luizchaves/dw-2026-2)
+
+## JS Web: CRUD
+
+- [DW: CRUD em JS Web](https://ifpb.github.io/dw/jsweb/crud/)
+- [Figma: Mockups de CRUD](https://www.figma.com/file/sample-crud-dw)
+
+## ✅ Exercício JS Web e API Rest (Fetch)
+
+- [Exercício: Consumo de API Fetch](https://ifpb.github.io/exercises/problems/web/fetch-api-dogs/)
+- [GitHub: Solução JS Web](https://github.com/luizchaves/dw-2026-2/tree/main/src/js-web)
+
+## Acompanhamento de Projeto
+
+- [Padlet: Acompanhamento Etapa 1](https://padlet.com/luizchaves/dw-2026-2)
+
+## Build Tools e Monitor-Host
+
+- [DW: Ferramentas de Build (Vite)](https://ifpb.github.io/dw/tooling/vite/)
+- [Medium: Guia de Monitor-Host](https://medium.com/@luizchaves/monitor-host-guide-2026)
+
+## ✅ Projeto Etapa I
+
+- [Padlet: Entrega Etapa I](https://padlet.com/luizchaves/dw-2026-2)
+
+## NodeJS e Express
+
+- [DW: NodeJS Intro](https://ifpb.github.io/dw/expressjs/introduction/)
+- [DW: Express rotas](https://ifpb.github.io/dw/expressjs/routing/)
+
+## ✅ Exercício Backend
+
+- [Exercício: API Express Inicial](https://ifpb.github.io/exercises/problems/backend/express-hello/)
+- [GitHub: Solução Backend](https://github.com/luizchaves/dw-2026-2/tree/main/src/express-intro)
+
+## Integrar Back e Front; Construir API Rest
+
+- [DW: Integração Front e Back](https://ifpb.github.io/dw/expressjs/integration/)
+
+## Banco de Dados e SQL
+
+- [DW: SQLite e SQL](https://ifpb.github.io/dw/db/sql-intro/)
+
+## Relacionamento
+
+- [DW: Relacionamentos em SQL](https://ifpb.github.io/dw/db/relationships/)
+
+## DB Simple
+
+- [DW: Conexão com DB em JS](https://ifpb.github.io/dw/db/sqlite-js/)
+
+## Prisma.js
+
+- [DW: Prisma.js Simple](https://ifpb.github.io/dw/expressjs/prismajs-simple/)
+
+## Relacionamento e Cadastro de Usuário
+
+- [DW: Prisma.js User](https://ifpb.github.io/dw/expressjs/prismajs-user/)
+
+## Controle de Sessão JWT
+
+- [DW: Autenticação JWT](https://ifpb.github.io/dw/expressjs/auth/)
+
+## Documentação API
+
+## Docker
+
+## Teste
+
+## Front-end (React, Vue, Angular)
+
+## Projeto Acompanhamento e Deploy
+
+## ✅ Projeto Etapa II
+
+- [DW: Projeto](https://ifpb.github.io/dw/project/)
+
+## Recuperação
+
+  </script>
+</body>
+</html>
