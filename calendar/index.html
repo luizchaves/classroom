@@ -615,10 +615,23 @@
       font-size: 0.85rem;
       font-weight: 800;
       color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.55rem;
+      height: 1.55rem;
+      border-radius: 999px;
+      line-height: 1;
     }
 
     .is-letivo .day-number {
       color: var(--letivo-text);
+    }
+
+    .day-cell.is-today .day-number {
+      background-color: #f97316;
+      color: #ffffff !important;
+      box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(249, 115, 22, 0.35);
     }
 
     .event-dots {
@@ -1096,6 +1109,15 @@
 
     const weekdaysNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     const weekdaysFullNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+    const todayIsoDate = getTodayIsoDate();
+
+    function getTodayIsoDate() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
 
     function updateQueryString(params, options = {}) {
       const currentUrl = new URL(window.location.href);
@@ -1409,6 +1431,7 @@
           dayCell.className = 'day-cell';
           if (day.letivo) dayCell.classList.add('is-letivo');
           if (day.eventos.length > 0) dayCell.classList.add('has-event');
+          if (day.data === todayIsoDate) dayCell.classList.add('is-today');
 
           const dayNumSpan = document.createElement('span');
           dayNumSpan.className = 'day-number';

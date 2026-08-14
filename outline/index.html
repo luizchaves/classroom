@@ -465,6 +465,12 @@
       font-size: 0.78rem;
       font-weight: 800;
       color: var(--text-main);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 1.45rem;
+      height: 1.45rem;
+      border-radius: 999px;
       line-height: 1;
     }
 
@@ -474,6 +480,12 @@
 
     .lesson-day-cell.has-no-class .lesson-day-number {
       color: #991b1b;
+    }
+
+    .lesson-day-cell.is-today .lesson-day-number {
+      background-color: #f97316;
+      color: #ffffff !important;
+      box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(249, 115, 22, 0.35);
     }
 
     .lesson-calendar-items {
@@ -732,6 +744,13 @@
       justify-content: center;
       align-items: center;
       white-space: nowrap;
+    }
+
+    .topic-date-badge.is-past-date:not(.badge-extra-label):not(.badge-project-label) {
+      background-color: #f8fafc;
+      color: #94a3b8;
+      border-color: #e2e8f0;
+      font-weight: 600;
     }
 
     /* Lesson Text Content */
@@ -1073,10 +1092,19 @@
     const calendarTooltipEl = document.getElementById('lesson-calendar-tooltip');
 
     const weekdaysFullNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
+    const todayIsoDate = getTodayIsoDate();
     const monthNamesList = [
       'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
       'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
     ];
+
+    function getTodayIsoDate() {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
 
     function getMonthName(anoMes) {
       if (!anoMes) return '';
@@ -1722,10 +1750,11 @@
         }
 
         if (topic.dateObj) {
+          const dateBadgePastClass = topic.dateObj.isoDate && topic.dateObj.isoDate < todayIsoDate ? ' is-past-date' : '';
           if (topic.isNoClass) {
-            headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (0 aulas)</span>`;
+            headerHtml += `<span class="topic-date-badge${dateBadgePastClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (0 aulas)</span>`;
           } else {
-            headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas)</span>`;
+            headerHtml += `<span class="topic-date-badge${dateBadgePastClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas)</span>`;
           }
         }
 
@@ -1943,6 +1972,7 @@
           if (hasClass) dayCell.classList.add('has-class');
           if (hasNoClass) dayCell.classList.add('has-no-class');
           if (isOutsideRange) dayCell.classList.add('outside-range');
+          if (isoDate === todayIsoDate) dayCell.classList.add('is-today');
 
           const dayNumber = document.createElement('span');
           dayNumber.className = 'lesson-day-number';
