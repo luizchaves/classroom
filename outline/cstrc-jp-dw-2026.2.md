@@ -57,7 +57,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [DW: Projeto](https://ifpb.github.io/dw/project/)
 
-## Prática e Apresentação dos Projetos
+## Apresentação das Proposta de Projetos
 
 ## ECMA: Dados, Variável, Decisão e Repetição
 
@@ -108,8 +108,6 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [DW: Manipulação de Eventos](https://ifpb.github.io/dw/w3c/event-handling/)
 - [DW: DOM API](https://ifpb.github.io/dw/w3c/dom-api/)
 
-## Acompanhamento de Projeto
-
 ## JS Web: CRUD
 
 - [DW: Local Storage](https://ifpb.github.io/dw/w3c/local-storage/)
@@ -127,6 +125,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [DW: Vite](https://ifpb.github.io/dw/package/vite/)
 - [DW: Chart.js](https://ifpb.github.io/dw/package/chartjs/)
 
+## Acompanhamento de Projeto
+
 ## Projeto Etapa I
 
 - [DW: Projeto](https://ifpb.github.io/dw/project/)
@@ -142,7 +142,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Exercício: Web API Basic Hello](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
 - [Exercício: Web API Utils](https://ifpb.github.io/exercises/problems/web-api-utils/)
 
-## Integrar Back e Front; Construir API Rest
+## Integrar Back e Front e Construir API Rest
 
 - [DW: System Call](https://ifpb.github.io/dw/expressjs/system-call/)
 - [DW: API REST](https://ifpb.github.io/dw/expressjs/api/)
