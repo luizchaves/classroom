@@ -19,6 +19,9 @@
       --text-muted: #64748b;
       --primary: #0284c7;
       --primary-hover: #0369a1;
+      --content-max-width: 1400px;
+      --content-shell-max-width: calc(var(--content-max-width) + 4rem);
+      --page-gutter: 2rem;
 
       --letivo-bg: #ecfdf5;
       --letivo-border: #a7f3d0;
@@ -79,7 +82,7 @@
     header {
       background-color: var(--bg-card);
       border-bottom: 1px solid var(--border-color);
-      padding: 1.25rem 2rem;
+      padding: 1.25rem var(--page-gutter);
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
@@ -87,7 +90,7 @@
     }
 
     .header-container {
-      max-width: 1400px;
+      max-width: var(--content-max-width);
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
@@ -196,9 +199,9 @@
 
     /* Controls Bar */
     .controls-bar {
-      max-width: 1400px;
+      max-width: var(--content-shell-max-width);
       margin: 1.5rem auto 1rem;
-      padding: 0 1.5rem;
+      padding: 0 var(--page-gutter);
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
@@ -317,9 +320,9 @@
 
     /* Legend Box */
     .legend-container {
-      max-width: 1400px;
+      max-width: var(--content-shell-max-width);
       margin: 0 auto 1.5rem;
-      padding: 0 1.5rem;
+      padding: 0 var(--page-gutter);
     }
 
     .legend-card {
@@ -376,9 +379,9 @@
 
     /* Summary Stats Grid */
     .stats-container {
-      max-width: 1400px;
+      max-width: var(--content-shell-max-width);
       margin: 0 auto 1.5rem;
-      padding: 0 1.5rem;
+      padding: 0 var(--page-gutter);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
@@ -415,9 +418,9 @@
 
     /* Main Grid for Months */
     .calendar-grid {
-      max-width: 1400px;
+      max-width: var(--content-shell-max-width);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 var(--page-gutter);
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 1.5rem;
@@ -639,9 +642,9 @@
 
     /* Chronological List View Mode Styles */
     .calendar-list-wrapper {
-      max-width: 1400px;
+      max-width: var(--content-shell-max-width);
       margin: 0 auto;
-      padding: 0 1.5rem;
+      padding: 0 var(--page-gutter);
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -914,7 +917,8 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      header { padding: 1rem; }
+      :root { --page-gutter: 1rem; }
+      header { padding: 1rem var(--page-gutter); }
       .brand-text h1 { font-size: 1.1rem; }
       .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
       .search-input-wrapper input { width: 100%; }
@@ -979,13 +983,13 @@
     </div>
 
     <div class="right-controls">
-      <!-- Lucide View Switcher Segmented Control (Grid vs List) -->
+      <!-- Lucide View Switcher -->
       <div class="view-switcher-group">
-        <button id="view-grid-btn" class="view-btn active" title="Exibir em Grade">
-          <i data-lucide="layout-grid"></i> Grade
-        </button>
         <button id="view-list-btn" class="view-btn" title="Exibir em Lista">
           <i data-lucide="list"></i> Lista
+        </button>
+        <button id="view-grid-btn" class="view-btn active" title="Exibir em Calendário">
+          <i data-lucide="calendar-days"></i> Calendário
         </button>
       </div>
 
@@ -1070,7 +1074,7 @@
 
   <script>
     let calendarData = null;
-    let currentViewMode = 'grid'; // 'grid' or 'list'
+    let currentViewMode = new URLSearchParams(window.location.search).get('view') === 'list' ? 'list' : 'grid';
     const tooltipEl = document.getElementById('floating-tooltip');
 
     const monthNamesList = [
@@ -1092,6 +1096,28 @@
 
     const weekdaysNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     const weekdaysFullNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
+
+    function updateQueryString(params, options = {}) {
+      const currentUrl = new URL(window.location.href);
+
+      Object.entries(params).forEach(([key, value]) => {
+        if (value === null || value === undefined || value === '') {
+          currentUrl.searchParams.delete(key);
+        } else {
+          currentUrl.searchParams.set(key, value);
+        }
+      });
+
+      (options.deleteParams || []).forEach(key => currentUrl.searchParams.delete(key));
+      if (options.clearHash) currentUrl.hash = '';
+
+      window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
+    }
+
+    function isQueryFlagEnabled(key) {
+      const value = new URLSearchParams(window.location.search).get(key);
+      return value === '' || value === '1' || value === 'true' || value === 'sim';
+    }
 
     function getSelectedCalendarFile() {
       const urlParams = new URLSearchParams(window.location.search);
@@ -1196,12 +1222,23 @@
       document.getElementById('stat-exames').textContent = totalExames;
       document.getElementById('stat-sabados').textContent = totalSabadosLetivos;
 
+      const letivoOnlyToggle = document.getElementById('letivo-only-toggle');
+      const eventsOnlyToggle = document.getElementById('events-only-toggle');
+      letivoOnlyToggle.checked = isQueryFlagEnabled('letivo');
+      eventsOnlyToggle.checked = isQueryFlagEnabled('eventos');
+
       // Event Listeners for Filters
       monthSelect.addEventListener('change', renderActiveView);
       document.getElementById('category-select').addEventListener('change', renderActiveView);
       document.getElementById('search-input').addEventListener('input', renderActiveView);
-      document.getElementById('letivo-only-toggle').addEventListener('change', renderActiveView);
-      document.getElementById('events-only-toggle').addEventListener('change', renderActiveView);
+      letivoOnlyToggle.addEventListener('change', () => {
+        updateQueryString({ letivo: letivoOnlyToggle.checked ? '1' : null });
+        renderActiveView();
+      });
+      eventsOnlyToggle.addEventListener('change', () => {
+        updateQueryString({ eventos: eventsOnlyToggle.checked ? '1' : null });
+        renderActiveView();
+      });
 
       // View Switcher Handlers
       document.getElementById('view-grid-btn').addEventListener('click', () => setViewMode('grid'));
@@ -1213,7 +1250,7 @@
         if (e.target.id === 'event-modal') closeModal();
       });
 
-      renderActiveView();
+      setViewMode(currentViewMode, { updateUrl: false });
 
       // Initialize Lucide Icons if available
       if (window.lucide) {
@@ -1221,8 +1258,12 @@
       }
     }
 
-    function setViewMode(mode) {
+    function setViewMode(mode, options = {}) {
       currentViewMode = mode;
+      if (options.updateUrl !== false) {
+        updateQueryString({ view: mode });
+      }
+
       const gridBtn = document.getElementById('view-grid-btn');
       const listBtn = document.getElementById('view-list-btn');
       const gridContainer = document.getElementById('calendar-container');
@@ -1601,8 +1642,7 @@
     document.getElementById('calendar-select').addEventListener('change', (e) => {
       const selectedFile = e.target.value;
       const periodKey = selectedFile.replace('.json', '');
-      const newUrl = `${window.location.pathname}?period=${encodeURIComponent(periodKey)}`;
-      window.history.pushState({ path: newUrl }, '', newUrl);
+      updateQueryString({ period: periodKey }, { deleteParams: ['file'], clearHash: true });
       loadCalendarData(selectedFile);
     });
 
