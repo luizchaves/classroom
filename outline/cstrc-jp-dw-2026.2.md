@@ -20,24 +20,24 @@ horarios:
 
 ## Fundamentos de Web e Linguagem de Marcação
 
-- [DW: Página da disciplina](https://ifpb.github.io/dw/)
-- [DW: Linguagem de marcação](https://ifpb.github.io/dw/markup/languages/)
-- [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
-- [Exercícios: Fundamentos de Web](https://ifpb.github.io/dw/extra/exercises/)
+- [Disciplina: Página da disciplina](https://ifpb.github.io/dw/)
+- [Conteúdo: Linguagem de marcação](https://ifpb.github.io/dw/markup/languages/)
+- [Conteúdo: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [Exercício: Lista de exercícios](https://ifpb.github.io/dw/extra/exercises/)
 - [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
 - [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
 - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
 
 ## Fundamentos de HTML
 
-- [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [Conteúdo: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
 - [Exercício: HTML | Currículo Simples em HTML](https://ifpb.github.io/exercises/problems/web-markup-curriculum-simple/)
 - [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
 - [Braincheck: Fundamentos de HTML](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-html-FisLfBWvwP)
 
 ## Fundamentos de CSS
 
-- [DW: Introdução ao CSS](https://ifpb.github.io/dw/css/introduction/)
+- [Conteúdo: Introdução ao CSS](https://ifpb.github.io/dw/css/introduction/)
 - [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
 - [Braincheck: Fundamentos de CSS](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
 
@@ -51,28 +51,28 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Bootstrap, Form
 
-- [DW: Bootstrap](https://ifpb.github.io/dw/package/bootstrap/)
-- [DW: Formulários](https://ifpb.github.io/dw/css/form/)
+- [Conteúdo: Bootstrap](https://ifpb.github.io/dw/package/bootstrap/)
+- [Conteúdo: Formulários](https://ifpb.github.io/dw/css/form/)
 
 ## Projeto Definição
 
-- [DW: Projeto](https://ifpb.github.io/dw/project/)
+- [Conteúdo: Projeto](https://ifpb.github.io/dw/project/)
 
 ## Apresentação das Proposta de Projetos
 
 ## ECMA: Dados, Variável, Decisão e Repetição
 
-- [DW: Introdução ao ECMA](https://ifpb.github.io/dw/ecma/introduction/)
-- [DW: Variáveis](https://ifpb.github.io/dw/ecma/variable/)
-- [DW: Expressões e Operadores](https://ifpb.github.io/dw/ecma/expression-and-operator/)
-- [DW: Comandos e Instruções](https://ifpb.github.io/dw/ecma/statements/)
+- [Conteúdo: Introdução ao ECMA](https://ifpb.github.io/dw/ecma/introduction/)
+- [Conteúdo: Variáveis](https://ifpb.github.io/dw/ecma/variable/)
+- [Conteúdo: Expressões e Operadores](https://ifpb.github.io/dw/ecma/expression-and-operator/)
+- [Conteúdo: Comandos e Instruções](https://ifpb.github.io/dw/ecma/statements/)
 - [Exercício: Hello](https://ifpb.github.io/exercises/problems/algorithms/basic-hello/)
 - [Exercício: Notas](https://ifpb.github.io/exercises/problems/algorithms/basic-grades/)
 - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/algorithms/basic-numbers-series/)
 
 ## Projeto da Disciplina em Bootstrap
 
-- [DW: Monitor-app | Bootstrap](https://ifpb.github.io/dw/app/invest-app-bootstrap/)
+- [Conteúdo: Monitor-app | Bootstrap](https://ifpb.github.io/dw/app/invest-app-bootstrap/)
 - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
 - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
 - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
@@ -80,8 +80,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Função e Módulos
 
-- [DW: Funções](https://ifpb.github.io/dw/ecma/function/)
-- [DW: Módulos](https://ifpb.github.io/dw/ecma/modules/)
+- [Conteúdo: Funções](https://ifpb.github.io/dw/ecma/function/)
+- [Conteúdo: Módulos](https://ifpb.github.io/dw/ecma/modules/)
 - [Exercício: Soma](https://ifpb.github.io/exercises/problems/algorithms/function-sum/)
 
 ## Função e Módulos
@@ -94,51 +94,51 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## API do JS (Array, String, Object)
 
-- [DW: Array](https://ifpb.github.io/dw/ecma/array/)
+- [Conteúdo: Array](https://ifpb.github.io/dw/ecma/array/)
 - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/algorithms/array-util/)
 - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/algorithms/array-operations/)
-- [DW: String](https://ifpb.github.io/dw/ecma/string/)
+- [Conteúdo: String](https://ifpb.github.io/dw/ecma/string/)
 - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/algorithms/string-list-generator/)
 - [Exercício: String Util](https://ifpb.github.io/exercises/problems/algorithms/string-util/)
-- [DW: Object](https://ifpb.github.io/dw/ecma/object/)
+- [Conteúdo: Object](https://ifpb.github.io/dw/ecma/object/)
 - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
 
 ## JS Web: Intro
 
-- [DW: Browser Objects](https://ifpb.github.io/dw/w3c/browser-objects/)
-- [DW: Elementos Dinâmicos](https://ifpb.github.io/dw/w3c/dynamic-elements/)
-- [DW: Manipulação de Eventos](https://ifpb.github.io/dw/w3c/event-handling/)
-- [DW: DOM API](https://ifpb.github.io/dw/w3c/dom-api/)
+- [Conteúdo: Browser Objects](https://ifpb.github.io/dw/w3c/browser-objects/)
+- [Conteúdo: Elementos Dinâmicos](https://ifpb.github.io/dw/w3c/dynamic-elements/)
+- [Conteúdo: Manipulação de Eventos](https://ifpb.github.io/dw/w3c/event-handling/)
+- [Conteúdo: DOM API](https://ifpb.github.io/dw/w3c/dom-api/)
 
 ## JS Web: CRUD
 
-- [DW: Local Storage](https://ifpb.github.io/dw/w3c/local-storage/)
+- [Conteúdo: Local Storage](https://ifpb.github.io/dw/w3c/local-storage/)
 
 ## Exercício JS Web e API Rest (Fetch)
 
-- [DW: JSON Server](https://ifpb.github.io/dw/package/json-server/)
-- [DW: Fetch API](https://ifpb.github.io/dw/w3c/fetch-api/)
+- [Conteúdo: JSON Server](https://ifpb.github.io/dw/package/json-server/)
+- [Conteúdo: Fetch API](https://ifpb.github.io/dw/w3c/fetch-api/)
 - [Exercício: IPInfo API Table](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
 - [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
 - [Exercício: IP Table](https://ifpb.github.io/exercises/problems/web-script-iptable/)
 
 ## Build Tools e Monitor-Host
 
-- [DW: Vite](https://ifpb.github.io/dw/package/vite/)
-- [DW: Chart.js](https://ifpb.github.io/dw/package/chartjs/)
+- [Conteúdo: Vite](https://ifpb.github.io/dw/package/vite/)
+- [Conteúdo: Chart.js](https://ifpb.github.io/dw/package/chartjs/)
 
 ## Acompanhamento de Projeto
 
 ## Projeto Etapa I
 
-- [DW: Projeto](https://ifpb.github.io/dw/project/)
+- [Conteúdo: Projeto](https://ifpb.github.io/dw/project/)
 
 ## Pulsar (17/10/2026 - 4 aulas)
 
 ## NodeJS e Express
 
-- [DW: Node.js - HTTP](https://ifpb.github.io/dw/nodejs/http/)
-- [DW: Introdução ao Express](https://ifpb.github.io/dw/expressjs/introduction/)
+- [Conteúdo: Node.js - HTTP](https://ifpb.github.io/dw/nodejs/http/)
+- [Conteúdo: Introdução ao Express](https://ifpb.github.io/dw/expressjs/introduction/)
 
 ## Exercício Backend
 
@@ -147,36 +147,36 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Integrar Back e Front e Construir API Rest
 
-- [DW: System Call](https://ifpb.github.io/dw/expressjs/system-call/)
-- [DW: API REST](https://ifpb.github.io/dw/expressjs/api/)
-- [DW: MVC](https://ifpb.github.io/dw/expressjs/mvc/)
+- [Conteúdo: System Call](https://ifpb.github.io/dw/expressjs/system-call/)
+- [Conteúdo: API REST](https://ifpb.github.io/dw/expressjs/api/)
+- [Conteúdo: MVC](https://ifpb.github.io/dw/expressjs/mvc/)
 - Escolha algum comando ou arquivo para ser acessado ou manipulado usando o express.
 
 ## Banco de Dados e SQL
 
-- [DW: DBMS](https://ifpb.github.io/dw/database/dbms/)
-- [DW: SQL](https://ifpb.github.io/dw/database/sql/)
+- [Conteúdo: DBMS](https://ifpb.github.io/dw/database/dbms/)
+- [Conteúdo: SQL](https://ifpb.github.io/dw/database/sql/)
 
 ## Relacionamento
 
-- [DW: SQL - Relacionamentos](https://ifpb.github.io/dw/database/sql/)
+- [Conteúdo: SQL - Relacionamentos](https://ifpb.github.io/dw/database/sql/)
 
 ## DB Simple
 
-- [DW: DB Simple](https://ifpb.github.io/dw/expressjs/db-simple/)
+- [Conteúdo: DB Simple](https://ifpb.github.io/dw/expressjs/db-simple/)
 
 ## Prisma.js
 
-- [DW: Prisma.js Simple](https://ifpb.github.io/dw/expressjs/prismajs-simple/)
+- [Conteúdo: Prisma.js Simple](https://ifpb.github.io/dw/expressjs/prismajs-simple/)
 
 ## Relacionamento e Cadastro de Usuário
 
-- [DW: Relação entre Entidades](https://ifpb.github.io/dw/expressjs/prismajs-relation/)
-- [DW: Prisma.js User](https://ifpb.github.io/dw/expressjs/prismajs-user/)
+- [Conteúdo: Relação entre Entidades](https://ifpb.github.io/dw/expressjs/prismajs-relation/)
+- [Conteúdo: Prisma.js User](https://ifpb.github.io/dw/expressjs/prismajs-user/)
 
 ## Controle de Sessão JWT
 
-- [DW: Autenticação JWT](https://ifpb.github.io/dw/expressjs/auth/)
+- [Conteúdo: Autenticação JWT](https://ifpb.github.io/dw/expressjs/auth/)
 
 ## Documentação API
 
@@ -192,8 +192,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Projeto Etapa II
 
-- [DW: Projeto](https://ifpb.github.io/dw/project/)
+- [Conteúdo: Projeto](https://ifpb.github.io/dw/project/)
 
 ## Próximos Passos e Recuperação Exercícios
 
-- [DW: Próximos Passos](https://ifpb.github.io/dw/extra/next-steps/)
+- [Conteúdo: Próximos Passos](https://ifpb.github.io/dw/extra/next-steps/)

@@ -19,15 +19,15 @@ sem_aula:
 
 ## Apresentar Disciplina
 
-- [LP2: Página da disciplina](https://ifpb.github.io/lp2/)
+- [Disciplina: Página da disciplina](https://ifpb.github.io/lp2/)
 - [GitHub: README LP2 2023](https://github.com/lucachaves/lp2-2023/blob/main/README.md)
 - [Padlet: Projeto LP2 2023](https://padlet.com/lucachaves/projetolp22023)
 - [Padlet: Projeto LP2 2024](https://padlet.com/lucachaves/projetolp22024)
 
 ## Revisão de JS (Sintaxe e Web)
 
-- [LP2: Introdução ao ECMAScript](https://ifpb.github.io/lp2/javascript/introduction/)
-- [LP2: JavaScript e Frontend Web](https://ifpb.github.io/lp2/javascript/frontend/)
+- [Conteúdo: Introdução ao ECMAScript](https://ifpb.github.io/lp2/javascript/introduction/)
+- [Conteúdo: JavaScript e Frontend Web](https://ifpb.github.io/lp2/javascript/frontend/)
 - ECMA: datatype
 - function
 - ESM
@@ -41,14 +41,14 @@ sem_aula:
 
 ## ExpressJS e Construção de API
 
-- [LP2: Node.js HTTP](https://ifpb.github.io/lp2/nodejs/http/)
-- [LP2: Introdução ao ExpressJS](https://ifpb.github.io/lp2/expressjs/introduction/)
+- [Conteúdo: Node.js HTTP](https://ifpb.github.io/lp2/nodejs/http/)
+- [Conteúdo: Introdução ao ExpressJS](https://ifpb.github.io/lp2/expressjs/introduction/)
 - [Exercício: API Basic Hello](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
 - [Exercício: API Utils](https://ifpb.github.io/exercises/problems/web-api-utils/)
 
 ## CRUD com Front e Back
 
-- [LP2: ExpressJS API (CRUD)](https://ifpb.github.io/lp2/expressjs/api/)
+- [Conteúdo: ExpressJS API (CRUD)](https://ifpb.github.io/lp2/expressjs/api/)
 
 ## Sábado Letivo CAEST (11/04/2026 - 2 aulas)
 
@@ -62,11 +62,11 @@ sem_aula:
 
 ## Camada de Dados
 
-- [LP2: ExpressJS MVC (Camada de Dados)](https://ifpb.github.io/lp2/expressjs/mvc/)
+- [Conteúdo: ExpressJS MVC (Camada de Dados)](https://ifpb.github.io/lp2/expressjs/mvc/)
 
 ## Integração com SQL
 
-- [LP2: Integração com SQL](https://ifpb.github.io/lp2/expressjs/db-simple/)
+- [Conteúdo: Integração com SQL](https://ifpb.github.io/lp2/expressjs/db-simple/)
 
 ## Projeto Acompanhamento
 
@@ -74,12 +74,12 @@ sem_aula:
 
 ## ORM
 
-- [LP2: PrismaJS Simple (ORM)](https://ifpb.github.io/lp2/expressjs/prismajs-simple/)
+- [Conteúdo: PrismaJS Simple (ORM)](https://ifpb.github.io/lp2/expressjs/prismajs-simple/)
 
 ## Entidades com Relacionamento e Cadastro de Usuário
 
-- [LP2: PrismaJS Relacionamentos](https://ifpb.github.io/lp2/expressjs/prismajs-relation/)
-- [LP2: PrismaJS Cadastro de Usuário](https://ifpb.github.io/lp2/expressjs/prismajs-user/)
+- [Conteúdo: PrismaJS Relacionamentos](https://ifpb.github.io/lp2/expressjs/prismajs-relation/)
+- [Conteúdo: PrismaJS Cadastro de Usuário](https://ifpb.github.io/lp2/expressjs/prismajs-user/)
 
 ## Semana do Meio Ambiente (13/06/2026 - 2 aulas)
 
@@ -89,7 +89,7 @@ sem_aula:
 
 ## Autenticação | Back-end
 
-- [LP2: ExpressJS Autenticação](https://ifpb.github.io/lp2/expressjs/auth/)
+- [Conteúdo: ExpressJS Autenticação](https://ifpb.github.io/lp2/expressjs/auth/)
 
 ## Autenticação | Front-end
 
@@ -110,11 +110,11 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Validação de Dados
 
-- [LP2: ExpressJS Validação](https://ifpb.github.io/lp2/expressjs/validation/)
+- [Conteúdo: ExpressJS Validação](https://ifpb.github.io/lp2/expressjs/validation/)
 
 ## Manipulação de E-mail
 
-- [LP2: ExpressJS E-mail](https://ifpb.github.io/lp2/expressjs/email/)
+- [Conteúdo: ExpressJS E-mail](https://ifpb.github.io/lp2/expressjs/email/)
 
 ## Pulsar (16/10/2026 - 2 aulas)
 
@@ -126,7 +126,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Upload de Arquivo
 
-- [LP2: ExpressJS Upload de Arquivo](https://ifpb.github.io/lp2/expressjs/upload-file/)
+- [Conteúdo: ExpressJS Upload de Arquivo](https://ifpb.github.io/lp2/expressjs/upload-file/)
 
 ## Projeto Acompanhamento
 
@@ -134,11 +134,11 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Teste de Aplicação
 
-- [LP2: ExpressJS Teste de Software](https://ifpb.github.io/lp2/expressjs/test/)
+- [Conteúdo: ExpressJS Teste de Software](https://ifpb.github.io/lp2/expressjs/test/)
 
 ## Teste de Aplicação
 
-- [LP2: ExpressJS Teste de Software](https://ifpb.github.io/lp2/expressjs/test/)
+- [Conteúdo: ExpressJS Teste de Software](https://ifpb.github.io/lp2/expressjs/test/)
 
 ## Projeto Acompanhamento
 
