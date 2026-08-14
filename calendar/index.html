@@ -566,16 +566,26 @@
       color: var(--academico-text) !important;
     }
 
-    .day-cell.cat-prazo_academico,
     .day-cell.cat-inicio_semestre,
     .day-cell.cat-termino_semestre,
+    .day-cell.cat-inicio_bimestre,
+    .day-cell.cat-termino_bimestre {
+      background-color: var(--semestre-milestone-bg) !important;
+      border-color: var(--semestre-milestone-border) !important;
+    }
+    .day-cell.cat-inicio_semestre .day-number,
+    .day-cell.cat-termino_semestre .day-number,
+    .day-cell.cat-inicio_bimestre .day-number,
+    .day-cell.cat-termino_bimestre .day-number {
+      color: var(--semestre-milestone-text) !important;
+    }
+
+    .day-cell.cat-prazo_academico,
     .day-cell.cat-conselho_classe {
       background-color: var(--prazo-bg) !important;
       border-color: var(--prazo-border) !important;
     }
     .day-cell.cat-prazo_academico .day-number,
-    .day-cell.cat-inicio_semestre .day-number,
-    .day-cell.cat-termino_semestre .day-number,
     .day-cell.cat-conselho_classe .day-number {
       color: var(--prazo-text) !important;
     }
@@ -934,6 +944,7 @@
         <label for="calendar-select">📅 Período:</label>
         <select id="calendar-select" aria-label="Selecionar Período do Calendário">
           <option value="2026.2.json">2026.2 (Segundo Semestre 2026)</option>
+          <option value="2026.json">2026 (Ano Letivo 2026 - Cursos Técnicos)</option>
         </select>
       </div>
 
@@ -1062,14 +1073,22 @@
     let currentViewMode = 'grid'; // 'grid' or 'list'
     const tooltipEl = document.getElementById('floating-tooltip');
 
-    const ptMonthNames = {
-      '2026-08': 'Agosto 2026',
-      '2026-09': 'Setembro 2026',
-      '2026-10': 'Outubro 2026',
-      '2026-11': 'Novembro 2026',
-      '2026-12': 'Dezembro 2026',
-      '2027-01': 'Janeiro 2027'
-    };
+    const monthNamesList = [
+      'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
+      'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+    ];
+
+    function getMonthName(anoMes) {
+      if (!anoMes) return '';
+      const parts = anoMes.split('-');
+      if (parts.length < 2) return anoMes;
+      const year = parts[0];
+      const mIdx = parseInt(parts[1]) - 1;
+      if (mIdx >= 0 && mIdx < 12) {
+        return `${monthNamesList[mIdx]} ${year}`;
+      }
+      return anoMes;
+    }
 
     const weekdaysNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     const weekdaysFullNames = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado'];
@@ -1096,31 +1115,45 @@
     async function loadCalendarData(fileToLoad) {
       const activeFile = fileToLoad || getSelectedCalendarFile();
       const selectEl = document.getElementById('calendar-select');
-      if (selectEl.value !== activeFile) {
+      if (selectEl && selectEl.value !== activeFile) {
         selectEl.value = activeFile;
       }
 
-      try {
-        const res = await fetch(activeFile);
-        if (res.ok) {
-          calendarData = await res.json();
+      let data = null;
+      const currentOrigin = window.location.origin;
+      const currentPath = window.location.pathname;
+      let dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      if (!dirPath.includes('/calendar/')) {
+        if (currentPath.includes('/calendar')) {
+          const pos = currentPath.indexOf('/calendar');
+          dirPath = currentPath.substring(0, pos + 9) + '/';
         }
-      } catch (err) {
-        console.warn(`Fetch fallback triggered for ${activeFile}:`, err);
       }
 
-      if (!calendarData) {
-        const embeddedEl = document.getElementById('embedded-calendar-json');
-        if (embeddedEl) {
-          try {
-            calendarData = JSON.parse(embeddedEl.textContent);
-          } catch (e) {
-            console.error('Error parsing embedded calendar JSON:', e);
+      const candidateUrls = [
+        activeFile,
+        `./${activeFile}`,
+        `calendar/${activeFile}`,
+        new URL(activeFile, currentOrigin + dirPath).href
+      ];
+
+      for (const url of candidateUrls) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            const parsed = await res.json();
+            if (parsed && parsed.meses) {
+              data = parsed;
+              break;
+            }
           }
+        } catch (err) {
+          console.warn(`Fetch candidate ${url} failed:`, err);
         }
       }
 
-      if (calendarData) {
+      if (data) {
+        calendarData = data;
         initCalendarApp();
       }
     }
@@ -1141,7 +1174,7 @@
       calendarData.meses.forEach(m => {
         const opt = document.createElement('option');
         opt.value = m.ano_mes;
-        opt.textContent = ptMonthNames[m.ano_mes] || m.ano_mes;
+        opt.textContent = getMonthName(m.ano_mes);
         monthSelect.appendChild(opt);
 
         m.dias.forEach(d => {
@@ -1241,14 +1274,14 @@
 
     function getCategoryColors(cat, desc = '') {
       const dLower = desc.toLowerCase();
-      if (cat === 'inicio_semestre' || cat === 'termino_semestre' || dLower.includes('início do período') || dLower.includes('término do período') || dLower.includes('término das aulas')) {
+      if (cat === 'inicio_semestre' || cat === 'termino_semestre' || cat === 'inicio_bimestre' || cat === 'termino_bimestre' || dLower.includes('início do') || dLower.includes('inicio do') || dLower.includes('término do') || dLower.includes('termino do') || dLower.includes('término das aulas')) {
         return { bg: 'var(--semestre-milestone-bg)', border: 'var(--semestre-milestone-border)', text: 'var(--semestre-milestone-text)' };
       }
       if (cat.includes('feriado') || cat.includes('ponto_facultativo')) return { bg: 'var(--feriado-bg)', border: 'var(--feriado-border)', text: 'var(--feriado-text)' };
       if (cat === 'recesso') return { bg: 'var(--recesso-bg)', border: 'var(--recesso-border)', text: 'var(--recesso-text)' };
       if (cat === 'exames_finais') return { bg: 'var(--exames-bg)', border: 'var(--exames-border)', text: 'var(--exames-text)' };
       if (cat === 'ferias') return { bg: 'var(--ferias-bg)', border: 'var(--ferias-border)', text: 'var(--ferias-text)' };
-      if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho')) return { bg: 'var(--prazo-bg)', border: 'var(--prazo-border)', text: 'var(--prazo-text)' };
+      if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho') || cat.includes('bimestre')) return { bg: 'var(--prazo-bg)', border: 'var(--prazo-border)', text: 'var(--prazo-text)' };
       if (cat.includes('matricula')) return { bg: 'var(--matricula-bg)', border: 'var(--matricula-border)', text: 'var(--matricula-text)' };
       return { bg: 'var(--academico-bg)', border: 'var(--academico-border)', text: 'var(--academico-text)' };
     }
@@ -1302,7 +1335,7 @@
         const monthHeader = document.createElement('div');
         monthHeader.className = 'month-header';
         monthHeader.innerHTML = `
-          <div class="month-title">${ptMonthNames[month.ano_mes] || month.ano_mes}</div>
+          <div class="month-title">${getMonthName(month.ano_mes)}</div>
           <div class="month-badge">${letivoCount} dias letivos</div>
         `;
         monthCard.appendChild(monthHeader);
@@ -1377,14 +1410,14 @@
 
     function getBadgeClass(cat, desc = '') {
       const dLower = desc.toLowerCase();
-      if (cat === 'inicio_semestre' || cat === 'termino_semestre' || dLower.includes('início do período') || dLower.includes('término do período') || dLower.includes('término das aulas')) {
+      if (cat === 'inicio_semestre' || cat === 'termino_semestre' || cat === 'inicio_bimestre' || cat === 'termino_bimestre' || dLower.includes('início do') || dLower.includes('inicio do') || dLower.includes('término do') || dLower.includes('termino do') || dLower.includes('término das aulas')) {
         return 'badge-milestone';
       }
       if (cat.includes('feriado') || cat.includes('ponto_facultativo')) return 'badge-feriado';
       if (cat === 'recesso') return 'badge-recesso';
       if (cat === 'exames_finais') return 'badge-exames';
       if (cat === 'ferias') return 'badge-ferias';
-      if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho')) return 'badge-prazo';
+      if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho') || cat.includes('bimestre')) return 'badge-prazo';
       if (cat.includes('matricula')) return 'badge-matricula';
       return 'badge-academico';
     }
@@ -1414,7 +1447,7 @@
         const monthHeader = document.createElement('div');
         monthHeader.className = 'list-month-header';
         monthHeader.innerHTML = `
-          <div>${ptMonthNames[month.ano_mes] || month.ano_mes}</div>
+          <div>${getMonthName(month.ano_mes)}</div>
           <div class="month-badge">${visibleDays.filter(d => d.letivo).length} dias letivos exibidos</div>
         `;
         monthCard.appendChild(monthHeader);

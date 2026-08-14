@@ -396,6 +396,11 @@
       background-color: #fffdf5;
     }
 
+    .topic-card.is-no-class-card {
+      border-left: 4px solid #ef4444;
+      background-color: #fff7f7;
+    }
+
     .topic-card.is-project-card {
       border-left: 4px solid #8b5cf6;
       background-color: #faf5ff;
@@ -442,6 +447,16 @@
       opacity: 1;
     }
 
+    .topic-number-link.no-class-link {
+      background-color: #fee2e2;
+      color: #991b1b;
+    }
+
+    .topic-number-link.no-class-link:hover {
+      background-color: #fecaca;
+      color: #7f1d1d;
+    }
+
     .topic-title {
       font-size: 1.05rem;
       font-weight: 700;
@@ -484,7 +499,22 @@
       width: auto;
     }
 
-    .topic-date-badge:not(.badge-extra-label):not(.badge-project-label) {
+    .badge-no-class-label {
+      background-color: #fee2e2;
+      color: #991b1b;
+      border-color: #fecaca;
+      font-weight: 800;
+      flex-shrink: 0;
+      order: 3;
+      font-size: 0.725rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.35rem;
+      margin-left: 0;
+      min-width: 0;
+      width: auto;
+    }
+
+    .topic-date-badge:not(.badge-extra-label):not(.badge-project-label):not(.badge-no-class-label) {
       background-color: #f1f5f9;
       color: var(--text-muted);
       font-weight: 700;
@@ -764,6 +794,7 @@
         <select id="subject-select" aria-label="Selecionar Disciplina">
           <option value="cstrc-jp-dw-2026.2.md">DW 2026.2 (Desenvolvimento Web)</option>
           <option value="csbes-jp-pw2-2026.2.md">PW2 2026.2 (Programação Web II)</option>
+          <option value="ctii-jp-lp2-2026.md">LP2 2026 (Linguagens de Programação II)</option>
         </select>
       </div>
 
@@ -788,7 +819,7 @@
       </div>
 
       <div class="extras-box" id="extras-box" style="display: none;">
-        <span>⚡ <strong>Aulas Extras / Eventos:</strong></span>
+        <span>📌 <strong>Ajustes do Cronograma:</strong></span>
         <span id="extras-text"></span>
       </div>
     </div>
@@ -909,21 +940,28 @@
 
 
       if (rawMarkdown) {
-        await loadCalendarJSON();
+        const calMatch = rawMarkdown.match(/calendario:\s*(.*)/i);
+        let calFileName = '2026.2.json';
+        if (calMatch) {
+          const rawCal = calMatch[1].trim();
+          calFileName = rawCal.split('/').pop();
+        }
+        await loadCalendarJSON(calFileName);
         parseOutlineData(rawMarkdown);
       }
     }
 
-    async function loadCalendarJSON() {
+    async function loadCalendarJSON(calFileName = '2026.2.json') {
       const currentOrigin = window.location.origin;
       const currentPath = window.location.pathname;
       let dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
 
       const calendarCandidates = [
-        '../calendar/2026.2.json',
-        './calendar/2026.2.json',
-        'calendar/2026.2.json',
-        new URL('../calendar/2026.2.json', currentOrigin + dirPath).href
+        `../calendar/${calFileName}`,
+        `./calendar/${calFileName}`,
+        `calendar/${calFileName}`,
+        calFileName,
+        new URL(`../calendar/${calFileName}`, currentOrigin + dirPath).href
       ];
 
       for (const url of calendarCandidates) {
@@ -939,7 +977,58 @@
       }
     }
 
-    function getLetivoClassDates(schedule) {
+    function normalizeIsoDate(value) {
+      const clean = (value || '').trim();
+      const isoMatch = clean.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (isoMatch) return clean;
+
+      const brMatch = clean.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+      if (brMatch) return `${brMatch[3]}-${brMatch[2]}-${brMatch[1]}`;
+
+      const brShortMatch = clean.match(/^(\d{2})\/(\d{2})\/(\d{2})$/);
+      if (brShortMatch) return `20${brShortMatch[3]}-${brShortMatch[2]}-${brShortMatch[1]}`;
+
+      return null;
+    }
+
+    function formatIsoDate(isoDate) {
+      const [y, m, d] = isoDate.split('-');
+      return `${d}/${m}/${y}`;
+    }
+
+    function parseFrontMatterList(fmText, key) {
+      const blockRegex = new RegExp(`(?:^|\\n)${key}:\\s*\\n([\\s\\S]*?)(?=\\n[a-z_]+:|$)`, 'i');
+      const blockMatch = fmText.match(blockRegex);
+      if (!blockMatch) return [];
+
+      const items = [];
+      let current = null;
+
+      blockMatch[1].split('\n').forEach(rawLine => {
+        const line = rawLine.trim();
+        if (!line) return;
+
+        if (line.startsWith('- ')) {
+          if (current) items.push(current);
+          current = {};
+          const inlineField = line.slice(2).trim().match(/^([a-z_]+):\s*(.*)$/i);
+          if (inlineField) {
+            current[inlineField[1]] = inlineField[2].trim();
+          }
+          return;
+        }
+
+        const fieldMatch = line.match(/^([a-z_]+):\s*(.*)$/i);
+        if (fieldMatch && current) {
+          current[fieldMatch[1]] = fieldMatch[2].trim();
+        }
+      });
+
+      if (current) items.push(current);
+      return items;
+    }
+
+    function getLetivoClassDates(schedule, skippedClassDates = new Set()) {
       const dates = [];
       if (!rawCalendarData || !rawCalendarData.meses || !schedule || schedule.length === 0) return dates;
 
@@ -960,11 +1049,11 @@
         aulas: s.aulas || 2
       })).filter(s => s.dayOfWeek !== undefined);
 
-      const startDate = rawCalendarData.inicio || '2026-08-06';
+      const startDate = rawCalendarData.metadata?.inicio || rawCalendarData.inicio || (rawCalendarData.periodos && rawCalendarData.periodos[0]?.inicio) || '2026-02-25';
 
       rawCalendarData.meses.forEach(m => {
         m.dias.forEach(d => {
-          if (d.letivo && d.data >= startDate) {
+          if (d.letivo && d.data >= startDate && !skippedClassDates.has(d.data)) {
             const dt = new Date(d.data + 'T00:00:00');
             const dayOfWeek = dt.getDay();
 
@@ -974,6 +1063,7 @@
               const formattedDate = `${dayNum}/${month}/${y}`;
               const diaSemanaName = weekdaysFullNames[dayOfWeek];
               dates.push({
+                isoDate: d.data,
                 dateStr: formattedDate,
                 diaSemana: diaSemanaName,
                 aulas: matchedSchedule.aulas
@@ -989,6 +1079,9 @@
       const fmMatch = rawMarkdown.match(/^---\s*\n([\s\S]*?)\n---/);
       let content = rawMarkdown;
       const parsedSchedule = [];
+      const skippedClassDates = new Set();
+      const noClassDisplayItems = [];
+      const noClassEntries = [];
 
       if (fmMatch) {
         content = rawMarkdown.replace(fmMatch[0], '');
@@ -1045,27 +1138,54 @@
           }
         }
 
+        const noClassItems = parseFrontMatterList(fmText, 'sem_aula');
+        noClassItems.forEach(item => {
+          const isoDate = normalizeIsoDate(item.data);
+          if (!isoDate) return;
+
+          skippedClassDates.add(isoDate);
+          const reason = item.motivo || item.descricao || 'Sem aula';
+          const dateStr = formatIsoDate(isoDate);
+          noClassDisplayItems.push(`${dateStr} - ${reason}`);
+          noClassEntries.push({
+            isoDate,
+            dateStr,
+            diaSemana: getDayOfWeekName(dateStr),
+            reason
+          });
+        });
+
         const extraLines = fmText.match(/- data:\s*(.*)\n\s*descricao:\s*(.*)\n\s*aulas:\s*(.*)/g);
+        const adjustmentItems = [];
+
         if (extraLines && extraLines.length > 0) {
-          const displayItems = [];
           extraLines.forEach(el => {
             const dtStr = el.match(/data:\s*(.*)/)[1].trim();
             const desc = el.match(/descricao:\s*(.*)/)[1].trim();
             const nAulas = el.match(/aulas:\s*(.*)/)[1].trim();
-            const [y, m, d] = dtStr.split('-');
-            displayItems.push(`${d}/${m}/${y} - ${desc} (${nAulas} aulas)`);
+            const isoDate = normalizeIsoDate(dtStr);
+            const formattedDate = isoDate ? formatIsoDate(isoDate) : dtStr;
+            adjustmentItems.push(`Aula extra: ${formattedDate} - ${desc} (${nAulas} aulas)`);
           });
+        }
 
-          const extrasBox = document.getElementById('extras-box');
-          const extrasText = document.getElementById('extras-text');
+        noClassDisplayItems.forEach(item => {
+          adjustmentItems.push(`Sem aula: ${item}`);
+        });
+
+        const extrasBox = document.getElementById('extras-box');
+        const extrasText = document.getElementById('extras-text');
+
+        if (adjustmentItems.length > 0) {
           extrasBox.style.display = 'flex';
-          extrasText.textContent = displayItems.join('; ');
+          extrasText.textContent = adjustmentItems.join('; ');
         } else {
-          document.getElementById('extras-box').style.display = 'none';
+          extrasBox.style.display = 'none';
+          extrasText.textContent = '';
         }
       }
 
-      const regDates = getLetivoClassDates(parsedSchedule);
+      const regDates = getLetivoClassDates(parsedSchedule, skippedClassDates);
       let regIdx = 0;
 
       const topicBlocks = content.split(/^##\s+/m).filter(b => b.trim().length > 0);
@@ -1074,7 +1194,7 @@
       topicBlocks.forEach((block) => {
         const lines = block.trim().split('\n');
         let rawTitleLine = lines[0].replace(/^#+\s*/, '').trim();
-        if (rawTitleLine.startsWith('CSTRC JP') || rawTitleLine.startsWith('CSBES JP') || rawTitleLine.startsWith('#')) return;
+        if (rawTitleLine.startsWith('CSTRC JP') || rawTitleLine.startsWith('CSBES JP') || rawTitleLine.startsWith('CTII JP') || rawTitleLine.startsWith('#')) return;
 
         let cleanTitle = rawTitleLine;
         let explicitDate = null;
@@ -1131,6 +1251,7 @@
           const realDayOfWeek = getDayOfWeekName(explicitDate);
           dateObj = {
             dateStr: explicitDate,
+            isoDate: normalizeIsoDate(explicitDate),
             diaSemana: realDayOfWeek,
             isExtra: true,
             infoStr: extraInfoStr,
@@ -1138,6 +1259,7 @@
           };
         } else if (regIdx < regDates.length) {
           dateObj = {
+            isoDate: regDates[regIdx].isoDate,
             dateStr: regDates[regIdx].dateStr,
             diaSemana: regDates[regIdx].diaSemana,
             isExtra: false,
@@ -1151,11 +1273,44 @@
           title: cleanTitle,
           dateObj: dateObj,
           resources: resources,
-          bodyTexts: bodyTexts
+          bodyTexts: bodyTexts,
+          sortOrder: topicsData.length
         });
       });
 
-      window.topicsData = topicsData;
+      const noClassTopics = noClassEntries.map((entry, index) => ({
+        id: 0,
+        title: `Sem aula: ${entry.reason}`,
+        isNoClass: true,
+        dateObj: {
+          isoDate: entry.isoDate,
+          dateStr: entry.dateStr,
+          diaSemana: entry.diaSemana,
+          isNoClass: true,
+          aulas: 0
+        },
+        resources: [],
+        bodyTexts: [],
+        sortOrder: -1000 + index
+      }));
+
+      const sortedTopics = topicsData.concat(noClassTopics).sort((a, b) => {
+        const aDate = a.dateObj?.isoDate || '9999-12-31';
+        const bDate = b.dateObj?.isoDate || '9999-12-31';
+        if (aDate !== bDate) return aDate.localeCompare(bDate);
+        return (a.sortOrder || 0) - (b.sortOrder || 0);
+      });
+
+      let lessonCounter = 0;
+      sortedTopics.forEach((topic, index) => {
+        topic.id = index + 1;
+        if (!topic.isNoClass) {
+          lessonCounter++;
+          topic.lessonNumber = lessonCounter;
+        }
+      });
+
+      window.topicsData = sortedTopics;
       renderTopics();
       checkUrlAnchor();
     }
@@ -1187,13 +1342,15 @@
         if (searchQuery && !matchesTitle && !matchesDate && !matchesResource && !matchesBody) return;
 
         count++;
-        sumDays += 1;
-        if (topic.dateObj && topic.dateObj.aulas) {
-          sumAulas += topic.dateObj.aulas;
+        if (!topic.isNoClass) {
+          sumDays += 1;
+          if (topic.dateObj && topic.dateObj.aulas) {
+            sumAulas += topic.dateObj.aulas;
+          }
         }
 
-        const lessonNumStr = String(index + 1).padStart(2, '0');
-        const lessonAnchorId = `aula-${lessonNumStr}`;
+        const lessonNumStr = topic.lessonNumber ? String(topic.lessonNumber).padStart(2, '0') : '';
+        const lessonAnchorId = topic.isNoClass ? `sem-aula-${topic.dateObj.isoDate}` : `aula-${lessonNumStr}`;
 
         const titleLower = topic.title.toLowerCase();
         const isProject = titleLower.includes('projeto');
@@ -1203,6 +1360,9 @@
         card.id = lessonAnchorId;
         if (topic.dateObj && topic.dateObj.isExtra) {
           card.classList.add('is-extra-card');
+        }
+        if (topic.isNoClass) {
+          card.classList.add('is-no-class-card');
         }
         if (isProject) {
           card.classList.add('is-project-card');
@@ -1217,10 +1377,11 @@
 
         const header = document.createElement('div');
         header.className = 'topic-card-header';
-        
+
+        const lessonLinkLabel = topic.isNoClass ? 'Sem aula' : `Aula ${lessonNumStr}`;
         let headerHtml = `
-          <a href="#${lessonAnchorId}" class="topic-number-link" onclick="copyLessonLink(event, '${lessonAnchorId}')" title="Copiar link direto para Aula ${lessonNumStr}">
-            Aula ${lessonNumStr}
+          <a href="#${lessonAnchorId}" class="topic-number-link ${topic.isNoClass ? 'no-class-link' : ''}" onclick="copyLessonLink(event, '${lessonAnchorId}')" title="Copiar link direto para ${lessonLinkLabel}">
+            ${lessonLinkLabel}
             <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
           </a>
         `;
@@ -1231,13 +1392,21 @@
           headerHtml += `<span class="topic-date-badge badge-extra-label">⚡ AULA EXTRA</span>`;
         }
 
+        if (topic.isNoClass) {
+          headerHtml += `<span class="topic-date-badge badge-no-class-label">SEM AULA</span>`;
+        }
+
         if (isProject) {
           headerHtml += `<span class="topic-date-badge badge-project-label">🚀 PROJETO</span>`;
         }
 
         if (topic.dateObj) {
-          const clockStr = formatMinutesToHours(topic.dateObj.aulas * 50);
-          headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas • ${clockStr})</span>`;
+          if (topic.isNoClass) {
+            headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr}</span>`;
+          } else {
+            const clockStr = formatMinutesToHours(topic.dateObj.aulas * 50);
+            headerHtml += `<span class="topic-date-badge">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas • ${clockStr})</span>`;
+          }
         }
 
         header.innerHTML = headerHtml;
@@ -1255,7 +1424,7 @@
         const resList = document.createElement('div');
         resList.className = 'resources-list';
 
-        if (topic.resources.length === 0 && (!topic.bodyTexts || topic.bodyTexts.length === 0)) {
+        if (topic.resources.length === 0 && (!topic.bodyTexts || topic.bodyTexts.length === 0) && !topic.isNoClass) {
           resList.innerHTML = '<div class="no-resources">Nenhum recurso cadastrado para esta aula.</div>';
         } else if (topic.resources.length > 0) {
           topic.resources.forEach(r => {
@@ -1352,7 +1521,8 @@
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(currentUrl.toString()).then(() => {
-          showToast(`🔗 Link para Aula ${anchorId.replace('aula-', '')} copiado!`);
+          const label = anchorId.startsWith('sem-aula-') ? 'ajuste do cronograma' : `Aula ${anchorId.replace('aula-', '')}`;
+          showToast(`🔗 Link para ${label} copiado!`);
         }).catch(() => {});
       }
       scrollToLesson(anchorId);
