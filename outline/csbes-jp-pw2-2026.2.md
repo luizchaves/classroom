@@ -24,12 +24,12 @@ horarios:
 - [Conteúdo: Introdução ao ECMA](https://ifpb.github.io/pw2/ecma/introduction/)
 - [Exercício: Lista de exercícios](https://ifpb.github.io/pw2/extra/exercises/)
 - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-JtstuRmQCO)
-- [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
 
 ## Decisão e Repetição
 
 - [Conteúdo: Variáveis](https://ifpb.github.io/pw2/ecma/variable/)
 - [Conteúdo: Expressões e Operadores](https://ifpb.github.io/pw2/ecma/expression-and-operator/)
+- [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
 - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-GQBuuwHpFN)
 - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-EJYEO7Y3n3)
 
@@ -41,31 +41,31 @@ Participe dos minicursos do [IFTech 2026](https://www.even3.com.br/iftech-2026-7
 
 Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
-## Decisão e Repetição, Função, Módulos
+## Decisão e Repetição
 
 - [Conteúdo: Comandos e Instruções](https://ifpb.github.io/pw2/ecma/statements/)
-- [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
-- [Conteúdo: Funções](https://ifpb.github.io/pw2/ecma/function/)
 - [Braincheck: JavaScript | Decisão e Repetição](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-wXu0b3rLIa)
+- [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 - [Braincheck: JavaScript | Decisão e Repetição | Prática](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-pratica-GQNhdEgQQx)
+
+## Função e Módulos
+
+- [Conteúdo: Funções](https://ifpb.github.io/pw2/ecma/function/)
 - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
-
-## Exercício Intro JS
-
 - [Conteúdo: Módulos](https://ifpb.github.io/pw2/ecma/modules/)
+- [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
 - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
 - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
 - [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
-- [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
 
-## Array, String
+## Array e String
 
 - [Conteúdo: Array](https://ifpb.github.io/pw2/ecma/array/)
-- [Conteúdo: String](https://ifpb.github.io/pw2/ecma/string/)
 - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
-- [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
 - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
 - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
+- [Conteúdo: String](https://ifpb.github.io/pw2/ecma/string/)
+- [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
 - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
 - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
 - [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
@@ -76,25 +76,23 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
 - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
 
-## Exercício Array
-
 ## Objetos
 
+- [Conteúdo: Objeto](https://ifpb.github.io/pw2/ecma/object/)
+- [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
 - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
 - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
 
-## JSON
+## Objetos
 
+- [Exercício: Objeto Exame](https://ifpb.github.io/exercises/problems/object-exam/)
 - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
 - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
-- [Conteúdo: Objeto](https://ifpb.github.io/pw2/ecma/object/)
-- [Exercício: Objeto Exame](https://ifpb.github.io/exercises/problems/object-exam/)
-- [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
 
 ## Objetos do Navegador
 
 - [Conteúdo: Objetos do Navegador](https://ifpb.github.io/pw2/w3c/browser-objects/)
-- List generator document.write
+- Exercício: List generator document.write
 
 ## Criando Elementos Dinâmicos
 
@@ -110,6 +108,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
 - PR ifpb/projects
+
+## Apresentação da Proposta do Projeto
 
 ## Eventos
 
