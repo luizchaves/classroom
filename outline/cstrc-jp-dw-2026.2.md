@@ -23,6 +23,7 @@ horarios:
 - [DW: Página da disciplina](https://ifpb.github.io/dw/)
 - [DW: Linguagem de marcação](https://ifpb.github.io/dw/markup/languages/)
 - [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
+- [Exercícios: Fundamentos de Web](https://ifpb.github.io/dw/extra/exercises/)
 - [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
 - [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
 - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
@@ -71,6 +72,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Projeto da Disciplina em Bootstrap
 
+- [DW: Monitor-app | Bootstrap](https://ifpb.github.io/dw/app/invest-app-bootstrap/)
 - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
 - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
 - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
@@ -135,6 +137,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## NodeJS e Express
 
+- [DW: Node.js - HTTP](https://ifpb.github.io/dw/nodejs/http/)
 - [DW: Introdução ao Express](https://ifpb.github.io/dw/expressjs/introduction/)
 
 ## Exercício Backend
@@ -168,6 +171,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Relacionamento e Cadastro de Usuário
 
+- [DW: Relação entre Entidades](https://ifpb.github.io/dw/expressjs/prismajs-relation/)
 - [DW: Prisma.js User](https://ifpb.github.io/dw/expressjs/prismajs-user/)
 
 ## Controle de Sessão JWT
@@ -190,4 +194,6 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [DW: Projeto](https://ifpb.github.io/dw/project/)
 
-## Recuperação
+## Próximos Passos e Recuperação Exercícios
+
+- [DW: Próximos Passos](https://ifpb.github.io/dw/extra/next-steps/)
