@@ -872,19 +872,37 @@
       }
 
       let rawMarkdown = '';
-      try {
-        const res = await fetch(activeFile);
-        if (res.ok) {
-          rawMarkdown = await res.text();
+
+      // Smart URL resolution for GitHub Pages and relative paths
+      const currentOrigin = window.location.origin;
+      const currentPath = window.location.pathname;
+      let dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+      if (!dirPath.includes('/outline/')) {
+        if (currentPath.includes('/outline')) {
+          const pos = currentPath.indexOf('/outline');
+          dirPath = currentPath.substring(0, pos + 8) + '/';
         }
-      } catch (err) {
-        console.warn(`Fetch fallback triggered for ${activeFile}:`, err);
       }
 
-      if (!rawMarkdown) {
-        const embeddedEl = document.getElementById('embedded-markdown');
-        if (embeddedEl) {
-          rawMarkdown = embeddedEl.textContent;
+      const candidateUrls = [
+        activeFile,
+        `./${activeFile}`,
+        `outline/${activeFile}`,
+        new URL(activeFile, currentOrigin + dirPath).href
+      ];
+
+      for (const url of candidateUrls) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            const txt = await res.text();
+            if (txt && txt.includes('---')) {
+              rawMarkdown = txt;
+              break;
+            }
+          }
+        } catch (err) {
+          console.warn(`Fetch candidate ${url} failed:`, err);
         }
       }
 
@@ -895,13 +913,27 @@
     }
 
     async function loadCalendarJSON() {
-      try {
-        const res = await fetch('../calendar/2026.2.json');
-        if (res.ok) {
-          rawCalendarData = await res.json();
+      const currentOrigin = window.location.origin;
+      const currentPath = window.location.pathname;
+      let dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+
+      const calendarCandidates = [
+        '../calendar/2026.2.json',
+        './calendar/2026.2.json',
+        'calendar/2026.2.json',
+        new URL('../calendar/2026.2.json', currentOrigin + dirPath).href
+      ];
+
+      for (const url of calendarCandidates) {
+        try {
+          const res = await fetch(url);
+          if (res.ok) {
+            rawCalendarData = await res.json();
+            if (rawCalendarData) break;
+          }
+        } catch (err) {
+          console.warn(`Calendar fetch candidate ${url} failed:`, err);
         }
-      } catch (err) {
-        console.warn('Could not load calendar JSON via fetch:', err);
       }
     }
 
@@ -1379,110 +1411,6 @@
     // Start App
     const initialFile = getSelectedSubjectFile();
     loadSubjectOutline(initialFile);
-  </script>
-
-  <!-- Embedded Markdown Fallback for file:// protocol -->
-  <script type="text/markdown" id="embedded-markdown">
----
-disciplina: Desenvolvimento Web
-curso: Curso Superior de Tecnologia em Redes de Computadores
-periodo: 2026.2
-carga_horaria: 100h
-professor: Luiz Carlos Rodrigues Chaves
-calendario: ../calendar/2026.2.json
-horarios:
-  - dia: Segunda
-    horario: 07:00-08:40
-    ambiente: Lab 03
-    aulas: 2
-  - dia: Quinta
-    horario: 08:40-12:20
-    ambiente: Lab 03
-    aulas: 4
-aulas_extras:
-  - data: 2026-08-14
-    descricao: IFTech
-    aulas: 4
----
-
-# CSTRC JP 2026.2
-
-## Fundamentos de Web e Linguagem de Marcação
-
-- [DW: Página da disciplina](https://ifpb.github.io/dw/)
-- [DW: Linguagem de marcação](https://ifpb.github.io/dw/markup/languages/)
-- [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
-- [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
-- [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
-- [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
-
-## Fundamentos de HTML
-
-- [DW: Introdução ao HTML](https://ifpb.github.io/dw/html/introduction/)
-- [Exercício: HTML | Currículo Simples em HTML](https://ifpb.github.io/exercises/problems/web-markup-curriculum-simple/)
-- [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
-- [Braincheck: Fundamentos de HTML](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-html-FisLfBWvwP)
-
-## Fundamentos de CSS
-
-- [DW: Introdução ao CSS](https://ifpb.github.io/dw/css/introduction/)
-- [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
-- [Braincheck: Fundamentos de CSS](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
-
-## IFTech (14/08/2026 - 4 aulas)
-
-Participe do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
-
-## Bootstrap, Form
-
-- [DW: Bootstrap](https://ifpb.github.io/dw/package/bootstrap/)
-- [DW: Formulários](https://ifpb.github.io/dw/css/form/)
-
-## Projeto Definição
-
-- [DW: Projeto](https://ifpb.github.io/dw/project/)
-
-## Prática e Apresentação dos Projetos
-
-## ECMA: Dados, Variável, Decisão e Repetição
-
-- [DW: Introdução ao ECMA](https://ifpb.github.io/dw/ecma/introduction/)
-- [DW: Variáveis](https://ifpb.github.io/dw/ecma/variable/)
-- [DW: Expressões e Operadores](https://ifpb.github.io/dw/ecma/expression-and-operator/)
-- [DW: Comandos e Instruções](https://ifpb.github.io/dw/ecma/statements/)
-- [Exercício: Hello](https://ifpb.github.io/exercises/problems/algorithms/basic-hello/)
-- [Exercício: Notas](https://ifpb.github.io/exercises/problems/algorithms/basic-grades/)
-- [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/algorithms/basic-numbers-series/)
-
-## Projeto da Disciplina em Bootstrap
-
-- [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
-- [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
-- [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
-- [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
-
-## Função e Módulos
-
-- [DW: Funções](https://ifpb.github.io/dw/ecma/function/)
-- [DW: Módulos](https://ifpb.github.io/dw/ecma/modules/)
-- [Exercício: Soma](https://ifpb.github.io/exercises/problems/algorithms/function-sum/)
-
-## Exercício JS Intro
-
-- [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/algorithms/function-calc/)
-- [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/algorithms/function-area-of-circle/)
-- [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/algorithms/function-triangle-checker/)
-
-## API do JS (Array, String, Object)
-
-- [DW: Array](https://ifpb.github.io/dw/ecma/array/)
-- [Exercício: Array Util](https://ifpb.github.io/exercises/problems/algorithms/array-util/)
-- [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/algorithms/array-operations/)
-- [DW: String](https://ifpb.github.io/dw/ecma/string/)
-- [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/algorithms/string-list-generator/)
-- [Exercício: String Util](https://ifpb.github.io/exercises/problems/algorithms/string-util/)
-- [DW: Object](https://ifpb.github.io/dw/ecma/object/)
-- [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
   </script>
 </body>
 </html>
