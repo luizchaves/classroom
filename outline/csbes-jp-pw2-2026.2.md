@@ -20,14 +20,15 @@ horarios:
 
 ## Apresentação da Disciplina e Introdução ao JavaScript
 
-- [LS: Página da disciplina](https://ifpb.github.io/ls/)
-- [LS: Introdução ao ECMA](https://ifpb.github.io/ls/ecma/introduction-ecma/)
-- [LS: Variáveis](https://ifpb.github.io/ls/ecma/variable/)
-- [LS: Expressões e Operadores](https://ifpb.github.io/ls/ecma/expression-and-operator/)
+- [PW2: Página da disciplina](https://ifpb.github.io/pw2/)
+- [PW2: Introdução ao ECMA](https://ifpb.github.io/pw2/ecma/introduction/)
+- [PW2: Variáveis](https://ifpb.github.io/pw2/ecma/variable/)
+- [PW2: Expressões e Operadores](https://ifpb.github.io/pw2/ecma/expression-and-operator/)
+- [PW2: Exercícios](https://ifpb.github.io/pw2/extra/exercises/)
 
 ## Decisão e Repetição
 
-- [LS: Comandos e Instruções](https://ifpb.github.io/ls/ecma/statements/)
+- [PW2: Comandos e Instruções](https://ifpb.github.io/pw2/ecma/statements/)
 - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 
 ## IFTech (14/08/2026 - 4 aulas)
@@ -40,8 +41,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Função, Módulos
 
-- [LS: Funções](https://ifpb.github.io/ls/ecma/function/)
-- [LS: Módulos](https://ifpb.github.io/ls/ecma/modules/)
+- [PW2: Funções](https://ifpb.github.io/pw2/ecma/function/)
+- [PW2: Módulos](https://ifpb.github.io/pw2/ecma/modules/)
 - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
 
 ## Exercício Intro JS
@@ -51,8 +52,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Array, String
 
-- [LS: Array](https://ifpb.github.io/ls/ecma/array/)
-- [LS: String](https://ifpb.github.io/ls/ecma/string/)
+- [PW2: Array](https://ifpb.github.io/pw2/ecma/array/)
+- [PW2: String](https://ifpb.github.io/pw2/ecma/string/)
 - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
 - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
 - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
@@ -75,17 +76,17 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
 - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
-- [LS: Objeto](https://ifpb.github.io/ls/ecma/object/)
+- [PW2: Objeto](https://ifpb.github.io/pw2/ecma/object/)
 - [Exercício: Objeto Exame](https://ifpb.github.io/exercises/problems/object-exam/)
 
 ## Objetos do Navegador
 
-- [LS: Objetos do Navegador](https://ifpb.github.io/ls/w3c/browser-objects/)
+- [PW2: Objetos do Navegador](https://ifpb.github.io/pw2/w3c/browser-objects/)
 - List generator document.write
 
 ## Criando Elementos Dinâmicos
 
-- [LS: Elementos Dinâmicos](https://ifpb.github.io/ls/w3c/dynamic-elements/)
+- [PW2: Elementos Dinâmicos](https://ifpb.github.io/pw2/w3c/dynamic-elements/)
 - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
 
 ## Exercício Elementos Dinâmicos
@@ -100,22 +101,22 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Eventos
 
-- [LS: Tratamento de Eventos](https://ifpb.github.io/ls/w3c/event-handling/)
+- [PW2: Tratamento de Eventos](https://ifpb.github.io/pw2/w3c/event-handling/)
 
 ## Build Tools
 
-- [LS: Vite](https://ifpb.github.io/ls/package/vite/)
+- [PW2: Vite](https://ifpb.github.io/pw2/package/vite/)
 - [Exercício: Amaro Script](https://ifpb.github.io/exercises/problems/web-script-amaro/)
 
 ## DOM
 
-- [LS: DOM API](https://ifpb.github.io/ls/w3c/dom-api/)
+- [PW2: DOM API](https://ifpb.github.io/pw2/w3c/dom-api/)
 - [Exercício: Gerador de Lista Script](https://ifpb.github.io/exercises/problems/web-script-list-generator/)
 - [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
 
 ## Criando Elementos Dinâmicos (Create, Delete e Update)
 
-- [LS: Local Storage](https://ifpb.github.io/ls/w3c/local-storage/)
+- [PW2: Local Storage](https://ifpb.github.io/pw2/w3c/local-storage/)
 
 ## Projeto Acompanhamento
 
@@ -127,38 +128,39 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## React - Component
 
-- [LS: Introdução ao React](https://ifpb.github.io/ls/react/introduction/)
+- [PW2: Introdução ao React](https://ifpb.github.io/pw2/react/introduction/)
 
 ## React - Rotas, Eventos, Hooks
 
-- [LS: React Hooks](https://ifpb.github.io/ls/react/hooks/)
+- [PW2: React Hooks](https://ifpb.github.io/pw2/react/hooks/)
 
 ## React - Context API
 
-- [LS: React Hooks](https://ifpb.github.io/ls/react/hooks/)
+- [PW2: React Hooks](https://ifpb.github.io/pw2/react/hooks/)
 
 ## React - Manipular Form, CRUD
 
-- [LS: React Hooks](https://ifpb.github.io/ls/react/hooks/)
+- [PW2: React Hooks](https://ifpb.github.io/pw2/react/hooks/)
 
 ## Expressões Regulares
 
-- [LS: Expressões Regulares](https://ifpb.github.io/ls/ecma/regexp/)
+- [PW2: Expressões Regulares](https://ifpb.github.io/pw2/ecma/regexp/)
 
 ## Promises
 
-- [LS: Promises](https://ifpb.github.io/ls/ecma/promise/)
+- [PW2: Promises](https://ifpb.github.io/pw2/ecma/promise/)
 
 ## Web API e Supabase API
 
-- [LS: REST API](https://ifpb.github.io/ls/api/rest/)
-- [LS: Supabase API](https://ifpb.github.io/ls/package/supabase-api/)
+- [PW2: REST API](https://ifpb.github.io/pw2/api/rest/)
+- [PW2: Supabase API](https://ifpb.github.io/pw2/package/supabase-api/)
 
 ## Fetch API, axios, supabase-client
 
-- [LS: Fetch API](https://ifpb.github.io/ls/w3c/fetch-api/)
-- [LS: Axios](https://ifpb.github.io/ls/package/axios/)
-- [LS: Supabase Client](https://ifpb.github.io/ls/package/supabase-client/)
+- [PW2: Fetch API](https://ifpb.github.io/pw2/w3c/fetch-api/)
+- [PW2: Axios](https://ifpb.github.io/pw2/package/axios/)
+- [PW2: Supabase Client](https://ifpb.github.io/pw2/package/supabase-client/)
+- [PW2: Consumo do Supabase](https://ifpb.github.io/pw2/package/http-client/)
 
 ## Exercício Requisição Assíncrona
 
@@ -166,7 +168,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## React - Auth
 
-- [LS: Supabase Auth em React](https://ifpb.github.io/ls/react/supabase-auth/)
+- [PW2: Supabase Auth em React](https://ifpb.github.io/pw2/react/supabase-auth/)
 
 ## Projeto Acompanhamento
 
@@ -176,4 +178,6 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Replit: Economic App Storage](https://replit.com/@lucachaves/economic-app-storage-ls-20221)
 - [GitHub: Economic App React](https://github.com/lucachaves/ls-economic-react-2022-1)
 
-## Recuperação
+## Próximos Passos e Recuperação
+
+- [PW2: Próximos Passos](https://ifpb.github.io/pw2/extra/next-steps/)

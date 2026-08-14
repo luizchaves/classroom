@@ -26,6 +26,8 @@ sem_aula:
 
 ## Revisão de JS (Sintaxe e Web)
 
+- [LP2: Introdução ao ECMAScript](https://ifpb.github.io/lp2/javascript/introduction/)
+- [LP2: JavaScript e Frontend Web](https://ifpb.github.io/lp2/javascript/frontend/)
 - ECMA: datatype
 - function
 - ESM
@@ -124,13 +126,19 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Upload de Arquivo
 
+- [LP2: ExpressJS Upload de Arquivo](https://ifpb.github.io/lp2/expressjs/upload-file/)
+
 ## Projeto Acompanhamento
 
 ## Projeto
 
 ## Teste de Aplicação
 
+- [LP2: ExpressJS Teste de Software](https://ifpb.github.io/lp2/expressjs/test/)
+
 ## Teste de Aplicação
+
+- [LP2: ExpressJS Teste de Software](https://ifpb.github.io/lp2/expressjs/test/)
 
 ## Projeto Acompanhamento
 
