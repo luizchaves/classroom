@@ -2,7 +2,7 @@
 disciplina: Linguagens de Programação II
 curso: Curso Técnico Integrado em Informática
 periodo: 2026
-carga_horaria: 80h
+carga_horaria: 67h
 professor: Luiz Carlos Rodrigues Chaves
 calendario: ../calendar/2026.json
 horarios:
@@ -91,11 +91,11 @@ sem_aula:
 
 ## Autenticação | Front-end
 
-## IFTech (14/08/2026 - 4 aulas)
+## IFTech (14/08/2026 - 2 aulas)
 
 Participe dos minicursos do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
-## IFTech (15/08/2026 - 4 aulas)
+## IFTech (15/08/2026 - 2 aulas)
 
 Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
@@ -114,9 +114,9 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [LP2: ExpressJS E-mail](https://ifpb.github.io/lp2/expressjs/email/)
 
-## Pulsar (16/10/2026 - 4 aulas)
+## Pulsar (16/10/2026 - 2 aulas)
 
-## Pulsar (17/10/2026 - 4 aulas)
+## Pulsar (17/10/2026 - 2 aulas)
 
 ## Projeto Acompanhamento
 
