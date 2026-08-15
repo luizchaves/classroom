@@ -201,6 +201,27 @@
       font-weight: 700;
     }
 
+    .pill-progress {
+      background: #fff7ed;
+      border-color: #fdba74;
+      color: #c2410c;
+      font-weight: 800;
+    }
+
+    .pill-progress-muted {
+      background: #f8fafc;
+      border-color: #cbd5e1;
+      color: #64748b;
+      font-weight: 700;
+    }
+
+    .pill-progress-done {
+      background: #f0fdf4;
+      border-color: #86efac;
+      color: #166534;
+      font-weight: 800;
+    }
+
     /* Course Banner Card */
     .course-banner-container {
       max-width: var(--content-shell-max-width);
@@ -251,6 +272,26 @@
     .schedule-item span {
       color: var(--text-muted);
       font-weight: 500;
+    }
+
+    .schedule-main {
+      color: var(--text-main) !important;
+      font-weight: 700 !important;
+    }
+
+    .schedule-day-short {
+      display: none;
+    }
+
+    .schedule-main .schedule-day-full,
+    .schedule-main .schedule-day-short {
+      color: inherit !important;
+      font-weight: inherit !important;
+    }
+
+    .schedule-detail {
+      color: var(--text-muted) !important;
+      font-weight: 500 !important;
     }
 
     /* Controls & Search */
@@ -753,6 +794,14 @@
       font-weight: 600;
     }
 
+    .topic-date-badge.is-focus-date:not(.badge-extra-label):not(.badge-project-label) {
+      background-color: #fff7ed;
+      color: #9a3412;
+      border-color: #f97316;
+      font-weight: 800;
+      box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.18), 0 8px 18px -12px rgba(154, 52, 18, 0.65);
+    }
+
     /* Lesson Text Content */
     .topic-body-text {
       font-size: 0.925rem;
@@ -983,15 +1032,298 @@
     /* Responsive */
     @media (max-width: 768px) {
       :root { --page-gutter: 1rem; }
-      header { padding: 1rem var(--page-gutter); }
-      .brand-text h1 { font-size: 1.1rem; }
-      .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
-      .controls-left { flex-direction: column; align-items: stretch; }
-      .search-box { max-width: 100%; }
-      .outline-feed { padding: 0 1rem; }
-      .outline-calendar-grid { padding: 0 1rem; grid-template-columns: 1fr; }
-      .course-banner-container { padding: 0 1rem; }
-      .schedule-info-group { flex-direction: column; align-items: stretch; }
+      header {
+        position: static;
+        padding: 0.85rem var(--page-gutter);
+      }
+      .header-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .brand {
+        align-items: flex-start;
+        gap: 0.75rem;
+        min-width: 0;
+      }
+      .logo-badge {
+        font-size: 1rem;
+        padding: 0.42rem 0.65rem;
+        border-radius: 0.58rem;
+      }
+      .brand-text {
+        min-width: 0;
+      }
+      .brand-text h1 {
+        font-size: 1rem;
+        line-height: 1.2;
+      }
+      .brand-text p {
+        font-size: 0.76rem;
+        line-height: 1.35;
+      }
+      .subject-selector-box {
+        width: 100%;
+        padding: 0.5rem;
+        gap: 0.45rem;
+      }
+      .subject-selector-box label {
+        width: 1.2rem;
+        flex-shrink: 0;
+        font-size: 0;
+        letter-spacing: 0;
+      }
+      .subject-selector-box label::before {
+        content: "📚";
+        font-size: 1rem;
+      }
+      .subject-selector-box select {
+        flex: 1;
+        min-width: 0;
+        width: 100%;
+        font-size: 0.78rem;
+      }
+      .periodos-pills {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.45rem;
+      }
+      .pill {
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        border-radius: 0.55rem;
+        font-size: 0.7rem;
+        line-height: 1.22;
+        padding: 0.42rem 0.52rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+      #meta-periodo { order: 1; }
+      #badge-aulas-ministradas { order: 2; }
+      #badge-progresso-data { order: 3; }
+      #badge-status-carga { order: 4; }
+      .course-banner-container {
+        margin-top: 1rem;
+        padding: 0 1rem;
+      }
+      .course-banner {
+        padding: 0.75rem;
+        border-radius: 0.65rem;
+        gap: 0.55rem;
+      }
+      .course-banner-title {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        font-size: 0.95rem;
+        line-height: 1.25;
+      }
+      .course-banner-title span:last-child {
+        font-size: 0.72rem !important;
+        line-height: 1.3;
+      }
+      .schedule-info-group {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5rem;
+      }
+      .schedule-item {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0.45rem 0.5rem;
+        font-size: 0.74rem;
+        line-height: 1.25;
+        gap: 0.15rem;
+      }
+      .schedule-item span {
+        display: block;
+        line-height: 1.25;
+      }
+      .schedule-main .schedule-day-full {
+        display: none;
+      }
+      .schedule-main .schedule-day-short {
+        display: inline;
+      }
+      .controls-bar {
+        margin: 1rem auto;
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.75rem;
+      }
+      .controls-left {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.55rem;
+      }
+      .search-box {
+        max-width: 100%;
+      }
+      .search-info-text {
+        font-size: 0.78rem;
+        line-height: 1.35;
+      }
+      .view-switcher-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .view-btn {
+        justify-content: center;
+        min-width: 0;
+        gap: 0.28rem;
+        padding: 0.5rem 0.35rem;
+        font-size: 0.76rem;
+        white-space: nowrap;
+      }
+      .view-btn svg {
+        width: 0.92rem;
+        height: 0.92rem;
+        flex-shrink: 0;
+      }
+      .outline-feed {
+        padding: 0 1rem;
+        gap: 0.8rem;
+      }
+      .topic-card,
+      .outline-feed.compact-mode .topic-card,
+      .outline-feed.compact-mode .topic-card.expanded {
+        padding: 0.85rem;
+        border-radius: 0.65rem;
+      }
+      .topic-card:hover {
+        transform: none;
+      }
+      .topic-card-header,
+      .outline-feed.compact-mode .topic-card-header,
+      .outline-feed.compact-mode .topic-card.expanded .topic-card-header {
+        flex-wrap: wrap;
+        align-items: flex-start;
+        gap: 0.45rem 0.5rem;
+        margin-bottom: 0.65rem;
+      }
+      .outline-feed.compact-mode .topic-card-header {
+        margin-bottom: 0;
+      }
+      .topic-number-link,
+      .outline-feed.compact-mode .topic-number-link {
+        font-size: 0.74rem;
+        padding: 0.22rem 0.5rem;
+      }
+      .topic-title,
+      .outline-feed.compact-mode .topic-title,
+      .outline-feed.compact-mode .topic-card.expanded .topic-title {
+        flex: 1 1 calc(100% - 5rem);
+        min-width: 0;
+        font-size: 0.94rem;
+        line-height: 1.35;
+        white-space: normal;
+        overflow: visible;
+        text-overflow: clip;
+      }
+      .topic-date-badge:not(.badge-extra-label):not(.badge-project-label),
+      .outline-feed.compact-mode .topic-date-badge:not(.badge-extra-label):not(.badge-project-label) {
+        width: 100%;
+        margin-left: 0;
+        justify-content: flex-start;
+        white-space: normal;
+        line-height: 1.25;
+        font-size: 0.74rem;
+        padding: 0.32rem 0.5rem;
+      }
+      .badge-extra-label,
+      .badge-project-label,
+      .outline-feed.compact-mode .badge-extra-label,
+      .outline-feed.compact-mode .badge-project-label {
+        font-size: 0.68rem;
+        padding: 0.16rem 0.4rem;
+      }
+      .topic-body-text {
+        font-size: 0.88rem;
+      }
+      .resources-list {
+        padding-left: 0;
+        gap: 0.42rem;
+      }
+      .resource-link {
+        width: 100%;
+        align-items: flex-start;
+        line-height: 1.3;
+        padding: 0.5rem 0.65rem;
+      }
+      .badge-prefix {
+        flex-shrink: 0;
+      }
+      .outline-calendar-grid {
+        padding: 0 1rem;
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+      .lesson-month-card {
+        border-radius: 0.65rem;
+      }
+      .lesson-month-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+        padding: 0.7rem 0.8rem;
+      }
+      .lesson-month-title {
+        font-size: 0.95rem;
+      }
+      .lesson-month-badge {
+        white-space: normal;
+        line-height: 1.25;
+      }
+      .lesson-weekdays-grid {
+        font-size: 0.62rem;
+        padding: 0.4rem 0;
+      }
+      .lesson-days-grid {
+        padding: 0.35rem;
+        gap: 0.18rem;
+      }
+      .lesson-day-cell {
+        min-height: 4.65rem;
+        border-radius: 0.38rem;
+        padding: 0.22rem;
+        gap: 0.2rem;
+      }
+      .lesson-day-number {
+        width: 1.2rem;
+        height: 1.2rem;
+        font-size: 0.68rem;
+      }
+      .lesson-calendar-item {
+        border-radius: 0.28rem;
+        padding: 0.16rem 0.2rem;
+      }
+      .lesson-calendar-label {
+        font-size: 0;
+      }
+      .lesson-calendar-label::after {
+        content: attr(data-short-label);
+        font-size: 0.62rem;
+      }
+      .lesson-calendar-title {
+        font-size: 0.59rem;
+        line-height: 1.15;
+        white-space: normal;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .lesson-calendar-item:not(.is-no-class) .lesson-calendar-title {
+        display: none;
+      }
+      .lesson-calendar-item.is-no-class .lesson-calendar-title {
+        display: -webkit-box;
+      }
     }
   </style>
 </head>
@@ -1024,7 +1356,8 @@
 
       <div class="periodos-pills">
         <div class="pill pill-accent" id="meta-periodo">📅 Período 2026.2</div>
-        <div class="pill pill-info" id="badge-aulas-ministradas">🎓 -- aulas ministradas</div>
+        <div class="pill pill-progress" id="badge-progresso-data">📈 Progresso: --</div>
+        <div class="pill pill-info" id="badge-aulas-ministradas">🎓 -- aulas planejadas</div>
         <div class="pill pill-warning" id="badge-status-carga">⚠️ Status: Calculando...</div>
       </div>
     </div>
@@ -1267,6 +1600,69 @@
     function formatIsoDate(isoDate) {
       const [y, m, d] = isoDate.split('-');
       return `${d}/${m}/${y}`;
+    }
+
+    function getIsoDateAsLocalTime(isoDate) {
+      if (!isoDate) return null;
+      const [year, month, day] = isoDate.split('-').map(Number);
+      return new Date(year, month - 1, day).getTime();
+    }
+
+    function getDeliveredClassSummary() {
+      const deliveredDates = new Set();
+      let deliveredAulas = 0;
+
+      (window.topicsData || []).forEach(topic => {
+        if (topic.isNoClass || !topic.dateObj?.isoDate || topic.dateObj.isoDate > todayIsoDate) return;
+
+        deliveredDates.add(topic.dateObj.isoDate);
+        deliveredAulas += topic.dateObj.aulas || 0;
+      });
+
+      return {
+        days: deliveredDates.size,
+        aulas: deliveredAulas
+      };
+    }
+
+    function getDateProgressMeta() {
+      const activeRange = getCalendarActiveRange();
+      const startTime = getIsoDateAsLocalTime(activeRange.inicio);
+      const endTime = getIsoDateAsLocalTime(activeRange.termino);
+      const todayTime = getIsoDateAsLocalTime(todayIsoDate);
+      const dayMs = 24 * 60 * 60 * 1000;
+      const delivered = getDeliveredClassSummary();
+      const deliveredText = `${delivered.days} dias • ${delivered.aulas} aulas`;
+
+      if (!startTime || !endTime || !todayTime || endTime < startTime) {
+        return {
+          className: 'pill pill-progress-muted',
+          text: `📈 Progresso: -- • ${deliveredText}`
+        };
+      }
+
+      if (todayTime < startTime) {
+        return {
+          className: 'pill pill-progress-muted',
+          text: `📈 Progresso: Não iniciado • ${deliveredText}`
+        };
+      }
+
+      if (todayTime > endTime) {
+        return {
+          className: 'pill pill-progress-done',
+          text: `📈 Progresso: 100% • ${deliveredText}`
+        };
+      }
+
+      const totalDays = Math.max(1, Math.round((endTime - startTime) / dayMs) + 1);
+      const elapsedDays = Math.round((todayTime - startTime) / dayMs) + 1;
+      const percent = Math.min(100, Math.max(0, Math.round((elapsedDays / totalDays) * 100)));
+
+      return {
+        className: 'pill pill-progress',
+        text: `📈 Progresso: ${percent}% • ${deliveredText}`
+      };
     }
 
     function parseFrontMatterList(fmText, key) {
@@ -1649,7 +2045,25 @@
       div.className = 'schedule-item';
       const clockStr = formatMinutesToHours((h.aulas || 2) * 50);
       const ambStr = h.ambiente ? `${h.ambiente} • ` : '';
-      div.innerHTML = `${h.dia}-feira: ${h.horario} <span>${ambStr}${h.aulas} aulas (${clockStr})</span>`;
+      const shortDayMap = {
+        'segunda': 'Seg',
+        'terça': 'Ter',
+        'terca': 'Ter',
+        'quarta': 'Qua',
+        'quinta': 'Qui',
+        'sexta': 'Sex',
+        'sábado': 'Sáb',
+        'sabado': 'Sáb',
+        'domingo': 'Dom'
+      };
+      const normalizedDay = h.dia.toLowerCase().replace('-feira', '');
+      const shortDay = shortDayMap[normalizedDay] || h.dia.slice(0, 3);
+      div.innerHTML = `
+        <span class="schedule-main">
+          <span class="schedule-day-full">${h.dia}-feira</span><span class="schedule-day-short">${shortDay}</span>: ${h.horario}
+        </span>
+        <span class="schedule-detail">${ambStr}${h.aulas} aulas (${clockStr})</span>
+      `;
       container.appendChild(div);
     }
 
@@ -1692,10 +2106,14 @@
       let count = 0;
       let sumDays = 0;
       let sumAulas = 0;
+      const visibleTopics = window.topicsData.filter(topic => topicMatchesSearch(topic, searchQuery));
+      const hasTodayTopic = visibleTopics.some(topic => topic.dateObj?.isoDate === todayIsoDate);
+      const nextLessonDateIso = visibleTopics
+        .filter(topic => !topic.isNoClass && topic.dateObj?.isoDate && topic.dateObj.isoDate >= todayIsoDate)
+        .map(topic => topic.dateObj.isoDate)
+        .sort()[0] || null;
 
-      window.topicsData.forEach((topic, index) => {
-        if (!topicMatchesSearch(topic, searchQuery)) return;
-
+      visibleTopics.forEach((topic, index) => {
         count++;
         if (!topic.isNoClass) {
           sumDays += 1;
@@ -1751,10 +2169,14 @@
 
         if (topic.dateObj) {
           const dateBadgePastClass = topic.dateObj.isoDate && topic.dateObj.isoDate < todayIsoDate ? ' is-past-date' : '';
+          const isFocusDate = topic.dateObj.isoDate
+            && ((hasTodayTopic && topic.dateObj.isoDate === todayIsoDate)
+              || (!hasTodayTopic && !topic.isNoClass && topic.dateObj.isoDate === nextLessonDateIso));
+          const dateBadgeFocusClass = isFocusDate ? ' is-focus-date' : '';
           if (topic.isNoClass) {
-            headerHtml += `<span class="topic-date-badge${dateBadgePastClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (0 aulas)</span>`;
+            headerHtml += `<span class="topic-date-badge${dateBadgePastClass}${dateBadgeFocusClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (0 aulas)</span>`;
           } else {
-            headerHtml += `<span class="topic-date-badge${dateBadgePastClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas)</span>`;
+            headerHtml += `<span class="topic-date-badge${dateBadgePastClass}${dateBadgeFocusClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (${topic.dateObj.aulas} aulas)</span>`;
           }
         }
 
@@ -1814,8 +2236,13 @@
 
       const badgeAulas = document.getElementById('badge-aulas-ministradas');
       const badgeStatus = document.getElementById('badge-status-carga');
+      const badgeProgress = document.getElementById('badge-progresso-data');
 
-      badgeAulas.textContent = `🎓 ${sumAulas} aulas (${sumClockStr}) ministradas`;
+      badgeAulas.textContent = `🎓 ${sumAulas} aulas (${sumClockStr}) planejadas`;
+
+      const progressMeta = getDateProgressMeta();
+      badgeProgress.className = progressMeta.className;
+      badgeProgress.textContent = progressMeta.text;
 
       const diffAulas = sumAulas - targetWorkloadAulas;
 
@@ -2000,6 +2427,7 @@
               if (!topic.isNoClass) {
                 const label = document.createElement('span');
                 label.className = 'lesson-calendar-label';
+                label.dataset.shortLabel = lessonLabel.replace(/^Aula\s+/, 'A');
                 label.textContent = lessonLabel;
                 item.appendChild(label);
               }
