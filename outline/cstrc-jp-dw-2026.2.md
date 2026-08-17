@@ -49,13 +49,14 @@ Participe dos minicursos do [IFTech 2026](https://www.even3.com.br/iftech-2026-7
 
 Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
-## Bootstrap, Form
+## Bibliotecas de Estilo
 
 - [Conteúdo: Bootstrap](https://ifpb.github.io/dw/package/bootstrap/)
+- [Braincheck: Bibliotecas de Estilo](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
+
+## Form e Definição de Projeto
+
 - [Conteúdo: Formulários](https://ifpb.github.io/dw/css/form/)
-
-## Projeto Definição
-
 - [Conteúdo: Projeto](https://ifpb.github.io/dw/project/)
 
 ## Apresentação das Proposta de Projetos
