@@ -768,7 +768,22 @@
       width: auto;
     }
 
-    .topic-date-badge:not(.badge-extra-label):not(.badge-project-label) {
+    .badge-graded-label {
+      background-color: #dcfce7;
+      color: #15803d;
+      border-color: #bbf7d0;
+      font-weight: 800;
+      flex-shrink: 0;
+      order: 3;
+      font-size: 0.725rem;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.35rem;
+      margin-left: 0;
+      min-width: 0;
+      width: auto;
+    }
+
+    .topic-date-badge:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
       background-color: #f1f5f9;
       color: var(--text-muted);
       font-weight: 700;
@@ -787,14 +802,14 @@
       white-space: nowrap;
     }
 
-    .topic-date-badge.is-past-date:not(.badge-extra-label):not(.badge-project-label) {
+    .topic-date-badge.is-past-date:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
       background-color: #f8fafc;
       color: #94a3b8;
       border-color: #e2e8f0;
       font-weight: 600;
     }
 
-    .topic-date-badge.is-focus-date:not(.badge-extra-label):not(.badge-project-label) {
+    .topic-date-badge.is-focus-date:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
       background-color: #fff7ed;
       color: #9a3412;
       border-color: #f97316;
@@ -949,7 +964,8 @@
     }
 
     .outline-feed.compact-mode .badge-extra-label,
-    .outline-feed.compact-mode .badge-project-label {
+    .outline-feed.compact-mode .badge-project-label,
+    .outline-feed.compact-mode .badge-graded-label {
       order: 3;
       flex-shrink: 0;
       font-size: 0.725rem;
@@ -958,7 +974,7 @@
       margin-left: 0;
     }
 
-    .outline-feed.compact-mode .topic-date-badge:not(.badge-extra-label):not(.badge-project-label) {
+    .outline-feed.compact-mode .topic-date-badge:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
       order: 4;
       flex-shrink: 0;
       margin-left: auto;
@@ -1226,8 +1242,8 @@
         overflow: visible;
         text-overflow: clip;
       }
-      .topic-date-badge:not(.badge-extra-label):not(.badge-project-label),
-      .outline-feed.compact-mode .topic-date-badge:not(.badge-extra-label):not(.badge-project-label) {
+      .topic-date-badge:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label),
+      .outline-feed.compact-mode .topic-date-badge:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
         width: 100%;
         margin-left: 0;
         justify-content: flex-start;
@@ -1238,8 +1254,10 @@
       }
       .badge-extra-label,
       .badge-project-label,
+      .badge-graded-label,
       .outline-feed.compact-mode .badge-extra-label,
-      .outline-feed.compact-mode .badge-project-label {
+      .outline-feed.compact-mode .badge-project-label,
+      .outline-feed.compact-mode .badge-graded-label {
         font-size: 0.68rem;
         padding: 0.16rem 0.4rem;
       }
@@ -2125,7 +2143,9 @@
         const lessonAnchorId = getTopicAnchorId(topic);
 
         const titleLower = topic.title.toLowerCase();
+        const titleNormalized = titleLower.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const isProject = titleLower.includes('projeto');
+        const isGradedExercise = titleNormalized.includes('exercicio avaliativo');
 
         const card = document.createElement('div');
         card.className = 'topic-card';
@@ -2165,6 +2185,10 @@
 
         if (isProject) {
           headerHtml += `<span class="topic-date-badge badge-project-label">🚀 PROJETO</span>`;
+        }
+
+        if (isGradedExercise) {
+          headerHtml += `<span class="topic-date-badge badge-graded-label">📝 VALE NOTA</span>`;
         }
 
         if (topic.dateObj) {

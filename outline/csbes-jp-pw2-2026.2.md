@@ -83,9 +83,9 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
 - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
 
-## Objetos
+## Exercício Avaliativo
 
-- [Exercício: Objeto Exame](https://ifpb.github.io/exercises/problems/object-exam/)
+- [Exercício: Objeto Exame (Avaliativo)](https://ifpb.github.io/exercises/problems/object-exam/)
 - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
 - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
 
@@ -99,9 +99,9 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Conteúdo: Elementos Dinâmicos](https://ifpb.github.io/pw2/w3c/dynamic-elements/)
 - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
 
-## Exercício Elementos Dinâmicos
+## Exercício Avaliativo
 
-- [Exercício: Banderas de Países](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
+- [Exercício: Banderas de Países (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
 - [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
 
 ## Projeto Definição
@@ -176,9 +176,9 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Conteúdo: Supabase Client](https://ifpb.github.io/pw2/package/supabase-client/)
 - [Conteúdo: Consumo do Supabase](https://ifpb.github.io/pw2/package/http-client/)
 
-## Exercício Requisição Assíncrona
+## Exercício Avaliativo
 
-- [Exercício: API de CEP](https://ifpb.github.io/exercises/problems/web-script-address-cep-api/)
+- [Exercício: API de CEP (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-address-cep-api/)
 
 ## React - Auth
 
@@ -187,10 +187,6 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 ## Projeto Acompanhamento
 
 ## Apresentação do Projeto (Etapa II)
-
-- [Replit: Radar Crypto (React Context)](https://replit.com/@lucachaves/radar-crypto-context-react#README.md)
-- [Replit: Economic App Storage](https://replit.com/@lucachaves/economic-app-storage-ls-20221)
-- [GitHub: Economic App React](https://github.com/lucachaves/ls-economic-react-2022-1)
 
 ## Próximos Passos e Recuperação
 

@@ -87,11 +87,11 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Função e Módulos
 
-## Exercício JS Intro
+## Exercício JS Intro e Exercício Avaliativo
 
-- [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/algorithms/function-calc/)
-- [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/algorithms/function-area-of-circle/)
-- [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/algorithms/function-triangle-checker/)
+- [Exercício (Avaliativo): Calculadora](https://ifpb.github.io/exercises/problems/algorithms/function-calc/)
+- [Exercício (Avaliativo): Área do Círculo](https://ifpb.github.io/exercises/problems/algorithms/function-area-of-circle/)
+- [Exercício (Avaliativo): Verificador de Triângulos](https://ifpb.github.io/exercises/problems/algorithms/function-triangle-checker/)
 
 ## API do JS (Array, String, Object)
 
@@ -115,11 +115,11 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 - [Conteúdo: Local Storage](https://ifpb.github.io/dw/w3c/local-storage/)
 
-## Exercício JS Web e API Rest (Fetch)
+## API Rest (Fetch) e Exercício Avaliativo
 
 - [Conteúdo: JSON Server](https://ifpb.github.io/dw/package/json-server/)
 - [Conteúdo: Fetch API](https://ifpb.github.io/dw/w3c/fetch-api/)
-- [Exercício: IPInfo API Table](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
+- [Exercício: IPInfo API Table (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
 - [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
 - [Exercício: IP Table](https://ifpb.github.io/exercises/problems/web-script-iptable/)
 
@@ -141,10 +141,10 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Conteúdo: Node.js - HTTP](https://ifpb.github.io/dw/nodejs/http/)
 - [Conteúdo: Introdução ao Express](https://ifpb.github.io/dw/expressjs/introduction/)
 
-## Exercício Backend
+## Exercício Backend e Exercício Avaliativo
 
-- [Exercício: Web API Basic Hello](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
-- [Exercício: Web API Utils](https://ifpb.github.io/exercises/problems/web-api-utils/)
+- [Exercício: Web API Basic Hello (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
+- [Exercício: Web API Utils (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-utils/)
 
 ## Integrar Back e Front e Construir API Rest
 
