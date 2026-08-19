@@ -1,8 +1,8 @@
 ---
-disciplina: Programação Web II
+disciplina: Programação para Web II
 curso: Bacharelado em Engenharia de Software
 periodo: 2026.2
-carga_horaria: 60h
+carga_horaria: 80ha
 professor: Luiz Carlos Rodrigues Chaves
 calendario: ../calendar/2026.2.json
 horarios:
@@ -111,7 +111,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Apresentação da Proposta do Projeto
 
-## Eventos
+## Manipulação de Eventos
 
 - [Conteúdo: Tratamento de Eventos](https://ifpb.github.io/pw2/w3c/event-handling/)
 
@@ -131,6 +131,10 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Conteúdo: Local Storage](https://ifpb.github.io/pw2/w3c/local-storage/)
 
 ## Projeto Acompanhamento
+
+## Pulsar (16/10/2026 - 3 aulas)
+
+## Pulsar (17/10/2026 - 3 aulas)
 
 ## Apresentação do Projeto (Etapa I)
 

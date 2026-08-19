@@ -2,7 +2,7 @@
 disciplina: Linguagens de Programação II
 curso: Curso Técnico Integrado em Informática
 periodo: 2026
-carga_horaria: 67h
+carga_horaria: 80ha
 professor: Luiz Carlos Rodrigues Chaves
 calendario: ../calendar/2026.json
 horarios:

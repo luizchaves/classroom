@@ -22,6 +22,7 @@
       --content-max-width: 1100px;
       --content-shell-max-width: calc(var(--content-max-width) + 4rem);
       --page-gutter: 2rem;
+      --lesson-top-gap: 24px;
 
       --badge-dw-bg: #e0f2fe;
       --badge-dw-text: #0369a1;
@@ -70,108 +71,136 @@
     header {
       background-color: var(--bg-card);
       border-bottom: 1px solid var(--border-color);
-      padding: 1.25rem var(--page-gutter);
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      padding: 0.85rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
       position: sticky;
       top: 0;
       z-index: 100;
     }
 
     .header-container {
-      max-width: var(--content-max-width);
+      max-width: var(--content-shell-max-width);
       margin: 0 auto;
+      padding: 0 var(--page-gutter);
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .header-main {
+      display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
+      gap: 1.25rem;
+      min-width: 0;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.85rem;
+      flex: 1 1 auto;
+      min-width: 0;
     }
 
-    .logo-badge {
-      background: linear-gradient(135deg, #0284c7, #16a34a);
-      color: white;
-      font-weight: 800;
-      font-size: 1.25rem;
-      padding: 0.5rem 0.85rem;
-      border-radius: 0.75rem;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
+    .brand-text {
+      min-width: 0;
+      width: 100%;
+    }
+
+    .brand-title-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.55rem 0.7rem;
     }
 
     .brand-text h1 {
-      font-size: 1.35rem;
+      font-size: 1.28rem;
       font-weight: 800;
       color: var(--text-main);
+      line-height: 1.15;
     }
 
     .brand-text p {
-      font-size: 0.85rem;
+      margin-top: 0.12rem;
+      font-size: 0.82rem;
       color: var(--text-muted);
+      line-height: 1.35;
     }
 
-    /* Universal Subject Selector Dropdown */
-    .subject-selector-box {
+    .brand-subtitle-line {
+      display: block;
+    }
+
+    .header-lessons-summary {
       display: flex;
       align-items: center;
-      gap: 0.6rem;
-      background: #f8fafc;
-      border: 1px solid var(--border-color);
-      padding: 0.45rem 0.85rem;
-      border-radius: 0.6rem;
+      flex-wrap: nowrap;
+      gap: 0.45rem 0.6rem;
+      margin-top: 0.55rem;
     }
 
-    .subject-selector-box label {
-      font-size: 0.8rem;
-      font-weight: 800;
+    .header-lessons-label {
       color: var(--text-muted);
-      text-transform: uppercase;
+      flex-shrink: 0;
+      font-size: 0.68rem;
+      font-weight: 800;
       letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .header-lessons-summary .schedule-info-group {
+      flex-wrap: nowrap;
+      min-width: 0;
+    }
+
+    .header-lessons-summary .schedule-item {
+      flex-shrink: 0;
       white-space: nowrap;
     }
 
-    .subject-selector-box select {
-      font-family: inherit;
-      font-size: 0.875rem;
-      font-weight: 700;
-      color: var(--primary);
-      background: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 0.4rem;
-      padding: 0.35rem 0.65rem;
-      outline: none;
-      cursor: pointer;
-      transition: border-color 0.2s ease;
+    .header-aulas-summary {
+      margin-top: 0.32rem;
     }
 
-    .subject-selector-box select:hover,
-    .subject-selector-box select:focus {
-      border-color: var(--primary);
-    }
-
-    .periodos-pills {
-      display: flex;
-      gap: 0.75rem;
+    .header-lessons-summary .lesson-metrics-group {
       flex-wrap: wrap;
+    }
+
+    .lesson-metrics-group .pill {
+      border-radius: 0.4rem;
+      flex: 0 0 auto;
+      font-size: 0.72rem;
+      line-height: 1.25;
+      padding: 0.18rem 0.45rem;
+      white-space: nowrap;
+    }
+
+    .header-period-pill {
+      color: var(--text-muted);
+      flex-shrink: 0;
+      font-size: 1.28rem;
+      font-weight: 800;
+      line-height: 1.15;
     }
 
     .pill {
       background: #f1f5f9;
       border: 1px solid var(--border-color);
-      padding: 0.4rem 0.85rem;
-      border-radius: 2rem;
-      font-size: 0.8rem;
-      font-weight: 600;
+      padding: 0.42rem 0.65rem;
+      border-radius: 0.55rem;
+      font-size: 0.76rem;
+      font-weight: 700;
       color: var(--text-main);
       display: flex;
       align-items: center;
       gap: 0.35rem;
       transition: all 0.2s ease;
+    }
+
+    .pill[hidden] {
+      display: none;
     }
 
     .pill-accent {
@@ -222,60 +251,34 @@
       font-weight: 800;
     }
 
-    .sticky-course-controls {
+    .sticky-page-tools {
       position: sticky;
       top: var(--sticky-tools-top, 0);
       z-index: 90;
       background-color: var(--bg-main);
-      padding: 1.5rem 0 1.25rem;
+      padding: 0.85rem 0;
       box-shadow: 0 10px 20px -22px rgba(15, 23, 42, 0.4);
-    }
-
-    /* Course Banner Card */
-    .course-banner-container {
-      max-width: var(--content-shell-max-width);
-      margin: 0 auto;
-      padding: 0 var(--page-gutter);
-    }
-
-    .course-banner {
-      background: var(--bg-card);
-      border: 1px solid var(--border-color);
-      border-radius: 0.85rem;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.85rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
-    }
-
-    .course-banner-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
 
     .schedule-info-group {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.75rem;
+      gap: 0.35rem;
       align-items: center;
     }
 
     .schedule-item {
       background-color: #f8fafc;
       border: 1px solid var(--border-color);
-      border-radius: 0.5rem;
-      padding: 0.4rem 0.75rem;
-      font-size: 0.85rem;
+      border-radius: 0.4rem;
+      padding: 0.18rem 0.45rem;
+      font-size: 0.72rem;
       font-weight: 600;
       color: var(--text-main);
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      gap: 0.3rem;
+      line-height: 1.25;
     }
 
     .schedule-item span {
@@ -306,7 +309,7 @@
     /* Controls & Search */
     .controls-bar {
       max-width: var(--content-shell-max-width);
-      margin: 1rem auto 0;
+      margin: 0 auto;
       padding: 0 var(--page-gutter);
       display: flex;
       flex-wrap: wrap;
@@ -374,6 +377,46 @@
       box-shadow: 0 1px 2px rgba(0,0,0,0.03);
     }
 
+    .controls-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .jump-lesson-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: inherit;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 0.34rem 0.75rem;
+      border: 1px solid #7dd3fc;
+      border-radius: 0.4rem;
+      background: #e0f2fe;
+      color: #0369a1;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .jump-lesson-btn svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .jump-lesson-btn:hover:not(:disabled) {
+      background: #bae6fd;
+      border-color: #38bdf8;
+      color: #075985;
+    }
+
+    .jump-lesson-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.52;
+    }
+
     .view-btn {
       display: inline-flex;
       align-items: center;
@@ -409,7 +452,7 @@
     .outline-feed {
       max-width: var(--content-shell-max-width);
       margin: 0 auto;
-      padding: 0 var(--page-gutter);
+      padding: var(--lesson-top-gap) var(--page-gutter) 0;
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
@@ -419,7 +462,7 @@
     .outline-calendar-grid {
       max-width: var(--content-shell-max-width);
       margin: 0 auto;
-      padding: 0 var(--page-gutter);
+      padding: var(--lesson-top-gap) var(--page-gutter) 0;
       display: none;
       grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
       gap: 1.25rem;
@@ -1056,63 +1099,52 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      :root { --page-gutter: 1rem; }
+      :root {
+        --page-gutter: 1rem;
+        --lesson-top-gap: 20px;
+      }
       header {
         position: static;
-        padding: 0.85rem var(--page-gutter);
+        padding: 0.85rem 0;
       }
       .header-container {
+        gap: 0.75rem;
+      }
+      .header-main {
         flex-direction: column;
         align-items: stretch;
         gap: 0.75rem;
       }
       .brand {
-        align-items: flex-start;
+        align-items: center;
         gap: 0.75rem;
         min-width: 0;
-      }
-      .logo-badge {
-        font-size: 1rem;
-        padding: 0.42rem 0.65rem;
-        border-radius: 0.58rem;
       }
       .brand-text {
         min-width: 0;
       }
+      .brand-title-row {
+        gap: 0.4rem;
+      }
       .brand-text h1 {
-        font-size: 1rem;
+        font-size: 1.04rem;
         line-height: 1.2;
       }
       .brand-text p {
         font-size: 0.76rem;
         line-height: 1.35;
       }
-      .subject-selector-box {
+      .header-lessons-summary {
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+      }
+      .header-lessons-label {
         width: 100%;
-        padding: 0.5rem;
-        gap: 0.45rem;
+        font-size: 0.64rem;
       }
-      .subject-selector-box label {
-        width: 1.2rem;
-        flex-shrink: 0;
-        font-size: 0;
-        letter-spacing: 0;
-      }
-      .subject-selector-box label::before {
-        content: "📚";
-        font-size: 1rem;
-      }
-      .subject-selector-box select {
-        flex: 1;
-        min-width: 0;
-        width: 100%;
-        font-size: 0.78rem;
-      }
-      .periodos-pills {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.45rem;
+      .schedule-item {
+        font-size: 0.68rem;
       }
       .pill {
         width: 100%;
@@ -1125,49 +1157,37 @@
         white-space: normal;
         overflow-wrap: anywhere;
       }
-      #meta-periodo { order: 1; }
-      #badge-aulas-ministradas { order: 2; }
-      #badge-progresso-data { order: 3; }
-      #badge-status-carga { order: 4; }
-      .sticky-course-controls {
-        padding: 1rem 0 0.75rem;
-      }
-      .course-banner-container {
-        padding: 0 1rem;
-      }
-      .course-banner {
-        padding: 0.75rem;
-        border-radius: 0.65rem;
-        gap: 0.55rem;
-      }
-      .course-banner-title {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 0.25rem;
-        font-size: 0.95rem;
+      .lesson-metrics-group .pill {
+        width: auto;
+        font-size: 0.68rem;
         line-height: 1.25;
+        padding: 0.16rem 0.38rem;
+        white-space: normal;
       }
-      .course-banner-title span:last-child {
-        font-size: 0.72rem !important;
-        line-height: 1.3;
+      .header-period-pill {
+        flex-shrink: 0;
+        font-size: 1.04rem;
+        line-height: 1.2;
+      }
+      #badge-progresso-data { order: 1; }
+      #badge-aulas-ministradas { order: 2; }
+      #badge-carga-diferenca { order: 3; }
+      .sticky-page-tools {
+        padding: 0.65rem 0;
       }
       .schedule-info-group {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      .header-lessons-summary .schedule-info-group {
+        flex-wrap: wrap;
+      }
+      .header-lessons-summary .schedule-item {
+        white-space: normal;
       }
       .schedule-item {
-        width: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0.45rem 0.5rem;
-        font-size: 0.74rem;
-        line-height: 1.25;
-        gap: 0.15rem;
-      }
-      .schedule-item span {
-        display: block;
-        line-height: 1.25;
+        padding: 0.16rem 0.38rem;
+        gap: 0.25rem;
       }
       .schedule-main .schedule-day-full {
         display: none;
@@ -1176,7 +1196,7 @@
         display: inline;
       }
       .controls-bar {
-        margin: 0.75rem auto 0;
+        margin: 0 auto;
         padding: 0 1rem;
         flex-direction: column;
         align-items: stretch;
@@ -1194,6 +1214,13 @@
       .search-info-text {
         font-size: 0.78rem;
         line-height: 1.35;
+      }
+      .controls-actions {
+        width: 100%;
+      }
+      .jump-lesson-btn {
+        width: 100%;
+        justify-content: center;
       }
       .view-switcher-group {
         width: 100%;
@@ -1365,49 +1392,38 @@
   <!-- Header -->
   <header>
     <div class="header-container">
-      <div class="brand">
-        <div class="logo-badge">IFPB</div>
-        <div class="brand-text">
-          <h1 id="meta-disciplina">Desenvolvimento Web</h1>
-          <p id="meta-curso">Curso Superior de Tecnologia em Redes de Computadores • IFPB Campus JP</p>
+      <div class="header-main">
+        <div class="brand">
+          <div class="brand-text">
+            <div class="brand-title-row">
+              <h1 id="meta-disciplina">Desenvolvimento Web</h1>
+              <span class="header-period-pill" id="meta-periodo">2026.2</span>
+            </div>
+            <p>
+              <span class="brand-subtitle-line" id="meta-curso">Curso Superior de Tecnologia em Redes de Computadores • IFPB Campus JP</span>
+              <span class="brand-subtitle-line" id="meta-professor">Prof. Luiz Carlos Rodrigues Chaves</span>
+            </p>
+            <div class="header-lessons-summary">
+              <span class="header-lessons-label">Horários</span>
+              <div class="schedule-info-group" id="schedule-items">
+                <!-- Rendered dynamically -->
+              </div>
+            </div>
+            <div class="header-lessons-summary header-aulas-summary">
+              <span class="header-lessons-label">Aulas</span>
+              <div class="schedule-info-group lesson-metrics-group">
+                <div class="pill pill-progress" id="badge-progresso-data">📈 Progresso: --</div>
+                <div class="pill pill-info" id="badge-aulas-ministradas">🎓 Planejadas: --</div>
+                <div class="pill pill-progress-muted" id="badge-carga-diferenca">Faltam: --</div>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <!-- Universal Subject Selector Dropdown -->
-      <div class="subject-selector-box">
-        <label for="subject-select">📚 Disciplina:</label>
-        <select id="subject-select" aria-label="Selecionar Disciplina">
-          <option value="cstrc-jp-dw-2026.2.md">DW 2026.2 (Desenvolvimento Web)</option>
-          <option value="ctii-jp-lp2-2026.md">LP2 2026 (Linguagens de Programação II)</option>
-          <option value="csbes-jp-pw2-2026.2.md">PW2 2026.2 (Programação Web II)</option>
-        </select>
-      </div>
-
-      <div class="periodos-pills">
-        <div class="pill pill-accent" id="meta-periodo">📅 Período 2026.2</div>
-        <div class="pill pill-progress" id="badge-progresso-data">📈 Progresso: --</div>
-        <div class="pill pill-info" id="badge-aulas-ministradas">🎓 -- aulas planejadas</div>
-        <div class="pill pill-warning" id="badge-status-carga">⚠️ Status: Calculando...</div>
       </div>
     </div>
   </header>
 
-  <div class="sticky-course-controls">
-    <!-- Banner da Disciplina & Horários -->
-    <div class="course-banner-container">
-      <div class="course-banner">
-        <div class="course-banner-title">
-          <span>📖 Plano de Aulas e Cronograma</span>
-          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" id="meta-professor">Prof. Luiz Carlos Rodrigues Chaves</span>
-        </div>
-
-        <div class="schedule-info-group" id="schedule-items">
-          <!-- Rendered dynamically -->
-        </div>
-
-      </div>
-    </div>
-
+  <div class="sticky-page-tools">
     <!-- Controls Bar -->
     <div class="controls-bar">
       <div class="controls-left">
@@ -1421,17 +1437,24 @@
         </div>
       </div>
 
-      <!-- Lucide View Switcher -->
-      <div class="view-switcher-group">
-        <button id="view-compact-btn" class="view-btn active" title="Exibir aulas em lista">
-          <i data-lucide="list"></i> Lista
+      <div class="controls-actions">
+        <button id="jump-current-lesson-btn" class="jump-lesson-btn" type="button" disabled title="Ir para a aula de hoje ou próxima aula">
+          <i data-lucide="calendar-clock"></i>
+          <span id="jump-current-lesson-label">Aula</span>
         </button>
-        <button id="view-detailed-btn" class="view-btn" title="Exibir conteúdo completo das aulas">
-          <i data-lucide="file-text"></i> Conteúdo
-        </button>
-        <button id="view-calendar-btn" class="view-btn" title="Exibir Aulas em Calendário">
-          <i data-lucide="calendar-days"></i> Calendário
-        </button>
+
+        <!-- Lucide View Switcher -->
+        <div class="view-switcher-group">
+          <button id="view-compact-btn" class="view-btn active" type="button" title="Exibir aulas em lista">
+            <i data-lucide="list"></i> Lista
+          </button>
+          <button id="view-detailed-btn" class="view-btn" type="button" title="Exibir conteúdo completo das aulas">
+            <i data-lucide="file-text"></i> Conteúdo
+          </button>
+          <button id="view-calendar-btn" class="view-btn" type="button" title="Exibir Aulas em Calendário">
+            <i data-lucide="calendar-days"></i> Calendário
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -1448,12 +1471,16 @@
 
   <script>
     let rawCalendarData = null;
-    let targetWorkloadHours = 100; // default 100h relógio
-    let targetWorkloadAulas = 120; // 100h relógio = 120 aulas (50 min)
+    let targetWorkloadAulas = 120; // padrão: 120 aulas de 50 min
+    let targetWorkloadMinutes = targetWorkloadAulas * 50;
     const initialOutlineView = new URLSearchParams(window.location.search).get('view');
     let currentOutlineView = ['compact', 'detailed', 'calendar'].includes(initialOutlineView) ? initialOutlineView : 'compact';
     let currentPeriodId = null;
+    let scrollHashFrame = null;
+    let suspendScrollHashUpdates = false;
+    let pendingViewSwitchAnchorId = null;
     const calendarTooltipEl = document.getElementById('lesson-calendar-tooltip');
+    const defaultSubjectFile = 'cstrc-jp-dw-2026.2.md';
 
     const weekdaysFullNames = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];
     const todayIsoDate = getTodayIsoDate();
@@ -1496,6 +1523,31 @@
       return `${h}h ${m}min`;
     }
 
+    function resetTargetWorkload() {
+      targetWorkloadAulas = 120;
+      targetWorkloadMinutes = targetWorkloadAulas * 50;
+    }
+
+    function setTargetWorkload(rawValue) {
+      const clean = String(rawValue || '').trim().toLowerCase();
+      const valueMatch = clean.match(/(\d+(?:[.,]\d+)?)/);
+      if (!valueMatch) return;
+
+      const value = parseFloat(valueMatch[1].replace(',', '.'));
+      if (!Number.isFinite(value)) return;
+
+      const suffix = clean.slice(valueMatch.index + valueMatch[0].length).trim();
+      const isClassHour = /^(ha\b|h\/a\b|horas?[-\s]*aulas?\b|aulas?\b)/.test(suffix);
+
+      if (isClassHour) {
+        targetWorkloadAulas = Math.ceil(value);
+        targetWorkloadMinutes = targetWorkloadAulas * 50;
+      } else {
+        targetWorkloadMinutes = Math.round(value * 60);
+        targetWorkloadAulas = Math.ceil(targetWorkloadMinutes / 50);
+      }
+    }
+
     function updateQueryString(params, options = {}) {
       const currentUrl = new URL(window.location.href);
 
@@ -1513,31 +1565,59 @@
       window.history.pushState({ path: currentUrl.toString() }, '', currentUrl.toString());
     }
 
+    function getSubjectSlug(subjectFile) {
+      return String(subjectFile || '').trim().replace(/\.md$/i, '');
+    }
+
+    function getSubjectFileFromSlug(subjectValue) {
+      const subjectSlug = getSubjectSlug(subjectValue);
+      return subjectSlug ? `${subjectSlug}.md` : defaultSubjectFile;
+    }
+
+    function normalizeSubjectQuery(activeFile) {
+      const currentUrl = new URL(window.location.href);
+      const hasSubjectParam = currentUrl.searchParams.has('subject');
+      const hasFileParam = currentUrl.searchParams.has('file');
+      if (!hasSubjectParam && !hasFileParam) return;
+
+      const subjectSlug = getSubjectSlug(activeFile);
+      let changed = false;
+
+      if (currentUrl.searchParams.get('subject') !== subjectSlug) {
+        currentUrl.searchParams.set('subject', subjectSlug);
+        changed = true;
+      }
+
+      if (hasFileParam) {
+        currentUrl.searchParams.delete('file');
+        changed = true;
+      }
+
+      if (changed) {
+        window.history.replaceState({ path: currentUrl.toString() }, '', currentUrl.toString());
+      }
+    }
+
     function getSelectedSubjectFile() {
       const urlParams = new URLSearchParams(window.location.search);
       const paramSubject = urlParams.get('subject') || urlParams.get('file');
       if (paramSubject) {
-        if (paramSubject.endsWith('.md')) return paramSubject;
-        return `${paramSubject}.md`;
+        return getSubjectFileFromSlug(paramSubject);
       }
 
       if (window.location.hash) {
         const hashVal = window.location.hash.replace('#', '').trim();
-        if (hashVal && !hashVal.startsWith('aula-')) {
-          if (hashVal.endsWith('.md')) return hashVal;
-          return `${hashVal}.md`;
+        if (hashVal && !hashVal.startsWith('aula-') && !hashVal.startsWith('sem-aula-')) {
+          return getSubjectFileFromSlug(hashVal);
         }
       }
 
-      return document.getElementById('subject-select').value || 'cstrc-jp-dw-2026.2.md';
+      return defaultSubjectFile;
     }
 
     async function loadSubjectOutline(fileToLoad) {
       const activeFile = fileToLoad || getSelectedSubjectFile();
-      const selectEl = document.getElementById('subject-select');
-      if (selectEl && selectEl.value !== activeFile) {
-        selectEl.value = activeFile;
-      }
+      normalizeSubjectQuery(activeFile);
 
       let rawMarkdown = '';
 
@@ -1561,7 +1641,7 @@
 
       for (const url of candidateUrls) {
         try {
-          const res = await fetch(url);
+          const res = await fetch(url, { cache: 'no-store' });
           if (res.ok) {
             const txt = await res.text();
             if (txt && txt.includes('---')) {
@@ -1603,7 +1683,7 @@
 
       for (const url of calendarCandidates) {
         try {
-          const res = await fetch(url);
+          const res = await fetch(url, { cache: 'no-store' });
           if (res.ok) {
             rawCalendarData = await res.json();
             if (rawCalendarData) break;
@@ -1639,12 +1719,20 @@
       return new Date(year, month - 1, day).getTime();
     }
 
+    function countsTowardWorkload(topic) {
+      return !topic.isNoClass;
+    }
+
+    function isExtraClass(topic) {
+      return countsTowardWorkload(topic) && topic.dateObj?.isExtra;
+    }
+
     function getDeliveredClassSummary() {
       const deliveredDates = new Set();
       let deliveredAulas = 0;
 
       (window.topicsData || []).forEach(topic => {
-        if (topic.isNoClass || !topic.dateObj?.isoDate || topic.dateObj.isoDate > todayIsoDate) return;
+        if (!countsTowardWorkload(topic) || !topic.dateObj?.isoDate || topic.dateObj.isoDate > todayIsoDate) return;
 
         deliveredDates.add(topic.dateObj.isoDate);
         deliveredAulas += topic.dateObj.aulas || 0;
@@ -1852,6 +1940,8 @@
     }
 
     function parseOutlineData(rawMarkdown) {
+      resetTargetWorkload();
+
       const fmMatch = rawMarkdown.match(/^---\s*\n([\s\S]*?)\n---/);
       let content = rawMarkdown;
       const parsedSchedule = [];
@@ -1871,19 +1961,14 @@
         const perMatch = fmText.match(/periodo:\s*(.*)/);
         if (perMatch) {
           currentPeriodId = perMatch[1].trim();
-          document.getElementById('meta-periodo').textContent = '📅 Período ' + currentPeriodId;
+          document.getElementById('meta-periodo').textContent = currentPeriodId;
         } else {
           currentPeriodId = null;
         }
 
         const cargaMatch = fmText.match(/carga_horaria:\s*(.*)/);
         if (cargaMatch) {
-          const chStr = cargaMatch[1].trim();
-          const parsedCh = parseInt(chStr);
-          if (!isNaN(parsedCh)) {
-            targetWorkloadHours = parsedCh;
-            targetWorkloadAulas = Math.round((parsedCh * 60) / 50);
-          }
+          setTargetWorkload(cargaMatch[1].trim());
         }
 
         const profMatch = fmText.match(/professor:\s*(.*)/);
@@ -2113,6 +2198,61 @@
       return `Aula ${lessonNumStr}`;
     }
 
+    function getTodayOrNextLessonTarget() {
+      const upcomingTopics = (window.topicsData || [])
+        .filter(topic => !topic.isNoClass && topic.dateObj?.isoDate && topic.dateObj.isoDate >= todayIsoDate);
+
+      const todayTopic = upcomingTopics.find(topic => topic.dateObj.isoDate === todayIsoDate);
+      const topic = todayTopic || upcomingTopics[0] || null;
+
+      return topic ? {
+        topic,
+        isToday: topic.dateObj.isoDate === todayIsoDate
+      } : null;
+    }
+
+    function updateJumpLessonButton() {
+      const button = document.getElementById('jump-current-lesson-btn');
+      const label = document.getElementById('jump-current-lesson-label');
+      if (!button || !label) return;
+
+      const target = getTodayOrNextLessonTarget();
+      if (!target) {
+        button.disabled = true;
+        label.textContent = 'Sem próximas aulas';
+        button.title = 'Não há aulas futuras cadastradas';
+        return;
+      }
+
+      const lessonLabel = getTopicLessonLabel(target.topic);
+      const prefix = target.isToday ? 'Hoje' : 'Próxima';
+      button.disabled = false;
+      label.textContent = `${prefix}: ${lessonLabel}`;
+      button.title = `Ir para ${lessonLabel} - ${target.topic.title} (${target.topic.dateObj.dateStr})`;
+    }
+
+    function jumpToTodayOrNextLesson() {
+      const target = getTodayOrNextLessonTarget();
+      if (!target) return;
+
+      const searchInput = document.getElementById('search-input');
+      if (searchInput && searchInput.value.trim()) {
+        searchInput.value = '';
+        renderTopics();
+      }
+
+      if (currentOutlineView === 'calendar') {
+        setOutlineView('compact');
+      }
+
+      const anchorId = getTopicAnchorId(target.topic);
+      const currentUrl = new URL(window.location.href);
+      currentUrl.hash = anchorId;
+      window.history.pushState({}, '', currentUrl.toString());
+
+      setTimeout(() => scrollToLesson(anchorId), 80);
+    }
+
     function topicMatchesSearch(topic, searchQuery) {
       if (!searchQuery) return true;
 
@@ -2132,15 +2272,39 @@
         .replace(/"/g, '&quot;');
     }
 
+    function getTopicsSummary(topics) {
+      return (topics || []).reduce((summary, topic) => {
+        summary.count += 1;
+
+        if (!topic.isNoClass) {
+          const aulas = topic.dateObj?.aulas || 0;
+          summary.days += 1;
+          summary.aulas += aulas;
+
+          if (isExtraClass(topic)) {
+            summary.extraDays += 1;
+            summary.extraAulas += aulas;
+          }
+        }
+
+        return summary;
+      }, {
+        count: 0,
+        days: 0,
+        aulas: 0,
+        extraDays: 0,
+        extraAulas: 0
+      });
+    }
+
     function renderTopics() {
       const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
       const feed = document.getElementById('outline-feed');
       feed.innerHTML = '';
 
-      let count = 0;
-      let sumDays = 0;
-      let sumAulas = 0;
       const visibleTopics = window.topicsData.filter(topic => topicMatchesSearch(topic, searchQuery));
+      const visibleSummary = getTopicsSummary(visibleTopics);
+      const fullSummary = getTopicsSummary(window.topicsData);
       const hasTodayTopic = visibleTopics.some(topic => topic.dateObj?.isoDate === todayIsoDate);
       const nextLessonDateIso = visibleTopics
         .filter(topic => !topic.isNoClass && topic.dateObj?.isoDate && topic.dateObj.isoDate >= todayIsoDate)
@@ -2148,14 +2312,6 @@
         .sort()[0] || null;
 
       visibleTopics.forEach((topic, index) => {
-        count++;
-        if (!topic.isNoClass) {
-          sumDays += 1;
-          if (topic.dateObj && topic.dateObj.aulas) {
-            sumAulas += topic.dateObj.aulas;
-          }
-        }
-
         const lessonAnchorId = getTopicAnchorId(topic);
 
         const titleLower = topic.title.toLowerCase();
@@ -2271,40 +2427,55 @@
       });
 
       // Update Header Badges dynamically
-      const sumMinutes = sumAulas * 50;
+      const sumMinutes = fullSummary.aulas * 50;
       const sumClockStr = formatMinutesToHours(sumMinutes);
 
       const badgeAulas = document.getElementById('badge-aulas-ministradas');
-      const badgeStatus = document.getElementById('badge-status-carga');
       const badgeProgress = document.getElementById('badge-progresso-data');
+      const badgeWorkloadDelta = document.getElementById('badge-carga-diferenca');
+      const targetMinutes = targetWorkloadMinutes;
+      const targetClockStr = formatMinutesToHours(targetMinutes);
+      const diffMinutes = sumMinutes - targetMinutes;
+      const extraSummary = fullSummary.extraAulas > 0
+        ? ` • +${fullSummary.extraAulas} extras`
+        : '';
+      badgeAulas.className = diffMinutes < 0 ? 'pill pill-warning' : 'pill pill-success';
+      badgeAulas.textContent = `🎓 Planejadas: ${fullSummary.aulas}/${targetWorkloadAulas} aulas (${sumClockStr}/${targetClockStr})${extraSummary}`;
+      badgeWorkloadDelta.hidden = false;
 
-      badgeAulas.textContent = `🎓 ${sumAulas} aulas (${sumClockStr}) planejadas`;
+      if (diffMinutes < 0) {
+        const neededMinutes = Math.abs(diffMinutes);
+        const neededAulas = Math.ceil(neededMinutes / 50);
+        const neededClockStr = formatMinutesToHours(neededMinutes);
+        const neededAulasLabel = neededAulas === 1 ? '1 aula' : `${neededAulas} aulas`;
+        badgeWorkloadDelta.className = 'pill pill-warning';
+        badgeWorkloadDelta.textContent = `Faltam: ${neededAulasLabel} (${neededClockStr})`;
+      } else if (diffMinutes > 0) {
+        const extraAulas = Math.ceil(diffMinutes / 50);
+        const extraClockStr = formatMinutesToHours(diffMinutes);
+        const extraAulasLabel = extraAulas === 1 ? '+1 aula' : `+${extraAulas} aulas`;
+        badgeWorkloadDelta.className = 'pill pill-info';
+        badgeWorkloadDelta.textContent = `Passou: ${extraAulasLabel} (${extraClockStr})`;
+      } else {
+        badgeWorkloadDelta.hidden = true;
+        badgeWorkloadDelta.textContent = '';
+      }
 
       const progressMeta = getDateProgressMeta();
       badgeProgress.className = progressMeta.className;
       badgeProgress.textContent = progressMeta.text;
+      updateJumpLessonButton();
 
-      const diffAulas = sumAulas - targetWorkloadAulas;
+      const searchInfoPrefix = searchQuery ? 'Filtro' : 'Todos';
 
-      if (diffAulas < 0) {
-        const neededAulas = Math.abs(diffAulas);
-        const neededClockStr = formatMinutesToHours(neededAulas * 50);
-        badgeStatus.className = 'pill pill-warning';
-        badgeStatus.textContent = `⚠️ Status: Faltam ${neededAulas} aulas (${neededClockStr})`;
-      } else {
-        const extraClockStr = formatMinutesToHours(diffAulas * 50);
-        const extraStr = diffAulas > 0 ? ` (+${diffAulas} aulas / ${extraClockStr} excedentes)` : ' (100% cumprida)';
-        badgeStatus.className = 'pill pill-success';
-        badgeStatus.textContent = `✅ Status: Concluída${extraStr}`;
-      }
-
-      document.getElementById('search-info-text').textContent = searchQuery 
-        ? `Filtrado: ${count} tópico(s) (${sumDays} dias • ${sumAulas} aulas = ${sumClockStr})`
-        : `Exibindo todos os ${count} tópicos cadastrados (${sumDays} dias de aula)`;
+      document.getElementById('search-info-text').textContent =
+        `${searchInfoPrefix}: ${visibleSummary.count} tópicos • ${visibleSummary.days} dias • ${visibleSummary.aulas} aulas`;
 
       if (currentOutlineView === 'calendar') {
         renderCalendarView();
       }
+
+      updateStickyOffsets();
 
       // Initialize Lucide Icons if available
       if (window.lucide) {
@@ -2570,6 +2741,14 @@
         mode = 'compact';
       }
 
+      const previousMode = currentOutlineView;
+      const preservedAnchorId = options.preserveTopLesson
+        && previousMode !== 'calendar'
+        && mode !== 'calendar'
+        ? (options.preservedAnchorId || pendingViewSwitchAnchorId || getTopVisibleLessonAnchorId({ preferAligned: true }) || getUrlLessonAnchor())
+        : null;
+      pendingViewSwitchAnchorId = null;
+
       if (mode !== 'calendar') {
         hideLessonCalendarTooltip();
       }
@@ -2608,6 +2787,10 @@
         btnCompact.classList.remove('active');
         renderCalendarView();
       }
+
+      if (preservedAnchorId) {
+        restoreLessonAtPageTop(preservedAnchorId);
+      }
     }
 
     function renderInlineLinks(text) {
@@ -2632,21 +2815,120 @@
     function scrollToLesson(anchorId) {
       const el = document.getElementById(anchorId);
       if (el) {
-        updateStickyOffsets();
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        scrollElementToPageTop(el, 'smooth');
         el.classList.add('highlight-card');
         setTimeout(() => el.classList.remove('highlight-card'), 2500);
       }
     }
 
+    function getTopVisibleLessonAnchorId(options = {}) {
+      if (currentOutlineView === 'calendar') return null;
+
+      const offset = getStickyScrollOffset();
+      const cards = Array.from(document.querySelectorAll('#outline-feed .topic-card'));
+      const topVisibleCard = cards.find(card => {
+        const rect = card.getBoundingClientRect();
+        return rect.bottom > offset + 1;
+      });
+      if (!options.preferAligned) {
+        return topVisibleCard?.id || null;
+      }
+
+      const alignedCard = cards.find(card => {
+        const rect = card.getBoundingClientRect();
+        return rect.top >= offset - 4;
+      });
+
+      return alignedCard?.id || topVisibleCard?.id || null;
+    }
+
+    function rememberTopLessonForViewSwitch() {
+      pendingViewSwitchAnchorId = getTopVisibleLessonAnchorId({ preferAligned: true }) || getUrlLessonAnchor();
+    }
+
+    function switchOutlineViewPreservingTop(mode) {
+      const preservedAnchorId = pendingViewSwitchAnchorId
+        || getTopVisibleLessonAnchorId({ preferAligned: true })
+        || getUrlLessonAnchor();
+      setOutlineView(mode, { preserveTopLesson: true, preservedAnchorId });
+    }
+
+    function handleOutlineViewSwitchClick(event, mode) {
+      event.preventDefault();
+      rememberTopLessonForViewSwitch();
+      switchOutlineViewPreservingTop(mode);
+    }
+
+    function restoreLessonAtPageTop(anchorId) {
+      suspendScrollHashUpdates = true;
+
+      const restore = () => {
+        const el = document.getElementById(anchorId);
+        if (el) {
+          scrollElementToPageTop(el, 'auto');
+          updateLessonHash(anchorId);
+        }
+      };
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(restore);
+      });
+      setTimeout(restore, 0);
+      setTimeout(restore, 80);
+      setTimeout(restore, 180);
+      setTimeout(() => {
+        suspendScrollHashUpdates = false;
+        updateHashForTopLesson();
+      }, 260);
+    }
+
+    function updateLessonHash(anchorId) {
+      if (!anchorId) return;
+
+      const currentUrl = new URL(window.location.href);
+      if (currentUrl.hash === `#${anchorId}`) return;
+
+      currentUrl.hash = anchorId;
+      window.history.replaceState(window.history.state || {}, '', currentUrl.toString());
+    }
+
+    function updateHashForTopLesson() {
+      scrollHashFrame = null;
+      const anchorId = getTopVisibleLessonAnchorId();
+      updateLessonHash(anchorId);
+    }
+
+    function scheduleHashForTopLessonUpdate() {
+      if (suspendScrollHashUpdates || scrollHashFrame !== null || currentOutlineView === 'calendar') return;
+      scrollHashFrame = requestAnimationFrame(updateHashForTopLesson);
+    }
+
+    function getStickyScrollOffset() {
+      updateStickyOffsets();
+      const rawOffset = getComputedStyle(document.documentElement)
+        .getPropertyValue('--sticky-scroll-offset')
+        .trim();
+      const parsedOffset = parseFloat(rawOffset);
+      return Number.isFinite(parsedOffset) ? parsedOffset : 0;
+    }
+
+    function scrollElementToPageTop(el, behavior = 'smooth') {
+      if (!el) return;
+
+      const offset = getStickyScrollOffset();
+      const targetTop = Math.max(0, window.scrollY + el.getBoundingClientRect().top - offset);
+      window.scrollTo({ top: targetTop, behavior });
+    }
+
     function updateStickyOffsets() {
       const header = document.querySelector('header');
-      const stickyTools = document.querySelector('.sticky-course-controls');
+      const stickyTools = document.querySelector('.sticky-page-tools');
       const headerHeight = header ? header.getBoundingClientRect().height : 0;
       const headerIsSticky = header ? getComputedStyle(header).position === 'sticky' : false;
       const stickyHeaderHeight = headerIsSticky ? headerHeight : 0;
       const stickyToolsHeight = stickyTools ? stickyTools.getBoundingClientRect().height : 0;
-      const offset = Math.ceil(stickyHeaderHeight + stickyToolsHeight + 16);
+      const lessonTopGap = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--lesson-top-gap')) || 24;
+      const offset = Math.ceil(stickyHeaderHeight + stickyToolsHeight + lessonTopGap);
 
       document.documentElement.style.setProperty('--sticky-tools-top', `${Math.ceil(stickyHeaderHeight)}px`);
       document.documentElement.style.setProperty('--sticky-scroll-offset', `${offset}px`);
@@ -2684,8 +2966,8 @@
       const focusBadge = document.querySelector('.topic-date-badge.is-focus-date');
       const focusCard = focusBadge ? focusBadge.closest('.topic-card') : null;
       if (focusCard) {
-        updateStickyOffsets();
-        focusCard.scrollIntoView({ behavior: 'auto', block: 'start' });
+        scrollElementToPageTop(focusCard, 'auto');
+        updateLessonHash(focusCard.id);
       }
     }
 
@@ -2705,15 +2987,13 @@
     // Init Event Listeners
     document.getElementById('search-input').addEventListener('input', renderTopics);
 
-    document.getElementById('subject-select').addEventListener('change', (e) => {
-      const selectedFile = e.target.value;
-      updateQueryString({ subject: selectedFile }, { deleteParams: ['file'], clearHash: true });
-      loadSubjectOutline(selectedFile);
-    });
-
-    document.getElementById('view-detailed-btn').addEventListener('click', () => setOutlineView('detailed'));
-    document.getElementById('view-compact-btn').addEventListener('click', () => setOutlineView('compact'));
+    document.getElementById('view-detailed-btn').addEventListener('pointerdown', rememberTopLessonForViewSwitch);
+    document.getElementById('view-compact-btn').addEventListener('pointerdown', rememberTopLessonForViewSwitch);
+    document.getElementById('view-detailed-btn').addEventListener('click', event => handleOutlineViewSwitchClick(event, 'detailed'));
+    document.getElementById('view-compact-btn').addEventListener('click', event => handleOutlineViewSwitchClick(event, 'compact'));
     document.getElementById('view-calendar-btn').addEventListener('click', () => setOutlineView('calendar'));
+    document.getElementById('jump-current-lesson-btn').addEventListener('click', jumpToTodayOrNextLesson);
+    window.addEventListener('scroll', scheduleHashForTopLessonUpdate, { passive: true });
     window.addEventListener('resize', updateStickyOffsets);
 
     // Start App

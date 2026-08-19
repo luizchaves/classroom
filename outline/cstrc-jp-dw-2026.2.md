@@ -2,7 +2,7 @@
 disciplina: Desenvolvimento Web
 curso: Curso Superior de Tecnologia em Redes de Computadores
 periodo: 2026.2
-carga_horaria: 100h
+carga_horaria: 120ha
 professor: Luiz Carlos Rodrigues Chaves
 calendario: ../calendar/2026.2.json
 horarios:
