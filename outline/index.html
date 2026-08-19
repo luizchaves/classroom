@@ -222,10 +222,19 @@
       font-weight: 800;
     }
 
+    .sticky-course-controls {
+      position: sticky;
+      top: var(--sticky-tools-top, 0);
+      z-index: 90;
+      background-color: var(--bg-main);
+      padding: 1.5rem 0 1.25rem;
+      box-shadow: 0 10px 20px -22px rgba(15, 23, 42, 0.4);
+    }
+
     /* Course Banner Card */
     .course-banner-container {
       max-width: var(--content-shell-max-width);
-      margin: 1.5rem auto 0;
+      margin: 0 auto;
       padding: 0 var(--page-gutter);
     }
 
@@ -297,7 +306,7 @@
     /* Controls & Search */
     .controls-bar {
       max-width: var(--content-shell-max-width);
-      margin: 1.75rem auto 1.25rem;
+      margin: 1rem auto 0;
       padding: 0 var(--page-gutter);
       display: flex;
       flex-wrap: wrap;
@@ -658,7 +667,7 @@
       padding: 1.25rem 1.5rem;
       box-shadow: 0 2px 4px rgba(0,0,0,0.02);
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, padding 0.2s ease;
-      scroll-margin-top: 5rem;
+      scroll-margin-top: var(--sticky-scroll-offset, 12rem);
     }
 
     .topic-card:hover {
@@ -1120,8 +1129,10 @@
       #badge-aulas-ministradas { order: 2; }
       #badge-progresso-data { order: 3; }
       #badge-status-carga { order: 4; }
+      .sticky-course-controls {
+        padding: 1rem 0 0.75rem;
+      }
       .course-banner-container {
-        margin-top: 1rem;
         padding: 0 1rem;
       }
       .course-banner {
@@ -1165,7 +1176,7 @@
         display: inline;
       }
       .controls-bar {
-        margin: 1rem auto;
+        margin: 0.75rem auto 0;
         padding: 0 1rem;
         flex-direction: column;
         align-items: stretch;
@@ -1381,45 +1392,47 @@
     </div>
   </header>
 
-  <!-- Banner da Disciplina & Horários -->
-  <div class="course-banner-container">
-    <div class="course-banner">
-      <div class="course-banner-title">
-        <span>📖 Plano de Aulas e Cronograma</span>
-        <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" id="meta-professor">Prof. Luiz Carlos Rodrigues Chaves</span>
-      </div>
+  <div class="sticky-course-controls">
+    <!-- Banner da Disciplina & Horários -->
+    <div class="course-banner-container">
+      <div class="course-banner">
+        <div class="course-banner-title">
+          <span>📖 Plano de Aulas e Cronograma</span>
+          <span style="font-size: 0.85rem; font-weight: 600; color: var(--text-muted);" id="meta-professor">Prof. Luiz Carlos Rodrigues Chaves</span>
+        </div>
 
-      <div class="schedule-info-group" id="schedule-items">
-        <!-- Rendered dynamically -->
-      </div>
+        <div class="schedule-info-group" id="schedule-items">
+          <!-- Rendered dynamically -->
+        </div>
 
-    </div>
-  </div>
-
-  <!-- Controls Bar -->
-  <div class="controls-bar">
-    <div class="controls-left">
-      <div class="search-box">
-        <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-        <input type="text" id="search-input" placeholder="Buscar por aula, tópico ou recurso..." aria-label="Buscar tópicos">
-      </div>
-
-      <div class="search-info-text" id="search-info-text">
-        Carregando cronograma...
       </div>
     </div>
 
-    <!-- Lucide View Switcher -->
-    <div class="view-switcher-group">
-      <button id="view-compact-btn" class="view-btn active" title="Exibir aulas em lista">
-        <i data-lucide="list"></i> Lista
-      </button>
-      <button id="view-detailed-btn" class="view-btn" title="Exibir conteúdo completo das aulas">
-        <i data-lucide="file-text"></i> Conteúdo
-      </button>
-      <button id="view-calendar-btn" class="view-btn" title="Exibir Aulas em Calendário">
-        <i data-lucide="calendar-days"></i> Calendário
-      </button>
+    <!-- Controls Bar -->
+    <div class="controls-bar">
+      <div class="controls-left">
+        <div class="search-box">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="search-input" placeholder="Buscar por aula, tópico ou recurso..." aria-label="Buscar tópicos">
+        </div>
+
+        <div class="search-info-text" id="search-info-text">
+          Carregando cronograma...
+        </div>
+      </div>
+
+      <!-- Lucide View Switcher -->
+      <div class="view-switcher-group">
+        <button id="view-compact-btn" class="view-btn active" title="Exibir aulas em lista">
+          <i data-lucide="list"></i> Lista
+        </button>
+        <button id="view-detailed-btn" class="view-btn" title="Exibir conteúdo completo das aulas">
+          <i data-lucide="file-text"></i> Conteúdo
+        </button>
+        <button id="view-calendar-btn" class="view-btn" title="Exibir Aulas em Calendário">
+          <i data-lucide="calendar-days"></i> Calendário
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2055,7 +2068,10 @@
       window.topicsData = sortedTopics;
       renderTopics();
       setOutlineView(currentOutlineView, { updateUrl: false });
-      checkUrlAnchor();
+      const handledUrlAnchor = checkUrlAnchor();
+      if (!handledUrlAnchor) {
+        setTimeout(() => scrollFocusedLessonToTop(), 120);
+      }
     }
 
     function renderScheduleItem(container, h) {
@@ -2616,26 +2632,60 @@
     function scrollToLesson(anchorId) {
       const el = document.getElementById(anchorId);
       if (el) {
+        updateStickyOffsets();
         el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         el.classList.add('highlight-card');
         setTimeout(() => el.classList.remove('highlight-card'), 2500);
       }
     }
 
-    function checkUrlAnchor() {
+    function updateStickyOffsets() {
+      const header = document.querySelector('header');
+      const stickyTools = document.querySelector('.sticky-course-controls');
+      const headerHeight = header ? header.getBoundingClientRect().height : 0;
+      const headerIsSticky = header ? getComputedStyle(header).position === 'sticky' : false;
+      const stickyHeaderHeight = headerIsSticky ? headerHeight : 0;
+      const stickyToolsHeight = stickyTools ? stickyTools.getBoundingClientRect().height : 0;
+      const offset = Math.ceil(stickyHeaderHeight + stickyToolsHeight + 16);
+
+      document.documentElement.style.setProperty('--sticky-tools-top', `${Math.ceil(stickyHeaderHeight)}px`);
+      document.documentElement.style.setProperty('--sticky-scroll-offset', `${offset}px`);
+    }
+
+    function getUrlLessonAnchor() {
       const hash = window.location.hash.replace('#', '').trim();
       const urlParams = new URLSearchParams(window.location.search);
       const aulaParam = urlParams.get('aula') || urlParams.get('lesson');
 
-      let targetId = null;
-      if (hash && hash.startsWith('aula-')) {
-        targetId = hash;
-      } else if (aulaParam) {
-        targetId = `aula-${String(aulaParam).padStart(2, '0')}`;
+      if (hash && (hash.startsWith('aula-') || hash.startsWith('sem-aula-'))) {
+        return hash;
       }
 
+      if (aulaParam) {
+        return `aula-${String(aulaParam).padStart(2, '0')}`;
+      }
+
+      return null;
+    }
+
+    function checkUrlAnchor() {
+      const targetId = getUrlLessonAnchor();
       if (targetId) {
         setTimeout(() => scrollToLesson(targetId), 400);
+        return true;
+      }
+
+      return false;
+    }
+
+    function scrollFocusedLessonToTop() {
+      if (currentOutlineView === 'calendar') return;
+
+      const focusBadge = document.querySelector('.topic-date-badge.is-focus-date');
+      const focusCard = focusBadge ? focusBadge.closest('.topic-card') : null;
+      if (focusCard) {
+        updateStickyOffsets();
+        focusCard.scrollIntoView({ behavior: 'auto', block: 'start' });
       }
     }
 
@@ -2664,8 +2714,10 @@
     document.getElementById('view-detailed-btn').addEventListener('click', () => setOutlineView('detailed'));
     document.getElementById('view-compact-btn').addEventListener('click', () => setOutlineView('compact'));
     document.getElementById('view-calendar-btn').addEventListener('click', () => setOutlineView('calendar'));
+    window.addEventListener('resize', updateStickyOffsets);
 
     // Start App
+    updateStickyOffsets();
     const initialFile = getSelectedSubjectFile();
     loadSubjectOutline(initialFile);
   </script>
