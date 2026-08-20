@@ -57,8 +57,11 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 ## Definição de Projeto
 
 - [Conteúdo: Projeto](https://ifpb.github.io/dw/project/)
+- [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
 
 ## Apresentação das Proposta de Projetos
+
+- [Github: Projeto DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
 
 ## ECMA: Dados, Variável, Decisão e Repetição
 
