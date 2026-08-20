@@ -54,9 +54,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Conteúdo: Bootstrap](https://ifpb.github.io/dw/package/bootstrap/)
 - [Braincheck: Bibliotecas de Estilo](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
 
-## Form e Definição de Projeto
+## Definição de Projeto
 
-- [Conteúdo: Formulários](https://ifpb.github.io/dw/css/form/)
 - [Conteúdo: Projeto](https://ifpb.github.io/dw/project/)
 
 ## Apresentação das Proposta de Projetos
@@ -109,10 +108,11 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 - [Conteúdo: Browser Objects](https://ifpb.github.io/dw/w3c/browser-objects/)
 - [Conteúdo: Elementos Dinâmicos](https://ifpb.github.io/dw/w3c/dynamic-elements/)
 - [Conteúdo: Manipulação de Eventos](https://ifpb.github.io/dw/w3c/event-handling/)
-- [Conteúdo: DOM API](https://ifpb.github.io/dw/w3c/dom-api/)
 
 ## JS Web: CRUD
 
+- [Conteúdo: DOM API](https://ifpb.github.io/dw/w3c/dom-api/)
+- [Conteúdo: Formulários](https://ifpb.github.io/dw/css/form/)
 - [Conteúdo: Local Storage](https://ifpb.github.io/dw/w3c/local-storage/)
 
 ## API Rest (Fetch) e Exercício Avaliativo
