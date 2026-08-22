@@ -282,10 +282,68 @@
     }
 
     @media (max-width: 640px) {
-      .subjects-hero h1 { font-size: 1.75rem; }
-      .subjects-grid-list { grid-template-columns: 1fr; }
-      .period-item { flex-direction: column; align-items: stretch; }
-      .period-item-actions { justify-content: flex-end; }
+      main {
+        margin: 1.5rem auto 3rem;
+        padding: 0 1rem;
+      }
+
+      .subjects-hero {
+        margin-bottom: 2rem;
+      }
+
+      .brand-badge-row {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .brand-sub {
+        font-size: 0.8rem;
+        text-align: center;
+      }
+
+      .subjects-hero h1 {
+        font-size: 1.6rem;
+      }
+
+      .subjects-hero p {
+        font-size: 0.95rem;
+      }
+
+      .subjects-grid-list {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      .subject-card {
+        padding: 1.25rem;
+      }
+
+      .subject-card-title {
+        font-size: 1.2rem;
+      }
+
+      .period-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+      }
+
+      .period-item-header {
+        justify-content: space-between;
+      }
+
+      .period-item-actions {
+        display: flex;
+        gap: 0.5rem;
+        width: 100%;
+      }
+
+      .btn-period-action {
+        flex: 1;
+        justify-content: center;
+        padding: 0.6rem 0.75rem;
+        font-size: 0.82rem;
+      }
     }
   </style>
 </head>
