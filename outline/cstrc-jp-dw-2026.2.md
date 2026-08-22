@@ -124,11 +124,11 @@ Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integran
 
 Organização de código com funções (parâmetros, retorno, _arrow functions_) e modularização de código com ES Modules (`import`/`export`).
 
-- **Conteúdo Teórico:**
+- **Funções:**
   - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/functions/)
-  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/modules/)
-- **Exercícios de Fixação:**
   - [Exercício: Soma](https://ifpb.github.io/exercises/problems/algorithms/function-sum/)
+- **Módulos:**
+  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/modules/)
 
 ## Exercício JS Intro e Exercício Avaliativo
 
@@ -143,15 +143,16 @@ Resolução de problemas práticos e avaliação de lógica de programação uti
 
 Manipulação de estruturas de dados essenciais em JavaScript: métodos de _arrays_ (`map`, `filter`, `reduce`), manipulação de _strings_ e criação de objetos literais.
 
-- **Conteúdo Teórico:**
+- **Array:**
   - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/arrays/)
-  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/strings/)
-  - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/objects/)
-- **Exercícios de Fixação:**
   - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/algorithms/array-util/)
   - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/algorithms/array-operations/)
+- **String:**
+  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/strings/)
   - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/algorithms/string-list-generator/)
   - [Exercício: String Util](https://ifpb.github.io/exercises/problems/algorithms/string-util/)
+- **Object:**
+  - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/objects/)
   - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
 
 ## JS Web: Intro
@@ -215,8 +216,9 @@ Participação nas atividades do evento acadêmico Pulsar.
 
 Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HTTP e conceitos de roteamento com o framework Express.js.
 
-- **Conteúdo Teórico:**
+- **Node.js:**
   - [Conteúdo: Node.js - HTTP](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/node/http/)
+- **Express:**
   - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/express/express/)
 
 ## Exercício Backend e Exercício Avaliativo
@@ -241,8 +243,9 @@ Arquitetura de APIs RESTful no Express, padrão de projeto MVC (Model-View-Contr
 
 Fundamentos de Sistemas Gerenciadores de Bancos de Dados (SGBD) relacionais e comandos da linguagem SQL (DDL e DML).
 
-- **Conteúdo Teórico:**
+- **SGBD:**
   - [Conteúdo: DBMS](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/database/dbms/)
+- **SQL:**
   - [Conteúdo: SQL](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/database/sql/)
 
 ## Relacionamento

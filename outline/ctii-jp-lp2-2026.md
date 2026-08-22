@@ -117,8 +117,9 @@ Uso do ORM Prisma para mapeamento objeto-relacional e facilitação de operaçõ
 
 Modelagem de relacionamentos entre tabelas no Prisma e implementação de cadastro seguro de usuários.
 
-- **Conteúdo Teórico:**
+- **PrismaJS Relacionamentos:**
   - [Conteúdo: PrismaJS Relacionamentos](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/prismajs-relation/prismajs-relation/)
+- **Cadastro de Usuário:**
   - [Conteúdo: PrismaJS Cadastro de Usuário](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/prismajs-user/prismajs-user/)
 
 ## Semana do Meio Ambiente (13/06/2026 - 2 aulas)

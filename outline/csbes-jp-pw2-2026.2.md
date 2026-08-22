@@ -62,46 +62,45 @@ Prática avançada com estruturas condicionais e laços de repetição em JavaSc
   - [Braincheck: JavaScript | Decisão e Repetição](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-wXu0b3rLIa)
   - [Braincheck: JavaScript | Decisão e Repetição | Prática](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-pratica-GQNhdEgQQx)
 
-## Função e Módulos
+## Função
 
-Declaração de funções (parâmetros, retorno, *arrow functions*) e organização de projetos com ES Modules (`import`/`export`).
+Declaração de funções (parâmetros, retorno e _arrow functions_) em JavaScript.
 
 - **Conteúdo Teórico:**
   - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/function/function/)
-  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/modules/modules/)
 - **Prática:**
   - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
   - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
   - [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
+
+## Módulos e Array
+
+Organização de projetos com ES Modules (`import`/`export`) e manipulação de vetores (*arrays*) em JavaScript.
+
+- **Módulos:**
+  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/modules/modules/)
   - [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
-
-## Array e String
-
-Manipulação de estruturas de dados básicas: vetores (*arrays*) e sequências de caracteres (*strings*) em JavaScript.
-
-- **Conteúdo Teórico:**
+- **Array:**
   - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/array/array/)
-  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/string/string/)
-- **Prática:**
   - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
   - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
+  - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
+
+## String e Array Iterators
+
+Manipulação de sequências de caracteres (*strings*) e uso dos métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`, `every`, `some`).
+
+- **String:**
+  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/string/string/)
   - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
   - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
   - [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
   - [Exercício: Citação de String](https://ifpb.github.io/exercises/problems/string-citation/)
-- **Acompanhamento:**
-  - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
   - [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
-
-## Array Iterators
-
-Uso dos métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`, `every`, `some`).
-
-- **Prática:**
+- **Array Iterators:**
   - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
-- **Acompanhamento:**
   - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
 
 ## Objetos
@@ -165,7 +164,7 @@ Validação inicial das propostas de projeto dos estudantes com o professor.
 
 ## Manipulação de Eventos
 
-Escuta e tratamento de eventos de usuário (*click*, *input*, *submit*) para interatividade em páginas web.
+Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para interatividade em páginas web.
 
 - **Conteúdo Teórico:**
   - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/event-handling/event-handling/)
@@ -191,7 +190,7 @@ Uso da DOM API para seleção, modificação e estruturação dinâmica de compo
 
 ## Criando Elementos Dinâmicos (Create, Delete e Update)
 
-Gerenciamento de estado e dados persistentes no navegador utilizando *Local Storage*.
+Gerenciamento de estado e dados persistentes no navegador utilizando _Local Storage_.
 
 - **Conteúdo Teórico:**
   - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/local-storage/local-storage/)
@@ -269,17 +268,20 @@ Programação assíncrona em JavaScript utilizando Promises (estados, chaining, 
 
 Conceitos de arquitetura REST API e introdução ao Backend-as-a-Service com Supabase API.
 
-- **Conteúdo Teórico:**
+- **REST API:**
   - [Conteúdo: REST API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/api/rest/rest/)
+- **Supabase API:**
   - [Conteúdo: Supabase API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/supabase-api/supabase-api/)
 
 ## Fetch API, axios, supabase-client
 
 Consumo de serviços web e APIs assíncronas utilizando `fetch()`, biblioteca Axios e SDK Supabase Client.
 
-- **Conteúdo Teórico & Ferramentas:**
+- **Fetch API:**
   - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/fetch-api/fetch-api/)
+- **Axios:**
   - [Conteúdo: Axios](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/axios/axios/)
+- **Supabase Client:**
   - [Conteúdo: Supabase Client](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/supabase-client/supabase-client/)
   - [Conteúdo: Consumo do Supabase](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/http-client/http-client/)
 
