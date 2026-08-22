@@ -20,18 +20,27 @@ horarios:
 
 ## Apresentação da Disciplina e Introdução ao JavaScript
 
-- [Disciplina: Página da disciplina](https://ifpb.github.io/pw2/)
-- [Conteúdo: Introdução ao ECMA](https://ifpb.github.io/pw2/ecma/introduction/)
-- [Exercício: Lista de exercícios](https://ifpb.github.io/pw2/extra/exercises/)
-- [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-JtstuRmQCO)
+Apresentação da disciplina, funcionamento das avaliações e introdução aos conceitos fundamentais do ecossistema JavaScript moderno.
+
+- **Informações & Avaliações:**
+  - [Disciplina: Página da disciplina](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/)
+  - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/extra/exercises/exercises/)
+- **Conteúdo Teórico:**
+  - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/introduction/introduction/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-JtstuRmQCO)
 
 ## Decisão e Repetição
 
-- [Conteúdo: Variáveis](https://ifpb.github.io/pw2/ecma/variable/)
-- [Conteúdo: Expressões e Operadores](https://ifpb.github.io/pw2/ecma/expression-and-operator/)
-- [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
-- [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-GQBuuwHpFN)
-- [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-EJYEO7Y3n3)
+Estruturas fundamentais de declaração de variáveis (`const`, `let`), tipos de dados, operadores e comandos de controle de fluxo em JavaScript.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/variable/variable/)
+  - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/expression-and-operator/expression-and-operator/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
+  - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-GQBuuwHpFN)
+  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-EJYEO7Y3n3)
 
 ## IFTech (14/08/2026 - 4 aulas)
 
@@ -41,157 +50,264 @@ Participe dos minicursos do [IFTech 2026](https://www.even3.com.br/iftech-2026-7
 
 Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
-## Decisão e Repetição
+## Decisão e Repetição (Aprofundamento)
 
-- [Conteúdo: Comandos e Instruções](https://ifpb.github.io/pw2/ecma/statements/)
-- [Braincheck: JavaScript | Decisão e Repetição](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-wXu0b3rLIa)
-- [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
-- [Braincheck: JavaScript | Decisão e Repetição | Prática](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-pratica-GQNhdEgQQx)
+Prática avançada com estruturas condicionais e laços de repetição em JavaScript para resolução de problemas algorítmicos.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/statements/statements/)
+- **Prática:**
+  - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Decisão e Repetição](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-wXu0b3rLIa)
+  - [Braincheck: JavaScript | Decisão e Repetição | Prática](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-pratica-GQNhdEgQQx)
 
 ## Função e Módulos
 
-- [Conteúdo: Funções](https://ifpb.github.io/pw2/ecma/function/)
-- [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
-- [Conteúdo: Módulos](https://ifpb.github.io/pw2/ecma/modules/)
-- [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
-- [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
-- [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
-- [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
+Declaração de funções (parâmetros, retorno, *arrow functions*) e organização de projetos com ES Modules (`import`/`export`).
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/function/function/)
+  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/modules/modules/)
+- **Prática:**
+  - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
+  - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
+  - [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
+  - [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
 
 ## Array e String
 
-- [Conteúdo: Array](https://ifpb.github.io/pw2/ecma/array/)
-- [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
-- [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
-- [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
-- [Conteúdo: String](https://ifpb.github.io/pw2/ecma/string/)
-- [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
-- [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
-- [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
-- [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
-- [Exercício: Citação de String](https://ifpb.github.io/exercises/problems/string-citation/)
+Manipulação de estruturas de dados básicas: vetores (*arrays*) e sequências de caracteres (*strings*) em JavaScript.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/array/array/)
+  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/string/string/)
+- **Prática:**
+  - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
+  - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
+  - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
+  - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
+  - [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
+  - [Exercício: Citação de String](https://ifpb.github.io/exercises/problems/string-citation/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
+  - [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
 
 ## Array Iterators
 
-- [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
-- [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
+Uso dos métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`, `every`, `some`).
+
+- **Prática:**
+  - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
 
 ## Objetos
 
-- [Conteúdo: Objeto](https://ifpb.github.io/pw2/ecma/object/)
-- [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
-- [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
-- [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
+Criação e manipulação de objetos literais em JavaScript, acesso a propriedades e estruturas de objetos.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/object/object/)
+- **Prática:**
+  - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
+  - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
 
 ## Exercício Avaliativo
 
-- [Exercício: Objeto Exame (Avaliativo)](https://ifpb.github.io/exercises/problems/object-exam/)
-- [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
-- [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
+Avaliação prática de manipulação de objetos e estruturas de dados em JavaScript.
+
+- **Exercícios Avaliativos:**
+  - [Exercício: Objeto Exame (Avaliativo)](https://ifpb.github.io/exercises/problems/object-exam/)
+  - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
+  - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
 
 ## Objetos do Navegador
 
-- [Conteúdo: Objetos do Navegador](https://ifpb.github.io/pw2/w3c/browser-objects/)
-- Exercício: List generator document.write
+Introdução ao ambiente do navegador, objeto `window`, `document` e interação inicial com a página web.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Objetos do Navegador](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/browser-objects/browser-objects/)
+- **Prática:**
+  - Exercício: List generator document.write
 
 ## Criando Elementos Dinâmicos
 
-- [Conteúdo: Elementos Dinâmicos](https://ifpb.github.io/pw2/w3c/dynamic-elements/)
-- [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
+Manipulação da árvore DOM no navegador e criação dinâmica de elementos HTML via JavaScript.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/dynamic-elements/dynamic-elements/)
+- **Prática:**
+  - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
 
 ## Exercício Avaliativo
 
-- [Exercício: Banderas de Países (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
-- [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
+Atividade prática avaliativa de manipulação do DOM e elementos dinâmicos na Web.
+
+- **Exercícios Avaliativos:**
+  - [Exercício: Banderas de Países (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
+  - [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
 
 ## Projeto Definição
 
-- [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
-- PR ifpb/projects
+Apresentação dos requisitos e diretrizes do projeto prático de Programação para Web II.
+
+- **Especificação & Acompanhamento:**
+  - [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
+  - PR ifpb/projects
 
 ## Apresentação da Proposta do Projeto
 
+Validação inicial das propostas de projeto dos estudantes com o professor.
+
 ## Manipulação de Eventos
 
-- [Conteúdo: Tratamento de Eventos](https://ifpb.github.io/pw2/w3c/event-handling/)
+Escuta e tratamento de eventos de usuário (*click*, *input*, *submit*) para interatividade em páginas web.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/event-handling/event-handling/)
 
 ## Build Tools
 
-- [Conteúdo: Vite](https://ifpb.github.io/pw2/package/vite/)
-- [Exercício: Amaro Script](https://ifpb.github.io/exercises/problems/web-script-amaro/)
+Configuração e uso de empacotadores modernos front-end com Vite para projetos JavaScript.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/vite/vite/)
+- **Prática:**
+  - [Exercício: Amaro Script](https://ifpb.github.io/exercises/problems/web-script-amaro/)
 
 ## DOM
 
-- [Conteúdo: DOM API](https://ifpb.github.io/pw2/w3c/dom-api/)
-- [Exercício: Gerador de Lista Script](https://ifpb.github.io/exercises/problems/web-script-list-generator/)
-- [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
+Uso da DOM API para seleção, modificação e estruturação dinâmica de componentes em páginas web.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/dom-api/dom-api/)
+- **Prática:**
+  - [Exercício: Gerador de Lista Script](https://ifpb.github.io/exercises/problems/web-script-list-generator/)
+  - [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
 
 ## Criando Elementos Dinâmicos (Create, Delete e Update)
 
-- [Conteúdo: Local Storage](https://ifpb.github.io/pw2/w3c/local-storage/)
+Gerenciamento de estado e dados persistentes no navegador utilizando *Local Storage*.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/local-storage/local-storage/)
 
 ## Projeto Acompanhamento
+
+Sessão de mentoria e acompanhamento do progresso de desenvolvimento dos projetos.
 
 ## Pulsar (16/10/2026 - 3 aulas)
 
+Participação nas atividades do evento acadêmico Pulsar.
+
 ## Pulsar (17/10/2026 - 3 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
 
 ## Apresentação do Projeto (Etapa I)
 
-- [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
+Apresentação e avaliação da primeira entrega parcial do projeto (Interface Front-end).
+
+- **Projeto & Acompanhamento:**
+  - [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
 
 ## TypeScript
 
+Introdução à linguagem TypeScript, sintaxe de tipos estáticos, interfaces e compilação para JavaScript.
+
 ## React - Component
 
-- [Conteúdo: Introdução ao React](https://ifpb.github.io/pw2/react/introduction/)
+Introdução à biblioteca ReactJS, conceitos de componentes funcionais, JSX e renderização de elementos.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Introdução ao React](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/introduction/introduction/)
 
 ## React - Rotas, Eventos, Hooks
 
-- [Conteúdo: React Hooks](https://ifpb.github.io/pw2/react/hooks/)
+Gerenciamento de estado de componentes React com `useState` e efeitos colaterais com `useEffect`.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/hooks/hooks/)
 
 ## React - Context API
 
-- [Conteúdo: React Hooks](https://ifpb.github.io/pw2/react/hooks/)
+Gerenciamento de estado global em aplicações React utilizando a Context API.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/hooks/hooks/)
 
 ## React - Manipular Form, CRUD
 
-- [Conteúdo: React Hooks](https://ifpb.github.io/pw2/react/hooks/)
+Construção de formulários controlados em React e implementação de operações de CRUD.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/hooks/hooks/)
 
 ## Expressões Regulares
 
-- [Conteúdo: Expressões Regulares](https://ifpb.github.io/pw2/ecma/regexp/)
-- [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
+Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para validação de padrões de texto.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Expressões Regulares](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/regexp/regexp/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
 ## Promises
 
-- [Conteúdo: Promises](https://ifpb.github.io/pw2/ecma/promise/)
-- [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-promises-qlyjDCgdDj)
+Programação assíncrona em JavaScript utilizando Promises (estados, chaining, `catch`).
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Promises](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/promise/promise/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-promises-qlyjDCgdDj)
 
 ## Web API e Supabase API
 
-- [Conteúdo: REST API](https://ifpb.github.io/pw2/api/rest/)
-- [Conteúdo: Supabase API](https://ifpb.github.io/pw2/package/supabase-api/)
+Conceitos de arquitetura REST API e introdução ao Backend-as-a-Service com Supabase API.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: REST API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/api/rest/rest/)
+  - [Conteúdo: Supabase API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/supabase-api/supabase-api/)
 
 ## Fetch API, axios, supabase-client
 
-- [Conteúdo: Fetch API](https://ifpb.github.io/pw2/w3c/fetch-api/)
-- [Conteúdo: Axios](https://ifpb.github.io/pw2/package/axios/)
-- [Conteúdo: Supabase Client](https://ifpb.github.io/pw2/package/supabase-client/)
-- [Conteúdo: Consumo do Supabase](https://ifpb.github.io/pw2/package/http-client/)
+Consumo de serviços web e APIs assíncronas utilizando `fetch()`, biblioteca Axios e SDK Supabase Client.
+
+- **Conteúdo Teórico & Ferramentas:**
+  - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/fetch-api/fetch-api/)
+  - [Conteúdo: Axios](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/axios/axios/)
+  - [Conteúdo: Supabase Client](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/supabase-client/supabase-client/)
+  - [Conteúdo: Consumo do Supabase](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/http-client/http-client/)
 
 ## Exercício Avaliativo
 
-- [Exercício: API de CEP (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-address-cep-api/)
+Avaliação prática de consumo de APIs REST assíncronas no front-end.
+
+- **Exercícios Avaliativos:**
+  - [Exercício: API de CEP (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-address-cep-api/)
 
 ## React - Auth
 
-- [Conteúdo: Supabase Auth em React](https://ifpb.github.io/pw2/react/supabase-auth/)
+Implementação de autenticação e sessão de usuário em aplicações React com Supabase Auth.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Supabase Auth em React](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/supabase-auth/supabase-auth/)
 
 ## Projeto Acompanhamento
 
+Mentoria final e apoio técnico no desenvolvimento dos projetos dos estudantes.
+
 ## Apresentação do Projeto (Etapa II)
+
+Apresentação e avaliação final do projeto completo da disciplina.
 
 ## Próximos Passos e Recuperação
 
-- [Conteúdo: Próximos Passos](https://ifpb.github.io/pw2/extra/next-steps/)
+Encerramento do período letivo, prazos de recuperação e recomendações de estudos continuados.
+
+- **Orientação & Conteúdo:**
+  - [Conteúdo: Próximos Passos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/extra/next-steps/next-steps/)
