@@ -1390,9 +1390,267 @@
       .lesson-calendar-item:not(.is-no-class) .lesson-calendar-title {
         display: none;
       }
-      .lesson-calendar-item.is-no-class .lesson-calendar-title {
-        display: -webkit-box;
-      }
+    }
+
+    /* Subjects Grid Styles (Exibição quando nenhuma disciplina / subject for informada) */
+    .calendar-selector-box {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 0.45rem 0.85rem;
+      border-radius: 0.6rem;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .calendar-selector-box label {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+    }
+
+    .calendar-selector-box select {
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 0.4rem;
+      padding: 0.35rem 0.65rem;
+      outline: none;
+      cursor: pointer;
+      transition: border-color 0.2s ease;
+    }
+
+    .calendar-selector-box select:hover,
+    .calendar-selector-box select:focus {
+      border-color: var(--primary);
+    }
+
+    .subjects-view {
+      max-width: var(--content-max-width);
+      margin: 2.5rem auto 4rem;
+      padding: 0 var(--page-gutter);
+    }
+
+    .subjects-hero {
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .subjects-hero h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .subjects-hero p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .subjects-grid-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.75rem;
+    }
+
+    .subject-card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.02);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .subject-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+      border-color: #cbd5e1;
+    }
+
+    .subject-card-header {
+      margin-bottom: 1.5rem;
+    }
+
+    .subject-card-badges {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .badge-period {
+      background-color: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2rem;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-workload {
+      background-color: #f1f5f9;
+      color: #334155;
+      border: 1px solid #cbd5e1;
+      padding: 0.3rem 0.75rem;
+      border-radius: 2rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .subject-card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 0.45rem;
+      line-height: 1.3;
+      letter-spacing: -0.01em;
+    }
+
+    .subject-card-course {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 0.85rem;
+      line-height: 1.4;
+    }
+
+    .subject-card-prof {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 500;
+    }
+
+    .subject-card-periods {
+      margin-top: auto;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1.25rem;
+    }
+
+    .period-group-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .period-group-title {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .subject-badge-count {
+      background-color: #f1f5f9;
+      color: #64748b;
+      border: 1px solid #e2e8f0;
+      padding: 0.15rem 0.55rem;
+      border-radius: 1rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+    }
+
+    .period-item {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 0.65rem;
+      padding: 0.75rem 0.85rem;
+      margin-bottom: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .period-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .period-item-header {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .period-item-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .btn-period-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 0.5rem;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.18s ease;
+    }
+
+    .btn-period-action svg {
+      width: 0.9rem;
+      height: 0.9rem;
+      stroke-width: 2.2;
+    }
+
+    .subject-badge-count {
+      background-color: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      padding: 0.25rem 0.65rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .btn-calendar-action {
+      background-color: #ffffff;
+      color: #1e293b;
+      border: 1px solid #cbd5e1;
+    }
+
+    .btn-calendar-action:hover {
+      background-color: #f1f5f9;
+      border-color: #94a3b8;
+      color: #0f172a;
+    }
+
+    .btn-outline-action {
+      background: linear-gradient(135deg, #0284c7, #0369a1);
+      color: #ffffff;
+      border: none;
+      box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
+    }
+
+    .btn-outline-action:hover {
+      background: linear-gradient(135deg, #0369a1, #075985);
+      box-shadow: 0 4px 8px rgba(2, 132, 199, 0.3);
+      color: #ffffff;
     }
   </style>
 </head>
@@ -1430,11 +1688,129 @@
                 <div class="pill pill-progress-muted" id="badge-carga-diferenca">Faltam: --</div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </div>
   </header>
+
+  <!-- Subjects Grid View (Exibida estaticamente quando nenhuma disciplina / subject for informada na URL) -->
+  <section class="subjects-view" id="subjects-view" style="display: none;">
+    <div class="subjects-hero">
+      <div style="display: flex; align-items: center; justify-content: center; gap: 0.75rem; margin-bottom: 1.25rem;">
+        <span style="background: linear-gradient(135deg, #0284c7, #16a34a); color: white; font-weight: 800; font-size: 1.1rem; padding: 0.4rem 0.75rem; border-radius: 0.6rem; box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);">IFPB</span>
+        <span style="font-size: 0.9rem; font-weight: 700; color: var(--text-muted);">Instituto Federal da Paraíba • Campus João Pessoa</span>
+      </div>
+      <h2>Disciplinas e Planos de Aula</h2>
+      <p>Selecione uma disciplina abaixo para visualizar seu Plano de Aulas (Outline) e Calendário Acadêmico.</p>
+    </div>
+
+    <div class="subjects-grid-list">
+      <!-- Card 1: Desenvolvimento Web -->
+      <article class="subject-card">
+        <div class="subject-card-header">
+          <h3 class="subject-card-title">Desenvolvimento Web</h3>
+          <p class="subject-card-course">Curso Superior de Tecnologia em Redes de Computadores</p>
+          <p class="subject-card-prof">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Prof. Luiz Carlos Rodrigues Chaves
+          </p>
+        </div>
+
+        <div class="subject-card-periods">
+          <div class="period-group-header">
+            <span class="period-group-title">Edições / Períodos Letivos</span>
+            <span class="subject-badge-count">1 disponível</span>
+          </div>
+          <div class="period-item">
+            <div class="period-item-header">
+              <span class="badge-period">2026.2</span>
+              <span class="badge-workload">120ha</span>
+            </div>
+            <div class="period-item-actions">
+              <a href="index.html?subject=cstrc-jp-dw-2026.2" class="btn-period-action btn-outline-action">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Outline
+              </a>
+              <a href="../calendar/index.html?subject=cstrc-jp-dw-2026.2" class="btn-period-action btn-calendar-action">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                Calendário
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2: Programação para Web II -->
+      <article class="subject-card">
+        <div class="subject-card-header">
+          <h3 class="subject-card-title">Programação para Web II</h3>
+          <p class="subject-card-course">Bacharelado em Engenharia de Software</p>
+          <p class="subject-card-prof">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Prof. Luiz Carlos Rodrigues Chaves
+          </p>
+        </div>
+
+        <div class="subject-card-periods">
+          <div class="period-group-header">
+            <span class="period-group-title">Edições / Períodos Letivos</span>
+            <span class="subject-badge-count">1 disponível</span>
+          </div>
+          <div class="period-item">
+            <div class="period-item-header">
+              <span class="badge-period">2026.2</span>
+              <span class="badge-workload">80ha</span>
+            </div>
+            <div class="period-item-actions">
+              <a href="index.html?subject=csbes-jp-pw2-2026.2" class="btn-period-action btn-outline-action">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                Outline
+              </a>
+              <a href="../calendar/index.html?subject=csbes-jp-pw2-2026.2" class="btn-period-action btn-calendar-action">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                Calendário
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3: Linguagens de Programação II -->
+      <article class="subject-card">
+        <div class="subject-card-header">
+          <h3 class="subject-card-title">Linguagens de Programação II</h3>
+          <p class="subject-card-course">Curso Técnico Integrado em Informática</p>
+          <p class="subject-card-prof">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            Prof. Luiz Carlos Rodrigues Chaves
+          </p>
+        </div>
+
+        <div class="subject-card-periods">
+          <div class="period-group-header">
+            <span class="period-group-title">Edições / Períodos Letivos</span>
+            <span class="subject-badge-count">1 disponível</span>
+          </div>
+          <div class="period-item">
+            <div class="period-item-header">
+              <span class="badge-period">2026</span>
+              <span class="badge-workload">80ha</span>
+            </div>
+            <div class="period-item-actions">
+              <a href="index.html?subject=ctii-jp-lp2-2026" class="btn-period-action btn-outline-action">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 1 3-3h7z"/></svg>
+                Outline
+              </a>
+              <a href="../calendar/index.html?subject=ctii-jp-lp2-2026" class="btn-period-action btn-calendar-action">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                Calendário
+              </a>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <div class="sticky-page-tools">
     <!-- Controls Bar -->
@@ -1625,12 +2001,45 @@
         }
       }
 
-      return defaultSubjectFile;
+      return null;
     }
 
     async function loadSubjectOutline(fileToLoad) {
-      const activeFile = fileToLoad || getSelectedSubjectFile();
-      normalizeSubjectQuery(activeFile);
+      const urlParams = new URLSearchParams(window.location.search);
+      const hasSubjectParam = urlParams.has('subject') || urlParams.has('file');
+      const activeFile = fileToLoad || (hasSubjectParam ? getSelectedSubjectFile() : null);
+
+      const subjectsView = document.getElementById('subjects-view');
+      const stickyPageTools = document.querySelector('.sticky-page-tools');
+      const outlineFeed = document.getElementById('outline-feed');
+      const outlineCalendarContainer = document.getElementById('outline-calendar-container');
+      const selectEl = document.getElementById('subject-select');
+
+      const headerEl = document.querySelector('header');
+
+      // Se nenhuma disciplina for especificada na URL:
+      if (!activeFile && !hasSubjectParam && !window.location.hash) {
+        if (headerEl) headerEl.style.display = 'none';
+        if (subjectsView) subjectsView.style.display = 'block';
+        if (stickyPageTools) stickyPageTools.style.display = 'none';
+        if (outlineFeed) outlineFeed.style.display = 'none';
+        if (outlineCalendarContainer) outlineCalendarContainer.style.display = 'none';
+        return;
+      }
+
+      // Quando subject for especificado:
+      if (headerEl) headerEl.style.display = 'block';
+      if (subjectsView) subjectsView.style.display = 'none';
+      if (stickyPageTools) stickyPageTools.style.display = 'block';
+      if (outlineFeed) outlineFeed.style.display = currentOutlineView === 'calendar' ? 'none' : 'flex';
+      if (outlineCalendarContainer) outlineCalendarContainer.style.display = currentOutlineView === 'calendar' ? 'grid' : 'none';
+
+      const fileToFetch = activeFile || defaultSubjectFile;
+      normalizeSubjectQuery(fileToFetch);
+
+      if (selectEl) {
+        selectEl.value = getSubjectSlug(fileToFetch);
+      }
 
       let rawMarkdown = '';
 
@@ -1646,10 +2055,10 @@
       }
 
       const candidateUrls = [
-        activeFile,
-        `./${activeFile}`,
-        `outline/${activeFile}`,
-        new URL(activeFile, currentOrigin + dirPath).href
+        fileToFetch,
+        `./${fileToFetch}`,
+        `outline/${fileToFetch}`,
+        new URL(fileToFetch, currentOrigin + dirPath).href
       ];
 
       for (const url of candidateUrls) {
@@ -3015,6 +3424,20 @@
     }
 
     // Init Event Listeners
+    const subjectSelectEl = document.getElementById('subject-select');
+    if (subjectSelectEl) {
+      subjectSelectEl.addEventListener('change', (e) => {
+        const selectedValue = e.target.value;
+        if (!selectedValue) {
+          updateQueryString({}, { deleteParams: ['subject', 'file'], clearHash: true });
+          loadSubjectOutline();
+        } else {
+          updateQueryString({ subject: selectedValue }, { deleteParams: ['file'], clearHash: true });
+          loadSubjectOutline(getSubjectFileFromSlug(selectedValue));
+        }
+      });
+    }
+
     document.getElementById('search-input').addEventListener('input', renderTopics);
 
     document.getElementById('view-detailed-btn').addEventListener('pointerdown', rememberTopLessonForViewSwitch);
