@@ -67,6 +67,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 ## Apresentação das Proposta de Projetos
 
+- [Projeto: Especificação do Projeto](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/project/)
 - [Github: Projeto DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
 
 ## ECMA: Dados, Variável, Decisão e Repetição
