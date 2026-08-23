@@ -88,11 +88,19 @@ Apresentação das diretrizes, escopo e requisitos do projeto final da disciplin
 
 ## Apresentação das Proposta de Projetos
 
-Pitch e validação das propostas de projeto das equipes com o professor.
+Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e validação das propostas de projeto das equipes com o professor.
 
-- **Especificação & Código:**
-  - [Projeto: Especificação do Projeto](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/project/)
-  - [Github: Projeto DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
+- **Especificação & Roteiro do Pitch:**
+  - [Projeto: Especificação do Projeto > Estrutura do Pitch (5 Minutos)](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/project/#estrutura-do-pitch-5-minutos)
+  - [Github: Projetos de DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
+- **Orientações e Estrutura do Pitch (5 Minutos):**
+  - **Duração & Integrantes:** Apresentação de até 5 minutos estritos, com fala obrigatória de todos os membros do grupo (requer treino prévio).
+  - **Pré-requisito:** PR no portal `ifpb/projects` enviado e aprovado com antecedência.
+  - **1. Problema & Objetivo:** Apresentar o problema na área de Redes de Computadores e o objetivo central.
+  - **2. Funcionalidades (Features):** Principais recursos planejados para a aplicação.
+  - **3. Benchmarking:** Comparação com ferramentas de mercado existentes (ex: Grafana, Zabbix, Webmin).
+  - **4. Interface & Telas Estáticas:** Exibição do protótipo/telas estáticas (HTML/CSS ou Figma) e fluxo de navegação.
+  - **5. Transição para Dados Reais:** Hipóteses técnicas para converter dados fictícios (mock data) em dados reais (chamadas CLI/SO, parsing de logs, APIs de rede ou banco de dados).
 
 ## ECMA: Dados, Variável, Decisão e Repetição
 
