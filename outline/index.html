@@ -103,6 +103,28 @@
       min-width: 0;
     }
 
+    .logo-badge {
+      background: linear-gradient(135deg, #0284c7, #16a34a);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.15rem;
+      padding: 0.45rem 0.75rem;
+      border-radius: 0.65rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      transition: all 0.2s ease;
+    }
+
+    .logo-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px -1px rgba(2, 132, 199, 0.35);
+      color: #ffffff;
+    }
+
     .brand-text {
       min-width: 0;
       width: 100%;
@@ -1405,6 +1427,7 @@
     <div class="header-container">
       <div class="header-main">
         <div class="brand">
+          <a href="../index.html" class="logo-badge" title="Página Inicial • Disciplinas">IFPB</a>
           <div class="brand-text">
             <div class="brand-title-row">
               <h1 id="meta-disciplina">Desenvolvimento Web</h1>

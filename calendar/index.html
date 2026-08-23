@@ -114,6 +114,16 @@
       border-radius: 0.75rem;
       letter-spacing: 0.5px;
       box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .logo-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 12px -1px rgba(2, 132, 199, 0.35);
+      color: white;
     }
 
     .brand-text h1 {
@@ -950,7 +960,7 @@
   <header>
     <div class="header-container">
       <div class="brand">
-        <div class="logo-badge">IFPB</div>
+        <a href="../index.html" class="logo-badge" title="Página Inicial • Disciplinas">IFPB</a>
         <div class="brand-text">
           <h1 id="calendar-header-title">Calendário Acadêmico 2026.2</h1>
           <p id="calendar-header-sub">Instituto Federal da Paraíba • Campus João Pessoa</p>
