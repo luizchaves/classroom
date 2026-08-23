@@ -96,7 +96,7 @@ Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e valida�
 - **Orientações e Estrutura do Pitch (5 Minutos):**
   - **Duração & Integrantes:** Apresentação de até 5 minutos estritos, com fala obrigatória de todos os membros do grupo (requer treino prévio).
   - **Pré-requisito:** PR no portal `ifpb/projects` enviado e aprovado com antecedência.
-  - **1. Problema & Objetivo:** Apresentar o problema na área de Redes de Computadores e o objetivo central.
+  - **1. Problema & Objetivo:** Apresentar o problema na área de Redes de Computadores, o objetivo central e público alvo.
   - **2. Funcionalidades (Features):** Principais recursos planejados para a aplicação.
   - **3. Benchmarking:** Comparação com ferramentas de mercado existentes (ex: Grafana, Zabbix, Webmin).
   - **4. Interface & Telas Estáticas:** Exibição do protótipo/telas estáticas (HTML/CSS ou Figma) e fluxo de navegação.
