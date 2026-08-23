@@ -116,18 +116,6 @@ Introdução à linguagem JavaScript (ECMAScript), tipos de dados fundamentais, 
   - [Exercício: Notas](https://ifpb.github.io/exercises/problems/algorithms/basic-grades/)
   - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/algorithms/basic-numbers-series/)
 
-## Projeto da Disciplina em Bootstrap
-
-Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integrando layout responsivo com Bootstrap.
-
-- **Conteúdo & Protótipo:**
-  - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/projects/invest-app-bootstrap/)
-  - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
-  - [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
-- **Código Fonte:**
-  - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
-  - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
-
 ## Função e Módulos
 
 Organização de código com funções (parâmetros, retorno, _arrow functions_) e modularização de código com ES Modules (`import`/`export`).
@@ -171,6 +159,18 @@ Integração do JavaScript com o navegador, manipulação da árvore DOM (_Docum
   - [Conteúdo: Browser Objects](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/browser/browser-objects/)
   - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/browser/dynamic-elements/)
   - [Conteúdo: Manipulação de Eventos](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/browser/events/)
+
+## Projeto da Disciplina em Bootstrap
+
+Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integrando layout responsivo com Bootstrap.
+
+- **Conteúdo & Protótipo:**
+  - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/projects/invest-app-bootstrap/)
+  - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
+  - [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
+- **Código Fonte:**
+  - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
+  - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
 
 ## JS Web: CRUD
 
