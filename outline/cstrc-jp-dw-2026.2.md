@@ -93,6 +93,7 @@ Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e valida�
 - **Especificação & Roteiro do Pitch:**
   - [Projeto: Especificação do Projeto > Estrutura do Pitch (5 Minutos)](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/project/#estrutura-do-pitch-5-minutos)
   - [Github: Projetos de DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
+  - [Github: Alunos com Projeto de DW 2026.2](https://ifpb.github.io/projects/people/dw-cstrc-jp-2026.2/1/)
 - **Orientações e Estrutura do Pitch (5 Minutos):**
   - **Duração & Integrantes:** Apresentação de até 5 minutos estritos, com fala obrigatória de todos os membros do grupo (requer treino prévio).
   - **Pré-requisito:** PR no portal `ifpb/projects` enviado e aprovado com antecedência.
