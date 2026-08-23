@@ -86,7 +86,7 @@
       box-shadow: 0 1px 3px rgba(0,0,0,0.05);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 1000;
     }
 
     .header-container {
@@ -133,6 +133,17 @@
       opacity: 0.45;
       line-height: 1.2;
       user-select: none;
+    }
+
+    .header-title-link {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .header-title-link:hover {
+      text-decoration: none;
+      opacity: 0.8;
     }
 
     .header-period-pill {
@@ -321,7 +332,7 @@
     }
 
     html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     select, input[type="text"] {
@@ -1229,7 +1240,9 @@
           <div class="brand-title-row">
             <a href="../index.html" class="title-breadcrumb-link" title="Ir para a página inicial (Disciplinas)">Disciplinas</a>
             <span class="title-breadcrumb-sep">›</span>
-            <h1 id="calendar-header-title">Desenvolvimento Web</h1>
+            <h1>
+              <a href="#" id="calendar-header-title" class="header-title-link" title="Voltar ao topo">Desenvolvimento Web</a>
+            </h1>
             <span class="header-period-pill" id="calendar-header-periodo">2026.2</span>
           </div>
           <p>
@@ -1601,7 +1614,10 @@
       eventsOnlyToggle.checked = isQueryFlagEnabled('eventos');
 
       // Event Listeners for Filters
-      monthSelect.addEventListener('change', renderActiveView);
+      monthSelect.addEventListener('change', () => {
+        renderActiveView();
+        scrollToTargetDateOrMonth(true);
+      });
       document.getElementById('category-select').addEventListener('change', renderActiveView);
       document.getElementById('search-input').addEventListener('input', renderActiveView);
       letivoOnlyToggle.addEventListener('change', () => {
@@ -1624,6 +1640,7 @@
       });
 
       setViewMode(currentViewMode, { updateUrl: false });
+      scrollToTargetDateOrMonth();
 
       // Initialize Lucide Icons if available
       if (window.lucide) {
@@ -1745,6 +1762,7 @@
 
         const monthCard = document.createElement('div');
         monthCard.className = 'month-card';
+        monthCard.setAttribute('data-month', month.ano_mes);
 
         const monthHeader = document.createElement('div');
         monthHeader.className = 'month-header';
@@ -1780,6 +1798,7 @@
 
           const dayCell = document.createElement('div');
           dayCell.className = 'day-cell';
+          dayCell.setAttribute('data-date', day.data);
           if (day.letivo) dayCell.classList.add('is-letivo');
           if (day.eventos.length > 0) dayCell.classList.add('has-event');
           if (day.data === todayIsoDate) dayCell.classList.add('is-today');
@@ -1858,6 +1877,7 @@
 
         const monthCard = document.createElement('div');
         monthCard.className = 'list-month-card';
+        monthCard.setAttribute('data-month', month.ano_mes);
 
         const monthHeader = document.createElement('div');
         monthHeader.className = 'list-month-header';
@@ -1877,6 +1897,7 @@
 
           const row = document.createElement('div');
           row.className = 'list-row-item';
+          row.setAttribute('data-date', day.data);
 
           const dateCol = document.createElement('div');
           dateCol.className = 'list-row-date';
@@ -2010,6 +2031,101 @@
 
     function closeModal() {
       document.getElementById('event-modal').classList.remove('active');
+    }
+
+    let hasAutoScrolled = false;
+
+    function scrollToTargetDateOrMonth(forceScroll = false) {
+      if (hasAutoScrolled && !forceScroll) return;
+
+      const today = new Date();
+      const currentYear = today.getFullYear();
+      const currentMonth = today.getMonth() + 1;
+      const todayIsoDate = `${currentYear}-${String(currentMonth).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+      const currentYearMonth = `${currentYear}-${String(currentMonth).padStart(2, '0')}`;
+      const monthSelectEl = document.getElementById('month-select');
+      const selectedMonth = monthSelectEl ? monthSelectEl.value : 'all';
+
+      let targetEl = null;
+
+      if (currentViewMode === 'list') {
+        // --- LIST VIEW: Target specific DATE row ---
+        if (selectedMonth && selectedMonth !== 'all') {
+          targetEl = document.querySelector(`.list-row-item[data-date^="${selectedMonth}"]`) ||
+                     document.querySelector(`.list-month-card[data-month="${selectedMonth}"]`);
+        }
+
+        // 1. Exact today row in list
+        if (!targetEl) {
+          targetEl = document.querySelector(`.list-row-item[data-date="${todayIsoDate}"]`);
+        }
+
+        // 2. Next closest future date row in list
+        if (!targetEl) {
+          const listRows = Array.from(document.querySelectorAll('.list-row-item[data-date]'));
+          targetEl = listRows.find(row => row.dataset.date >= todayIsoDate);
+        }
+
+        // 3. Fallback: first list row or list month card
+        if (!targetEl) {
+          targetEl = document.querySelector('.list-row-item, .list-month-card');
+        }
+      } else {
+        // --- GRID VIEW: Target MONTH card ---
+        if (selectedMonth && selectedMonth !== 'all') {
+          targetEl = document.querySelector(`.month-card[data-month="${selectedMonth}"]`);
+        }
+
+        // 1. Month card containing today
+        if (!targetEl) {
+          const todayCell = document.querySelector(`.day-cell.is-today, .day-cell[data-date="${todayIsoDate}"]`);
+          if (todayCell) {
+            targetEl = todayCell.closest('.month-card') || todayCell;
+          }
+        }
+
+        // 2. Month card for current year-month
+        if (!targetEl) {
+          targetEl = document.querySelector(`.month-card[data-month="${currentYearMonth}"]`);
+        }
+
+        // 3. Closest future month card
+        if (!targetEl) {
+          const monthCards = Array.from(document.querySelectorAll('.month-card[data-month]'));
+          targetEl = monthCards.find(card => card.dataset.month >= currentYearMonth);
+        }
+
+        // 4. Fallback to first month card
+        if (!targetEl) {
+          targetEl = document.querySelector('.month-card');
+        }
+      }
+
+      if (targetEl) {
+        hasAutoScrolled = true;
+        const doScroll = () => {
+          const header = document.querySelector('header');
+          const headerHeight = header ? header.offsetHeight : 0;
+          const targetRect = targetEl.getBoundingClientRect();
+          const absoluteTargetTop = targetRect.top + window.pageYOffset;
+          const scrollPosition = absoluteTargetTop - headerHeight - 24;
+
+          window.scrollTo({
+            top: Math.max(0, scrollPosition),
+            behavior: 'smooth'
+          });
+        };
+
+        setTimeout(doScroll, 400);
+      }
+    }
+
+    const headerTitleLink = document.querySelector('.header-title-link');
+    if (headerTitleLink) {
+      headerTitleLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     }
 
     // Init Calendar App & Event Listeners

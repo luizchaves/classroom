@@ -133,6 +133,17 @@
       user-select: none;
     }
 
+    .header-title-link {
+      color: inherit;
+      text-decoration: none;
+      transition: opacity 0.15s ease;
+    }
+
+    .header-title-link:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+
     .brand-text h1 {
       font-size: 1.28rem;
       font-weight: 800;
@@ -1476,7 +1487,9 @@
             <div class="brand-title-row">
               <a href="../index.html" class="title-breadcrumb-link" title="Ir para a página inicial (Disciplinas)">Disciplinas</a>
               <span class="title-breadcrumb-sep">›</span>
-              <h1 id="meta-disciplina">Desenvolvimento Web</h1>
+              <h1>
+                <a href="#" id="meta-disciplina" class="header-title-link" title="Voltar ao topo">Desenvolvimento Web</a>
+              </h1>
               <span class="header-period-pill" id="meta-periodo">2026.2</span>
             </div>
             <p>
@@ -3134,6 +3147,14 @@
     document.getElementById('view-detailed-btn').addEventListener('click', event => handleOutlineViewSwitchClick(event, 'detailed'));
     document.getElementById('view-compact-btn').addEventListener('click', event => handleOutlineViewSwitchClick(event, 'compact'));
     document.getElementById('view-calendar-btn').addEventListener('click', () => setOutlineView('calendar'));
+    const headerTitleLink = document.querySelector('.header-title-link');
+    if (headerTitleLink) {
+      headerTitleLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
     document.getElementById('jump-current-lesson-btn').addEventListener('click', jumpToTodayOrNextLesson);
     window.addEventListener('scroll', scheduleHashForTopLessonUpdate, { passive: true });
     window.addEventListener('resize', updateStickyOffsets);
