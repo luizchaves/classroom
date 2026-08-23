@@ -120,7 +120,7 @@
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.35rem 0.5rem;
+      gap: 0.2rem 0.35rem;
     }
 
     .title-breadcrumb-link {
@@ -138,11 +138,12 @@
     }
 
     .title-breadcrumb-sep {
-      font-size: 1.35rem;
-      font-weight: 800;
+      font-size: 0.85em;
+      font-weight: 700;
       color: var(--text-muted);
-      opacity: 0.4;
+      opacity: 0.45;
       line-height: 1.2;
+      user-select: none;
     }
 
     .brand-text h1 {
@@ -960,12 +961,37 @@
     /* Responsive */
     @media (max-width: 768px) {
       :root { --page-gutter: 1rem; }
-      header { padding: 1rem var(--page-gutter); }
+      header { padding: 0.75rem var(--page-gutter); }
       .brand-text h1,
       .title-breadcrumb-link,
-      .title-breadcrumb-sep { font-size: 1.1rem; }
-      .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
+      .title-breadcrumb-sep { font-size: 1.05rem; }
+      .controls-bar {
+        padding: 0 1rem;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+      }
+      .filters-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.4rem;
+      }
+      .search-input-wrapper {
+        grid-column: span 2;
+      }
       .search-input-wrapper input { width: 100%; }
+      .right-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+      .view-btn-label {
+        display: none;
+      }
+      .view-btn {
+        padding: 0.45rem 0.65rem;
+      }
       .calendar-grid { padding: 0 1rem; grid-template-columns: 1fr; }
       .list-row-item { grid-template-columns: 1fr; gap: 0.4rem; }
     }
@@ -985,7 +1011,7 @@
         <div class="brand-text">
           <div class="brand-title-row">
             <a href="../index.html" class="title-breadcrumb-link" title="Ir para a página inicial (Disciplinas)">Disciplinas</a>
-            <span class="title-breadcrumb-sep">/</span>
+            <span class="title-breadcrumb-sep">›</span>
             <h1 id="calendar-header-title">Calendário Acadêmico 2026.2</h1>
           </div>
           <p id="calendar-header-sub">Instituto Federal da Paraíba • Campus João Pessoa</p>
@@ -1026,10 +1052,10 @@
       <!-- Lucide View Switcher -->
       <div class="view-switcher-group">
         <button id="view-list-btn" class="view-btn" title="Exibir em Lista">
-          <i data-lucide="list"></i> Lista
+          <i data-lucide="list"></i> <span class="view-btn-label">Lista</span>
         </button>
         <button id="view-grid-btn" class="view-btn active" title="Exibir em Calendário">
-          <i data-lucide="calendar-days"></i> Calendário
+          <i data-lucide="calendar-days"></i> <span class="view-btn-label">Calendário</span>
         </button>
       </div>
 
