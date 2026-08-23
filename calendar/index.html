@@ -114,16 +114,35 @@
       border-radius: 0.75rem;
       letter-spacing: 0.5px;
       box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .logo-badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 12px -1px rgba(2, 132, 199, 0.35);
-      color: white;
+    .brand-title-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.5rem;
+    }
+
+    .title-breadcrumb-link {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      line-height: 1.2;
+      transition: color 0.15s ease;
+    }
+
+    .title-breadcrumb-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .title-breadcrumb-sep {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      opacity: 0.4;
+      line-height: 1.2;
     }
 
     .brand-text h1 {
@@ -942,7 +961,9 @@
     @media (max-width: 768px) {
       :root { --page-gutter: 1rem; }
       header { padding: 1rem var(--page-gutter); }
-      .brand-text h1 { font-size: 1.1rem; }
+      .brand-text h1,
+      .title-breadcrumb-link,
+      .title-breadcrumb-sep { font-size: 1.1rem; }
       .controls-bar { padding: 0 1rem; flex-direction: column; align-items: stretch; }
       .search-input-wrapper input { width: 100%; }
       .calendar-grid { padding: 0 1rem; grid-template-columns: 1fr; }
@@ -960,9 +981,13 @@
   <header>
     <div class="header-container">
       <div class="brand">
-        <a href="../index.html" class="logo-badge" title="Página Inicial • Disciplinas">IFPB</a>
+        <div class="logo-badge">IFPB</div>
         <div class="brand-text">
-          <h1 id="calendar-header-title">Calendário Acadêmico 2026.2</h1>
+          <div class="brand-title-row">
+            <a href="../index.html" class="title-breadcrumb-link" title="Ir para a página inicial (Disciplinas)">Disciplinas</a>
+            <span class="title-breadcrumb-sep">/</span>
+            <h1 id="calendar-header-title">Calendário Acadêmico 2026.2</h1>
+          </div>
           <p id="calendar-header-sub">Instituto Federal da Paraíba • Campus João Pessoa</p>
         </div>
       </div>

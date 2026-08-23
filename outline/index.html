@@ -103,38 +103,33 @@
       min-width: 0;
     }
 
-    .logo-badge {
-      background: linear-gradient(135deg, #0284c7, #16a34a);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 1.15rem;
-      padding: 0.45rem 0.75rem;
-      border-radius: 0.65rem;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 6px -1px rgba(2, 132, 199, 0.25);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      flex-shrink: 0;
-      transition: all 0.2s ease;
-    }
-
-    .logo-badge:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 12px -1px rgba(2, 132, 199, 0.35);
-      color: #ffffff;
-    }
-
-    .brand-text {
-      min-width: 0;
-      width: 100%;
-    }
-
     .brand-title-row {
       display: flex;
       align-items: baseline;
       flex-wrap: wrap;
-      gap: 0.55rem 0.7rem;
+      gap: 0.4rem 0.5rem;
+    }
+
+    .title-breadcrumb-link {
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--primary);
+      text-decoration: none;
+      line-height: 1.15;
+      transition: color 0.15s ease;
+    }
+
+    .title-breadcrumb-link:hover {
+      color: var(--primary-hover);
+      text-decoration: underline;
+    }
+
+    .title-breadcrumb-sep {
+      font-size: 1.28rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      opacity: 0.4;
+      line-height: 1.15;
     }
 
     .brand-text h1 {
@@ -1161,7 +1156,9 @@
       .brand-title-row {
         gap: 0.4rem;
       }
-      .brand-text h1 {
+      .brand-text h1,
+      .title-breadcrumb-link,
+      .title-breadcrumb-sep {
         font-size: 1.04rem;
         line-height: 1.2;
       }
@@ -1427,9 +1424,10 @@
     <div class="header-container">
       <div class="header-main">
         <div class="brand">
-          <a href="../index.html" class="logo-badge" title="Página Inicial • Disciplinas">IFPB</a>
           <div class="brand-text">
             <div class="brand-title-row">
+              <a href="../index.html" class="title-breadcrumb-link" title="Ir para a página inicial (Disciplinas)">Disciplinas</a>
+              <span class="title-breadcrumb-sep">/</span>
               <h1 id="meta-disciplina">Desenvolvimento Web</h1>
               <span class="header-period-pill" id="meta-periodo">2026.2</span>
             </div>
