@@ -3,7 +3,9 @@ disciplina: Programação para Web II
 curso: Bacharelado em Engenharia de Software
 periodo: 2026.2
 carga_horaria: 80ha
-professor: Luiz Carlos Rodrigues Chaves
+professor:
+  - Francisco Dantas Nobre Neto
+  - Luiz Carlos Rodrigues Chaves
 calendario: ../calendar/2026.2.json
 horarios:
   - dia: Segunda
@@ -72,26 +74,26 @@ Declaração de funções (parâmetros, retorno e _arrow functions_) em JavaScri
   - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
   - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
   - [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
-- **Acompanhamento:**
+
+## Módulos
+
+Organização de projetos com ES Modules (`import`/`export`) e estruturação de funções em JavaScript.
+
+- **Função:**
   - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
-
-## Módulos e Array
-
-Organização de projetos com ES Modules (`import`/`export`) e manipulação de vetores (*arrays*) em JavaScript.
-
 - **Módulos:**
   - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/modules/modules/)
   - [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
+
+## Array e String
+
+Criação e manipulação de vetores (_arrays_) e sequências de caracteres (_strings_) em JavaScript (`push`, `pop`, `split`, `join`, iteração).
+
 - **Array:**
   - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/array/array/)
   - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
   - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
   - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
-
-## String e Array Iterators
-
-Manipulação de sequências de caracteres (*strings*) e uso dos métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`, `every`, `some`).
-
 - **String:**
   - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/string/string/)
   - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
@@ -99,20 +101,18 @@ Manipulação de sequências de caracteres (*strings*) e uso dos métodos de ite
   - [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
   - [Exercício: Citação de String](https://ifpb.github.io/exercises/problems/string-citation/)
   - [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
+
+## Array Iterators e Objetos
+
+Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e criação de objetos literais e coleções em JavaScript.
+
 - **Array Iterators:**
   - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
   - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
-
-## Objetos
-
-Criação e manipulação de objetos literais em JavaScript, acesso a propriedades e estruturas de objetos.
-
-- **Conteúdo Teórico:**
+- **Objetos:**
   - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/object/object/)
-- **Prática:**
   - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
   - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
-- **Acompanhamento:**
   - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
 
 ## Exercício Avaliativo

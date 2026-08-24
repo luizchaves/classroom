@@ -2095,8 +2095,24 @@
           setTargetWorkload(cargaMatch[1].trim());
         }
 
-        const profMatch = fmText.match(/professor:\s*(.*)/);
-        if (profMatch) document.getElementById('meta-professor').textContent = '👨‍🏫 Prof. ' + profMatch[1].trim();
+        let profNames = [];
+        const profListBlock = fmText.match(/(?:professor|professores):\s*\n((?:\s*-\s*.*\n?)+)/i);
+        if (profListBlock) {
+          profNames = profListBlock[1]
+            .split('\n')
+            .map(l => l.trim().replace(/^-\s*/, '').trim())
+            .filter(Boolean);
+        } else {
+          const singleProfMatch = fmText.match(/(?:professor|professores):\s*(.*)/i);
+          if (singleProfMatch && singleProfMatch[1].trim()) {
+            profNames = singleProfMatch[1].trim().split(/\s+e\s+/i);
+          }
+        }
+
+        if (profNames.length > 0) {
+          const formattedNames = profNames.map(name => name.trim().startsWith('Prof.') ? name.trim() : `Prof. ${name.trim()}`);
+          document.getElementById('meta-professor').textContent = '👨‍🏫 ' + formattedNames.join(' e ');
+        }
 
         const horariosBlock = fmText.match(/horarios:\s*\n([\s\S]*?)(?=\n[a-z_]+:|\n---|$)/i);
         if (horariosBlock) {

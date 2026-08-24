@@ -1466,7 +1466,7 @@
         curso: 'Bacharelado em Engenharia de Software',
         periodo: '2026.2',
         carga_horaria: '80ha',
-        professor: 'Luiz Carlos Rodrigues Chaves',
+        professor: 'Francisco Dantas Nobre Neto e Luiz Carlos Rodrigues Chaves',
         calendarFile: '2026.2.json'
       },
       {
@@ -1566,7 +1566,14 @@
         document.getElementById('calendar-header-title').textContent = matchedSubject.disciplina;
         document.getElementById('calendar-header-periodo').textContent = matchedSubject.periodo;
         document.getElementById('calendar-header-curso').textContent = `${matchedSubject.curso} • IFPB Campus JP`;
-        const profName = matchedSubject.professor.startsWith('Prof.') ? matchedSubject.professor : `Prof. ${matchedSubject.professor}`;
+        let profName = '';
+        if (Array.isArray(matchedSubject.professor)) {
+          profName = matchedSubject.professor.map(p => p.trim().startsWith('Prof.') ? p.trim() : `Prof. ${p.trim()}`).join(' e ');
+        } else if (matchedSubject.professor.includes(' e ')) {
+          profName = matchedSubject.professor.split(/\s+e\s+/).map(p => p.trim().startsWith('Prof.') ? p.trim() : `Prof. ${p.trim()}`).join(' e ');
+        } else {
+          profName = matchedSubject.professor.startsWith('Prof.') ? matchedSubject.professor : `Prof. ${matchedSubject.professor}`;
+        }
         document.getElementById('calendar-header-prof').textContent = `👨‍🏫 ${profName}`;
       } else {
         const pName = calendarData.ano_letivo ? `${calendarData.ano_letivo}.${calendarData.periodo}` : '2026.2';
