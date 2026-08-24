@@ -103,10 +103,14 @@ Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e valida�
   - **4. Interface & Telas Estáticas:** Exibição do protótipo/telas estáticas (HTML/CSS ou Figma) e fluxo de navegação.
   - **5. Transição para Dados Reais:** Hipóteses técnicas para converter dados fictícios (mock data) em dados reais (chamadas CLI/SO, parsing de logs, APIs de rede ou banco de dados).
 
-## ECMA: Dados, Variável, Decisão e Repetição
+## Apresentação de Projetos (Cont.) & ECMA: Dados, Variável, Decisão e Repetição
 
-Introdução à linguagem JavaScript (ECMAScript), tipos de dados fundamentais, declaração de variáveis (`const`, `let`), operadores e estruturas de controle de fluxo (`if/else`, `for`, `while`).
+Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), análise das sugestões de correção para as equipes que já apresentaram (com foco na conversão de dados fictícios para dados reais, ajustes na interface se necessário e no `README`), e introdução à linguagem JavaScript (ECMAScript), tipos de dados fundamentais, declaração de variáveis (`const`, `let`), operadores e estruturas de controle de fluxo (`if/else`, `for`, `while`).
 
+- **Apresentação & Feedback de Projetos:**
+  - [Github: Projetos de DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
+  - [Github: Alunos com Projeto de DW 2026.2](https://ifpb.github.io/projects/people/dw-cstrc-jp-2026.2/1/)
+  - **Ajustes & Correções:** Apresentação dos grupos remanescentes e revisão das recomendações de melhoria nos projetos apresentados (estratégias para dados reais vs. mock, ajustes na interface se necessário e refinamento da documentação no `README`).
 - **Conteúdo Teórico:**
   - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/ecmascript/)
   - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/variables/)
