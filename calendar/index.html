@@ -3,8 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Calendário Acadêmico Interativo - IFPB Campus João Pessoa</title>
-  <meta name="description" content="Calendário Acadêmico Interativo do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <title>Calendário Acadêmico • IFPB Campus João Pessoa</title>
+  <meta name="title" content="Calendário Acadêmico • IFPB Campus João Pessoa">
+  <meta name="description" content="Calendário Acadêmico Interativo, feriados, recessos e exames do Instituto Federal da Paraíba - Campus João Pessoa.">
+
+  <!-- Open Graph / WhatsApp / Facebook / Telegram / LinkedIn / Slack -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luizchaves.github.io/subjects/calendar/index.html">
+  <meta property="og:title" content="Calendário Acadêmico • IFPB Campus João Pessoa">
+  <meta property="og:description" content="Calendário Acadêmico Interativo, feriados, recessos e exames do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <meta property="og:image" content="https://luizchaves.github.io/subjects/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Disciplinas • IFPB Campus JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://luizchaves.github.io/subjects/calendar/index.html">
+  <meta name="twitter:title" content="Calendário Acadêmico • IFPB Campus João Pessoa">
+  <meta name="twitter:description" content="Calendário Acadêmico Interativo, feriados, recessos e exames do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <meta name="twitter:image" content="https://luizchaves.github.io/subjects/assets/og-preview.png">
+  <!-- Inline Theme Script (FOUC Prevention) -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('subjects-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -64,6 +94,128 @@
       --semestre-milestone-text: #14532d;
     }
 
+    [data-theme="dark"] {
+      --bg-main: #0b1329;
+      --bg-card: #172036;
+      --border-color: #273554;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+
+      --letivo-bg: rgba(34, 197, 94, 0.15);
+      --letivo-border: rgba(34, 197, 94, 0.35);
+      --letivo-text: #86efac;
+
+      --nao-letivo-bg: #172036;
+      --nao-letivo-border: #273554;
+      --nao-letivo-text: #64748b;
+
+      --feriado-bg: rgba(239, 68, 68, 0.18);
+      --feriado-border: rgba(239, 68, 68, 0.4);
+      --feriado-text: #fca5a5;
+
+      --recesso-bg: rgba(249, 115, 22, 0.18);
+      --recesso-border: rgba(249, 115, 22, 0.4);
+      --recesso-text: #fed7aa;
+
+      --academico-bg: rgba(99, 102, 241, 0.18);
+      --academico-border: rgba(99, 102, 241, 0.4);
+      --academico-text: #c7d2fe;
+
+      --exames-bg: rgba(168, 85, 247, 0.18);
+      --exames-border: rgba(168, 85, 247, 0.4);
+      --exames-text: #e9d5ff;
+
+      --prazo-bg: rgba(234, 179, 8, 0.18);
+      --prazo-border: rgba(234, 179, 8, 0.4);
+      --prazo-text: #fde68a;
+
+      --ferias-bg: #1e293b;
+      --ferias-border: #334155;
+      --ferias-text: #cbd5e1;
+
+      --matricula-bg: rgba(6, 182, 212, 0.18);
+      --matricula-border: rgba(6, 182, 212, 0.4);
+      --matricula-text: #a5f3fc;
+
+      --semestre-milestone-bg: rgba(34, 197, 94, 0.2);
+      --semestre-milestone-border: rgba(34, 197, 94, 0.4);
+      --semestre-milestone-text: #86efac;
+    }
+
+    [data-theme="dark"] select,
+    [data-theme="dark"] input[type="text"] {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-color: #334155;
+    }
+
+    [data-theme="dark"] .day-cell {
+      background-color: #1e293b;
+      border-color: #273554;
+      color: #f8fafc;
+    }
+
+    [data-theme="dark"] .day-cell.empty {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    [data-theme="dark"] .list-row-item {
+      background-color: #1e293b;
+      border-color: #334155;
+    }
+
+    [data-theme="dark"] .view-btn {
+      background-color: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    [data-theme="dark"] .view-btn.active {
+      background-color: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+
+    [data-theme="dark"] .modal-content {
+      background-color: #172036;
+      border-color: #273554;
+      color: #f8fafc;
+    }
+
+    .theme-toggle-btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      z-index: 10;
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--bg-main);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle-btn svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -97,6 +249,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      position: relative;
     }
 
     .brand {
@@ -110,6 +263,7 @@
       align-items: baseline;
       flex-wrap: wrap;
       gap: 0.2rem 0.35rem;
+      padding-right: 2.75rem;
     }
 
     .title-breadcrumb-link {
@@ -1251,6 +1405,9 @@
           </p>
         </div>
       </div>
+      <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
+        <i data-lucide="moon"></i>
+      </button>
     </div>
   </header>
 
@@ -2134,6 +2291,26 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('subjects-theme', next);
+      updateThemeIcon();
+    }
+
+    function updateThemeIcon() {
+      const btn = document.getElementById('theme-toggle-btn');
+      if (!btn) return;
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = isDark ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+      btn.setAttribute('title', isDark ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
+    updateThemeIcon();
 
     // Init Calendar App & Event Listeners
     const calendarSelectEl = document.getElementById('calendar-select');

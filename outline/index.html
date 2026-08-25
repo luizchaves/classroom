@@ -3,8 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plano de Aulas e Conteúdo - IFPB Campus João Pessoa</title>
-  <meta name="description" content="Plano de Aulas e Conteúdo Programático do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <title>Plano de Aulas e Conteúdo • IFPB Campus João Pessoa</title>
+  <meta name="title" content="Plano de Aulas e Conteúdo • IFPB Campus João Pessoa">
+  <meta name="description" content="Plano de Aulas (Outline), cronograma, avaliações e materiais de estudo do Instituto Federal da Paraíba - Campus João Pessoa.">
+
+  <!-- Open Graph / WhatsApp / Facebook / Telegram / LinkedIn / Slack -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luizchaves.github.io/subjects/outline/index.html">
+  <meta property="og:title" content="Plano de Aulas e Conteúdo • IFPB Campus João Pessoa">
+  <meta property="og:description" content="Plano de Aulas (Outline), cronograma, avaliações e materiais de estudo do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <meta property="og:image" content="https://luizchaves.github.io/subjects/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Disciplinas • IFPB Campus JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://luizchaves.github.io/subjects/outline/index.html">
+  <meta name="twitter:title" content="Plano de Aulas e Conteúdo • IFPB Campus João Pessoa">
+  <meta name="twitter:description" content="Plano de Aulas (Outline), cronograma, avaliações e materiais de estudo do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <meta name="twitter:image" content="https://luizchaves.github.io/subjects/assets/og-preview.png">
+  <!-- Inline Theme Script (FOUC Prevention) -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('subjects-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -53,6 +83,204 @@
       --badge-medium-border: #cbd5e1;
     }
 
+    [data-theme="dark"] {
+      --bg-main: #0b1329;
+      --bg-card: #172036;
+      --border-color: #273554;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+
+      --badge-dw-bg: rgba(56, 189, 248, 0.15);
+      --badge-dw-text: #7dd3fc;
+      --badge-dw-border: rgba(56, 189, 248, 0.35);
+
+      --badge-github-bg: #1e293b;
+      --badge-github-text: #cbd5e1;
+      --badge-github-border: #334155;
+
+      --badge-braincheck-bg: rgba(168, 85, 247, 0.18);
+      --badge-braincheck-text: #e9d5ff;
+      --badge-braincheck-border: rgba(168, 85, 247, 0.4);
+
+      --badge-exercicio-bg: rgba(34, 197, 94, 0.15);
+      --badge-exercicio-text: #86efac;
+      --badge-exercicio-border: rgba(34, 197, 94, 0.35);
+
+      --badge-padlet-bg: rgba(236, 72, 153, 0.18);
+      --badge-padlet-text: #fbcfe8;
+      --badge-padlet-border: rgba(236, 72, 153, 0.4);
+
+      --badge-figma-bg: rgba(249, 115, 22, 0.18);
+      --badge-figma-text: #fed7aa;
+      --badge-figma-border: rgba(249, 115, 22, 0.4);
+
+      --badge-medium-bg: #1e293b;
+      --badge-medium-text: #cbd5e1;
+      --badge-medium-border: #334155;
+    }
+
+    [data-theme="dark"] select,
+    [data-theme="dark"] input[type="text"] {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-color: #334155;
+    }
+
+    [data-theme="dark"] .topic-card {
+      background-color: #172036;
+      border-color: #273554;
+    }
+
+    [data-theme="dark"] .topic-card.next-up-card {
+      background-color: #0f2744;
+      border-color: #0284c7;
+    }
+
+    [data-theme="dark"] .topic-card.is-extra-card {
+      background-color: #241a06;
+      border-left-color: #f59e0b;
+    }
+
+    [data-theme="dark"] .topic-card.is-no-class-card {
+      background-color: #291215;
+      border-left-color: #ef4444;
+    }
+
+    [data-theme="dark"] .topic-card.is-project-card {
+      background-color: #201335;
+      border-left-color: #a855f7;
+    }
+
+    [data-theme="dark"] .topic-number-link {
+      background-color: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+    }
+
+    [data-theme="dark"] .badge-extra-label {
+      background-color: rgba(245, 158, 11, 0.2);
+      color: #fef08a;
+      border-color: rgba(245, 158, 11, 0.4);
+    }
+
+    [data-theme="dark"] .badge-project-label {
+      background-color: rgba(168, 85, 247, 0.22);
+      color: #e9d5ff;
+      border-color: rgba(168, 85, 247, 0.45);
+    }
+
+    [data-theme="dark"] .badge-graded-label {
+      background-color: rgba(34, 197, 94, 0.2);
+      color: #bbf7d0;
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    [data-theme="dark"] .topic-date-badge:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
+      background-color: #1e293b;
+      color: #94a3b8;
+      border-color: #334155;
+    }
+
+    [data-theme="dark"] .topic-date-badge.is-past-date:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
+      background-color: #172036;
+      color: #64748b;
+      border-color: #273554;
+    }
+
+    [data-theme="dark"] .topic-date-badge.is-focus-date:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
+      background-color: rgba(249, 115, 22, 0.22);
+      color: #ffedd5;
+      border-color: #f97316;
+      box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+    }
+
+    [data-theme="dark"] .pill {
+      background-color: #1e293b;
+      border-color: #334155;
+      color: #f1f5f9;
+    }
+
+    [data-theme="dark"] .pill-accent,
+    [data-theme="dark"] .pill-info {
+      background-color: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.4);
+      color: #7dd3fc;
+    }
+
+    [data-theme="dark"] .pill-warning {
+      background-color: rgba(234, 179, 8, 0.15);
+      border-color: rgba(234, 179, 8, 0.4);
+      color: #fef08a;
+    }
+
+    [data-theme="dark"] .pill-success,
+    [data-theme="dark"] .pill-progress-done {
+      background-color: rgba(34, 197, 94, 0.15);
+      border-color: rgba(34, 197, 94, 0.4);
+      color: #86efac;
+    }
+
+    [data-theme="dark"] .pill-progress {
+      background-color: rgba(249, 115, 22, 0.18);
+      border-color: rgba(249, 115, 22, 0.4);
+      color: #ffedd5;
+    }
+
+    [data-theme="dark"] .pill-progress-muted {
+      background-color: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    [data-theme="dark"] .sticky-page-tools {
+      background-color: rgba(11, 19, 41, 0.92);
+      border-color: #273554;
+    }
+
+    [data-theme="dark"] .view-btn {
+      background-color: #1e293b;
+      border-color: #334155;
+      color: #94a3b8;
+    }
+
+    [data-theme="dark"] .view-btn.active {
+      background-color: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+
+    .theme-toggle-btn {
+      position: absolute;
+      top: 0;
+      right: var(--page-gutter);
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 36px;
+      height: 36px;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+      z-index: 10;
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--bg-main);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle-btn svg {
+      width: 1.1rem;
+      height: 1.1rem;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -85,6 +313,7 @@
       display: flex;
       flex-direction: column;
       gap: 0.65rem;
+      position: relative;
     }
 
     .header-main {
@@ -108,6 +337,7 @@
       align-items: baseline;
       flex-wrap: wrap;
       gap: 0.2rem 0.35rem;
+      padding-right: 2.75rem;
     }
 
     .title-breadcrumb-link {
@@ -1212,6 +1442,12 @@
       .header-container {
         gap: 0.5rem;
       }
+      .theme-toggle-btn {
+        top: 0;
+        right: 1rem;
+        width: 34px;
+        height: 34px;
+      }
       .header-main {
         flex-direction: column;
         align-items: stretch;
@@ -1522,6 +1758,9 @@
             </details>
         </div>
       </div>
+      <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
+        <i data-lucide="moon"></i>
+      </button>
     </div>
   </header>
 
@@ -3039,6 +3278,32 @@
       }, 260);
     }
 
+    function updateOpenGraphMeta({ title, description, url }) {
+      if (title) {
+        document.title = title;
+        const metaTitle = document.querySelector('meta[name="title"]');
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const twTitle = document.querySelector('meta[name="twitter:title"]');
+        if (metaTitle) metaTitle.setAttribute('content', title);
+        if (ogTitle) ogTitle.setAttribute('content', title);
+        if (twTitle) twTitle.setAttribute('content', title);
+      }
+      if (description) {
+        const metaDesc = document.querySelector('meta[name="description"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        const twDesc = document.querySelector('meta[name="twitter:description"]');
+        if (metaDesc) metaDesc.setAttribute('content', description);
+        if (ogDesc) ogDesc.setAttribute('content', description);
+        if (twDesc) twDesc.setAttribute('content', description);
+      }
+      if (url) {
+        const ogUrl = document.querySelector('meta[property="og:url"]');
+        const twUrl = document.querySelector('meta[name="twitter:url"]');
+        if (ogUrl) ogUrl.setAttribute('content', url);
+        if (twUrl) twUrl.setAttribute('content', url);
+      }
+    }
+
     function updateLessonHash(anchorId) {
       if (!anchorId) return;
 
@@ -3047,6 +3312,15 @@
 
       currentUrl.hash = anchorId;
       window.history.replaceState(window.history.state || {}, '', currentUrl.toString());
+
+      const lessonEl = document.getElementById(anchorId);
+      const lessonTitle = lessonEl ? (lessonEl.querySelector('.topic-title')?.textContent?.trim() || anchorId) : anchorId;
+      const discName = document.getElementById('meta-disciplina')?.textContent || 'Plano de Aulas';
+
+      updateOpenGraphMeta({
+        title: `${lessonTitle} • ${discName} | IFPB`,
+        url: currentUrl.toString()
+      });
     }
 
     function updateHashForTopLesson() {
@@ -3170,6 +3444,26 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     }
+
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('subjects-theme', next);
+      updateThemeIcon();
+    }
+
+    function updateThemeIcon() {
+      const btn = document.getElementById('theme-toggle-btn');
+      if (!btn) return;
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = isDark ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+      btn.setAttribute('title', isDark ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
+    updateThemeIcon();
 
     document.getElementById('jump-current-lesson-btn').addEventListener('click', jumpToTodayOrNextLesson);
     window.addEventListener('scroll', scheduleHashForTopLessonUpdate, { passive: true });

@@ -4,6 +4,39 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Disciplinas e Planos de Aula • IFPB Campus JP</title>
+  <meta name="title" content="Disciplinas e Planos de Aula • IFPB Campus JP">
+  <meta name="description" content="Portal de Disciplinas, Planos de Aula (Outline) e Calendários Acadêmicos do Instituto Federal da Paraíba - Campus João Pessoa.">
+
+  <!-- Open Graph / WhatsApp / Facebook / Telegram / LinkedIn / Slack -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://luizchaves.github.io/subjects/index.html">
+  <meta property="og:title" content="Disciplinas e Planos de Aula • IFPB Campus JP">
+  <meta property="og:description" content="Portal de Disciplinas, Planos de Aula (Outline) e Calendários Acadêmicos do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <meta property="og:image" content="https://luizchaves.github.io/subjects/assets/og-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Disciplinas • IFPB Campus JP">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://luizchaves.github.io/subjects/index.html">
+  <meta name="twitter:title" content="Disciplinas e Planos de Aula • IFPB Campus JP">
+  <meta name="twitter:description" content="Portal de Disciplinas, Planos de Aula (Outline) e Calendários Acadêmicos do Instituto Federal da Paraíba - Campus João Pessoa.">
+  <meta name="twitter:image" content="https://luizchaves.github.io/subjects/assets/og-preview.png">
+  <!-- Inline Theme Script (FOUC Prevention) -->
+  <script>
+    (function() {
+      const saved = localStorage.getItem('subjects-theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+  <!-- Lucide Icons -->
+  <script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,6 +51,63 @@
       --border-color: #e2e8f0;
       --content-max-width: 1200px;
       --page-gutter: 1.5rem;
+    }
+
+    [data-theme="dark"] {
+      --primary: #38bdf8;
+      --primary-hover: #7dd3fc;
+      --bg-page: #0b1329;
+      --bg-card: #172036;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-color: #273554;
+    }
+
+    [data-theme="dark"] .btn-calendar-action {
+      background-color: #1e293b;
+      color: #f8fafc;
+      border-color: #334155;
+    }
+
+    [data-theme="dark"] .btn-calendar-action:hover {
+      background-color: #334155;
+      border-color: #475569;
+    }
+
+    [data-theme="dark"] footer {
+      background-color: #172036;
+      border-color: #273554;
+    }
+
+    .theme-toggle-btn {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      z-index: 1100;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      width: 38px;
+      height: 38px;
+      border-radius: 0.5rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .theme-toggle-btn:hover {
+      background-color: var(--bg-page);
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+    }
+
+    .theme-toggle-btn svg {
+      width: 1.15rem;
+      height: 1.15rem;
     }
 
     * {
@@ -345,9 +435,21 @@
         font-size: 0.82rem;
       }
     }
+    @media (max-width: 640px) {
+      .theme-toggle-btn {
+        top: 0.75rem;
+        right: 0.75rem;
+        width: 34px;
+        height: 34px;
+      }
+    }
   </style>
 </head>
 <body>
+
+  <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
+    <i data-lucide="moon"></i>
+  </button>
 
   <main>
     <div class="subjects-hero">
@@ -471,5 +573,26 @@
     <p>Instituto Federal da Paraíba • Campus João Pessoa &copy; 2026</p>
   </footer>
 
+  <script>
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('subjects-theme', next);
+      updateThemeIcon();
+    }
+
+    function updateThemeIcon() {
+      const btn = document.getElementById('theme-toggle-btn');
+      if (!btn) return;
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      btn.innerHTML = isDark ? '<i data-lucide="sun"></i>' : '<i data-lucide="moon"></i>';
+      btn.setAttribute('title', isDark ? 'Mudar para Tema Claro' : 'Mudar para Tema Escuro');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
+    updateThemeIcon();
+  </script>
 </body>
 </html>
