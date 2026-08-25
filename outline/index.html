@@ -227,10 +227,142 @@
       color: #ffedd5;
     }
 
-    [data-theme="dark"] .pill-progress-muted {
+    [data-theme="dark"] .outline-feed.compact-mode .topic-card.expanded {
+      background-color: #172036;
+      border-color: #0284c7;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .outline-feed.compact-mode .topic-card.expanded.is-extra-card {
+      background-color: #241a06;
+      border-left-color: #f59e0b;
+    }
+
+    [data-theme="dark"] .outline-feed.compact-mode .topic-card.expanded.is-no-class-card {
+      background-color: #291215;
+      border-left-color: #ef4444;
+    }
+
+    [data-theme="dark"] .outline-feed.compact-mode .topic-card.expanded.is-project-card {
+      background-color: #201335;
+      border-left-color: #a855f7;
+    }
+
+    [data-theme="dark"] .outline-feed.compact-mode .topic-card:hover {
+      background-color: #1e293b;
+    }
+
+    /* Lesson Calendar Grid in Dark Mode */
+    [data-theme="dark"] .jump-lesson-btn {
+      background-color: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+    }
+
+    [data-theme="dark"] .jump-lesson-btn:hover:not(:disabled) {
+      background-color: rgba(56, 189, 248, 0.25);
+      border-color: #38bdf8;
+      color: #38bdf8;
+    }
+
+    [data-theme="dark"] .lesson-month-card {
+      background-color: #172036;
+      border-color: #273554;
+    }
+
+    [data-theme="dark"] .lesson-month-header {
+      background-color: #0f172a;
+      border-color: #273554;
+    }
+
+    [data-theme="dark"] .lesson-month-badge {
+      background-color: rgba(56, 189, 248, 0.15);
+      color: #7dd3fc;
+    }
+
+    [data-theme="dark"] .lesson-weekdays-grid {
+      background-color: #0f172a;
+      border-color: #273554;
+      color: #94a3b8;
+    }
+
+    [data-theme="dark"] .lesson-day-cell {
+      background-color: #1e293b;
+      border-color: #273554;
+      color: #f8fafc;
+    }
+
+    [data-theme="dark"] .lesson-day-cell.outside-range {
+      background-color: #0b1329;
+      border-color: #1e293b;
+    }
+
+    [data-theme="dark"] .lesson-day-cell.has-class {
+      background-color: rgba(34, 197, 94, 0.08);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    [data-theme="dark"] .lesson-day-cell.has-class .lesson-day-number {
+      color: #86efac;
+    }
+
+    [data-theme="dark"] .lesson-day-cell.has-no-class {
+      background-color: rgba(239, 68, 68, 0.08);
+      border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    [data-theme="dark"] .lesson-day-cell.has-no-class .lesson-day-number {
+      color: #fca5a5;
+    }
+
+    [data-theme="dark"] .lesson-day-cell.is-today .lesson-day-number {
+      background-color: #f97316;
+      color: #ffffff !important;
+      box-shadow: 0 0 0 2px #172036, 0 0 0 4px rgba(249, 115, 22, 0.45);
+    }
+
+    [data-theme="dark"] .lesson-calendar-item {
+      background-color: rgba(56, 189, 248, 0.15);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: #7dd3fc;
+    }
+
+    [data-theme="dark"] .lesson-calendar-item:hover {
+      background-color: rgba(56, 189, 248, 0.25);
+      border-color: #38bdf8;
+    }
+
+    [data-theme="dark"] .lesson-calendar-item.is-extra {
+      background-color: rgba(245, 158, 11, 0.18);
+      border-color: rgba(245, 158, 11, 0.4);
+      color: #fef08a;
+    }
+
+    [data-theme="dark"] .lesson-calendar-item.is-no-class {
+      background-color: rgba(239, 68, 68, 0.18);
+      border-color: rgba(239, 68, 68, 0.4);
+      color: #fca5a5;
+    }
+
+    [data-theme="dark"] .schedule-item {
       background-color: #1e293b;
       border-color: #334155;
-      color: #94a3b8;
+      color: #f8fafc;
+    }
+
+    [data-theme="dark"] .topic-card:hover {
+      background-color: #1e293b;
+      border-color: #334155;
+      box-shadow: 0 8px 20px -2px rgba(0, 0, 0, 0.3);
+    }
+
+    [data-theme="dark"] .topic-number-link:hover {
+      background-color: rgba(56, 189, 248, 0.25);
+      color: #38bdf8;
+    }
+
+    [data-theme="dark"] .header-details-summary:hover {
+      color: #38bdf8;
     }
 
     [data-theme="dark"] .sticky-page-tools {
@@ -242,6 +374,11 @@
       background-color: #1e293b;
       border-color: #334155;
       color: #94a3b8;
+    }
+
+    [data-theme="dark"] .view-btn:hover {
+      background-color: #334155;
+      color: #f8fafc;
     }
 
     [data-theme="dark"] .view-btn.active {
