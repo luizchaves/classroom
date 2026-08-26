@@ -68,7 +68,7 @@ Implementação de rotas de CRUD completo (Create, Read, Update, Delete) em Expr
 
 Atividades do Sábado Letivo organizadas pelo CAEST.
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Orientação prática e mentoria de acompanhamento do desenvolvimento do projeto final.
 
@@ -98,7 +98,7 @@ Conexão e manipulação de bancos de dados relacionais SQL diretamente pela apl
 - **Conteúdo Teórico:**
   - [Conteúdo: Integração com SQL](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/db-simple/db-simple/)
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Sessão de mentoria e acompanhamento da integração da camada de dados no projeto.
 
@@ -126,7 +126,7 @@ Modelagem de relacionamentos entre tabelas no Prisma e implementação de cadast
 
 Participação nas atividades da Semana do Meio Ambiente.
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Mentoria de acompanhamento do desenvolvimento dos modelos e cadastros no projeto.
 
@@ -153,7 +153,7 @@ Participe dos minicursos do [IFTech 2026](https://www.even3.com.br/iftech-2026-7
 
 Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/iftech-2026-768290/)
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Orientação técnica para autenticação e rotas protegidas no projeto.
 
@@ -183,7 +183,7 @@ Participação nas atividades do evento acadêmico Pulsar.
 
 Participação nas atividades do evento acadêmico Pulsar.
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Orientação e revisão de código para integração de serviços de validação e e-mail.
 
@@ -198,7 +198,7 @@ Implementação de upload e armazenamento de arquivos e imagens na API Express.j
 - **Conteúdo Teórico:**
   - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/upload-file/upload-file/)
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Acompanhamento técnico na implementação de upload de arquivos no projeto.
 
@@ -220,7 +220,7 @@ Prática de cobertura de testes automatizados para rotas e controllers da aplica
 - **Conteúdo Teórico:**
   - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/test/test/)
 
-## Projeto Acompanhamento
+## Acompanhamento de Projeto
 
 Revisão final, testes de usabilidade e preparação para entrega.
 
