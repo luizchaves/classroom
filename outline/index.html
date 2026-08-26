@@ -3461,10 +3461,10 @@
       if (!anchorId) return;
 
       const currentUrl = new URL(window.location.href);
-      if (currentUrl.hash === `#${anchorId}`) return;
-
-      currentUrl.hash = anchorId;
-      window.history.replaceState(window.history.state || {}, '', currentUrl.toString());
+      if (currentUrl.hash !== `#${anchorId}`) {
+        currentUrl.hash = anchorId;
+        window.history.replaceState(window.history.state || {}, '', currentUrl.toString());
+      }
 
       const lessonEl = document.getElementById(anchorId);
       const discName = document.getElementById('meta-disciplina')?.textContent || 'Plano de Aulas';
@@ -3558,6 +3558,7 @@
     function checkUrlAnchor() {
       const targetId = getUrlLessonAnchor();
       if (targetId) {
+        updateLessonHash(targetId);
         setTimeout(() => scrollToLesson(targetId), 400);
         return true;
       }
