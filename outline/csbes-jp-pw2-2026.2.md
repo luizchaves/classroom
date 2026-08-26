@@ -102,17 +102,20 @@ Criação e manipulação de vetores (_arrays_) e sequências de caracteres (_st
   - [Exercício: Citação de String](https://ifpb.github.io/exercises/problems/string-citation/)
   - [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
 
-## Array Iterators e Objetos
+## Array HOFs e Objetos
 
 Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e criação de objetos literais e coleções em JavaScript.
 
-- **Array Iterators:**
+- **Array HOFs:**
+  - [Conteúdo: Array | HOFs](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/array/#m%C3%A9todos-de-itera%C3%A7%C3%A3o-e-programa%C3%A7%C3%A3o-funcional-higher-order-functions)
   - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
   - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
 - **Objetos:**
   - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/object/)
   - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
   - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
+  - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
+  - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
   - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
 
 ## Exercício Avaliativo
@@ -121,8 +124,6 @@ Avaliação prática de manipulação de objetos e estruturas de dados em JavaSc
 
 - **Exercícios Avaliativos:**
   - [Exercício: Objeto Exame (Avaliativo)](https://ifpb.github.io/exercises/problems/object-exam/)
-  - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
-  - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
 
 ## Objetos do Navegador
 
