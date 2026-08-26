@@ -30,7 +30,7 @@ Apresentação da disciplina, funcionamento da Web (cliente-servidor e protocolo
 - **Conteúdo Teórico:**
   - [Conteúdo: Importância da Web](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/html/web-importance/)
   - [Conteúdo: Linguagem de marcação](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/html/markup-languages/)
-  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/html/html/)
+  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/html/)
 - **Prática & Acompanhamento:**
   - [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
   - [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
@@ -41,7 +41,7 @@ Apresentação da disciplina, funcionamento da Web (cliente-servidor e protocolo
 Sintaxe básica da HTML5, estrutura de tags, marcação semântica de conteúdo (`<header>`, `<main>`, `<footer>`) e boas práticas de acessibilidade.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/html/html/)
+  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/html/)
 - **Prática & Acompanhamento:**
   - [Exercício: HTML | Currículo Simples em HTML](https://ifpb.github.io/exercises/problems/web-markup-curriculum-simple/)
   - [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
@@ -52,7 +52,7 @@ Sintaxe básica da HTML5, estrutura de tags, marcação semântica de conteúdo 
 Introdução às folhas de estilo em cascata (CSS), sintaxe de seletores, propriedades de estilização visual (cores, tipografia) e o modelo de caixas (Box Model).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao CSS](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/css/css/)
+  - [Conteúdo: Introdução ao CSS](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/css/)
 - **Prática & Acompanhamento:**
   - [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
   - [Braincheck: Fundamentos de CSS](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
@@ -232,7 +232,7 @@ Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HT
 - **Node.js:**
   - [Conteúdo: Node.js - HTTP](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/node/http/)
 - **Express:**
-  - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/express/express/)
+  - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/express/)
 
 ## Exercício Backend e Exercício Avaliativo
 
