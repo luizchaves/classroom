@@ -80,7 +80,7 @@ Participação nas atividades dos Jogos Escolares.
 
 Participação nas atividades dos Jogos Escolares.
 
-## Projeto
+## Apresentação de Projeto
 
 Desenvolvimento prático e integração de funcionalidades no projeto da disciplina.
 
@@ -102,7 +102,7 @@ Conexão e manipulação de bancos de dados relacionais SQL diretamente pela apl
 
 Sessão de mentoria e acompanhamento da integração da camada de dados no projeto.
 
-## Projeto
+## Apresentação de Projeto
 
 Continuidade do desenvolvimento do projeto integrando banco de dados relacional.
 
@@ -130,7 +130,7 @@ Participação nas atividades da Semana do Meio Ambiente.
 
 Mentoria de acompanhamento do desenvolvimento dos modelos e cadastros no projeto.
 
-## Projeto
+## Apresentação de Projeto
 
 Evolução do projeto com cadastro de entidades e persistência de dados.
 
@@ -157,7 +157,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 Orientação técnica para autenticação e rotas protegidas no projeto.
 
-## Projeto
+## Apresentação de Projeto
 
 Desenvolvimento das funcionalidades de autenticação OAuth e recuperação de senhas.
 
@@ -187,7 +187,7 @@ Participação nas atividades do evento acadêmico Pulsar.
 
 Orientação e revisão de código para integração de serviços de validação e e-mail.
 
-## Projeto
+## Apresentação de Projeto
 
 Aprimoramento das regras de negócio e validações na aplicação.
 
@@ -202,7 +202,7 @@ Implementação de upload e armazenamento de arquivos e imagens na API Express.j
 
 Acompanhamento técnico na implementação de upload de arquivos no projeto.
 
-## Projeto
+## Apresentação de Projeto
 
 Desenvolvimento final do projeto integrado.
 
@@ -224,7 +224,7 @@ Prática de cobertura de testes automatizados para rotas e controllers da aplica
 
 Revisão final, testes de usabilidade e preparação para entrega.
 
-## Projeto
+## Apresentação de Projeto
 
 Apresentação e avaliação final do projeto da disciplina.
 
