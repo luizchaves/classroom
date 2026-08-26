@@ -3467,11 +3467,32 @@
       window.history.replaceState(window.history.state || {}, '', currentUrl.toString());
 
       const lessonEl = document.getElementById(anchorId);
-      const lessonTitle = lessonEl ? (lessonEl.querySelector('.topic-title')?.textContent?.trim() || anchorId) : anchorId;
       const discName = document.getElementById('meta-disciplina')?.textContent || 'Plano de Aulas';
 
+      if (!lessonEl) {
+        updateOpenGraphMeta({
+          title: `${anchorId} • ${discName} | IFPB`,
+          url: currentUrl.toString()
+        });
+        return;
+      }
+
+      const lessonLabel = lessonEl.querySelector('.topic-number-link')?.textContent?.trim() || '';
+      const topicTitle = lessonEl.querySelector('.topic-title')?.textContent?.trim() || '';
+      const topicDate = lessonEl.querySelector('.topic-date-badge')?.textContent?.trim() || '';
+      const topicBody = lessonEl.querySelector('.topic-body-text')?.textContent?.trim() || '';
+
+      const fullTitle = lessonLabel
+        ? `${lessonLabel}: ${topicTitle} • ${discName} | IFPB`
+        : `${topicTitle} • ${discName} | IFPB`;
+
+      const fullDescription = topicDate && topicBody
+        ? `${topicDate} — ${topicBody.slice(0, 160)}${topicBody.length > 160 ? '...' : ''}`
+        : (topicBody || topicDate || `Plano de aula da disciplina ${discName}`);
+
       updateOpenGraphMeta({
-        title: `${lessonTitle} • ${discName} | IFPB`,
+        title: fullTitle,
+        description: fullDescription,
         url: currentUrl.toString()
       });
     }
