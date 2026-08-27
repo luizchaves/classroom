@@ -2893,6 +2893,10 @@
             feed.querySelectorAll('.topic-card.expanded').forEach(c => c.classList.remove('expanded'));
             if (!isExpanded) {
               card.classList.add('expanded');
+              updateLessonHash(lessonAnchorId);
+              requestAnimationFrame(() => {
+                scrollElementToPageTop(card, 'smooth');
+              });
             }
           }
         });
@@ -3402,7 +3406,9 @@
       const el = document.getElementById(anchorId);
       if (el) {
         expandCompactLessonCard(el);
-        scrollElementToPageTop(el, 'smooth');
+        requestAnimationFrame(() => {
+          scrollElementToPageTop(el, 'smooth');
+        });
         el.classList.add('highlight-card');
         setTimeout(() => el.classList.remove('highlight-card'), 2500);
       }
