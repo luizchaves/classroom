@@ -116,6 +116,11 @@ Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), 
   - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/variables/)
   - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/expressions-operators/)
   - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/control-flow/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-RYoy6ZC7wa)
+  - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-pWFdFradYx)
+  - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-BS0Mwh0V5u)
+  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-lsD3Qoai6c)
 - **Exercícios de Fixação:**
   - [Exercício: Hello](https://ifpb.github.io/exercises/problems/algorithms/basic-hello/)
   - [Exercício: Notas](https://ifpb.github.io/exercises/problems/algorithms/basic-grades/)
