@@ -103,9 +103,9 @@ Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e valida�
   - **4. Interface & Telas Estáticas:** Exibição do protótipo/telas estáticas (HTML/CSS ou Figma) e fluxo de navegação.
   - **5. Transição para Dados Reais:** Hipóteses técnicas para converter dados fictícios (mock data) em dados reais (chamadas CLI/SO, parsing de logs, APIs de rede ou banco de dados).
 
-## Apresentação de Projetos (Cont.) & ECMA: Dados, Variável, Decisão e Repetição
+## Apresentação de Projetos (Cont.) & ECMA: Dados e Variáveis
 
-Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), análise das sugestões de correção para as equipes que já apresentaram (com foco na conversão de dados fictícios para dados reais, ajustes na interface se necessário e no `README`), e introdução à linguagem JavaScript (ECMAScript), tipos de dados fundamentais, declaração de variáveis (`const`, `let`), operadores e estruturas de controle de fluxo (`if/else`, `for`, `while`).
+Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), análise das sugestões de correção para as equipes que já apresentaram (com foco na conversão de dados fictícios para dados reais, ajustes na interface se necessário e no `README`), e introdução à linguagem JavaScript (ECMAScript), tipos de dados fundamentais e declaração de variáveis (`const`, `let`).
 
 - **Apresentação & Feedback de Projetos:**
   - [Github: Projetos de DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
@@ -115,35 +115,38 @@ Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), 
   - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/ecmascript/)
   - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/variables/)
   - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/expressions-operators/)
-  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/control-flow/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-RYoy6ZC7wa)
   - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-pWFdFradYx)
   - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-BS0Mwh0V5u)
-  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-lsD3Qoai6c)
 - **Exercícios de Fixação:**
-  - [Exercício: Hello](https://ifpb.github.io/exercises/problems/algorithms/basic-hello/)
-  - [Exercício: Notas](https://ifpb.github.io/exercises/problems/algorithms/basic-grades/)
-  - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/algorithms/basic-numbers-series/)
+  - [Exercício: Hello](https://ifpb.github.io/exercises/problems/basic-hello/)
+  - [Exercício: Expressões](https://ifpb.github.io/exercises/problems/basic-expressions/)
 
-## Função e Módulos
+## ECMA: Decisão, Repetição, Funções e Módulos
 
-Organização de código com funções (parâmetros, retorno, _arrow functions_) e modularização de código com ES Modules (`import`/`export`).
+Estruturas de controle de fluxo (`if/else`, `for`, `while`), expressões e operadores, organização de código com funções (parâmetros, retorno, _arrow functions_) e modularização de código com ES Modules (`import`/`export`).
 
+- **Estruturas de Controle & Expressões:**
+  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/control-flow/)
+  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-lsD3Qoai6c)
+  - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 - **Funções:**
   - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/functions/)
-  - [Exercício: Soma](https://ifpb.github.io/exercises/problems/algorithms/function-sum/)
+  - [Exercício: Soma](https://ifpb.github.io/exercises/problems/function-sum/)
 - **Módulos:**
   - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/modules/)
+  - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
+  - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
 
 ## Exercício JS Intro e Exercício Avaliativo
 
 Resolução de problemas práticos e avaliação de lógica de programação utilizando funções em JavaScript.
 
 - **Exercícios Avaliativos:**
-  - [Exercício (Avaliativo): Calculadora](https://ifpb.github.io/exercises/problems/algorithms/function-calc/)
-  - [Exercício (Avaliativo): Área do Círculo](https://ifpb.github.io/exercises/problems/algorithms/function-area-of-circle/)
-  - [Exercício (Avaliativo): Verificador de Triângulos](https://ifpb.github.io/exercises/problems/algorithms/function-triangle-checker/)
+  - [Exercício (Avaliativo): Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
+  - [Exercício (Avaliativo): Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
+  - [Exercício (Avaliativo): Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
 
 ## API do JS (Array, String, Object)
 
@@ -151,12 +154,12 @@ Manipulação de estruturas de dados essenciais em JavaScript: métodos de _arra
 
 - **Array:**
   - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/arrays/)
-  - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/algorithms/array-util/)
-  - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/algorithms/array-operations/)
+  - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
+  - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
 - **String:**
   - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/strings/)
-  - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/algorithms/string-list-generator/)
-  - [Exercício: String Util](https://ifpb.github.io/exercises/problems/algorithms/string-util/)
+  - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
+  - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
 - **Object:**
   - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/javascript/objects/)
   - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)

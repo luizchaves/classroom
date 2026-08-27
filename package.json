@@ -1,0 +1,13 @@
+{
+  "name": "subjects",
+  "version": "1.0.0",
+  "description": "Portal de Disciplinas e Planos de Aula • IFPB Campus JP",
+  "private": true,
+  "scripts": {
+    "test:links": "linkinator '**/*.html' '**/*.md' --recurse",
+    "test:links:local": "linkinator '**/*.html' '**/*.md' --recurse --skip '^https?://'"
+  },
+  "devDependencies": {
+    "linkinator": "^8.0.4"
+  }
+}
