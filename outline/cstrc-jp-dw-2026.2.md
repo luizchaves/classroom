@@ -55,7 +55,7 @@ Introdução às folhas de estilo em cascata (CSS), sintaxe de seletores, propri
   - [Conteúdo: Introdução ao CSS](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/css/)
 - **Prática & Acompanhamento:**
   - [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
-  - [Braincheck: Fundamentos de CSS](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
+  - [Braincheck: Fundamentos de CSS](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
 
 ## IFTech (14/08/2026 - 4 aulas)
 
@@ -73,7 +73,7 @@ Uso de frameworks CSS modernos (Bootstrap e Tailwind CSS) para agilizar o desenv
   - [Conteúdo: Bootstrap](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/packages/bootstrap/)
   - [Conteúdo: Tailwind CSS](https://luizchaves.github.io/devlab/courses/cstrc-jp-dw/packages/tailwind-css/)
 - **Acompanhamento:**
-  - [Braincheck: Bibliotecas de Estilo](http://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
+  - [Braincheck: Bibliotecas de Estilo](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
 
 ## Definição de Projeto
 

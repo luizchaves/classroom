@@ -156,7 +156,7 @@ Atividade prática avaliativa de manipulação do DOM e elementos dinâmicos na 
 Apresentação dos requisitos e diretrizes do projeto prático de Programação para Web II.
 
 - **Especificação & Acompanhamento:**
-  - [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
+  - [Padlet: Projeto LS](https://padlet.com/lucachaves/proposta-de-projeto-ls-2023-1-oro6qsdtga5xknjw)
   - PR ifpb/projects
 
 ## Apresentação da Proposta do Projeto
@@ -213,7 +213,7 @@ Participação nas atividades do evento acadêmico Pulsar.
 Apresentação e avaliação da primeira entrega parcial do projeto (Interface Front-end).
 
 - **Projeto & Acompanhamento:**
-  - [Padlet: Projeto LS](https://padlet.com/lucachaves/projetols20231)
+  - [Padlet: Projeto LS](https://padlet.com/lucachaves/proposta-de-projeto-ls-2023-1-oro6qsdtga5xknjw)
 
 ## TypeScript
 

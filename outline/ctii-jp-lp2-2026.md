@@ -23,9 +23,9 @@ Apresentação da disciplina, diretrizes de trabalho, ferramentas de acompanhame
 
 - **Informações & Diretrizes:**
   - [Disciplina: Página da disciplina](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/)
-  - [GitHub: README LP2 2023](https://github.com/lucachaves/lp2-2023/blob/main/README.md)
-  - [Padlet: Projeto LP2 2023](https://padlet.com/lucachaves/projetolp22023)
-  - [Padlet: Projeto LP2 2024](https://padlet.com/lucachaves/projetolp22024)
+  - [GitHub: README LP2 2023](https://github.com/luizchaves/lp2-2023/blob/main/README.md)
+  - [Padlet: Projeto LP2 2023](https://padlet.com/lucachaves/proposta-de-projeto-lp2-2023-p5zswieoly5k8a82)
+  - [Padlet: Projeto LP2 2024](https://padlet.com/lucachaves/proposta-de-projeto-lp2-2024-qumdtalo146gt0i3)
 
 ## Revisão de JS (Sintaxe e Web)
 
