@@ -25,10 +25,10 @@ horarios:
 Apresentação da disciplina, funcionamento das avaliações e introdução aos conceitos fundamentais do ecossistema JavaScript moderno.
 
 - **Informações & Avaliações:**
-  - [Disciplina: Página da disciplina](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/)
-  - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/extra/exercises/)
+  - [Disciplina: Página da disciplina](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/)
+  - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/extra/exercises/)
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/introduction/)
+  - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/introduction/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-JtstuRmQCO)
 
@@ -37,8 +37,8 @@ Apresentação da disciplina, funcionamento das avaliações e introdução aos 
 Estruturas fundamentais de declaração de variáveis (`const`, `let`), tipos de dados, operadores e comandos de controle de fluxo em JavaScript.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/variable/)
-  - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/expression-and-operator/)
+  - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/variable/)
+  - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/expression-and-operator/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
   - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-GQBuuwHpFN)
@@ -57,7 +57,7 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 Prática avançada com estruturas condicionais e laços de repetição em JavaScript para resolução de problemas algorítmicos.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/statements/)
+  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/statements/)
 - **Prática:**
   - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 - **Acompanhamento:**
@@ -69,7 +69,7 @@ Prática avançada com estruturas condicionais e laços de repetição em JavaSc
 Declaração de funções (parâmetros, retorno e _arrow functions_) em JavaScript.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/function/)
+  - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/function/)
 - **Prática:**
   - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
   - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
@@ -82,7 +82,7 @@ Organização de projetos com ES Modules (`import`/`export`) e estruturação de
 - **Função:**
   - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
 - **Módulos:**
-  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/modules/)
+  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/modules/)
   - [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
 
 ## Array e String
@@ -90,12 +90,12 @@ Organização de projetos com ES Modules (`import`/`export`) e estruturação de
 Criação e manipulação de vetores (_arrays_) e sequências de caracteres (_strings_) em JavaScript (`push`, `pop`, `split`, `join`, iteração).
 
 - **Array:**
-  - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/array/)
+  - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/array/)
   - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
   - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
   - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
 - **String:**
-  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/string/)
+  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/string/)
   - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
   - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
   - [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
@@ -107,11 +107,11 @@ Criação e manipulação de vetores (_arrays_) e sequências de caracteres (_st
 Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e criação de objetos literais e coleções em JavaScript.
 
 - **Array HOFs:**
-  - [Conteúdo: Array | HOFs](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/array/#m%C3%A9todos-de-itera%C3%A7%C3%A3o-e-programa%C3%A7%C3%A3o-funcional-higher-order-functions)
+  - [Conteúdo: Array | HOFs](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/array/#m%C3%A9todos-de-itera%C3%A7%C3%A3o-e-programa%C3%A7%C3%A3o-funcional-higher-order-functions)
   - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
   - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
 - **Objetos:**
-  - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/object/)
+  - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/object/)
   - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
   - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
   - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
@@ -130,7 +130,7 @@ Avaliação prática de manipulação de objetos e estruturas de dados em JavaSc
 Introdução ao ambiente do navegador, objeto `window`, `document` e interação inicial com a página web.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Objetos do Navegador](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/browser-objects/)
+  - [Conteúdo: Objetos do Navegador](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/w3c/browser-objects/)
 - **Prática:**
   - Exercício: List generator document.write
 
@@ -139,7 +139,7 @@ Introdução ao ambiente do navegador, objeto `window`, `document` e interação
 Manipulação da árvore DOM no navegador e criação dinâmica de elementos HTML via JavaScript.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/dynamic-elements/)
+  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/w3c/dynamic-elements/)
 - **Prática:**
   - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
 
@@ -168,14 +168,14 @@ Validação inicial das propostas de projeto dos estudantes com o professor.
 Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para interatividade em páginas web.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/event-handling/)
+  - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/w3c/event-handling/)
 
 ## Build Tools
 
 Configuração e uso de empacotadores modernos front-end com Vite para projetos JavaScript.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/vite/)
+  - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/package/vite/)
 - **Prática:**
   - [Exercício: Amaro Script](https://ifpb.github.io/exercises/problems/web-script-amaro/)
 
@@ -184,7 +184,7 @@ Configuração e uso de empacotadores modernos front-end com Vite para projetos 
 Uso da DOM API para seleção, modificação e estruturação dinâmica de componentes em páginas web.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/dom-api/)
+  - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/w3c/dom-api/)
 - **Prática:**
   - [Exercício: Gerador de Lista Script](https://ifpb.github.io/exercises/problems/web-script-list-generator/)
   - [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
@@ -194,7 +194,7 @@ Uso da DOM API para seleção, modificação e estruturação dinâmica de compo
 Gerenciamento de estado e dados persistentes no navegador utilizando _Local Storage_.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/local-storage/)
+  - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/w3c/local-storage/)
 
 ## Projeto Acompanhamento
 
@@ -224,35 +224,35 @@ Introdução à linguagem TypeScript, sintaxe de tipos estáticos, interfaces e 
 Introdução à biblioteca ReactJS, conceitos de componentes funcionais, JSX e renderização de elementos.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao React](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/introduction/)
+  - [Conteúdo: Introdução ao React](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/react/introduction/)
 
 ## React - Rotas, Eventos, Hooks
 
 Gerenciamento de estado de componentes React com `useState` e efeitos colaterais com `useEffect`.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/hooks/)
+  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/react/hooks/)
 
 ## React - Context API
 
 Gerenciamento de estado global em aplicações React utilizando a Context API.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/hooks/)
+  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/react/hooks/)
 
 ## React - Manipular Form, CRUD
 
 Construção de formulários controlados em React e implementação de operações de CRUD.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/hooks/)
+  - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/react/hooks/)
 
 ## Expressões Regulares
 
 Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para validação de padrões de texto.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Expressões Regulares](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/regexp/)
+  - [Conteúdo: Expressões Regulares](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/regexp/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
@@ -261,7 +261,7 @@ Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para valid
 Programação assíncrona em JavaScript utilizando Promises (estados, chaining, `catch`).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Promises](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/ecma/promise/)
+  - [Conteúdo: Promises](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/ecma/promise/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-promises-qlyjDCgdDj)
 
@@ -270,21 +270,21 @@ Programação assíncrona em JavaScript utilizando Promises (estados, chaining, 
 Conceitos de arquitetura REST API e introdução ao Backend-as-a-Service com Supabase API.
 
 - **REST API:**
-  - [Conteúdo: REST API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/api/rest/)
+  - [Conteúdo: REST API](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/api/rest/)
 - **Supabase API:**
-  - [Conteúdo: Supabase API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/supabase-api/)
+  - [Conteúdo: Supabase API](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/package/supabase-api/)
 
 ## Fetch API, axios, supabase-client
 
 Consumo de serviços web e APIs assíncronas utilizando `fetch()`, biblioteca Axios e SDK Supabase Client.
 
 - **Fetch API:**
-  - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/w3c/fetch-api/)
+  - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/w3c/fetch-api/)
 - **Axios:**
-  - [Conteúdo: Axios](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/axios/)
+  - [Conteúdo: Axios](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/package/axios/)
 - **Supabase Client:**
-  - [Conteúdo: Supabase Client](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/supabase-client/)
-  - [Conteúdo: Consumo do Supabase](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/package/http-client/)
+  - [Conteúdo: Supabase Client](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/package/supabase-client/)
+  - [Conteúdo: Consumo do Supabase](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/package/http-client/)
 
 ## Exercício Avaliativo
 
@@ -298,7 +298,7 @@ Avaliação prática de consumo de APIs REST assíncronas no front-end.
 Implementação de autenticação e sessão de usuário em aplicações React com Supabase Auth.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Supabase Auth em React](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/react/supabase-auth/)
+  - [Conteúdo: Supabase Auth em React](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/react/supabase-auth/)
 
 ## Projeto Acompanhamento
 
@@ -313,4 +313,4 @@ Apresentação e avaliação final do projeto completo da disciplina.
 Encerramento do período letivo, prazos de recuperação e recomendações de estudos continuados.
 
 - **Orientação & Conteúdo:**
-  - [Conteúdo: Próximos Passos](https://luizchaves.github.io/devlab/courses/csbes-jp-pw2/extra/next-steps/)
+  - [Conteúdo: Próximos Passos](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/extra/next-steps/)

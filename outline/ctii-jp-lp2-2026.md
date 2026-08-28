@@ -22,7 +22,7 @@ sem_aula:
 Apresentação da disciplina, diretrizes de trabalho, ferramentas de acompanhamento e histórico de projetos anteriores.
 
 - **Informações & Diretrizes:**
-  - [Disciplina: Página da disciplina](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/)
+  - [Disciplina: Página da disciplina](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/)
   - [GitHub: README LP2 2023](https://github.com/luizchaves/lp2-2023/blob/main/README.md)
   - [Padlet: Projeto LP2 2023](https://padlet.com/lucachaves/proposta-de-projeto-lp2-2023-p5zswieoly5k8a82)
   - [Padlet: Projeto LP2 2024](https://padlet.com/lucachaves/proposta-de-projeto-lp2-2024-qumdtalo146gt0i3)
@@ -32,8 +32,8 @@ Apresentação da disciplina, diretrizes de trabalho, ferramentas de acompanhame
 Revisão da sintaxe fundamental da linguagem JavaScript, manipulação do DOM e estruturação básica de aplicações web.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao ECMAScript](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/javascript/introduction/)
-  - [Conteúdo: JavaScript e Frontend Web](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/javascript/frontend/)
+  - [Conteúdo: Introdução ao ECMAScript](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/javascript/introduction/)
+  - [Conteúdo: JavaScript e Frontend Web](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/javascript/frontend/)
 
 ## Exercício Revisão Front
 
@@ -51,8 +51,8 @@ Planejamento e construção da interface gráfica do projeto prático em HTML, C
 Desenvolvimento back-end com Node.js e Express.js, manipulação de rotas, requisições HTTP e criação de Web APIs básicas.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Node.js HTTP](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/nodejs/http/)
-  - [Conteúdo: Introdução ao ExpressJS](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/introduction/)
+  - [Conteúdo: Node.js HTTP](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/nodejs/http/)
+  - [Conteúdo: Introdução ao ExpressJS](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/introduction/)
 - **Exercícios de Fixação:**
   - [Exercício: API Basic Hello](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
   - [Exercício: API Utils](https://ifpb.github.io/exercises/problems/web-api-utils/)
@@ -62,7 +62,7 @@ Desenvolvimento back-end com Node.js e Express.js, manipulação de rotas, requi
 Implementação de rotas de CRUD completo (Create, Read, Update, Delete) em Express.js.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS API (CRUD)](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/api/)
+  - [Conteúdo: ExpressJS API (CRUD)](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/api/)
 
 ## Sábado Letivo CAEST (11/04/2026 - 2 aulas)
 
@@ -89,14 +89,14 @@ Desenvolvimento prático e integração de funcionalidades no projeto da discipl
 Arquitetura de software no Express.js utilizando o padrão MVC (Model-View-Controller) para isolamento da camada de dados.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS MVC (Camada de Dados)](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/mvc/)
+  - [Conteúdo: ExpressJS MVC (Camada de Dados)](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/mvc/)
 
 ## Integração com SQL
 
 Conexão e manipulação de bancos de dados relacionais SQL diretamente pela aplicação Node.js/Express.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Integração com SQL](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/db-simple/)
+  - [Conteúdo: Integração com SQL](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/db-simple/)
 
 ## Acompanhamento de Projeto
 
@@ -111,16 +111,16 @@ Continuidade do desenvolvimento do projeto integrando banco de dados relacional.
 Uso do ORM Prisma para mapeamento objeto-relacional e facilitação de operações no banco de dados.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: PrismaJS Simple (ORM)](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/prismajs-simple/)
+  - [Conteúdo: PrismaJS Simple (ORM)](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/prismajs-simple/)
 
 ## Entidades com Relacionamento e Cadastro de Usuário
 
 Modelagem de relacionamentos entre tabelas no Prisma e implementação de cadastro seguro de usuários.
 
 - **PrismaJS Relacionamentos:**
-  - [Conteúdo: PrismaJS Relacionamentos](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/prismajs-relation/)
+  - [Conteúdo: PrismaJS Relacionamentos](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/prismajs-relation/)
 - **Cadastro de Usuário:**
-  - [Conteúdo: PrismaJS Cadastro de Usuário](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/prismajs-user/)
+  - [Conteúdo: PrismaJS Cadastro de Usuário](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/prismajs-user/)
 
 ## Semana do Meio Ambiente (13/06/2026 - 2 aulas)
 
@@ -139,7 +139,7 @@ Evolução do projeto com cadastro de entidades e persistência de dados.
 Implementação de autenticação e controle de sessões em APIs Express.js com JSON Web Tokens (JWT).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Autenticação](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/auth/)
+  - [Conteúdo: ExpressJS Autenticação](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/auth/)
 
 ## Autenticação | Front-end
 
@@ -166,14 +166,14 @@ Desenvolvimento das funcionalidades de autenticação OAuth e recuperação de s
 Implementação de middlewares de validação e sanitização de dados de entrada na API.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Validação](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/validation/)
+  - [Conteúdo: ExpressJS Validação](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/validation/)
 
 ## Manipulação de E-mail
 
 Envio transacional de e-mails na aplicação Express (confirmação de cadastro e redefinição de senha).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS E-mail](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/email/)
+  - [Conteúdo: ExpressJS E-mail](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/email/)
 
 ## Pulsar (16/10/2026 - 2 aulas)
 
@@ -196,7 +196,7 @@ Aprimoramento das regras de negócio e validações na aplicação.
 Implementação de upload e armazenamento de arquivos e imagens na API Express.js.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/upload-file/)
+  - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/upload-file/)
 
 ## Acompanhamento de Projeto
 
@@ -211,14 +211,14 @@ Desenvolvimento final do projeto integrado.
 Conceitos e escrita de testes automatizados de unidade e integração no Express.js.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/test/)
+  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/test/)
 
 ## Teste de Aplicação (Prática)
 
 Prática de cobertura de testes automatizados para rotas e controllers da aplicação.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/ctii-jp-lp2/expressjs/test/)
+  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/expressjs/test/)
 
 ## Acompanhamento de Projeto
 
