@@ -52,7 +52,7 @@ Desenvolvimento back-end com Node.js e Express.js, manipulação de rotas, requi
 
 - **Conteúdo Teórico:**
   - [Conteúdo: Node.js HTTP](https://luizchaves.github.io/devlab/courses/nodejs/http/server/)
-  - [Conteúdo: Introdução ao ExpressJS](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/introduction/)
+  - [Conteúdo: Introdução ao ExpressJS](https://luizchaves.github.io/devlab/courses/expressjs/basics/introduction/)
 - **Exercícios de Fixação:**
   - [Exercício: API Basic Hello](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
   - [Exercício: API Utils](https://ifpb.github.io/exercises/problems/web-api-utils/)
@@ -89,14 +89,14 @@ Desenvolvimento prático e integração de funcionalidades no projeto da discipl
 Arquitetura de software no Express.js utilizando o padrão MVC (Model-View-Controller) para isolamento da camada de dados.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS MVC (Camada de Dados)](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/mvc/)
+  - [Conteúdo: ExpressJS MVC (Camada de Dados)](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/typescript/)
 
 ## Integração com SQL
 
 Conexão e manipulação de bancos de dados relacionais SQL diretamente pela aplicação Node.js/Express.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Integração com SQL](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/db-simple/)
+  - [Conteúdo: Integração com SQL](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/sqlite/)
 
 ## Acompanhamento de Projeto
 
@@ -111,16 +111,16 @@ Continuidade do desenvolvimento do projeto integrando banco de dados relacional.
 Uso do ORM Prisma para mapeamento objeto-relacional e facilitação de operações no banco de dados.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: PrismaJS Simple (ORM)](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/prismajs-simple/)
+  - [Conteúdo: PrismaJS Simple (ORM)](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/prisma/)
 
 ## Entidades com Relacionamento e Cadastro de Usuário
 
 Modelagem de relacionamentos entre tabelas no Prisma e implementação de cadastro seguro de usuários.
 
 - **PrismaJS Relacionamentos:**
-  - [Conteúdo: PrismaJS Relacionamentos](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/prismajs-relation/)
+  - [Conteúdo: PrismaJS Relacionamentos](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/prisma/)
 - **Cadastro de Usuário:**
-  - [Conteúdo: PrismaJS Cadastro de Usuário](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/prismajs-user/)
+  - [Conteúdo: PrismaJS Cadastro de Usuário](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/user/)
 
 ## Semana do Meio Ambiente (13/06/2026 - 2 aulas)
 
@@ -196,7 +196,7 @@ Aprimoramento das regras de negócio e validações na aplicação.
 Implementação de upload e armazenamento de arquivos e imagens na API Express.js.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/upload-file/)
+  - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/upload/)
 
 ## Acompanhamento de Projeto
 
@@ -211,14 +211,14 @@ Desenvolvimento final do projeto integrado.
 Conceitos e escrita de testes automatizados de unidade e integração no Express.js.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/test/)
+  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/testing/)
 
 ## Teste de Aplicação (Prática)
 
 Prática de cobertura de testes automatizados para rotas e controllers da aplicação.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/test/)
+  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/testing/)
 
 ## Acompanhamento de Projeto
 

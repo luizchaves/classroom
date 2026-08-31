@@ -156,8 +156,8 @@ Atividade prática avaliativa de manipulação do DOM e elementos dinâmicos na 
 Apresentação dos requisitos e diretrizes do projeto prático de Programação para Web II.
 
 - **Especificação & Acompanhamento:**
-  - [Github: Projetos de PW2 2026.2](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.2/1/)
-  - [Github: Alunos com Projeto de PW2 2026.2](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.2/1/)
+  - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
+  - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
 
 ## Apresentação da Proposta do Projeto
 
@@ -213,8 +213,8 @@ Participação nas atividades do evento acadêmico Pulsar.
 Apresentação e avaliação da primeira entrega parcial do projeto (Interface Front-end).
 
 - **Projeto & Acompanhamento:**
-  - [Github: Projetos de PW2 2026.2](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.2/1/)
-  - [Github: Alunos com Projeto de PW2 2026.2](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.2/1/)
+  - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
+  - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
 
 ## TypeScript
 
