@@ -28,9 +28,9 @@ Apresentação da disciplina, funcionamento da Web (cliente-servidor e protocolo
   - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/exercises/)
   - [Quiz: Quizzes](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/quizzes/)
 - **Conteúdo Teórico:**
-  - [Conteúdo: Importância da Web](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/html/web-importance/)
-  - [Conteúdo: Linguagem de marcação](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/html/markup-languages/)
-  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/html/)
+  - [Conteúdo: Importância da Web](https://luizchaves.github.io/devlab/courses/html/basics/web-importance/)
+  - [Conteúdo: Linguagem de marcação](https://luizchaves.github.io/devlab/courses/html/basics/markup-languages/)
+  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/html/basics/syntax-structure/)
 - **Prática & Acompanhamento:**
   - [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
   - [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
@@ -41,7 +41,7 @@ Apresentação da disciplina, funcionamento da Web (cliente-servidor e protocolo
 Sintaxe básica da HTML5, estrutura de tags, marcação semântica de conteúdo (`<header>`, `<main>`, `<footer>`) e boas práticas de acessibilidade.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/html/)
+  - [Conteúdo: Introdução ao HTML](https://luizchaves.github.io/devlab/courses/html/basics/syntax-structure/)
 - **Prática & Acompanhamento:**
   - [Exercício: HTML | Currículo Simples em HTML](https://ifpb.github.io/exercises/problems/web-markup-curriculum-simple/)
   - [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
@@ -52,7 +52,7 @@ Sintaxe básica da HTML5, estrutura de tags, marcação semântica de conteúdo 
 Introdução às folhas de estilo em cascata (CSS), sintaxe de seletores, propriedades de estilização visual (cores, tipografia) e o modelo de caixas (Box Model).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao CSS](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/css/)
+  - [Conteúdo: Introdução ao CSS](https://luizchaves.github.io/devlab/courses/css/basics/syntax-cascade/)
 - **Prática & Acompanhamento:**
   - [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
   - [Braincheck: Fundamentos de CSS](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
@@ -70,8 +70,8 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 Uso de frameworks CSS modernos (Bootstrap e Tailwind CSS) para agilizar o desenvolvimento responsivo e a criação de componentes visuais.
 
 - **Conteúdo Teórico & Pacotes:**
-  - [Conteúdo: Bootstrap](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/packages/bootstrap/)
-  - [Conteúdo: Tailwind CSS](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/packages/tailwind-css/)
+  - [Conteúdo: Bootstrap](https://luizchaves.github.io/devlab/courses/css/frameworks/bootstrap/)
+  - [Conteúdo: Tailwind CSS](https://luizchaves.github.io/devlab/courses/css/frameworks/tailwind/)
 - **Acompanhamento:**
   - [Braincheck: Bibliotecas de Estilo](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
 
@@ -112,9 +112,9 @@ Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), 
   - [Github: Alunos com Projeto de DW 2026.2](https://ifpb.github.io/projects/people/dw-cstrc-jp-2026.2/1/)
   - **Ajustes & Correções:** Apresentação dos grupos remanescentes e revisão das recomendações de melhoria nos projetos apresentados (estratégias para dados reais vs. mock, ajustes na interface se necessário e refinamento da documentação no `README`).
 - **Conteúdo Teórico:**
-  - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/ecmascript/)
-  - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/variables/)
-  - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/expressions-operators/)
+  - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/ecmascript/basics/introduction/)
+  - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/ecmascript/basics/variables/)
+  - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/ecmascript/basics/operators/)
 - **Acompanhamento:**
   - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-RYoy6ZC7wa)
   - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-pWFdFradYx)
@@ -128,14 +128,14 @@ Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), 
 Estruturas de controle de fluxo (`if/else`, `for`, `while`), expressões e operadores, organização de código com funções (parâmetros, retorno, _arrow functions_) e modularização de código com ES Modules (`import`/`export`).
 
 - **Estruturas de Controle & Expressões:**
-  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/control-flow/)
+  - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/ecmascript/basics/control-flow/)
   - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-lsD3Qoai6c)
   - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 - **Funções:**
-  - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/functions/)
+  - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/ecmascript/structure/functions/)
   - [Exercício: Soma](https://ifpb.github.io/exercises/problems/function-sum/)
 - **Módulos:**
-  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/modules/)
+  - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/ecmascript/structure/modules/)
   - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
   - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
 
@@ -153,15 +153,15 @@ Resolução de problemas práticos e avaliação de lógica de programação uti
 Manipulação de estruturas de dados essenciais em JavaScript: métodos de _arrays_ (`map`, `filter`, `reduce`), manipulação de _strings_ e criação de objetos literais.
 
 - **Array:**
-  - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/arrays/)
+  - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/ecmascript/data/arrays/)
   - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
   - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
 - **String:**
-  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/strings/)
+  - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/ecmascript/data/strings/)
   - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
   - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
 - **Object:**
-  - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/objects/)
+  - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
   - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
 
 ## JS Web: Intro
@@ -169,16 +169,16 @@ Manipulação de estruturas de dados essenciais em JavaScript: métodos de _arra
 Integração do JavaScript com o navegador, manipulação da árvore DOM (_Document Object Model_) e tratamento de eventos de usuário (_click_, _submit_, _input_).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Browser Objects](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/browser/browser-objects/)
-  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/browser/dynamic-elements/)
-  - [Conteúdo: Manipulação de Eventos](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/browser/events/)
+  - [Conteúdo: Browser Objects](https://luizchaves.github.io/devlab/courses/web-api/browser/objects/)
+  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
+  - [Conteúdo: Manipulação de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
 
 ## Projeto da Disciplina em Bootstrap
 
 Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integrando layout responsivo com Bootstrap.
 
 - **Conteúdo & Protótipo:**
-  - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/projects/invest-app-bootstrap/)
+  - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/front-static/)
   - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
   - [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
 - **Código Fonte:**
@@ -190,17 +190,17 @@ Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integran
 Construção de aplicações interativas no front-end com formulários HTML, manipulação dinâmica do DOM e persistência local de dados com _Local Storage_.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/browser/dom-api/)
-  - [Conteúdo: Formulários](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/css/forms/)
-  - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/browser/local-storage/)
+  - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
+  - [Conteúdo: Formulários](https://luizchaves.github.io/devlab/courses/css/forms/styling/)
+  - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
 
 ## API Rest (Fetch) e Exercício Avaliativo
 
 Comunicação assíncrona cliente-servidor consumindo APIs REST via `fetch()`, simulação de backend com JSON Server e tratamento de dados JSON.
 
 - **Conteúdo Teórico & Pacotes:**
-  - [Conteúdo: JSON Server](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/packages/json-server/)
-  - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/javascript/fetch-api/)
+  - [Conteúdo: JSON Server](https://luizchaves.github.io/devlab/courses/packages/mock/json-server/)
+  - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/web-api/http/fetch/)
 - **Exercícios & Avaliações:**
   - [Exercício: IPInfo API Table (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
   - [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
@@ -211,8 +211,8 @@ Comunicação assíncrona cliente-servidor consumindo APIs REST via `fetch()`, s
 Empacotamento e automação de desenvolvimento front-end com Vite e visualização gráfica de dados com Chart.js.
 
 - **Conteúdo Teórico & Ferramentas:**
-  - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/packages/vite/)
-  - [Conteúdo: Chart.js](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/packages/chartjs/)
+  - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/packages/build/vite/)
+  - [Conteúdo: Chart.js](https://luizchaves.github.io/devlab/courses/packages/ui/chartjs/)
 
 ## Acompanhamento de Projeto
 
@@ -238,9 +238,9 @@ Participação nas atividades do evento acadêmico Pulsar.
 Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HTTP e conceitos de roteamento com o framework Express.js.
 
 - **Node.js:**
-  - [Conteúdo: Node.js - HTTP](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/node/http/)
+  - [Conteúdo: Node.js - HTTP](https://luizchaves.github.io/devlab/courses/nodejs/http/server/)
 - **Express:**
-  - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/express/)
+  - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/api/)
 
 ## Exercício Backend e Exercício Avaliativo
 
@@ -255,9 +255,9 @@ Prática de criação de rotas e manipulação de requisições/respostas HTTP e
 Arquitetura de APIs RESTful no Express, padrão de projeto MVC (Model-View-Controller) e chamadas de sistema no servidor.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: System Call](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/express/system-call/)
-  - [Conteúdo: API REST](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/express/api-construction/)
-  - [Conteúdo: MVC](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/express/mvc/)
+  - [Conteúdo: System Call](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/ping/)
+  - [Conteúdo: API REST](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/api/)
+  - [Conteúdo: MVC](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/typescript/)
 - Escolha algum comando ou arquivo para ser acessado ou manipulado usando o express.
 
 ## Banco de Dados e SQL
@@ -265,57 +265,66 @@ Arquitetura de APIs RESTful no Express, padrão de projeto MVC (Model-View-Contr
 Fundamentos de Sistemas Gerenciadores de Bancos de Dados (SGBD) relacionais e comandos da linguagem SQL (DDL e DML).
 
 - **SGBD:**
-  - [Conteúdo: DBMS](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/database/dbms/)
+  - [Conteúdo: DBMS](https://luizchaves.github.io/devlab/courses/database/basics/dbms/)
 - **SQL:**
-  - [Conteúdo: SQL](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/database/sql/)
+  - [Conteúdo: SQL](https://luizchaves.github.io/devlab/courses/database/sql/fundamentals/)
 
 ## Relacionamento
 
 Modelagem e consulta a bancos de dados relacionais com chaves primárias, chaves estrangeiras e junções (`JOIN`).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: SQL - Relacionamentos](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/database/sql/)
+  - [Conteúdo: SQL - Relacionamentos](https://luizchaves.github.io/devlab/courses/database/sql/fundamentals/)
 
 ## DB Simple
 
 Conexão da aplicação Express.js a um banco de dados SQL usando drivers nativos e execução de operações de CRUD.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: DB Simple](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/database/sql-node/)
+  - [Conteúdo: DB Simple](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/sqlite/)
 
 ## Prisma.js
 
 Uso do ORM Prisma para mapeamento objeto-relacional, criação de esquemas de banco de dados e migrações automáticas.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Prisma.js Simple](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/database/prisma/)
+  - [Conteúdo: Prisma.js Simple](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/prisma/)
 
 ## Relacionamento e Cadastro de Usuário
 
 Implementação de modelos relacionais no Prisma, persistência e validação de cadastro de usuários com criptografia de senha.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Relação entre Entidades](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/database/prisma-relations/)
-  - [Conteúdo: Prisma.js User](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/express/user-registration/)
+  - [Conteúdo: Relação entre Entidades](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/prisma/)
+  - [Conteúdo: Prisma.js User](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/user/)
 
 ## Controle de Sessão JWT
 
 Autenticação e autorização de usuários em Web APIs utilizando JSON Web Tokens (JWT) e middlewares de segurança.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Autenticação JWT](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/express/authentication/)
+  - [Conteúdo: Autenticação JWT](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/auth/)
 
 ## Documentação API
 
 Padronização e documentação de rotas da API RESTful para consumo por aplicações cliente.
 
+- **Conteúdo Teórico:**
+  - [Conteúdo: Documentação da API](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/swagger/)
+
 ## Docker
 
 Contêinerização da aplicação web e do banco de dados utilizando Docker e Docker Compose.
 
+- **Conteúdo Teórico:**
+  - [Conteúdo: Docker](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/docker/)
+
 ## Teste
 
 Conceitos e implementação de testes automatizados unitários e de integração no back-end.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Testes de Software](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/testing/)
 
 ## Front-end (React, Vue, Angular)
 
