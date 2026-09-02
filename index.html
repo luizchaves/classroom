@@ -108,11 +108,18 @@
       border-color: #273554;
     }
 
-    .theme-toggle-btn {
+    .top-actions-container {
       position: fixed;
       top: 1.25rem;
       right: 1.5rem;
       z-index: 1100;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .theme-toggle-btn,
+    .github-repo-btn {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       color: var(--text-main);
@@ -125,16 +132,19 @@
       cursor: pointer;
       transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
       box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-decoration: none;
     }
 
-    .theme-toggle-btn:hover {
+    .theme-toggle-btn:hover,
+    .github-repo-btn:hover {
       background-color: var(--bg-page);
       border-color: var(--primary);
       color: var(--primary);
       transform: translateY(-1px);
     }
 
-    .theme-toggle-btn svg {
+    .theme-toggle-btn svg,
+    .github-repo-btn svg {
       width: 1.15rem;
       height: 1.15rem;
     }
@@ -465,9 +475,14 @@
       }
     }
     @media (max-width: 640px) {
-      .theme-toggle-btn {
+      .top-actions-container {
         top: 0.75rem;
         right: 0.75rem;
+      }
+      .github-repo-btn {
+        display: none;
+      }
+      .theme-toggle-btn {
         width: 34px;
         height: 34px;
       }
@@ -476,9 +491,14 @@
 </head>
 <body>
 
-  <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
-    <i data-lucide="moon"></i>
-  </button>
+  <div class="top-actions-container">
+    <a href="https://github.com/luizchaves/subjects" target="_blank" rel="noopener noreferrer" class="github-repo-btn" title="Repositório no GitHub" aria-label="Repositório no GitHub">
+      <i data-lucide="github"></i>
+    </a>
+    <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
+      <i data-lucide="moon"></i>
+    </button>
+  </div>
 
   <main>
     <div class="subjects-hero">
