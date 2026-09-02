@@ -92,15 +92,19 @@
       border-color: #334155;
     }
 
-    [data-theme="dark"] .btn-calendar-action {
+    [data-theme="dark"] .btn-calendar-action,
+    [data-theme="dark"] .btn-calendar-action:visited {
       background-color: #1e293b;
       color: #f8fafc;
       border-color: #334155;
     }
 
-    [data-theme="dark"] .btn-calendar-action:hover {
-      background-color: #334155;
-      border-color: #475569;
+    [data-theme="dark"] .btn-calendar-action:hover,
+    [data-theme="dark"] .btn-calendar-action:focus-visible {
+      background-color: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+      color: #38bdf8;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     }
 
     [data-theme="dark"] footer {
@@ -374,7 +378,8 @@
       gap: 0.45rem;
     }
 
-    .btn-period-action {
+    .btn-period-action,
+    .btn-period-action:visited {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -392,29 +397,34 @@
       stroke-width: 2.2;
     }
 
-    .btn-outline-action {
+    .btn-outline-action,
+    .btn-outline-action:visited {
       background: linear-gradient(135deg, #0284c7, #0369a1);
       color: #ffffff;
-      border: none;
+      border: 1px solid transparent;
       box-shadow: 0 2px 4px rgba(2, 132, 199, 0.2);
     }
 
-    .btn-outline-action:hover {
+    .btn-outline-action:hover,
+    .btn-outline-action:focus-visible {
       background: linear-gradient(135deg, #0369a1, #075985);
       box-shadow: 0 4px 8px rgba(2, 132, 199, 0.3);
       color: #ffffff;
     }
 
-    .btn-calendar-action {
+    .btn-calendar-action,
+    .btn-calendar-action:visited {
       background-color: #ffffff;
       color: #1e293b;
       border: 1px solid #cbd5e1;
     }
 
-    .btn-calendar-action:hover {
-      background-color: #f1f5f9;
-      border-color: #94a3b8;
-      color: #0f172a;
+    .btn-calendar-action:hover,
+    .btn-calendar-action:focus-visible {
+      background-color: #f0f9ff;
+      border-color: #0284c7;
+      color: #0369a1;
+      box-shadow: 0 2px 6px rgba(2, 132, 199, 0.15);
     }
 
     /* Footer */
