@@ -425,13 +425,10 @@
     }
 
     .header-top-actions {
-      position: absolute;
-      top: 0;
-      right: var(--page-gutter);
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      z-index: 10;
+      flex-shrink: 0;
     }
 
     .theme-toggle-btn,
@@ -521,7 +518,6 @@
       align-items: baseline;
       flex-wrap: wrap;
       gap: 0.2rem 0.35rem;
-      padding-right: 5.25rem;
     }
 
     .title-breadcrumb-link {
@@ -577,7 +573,8 @@
     }
 
     .header-details {
-      margin-top: 0.55rem;
+      width: 100%;
+      margin-top: 0.25rem;
       border-top: 1px solid var(--border-color);
       padding-top: 0.45rem;
     }
@@ -1630,8 +1627,7 @@
         gap: 0.5rem;
       }
       .header-top-actions {
-        top: 0;
-        right: 1rem;
+        flex-shrink: 0;
       }
       .github-repo-btn {
         display: none;
@@ -1640,12 +1636,10 @@
         width: 34px;
         height: 34px;
       }
-      .brand-title-row {
-        padding-right: 2.75rem;
-      }
       .header-main {
-        flex-direction: column;
-        align-items: stretch;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
         gap: 0.5rem;
       }
       .brand {
@@ -1927,40 +1921,42 @@
               <span class="brand-subtitle-line" id="meta-curso">Curso Superior de Tecnologia em Redes de Computadores • IFPB Campus JP</span>
               <span class="brand-subtitle-line" id="meta-professor">Prof. Luiz Carlos Rodrigues Chaves</span>
             </p>
-            <details class="header-details" id="header-details-info" open>
-              <summary class="header-details-summary">
-                <span class="summary-label">
-                  <i data-lucide="info" class="summary-icon"></i> Horários e Métricas de Aulas
-                </span>
-                <i data-lucide="chevron-down" class="summary-chevron"></i>
-              </summary>
-              <div class="header-details-content">
-                <div class="header-lessons-summary">
-                  <span class="header-lessons-label">Horários</span>
-                  <div class="schedule-info-group" id="schedule-items">
-                    <!-- Rendered dynamically -->
-                  </div>
-                </div>
-                <div class="header-lessons-summary header-aulas-summary">
-                  <span class="header-lessons-label">Aulas</span>
-                  <div class="schedule-info-group lesson-metrics-group">
-                    <div class="pill pill-progress" id="badge-progresso-data">📈 Progresso: --</div>
-                    <div class="pill pill-info" id="badge-aulas-ministradas">🎓 Planejadas: --</div>
-                    <div class="pill pill-progress-muted" id="badge-carga-diferenca">Faltam: --</div>
-                  </div>
-                </div>
-              </div>
-            </details>
+          </div>
+        </div>
+        <div class="header-top-actions">
+          <a href="https://github.com/luizchaves/subjects" target="_blank" rel="noopener noreferrer" class="github-repo-btn" title="Repositório no GitHub" aria-label="Repositório no GitHub">
+            <i data-lucide="github"></i>
+          </a>
+          <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
+            <i data-lucide="moon"></i>
+          </button>
         </div>
       </div>
-      <div class="header-top-actions">
-        <a href="https://github.com/luizchaves/subjects" target="_blank" rel="noopener noreferrer" class="github-repo-btn" title="Repositório no GitHub" aria-label="Repositório no GitHub">
-          <i data-lucide="github"></i>
-        </a>
-        <button class="theme-toggle-btn" id="theme-toggle-btn" title="Alternar Tema Claro/Escuro" aria-label="Alternar Tema">
-          <i data-lucide="moon"></i>
-        </button>
-      </div>
+
+      <details class="header-details" id="header-details-info" open>
+        <summary class="header-details-summary">
+          <span class="summary-label">
+            <i data-lucide="info" class="summary-icon"></i> Horários e Métricas de Aulas
+          </span>
+          <i data-lucide="chevron-down" class="summary-chevron"></i>
+        </summary>
+        <div class="header-details-content">
+          <div class="header-lessons-summary">
+            <span class="header-lessons-label">Horários</span>
+            <div class="schedule-info-group" id="schedule-items">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          <div class="header-lessons-summary header-aulas-summary">
+            <span class="header-lessons-label">Aulas</span>
+            <div class="schedule-info-group lesson-metrics-group">
+              <div class="pill pill-progress" id="badge-progresso-data">📈 Progresso: --</div>
+              <div class="pill pill-info" id="badge-aulas-ministradas">🎓 Planejadas: --</div>
+              <div class="pill pill-progress-muted" id="badge-carga-diferenca">Faltam: --</div>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
   </header>
 
