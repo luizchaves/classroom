@@ -268,7 +268,8 @@
     }
 
     .theme-toggle-btn,
-    .github-repo-btn {
+    .github-repo-btn,
+    .github-repo-btn:visited {
       background: var(--bg-card);
       border: 1px solid var(--border-color);
       color: var(--text-main);
@@ -285,11 +286,28 @@
     }
 
     .theme-toggle-btn:hover,
-    .github-repo-btn:hover {
+    .github-repo-btn:hover,
+    .github-repo-btn:focus-visible {
       background-color: var(--bg-main);
       border-color: var(--primary);
       color: var(--primary);
       transform: translateY(-1px);
+    }
+
+    [data-theme="dark"] .theme-toggle-btn,
+    [data-theme="dark"] .github-repo-btn,
+    [data-theme="dark"] .github-repo-btn:visited {
+      background-color: #172036;
+      border-color: #273554;
+      color: #f8fafc;
+    }
+
+    [data-theme="dark"] .theme-toggle-btn:hover,
+    [data-theme="dark"] .github-repo-btn:hover,
+    [data-theme="dark"] .github-repo-btn:focus-visible {
+      background-color: #0b1329;
+      border-color: #38bdf8;
+      color: #38bdf8;
     }
 
     .theme-toggle-btn svg,
