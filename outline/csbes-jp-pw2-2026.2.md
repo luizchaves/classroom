@@ -104,7 +104,7 @@ Criação e manipulação de vetores (_arrays_) e sequências de caracteres (_st
 
 ## Array HOFs e Objetos
 
-Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e criação de objetos literais e coleções em JavaScript.
+Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e introdução à criação de objetos literais e coleções em JavaScript.
 
 - **Array HOFs:**
   - [Conteúdo: Array | HOFs](https://luizchaves.github.io/devlab/courses/ecmascript/data/arrays/)
@@ -114,16 +114,28 @@ Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e
   - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
   - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
   - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
+
+## Objetos (Continuação)
+
+Continuação da manipulação de objetos e coleções em JavaScript, estruturação e resolução de problemas práticos.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
+- **Prática:**
+  - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
+  - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
   - [Exercício: Objeto Entidade](https://ifpb.github.io/exercises/problems/object-entity/)
   - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
-  - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
+  - [Exercício: Objeto Exame](https://ifpb.github.io/exercises/problems/object-exam/)
 
 ## Exercício Avaliativo
 
 Avaliação prática de manipulação de objetos e estruturas de dados em JavaScript.
 
 - **Exercícios Avaliativos:**
-  - [Exercício: Objeto Exame (Avaliativo)](https://ifpb.github.io/exercises/problems/object-exam/)
+  - Exercício a ser publicado no horário da aula.
 
 ## Objetos do Navegador
 
@@ -179,21 +191,15 @@ Configuração e uso de empacotadores modernos front-end com Vite para projetos 
 - **Prática:**
   - [Exercício: Amaro Script](https://ifpb.github.io/exercises/problems/web-script-amaro/)
 
-## DOM
+## DOM e Local Storage (CRUD)
 
-Uso da DOM API para seleção, modificação e estruturação dinâmica de componentes em páginas web.
+Uso da DOM API para seleção, modificação e estruturação dinâmica de componentes em páginas web, com gerenciamento de estado e dados persistentes no navegador via _Local Storage_ (Create, Read, Update, Delete).
 
-- **Conteúdo Teórico:**
+- **DOM API:**
   - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
-- **Prática:**
   - [Exercício: Gerador de Lista Script](https://ifpb.github.io/exercises/problems/web-script-list-generator/)
   - [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
-
-## Criando Elementos Dinâmicos (Create, Delete e Update)
-
-Gerenciamento de estado e dados persistentes no navegador utilizando _Local Storage_.
-
-- **Conteúdo Teórico:**
+- **Local Storage:**
   - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
 
 ## Projeto Acompanhamento
