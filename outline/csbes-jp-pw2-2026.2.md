@@ -130,21 +130,18 @@ Continuação da manipulação de objetos e coleções em JavaScript, estrutura�
   - [Exercício: Objeto Comics](https://ifpb.github.io/exercises/problems/object-comics/)
   - [Exercício: Objeto Exame](https://ifpb.github.io/exercises/problems/object-exam/)
 
-## Exercício Avaliativo
-
-Avaliação prática de manipulação de objetos e estruturas de dados em JavaScript.
-
-- **Exercícios Avaliativos:**
-  - Exercício a ser publicado no horário da aula.
-
-## Objetos do Navegador
+## Dúvidas sobre ECMA e Web APIs
 
 Introdução ao ambiente do navegador, objeto `window`, `document` e interação inicial com a página web.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Objetos do Navegador](https://luizchaves.github.io/devlab/courses/web-api/browser/objects/)
+  - [Conteúdo: Web APIs](https://luizchaves.github.io/devlab/courses/web-api/)
 - **Prática:**
   - Exercício: List generator document.write
+
+## Exercício Avaliativo
+
+Avaliação prática de ECMAScript a ser publicado no horário da aula.
 
 ## Criando Elementos Dinâmicos
 

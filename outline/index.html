@@ -1433,6 +1433,13 @@
       margin-top: 0.15rem;
     }
 
+    .resource-plain-text {
+      font-size: 0.9rem;
+      color: var(--text-main);
+      line-height: 1.5;
+      margin: 0.15rem 0 0.25rem 0.2rem;
+    }
+
     .resource-link {
       display: inline-flex;
       align-items: center;
@@ -2672,7 +2679,10 @@
               resources.push({ prefix, text, url });
             } else {
               const plainText = line.replace(/^-\s*/, '').trim();
-              if (plainText) resources.push({ prefix: 'INFO', text: plainText, url: null });
+              if (plainText) {
+                const isCategoryHeader = /^\*\*.*?\*\*:?$/.test(plainText);
+                resources.push({ prefix: 'INFO', text: plainText, url: null, isHeader: isCategoryHeader });
+              }
             }
           } else if (line.length > 0 && !line.startsWith('#')) {
             bodyTexts.push(line);
@@ -2911,7 +2921,7 @@
         const titleLower = topic.title.toLowerCase();
         const titleNormalized = titleLower.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
         const isProject = titleLower.includes('projeto');
-        const isGradedExercise = titleNormalized.includes('exercicio avaliativo');
+        const isGradedExercise = titleNormalized.includes('exercicio avaliativo') || titleNormalized.includes('exercicios avaliativos');
 
         const card = document.createElement('div');
         card.className = 'topic-card';
@@ -2997,29 +3007,33 @@
           resList.innerHTML = '<div class="no-resources">Nenhum recurso cadastrado para esta aula.</div>';
         } else if (topic.resources.length > 0) {
           topic.resources.forEach(r => {
+            let badgeClass = 'badge-dw';
+            const pLower = (r.prefix || '').toLowerCase();
+            if (pLower.includes('github')) badgeClass = 'badge-github';
+            else if (pLower.includes('braincheck') || pLower.includes('quiz')) badgeClass = 'badge-braincheck';
+            else if (pLower.includes('exercício') || pLower.includes('exercicio')) badgeClass = 'badge-exercicio';
+            else if (pLower.includes('padlet')) badgeClass = 'badge-padlet';
+            else if (pLower.includes('figma')) badgeClass = 'badge-figma';
+            else if (pLower.includes('medium')) badgeClass = 'badge-medium';
+
             if (r.url) {
               const a = document.createElement('a');
               a.href = r.url;
               a.target = '_blank';
               a.rel = 'noopener noreferrer';
-              
-              let badgeClass = 'badge-dw';
-              const pLower = r.prefix.toLowerCase();
-              if (pLower.includes('github')) badgeClass = 'badge-github';
-              else if (pLower.includes('braincheck') || pLower.includes('quiz')) badgeClass = 'badge-braincheck';
-              else if (pLower.includes('exercício') || pLower.includes('exercicio')) badgeClass = 'badge-exercicio';
-              else if (pLower.includes('padlet')) badgeClass = 'badge-padlet';
-              else if (pLower.includes('figma')) badgeClass = 'badge-figma';
-              else if (pLower.includes('medium')) badgeClass = 'badge-medium';
-
               a.className = `resource-link ${badgeClass}`;
-              a.innerHTML = `<span class="badge-prefix">${r.prefix}</span> <span>${r.text}</span>`;
+              a.innerHTML = `<span class="badge-prefix">${escapeHtml(r.prefix)}</span> <span>${renderInlineMarkdown(r.text)}</span>`;
               resList.appendChild(a);
-            } else {
+            } else if (r.isHeader) {
               const div = document.createElement('div');
               div.className = 'resource-category-header';
               div.innerHTML = renderInlineMarkdown(r.text);
               resList.appendChild(div);
+            } else {
+              const p = document.createElement('p');
+              p.className = 'resource-plain-text';
+              p.innerHTML = renderInlineMarkdown(r.text);
+              resList.appendChild(p);
             }
           });
         }

@@ -138,15 +138,7 @@ Estruturas de controle de fluxo (`if/else`, `for`, `while`), expressões e opera
   - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/ecmascript/structure/modules/)
   - [Exercício: Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
   - [Exercício: Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
-
-## Exercício JS Intro e Exercício Avaliativo
-
-Resolução de problemas práticos e avaliação de lógica de programação utilizando funções em JavaScript.
-
-- **Exercícios Avaliativos:**
-  - [Exercício (Avaliativo): Calculadora](https://ifpb.github.io/exercises/problems/function-calc/)
-  - [Exercício (Avaliativo): Área do Círculo](https://ifpb.github.io/exercises/problems/function-area-of-circle/)
-  - [Exercício (Avaliativo): Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
+  - [Exercício: Verificador de Triângulos](https://ifpb.github.io/exercises/problems/function-triangle-checker/)
 
 ## API do JS (Array, String, Object)
 
@@ -163,6 +155,10 @@ Manipulação de estruturas de dados essenciais em JavaScript: métodos de _arra
 - **Object:**
   - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
   - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
+
+## Revisão sobre ECMA e Exercício Avaliativo
+
+Avaliação prática de ECMAScript a ser publicado no horário da aula.
 
 ## JS Web: Intro
 
