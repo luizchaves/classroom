@@ -156,18 +156,25 @@ Manipulação de estruturas de dados essenciais em JavaScript: métodos de _arra
   - [Conteúdo: Object](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
   - [Exercício: Object Host](https://ifpb.github.io/exercises/problems/object-host/)
 
-## Revisão sobre ECMA e Exercício Avaliativo
-
-Avaliação prática de ECMAScript a ser publicado no horário da aula.
-
 ## JS Web: Intro
 
 Integração do JavaScript com o navegador, manipulação da árvore DOM (_Document Object Model_) e tratamento de eventos de usuário (_click_, _submit_, _input_).
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Browser Objects](https://luizchaves.github.io/devlab/courses/web-api/browser/objects/)
-  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
+  - [Conteúdo: Guia Web APIs](https://luizchaves.github.io/devlab/courses/web-api/)
+  - [Conteúdo: Web APIs - O que uma Aplicação Front-end Faz?](https://luizchaves.github.io/devlab/courses/web-api/common-features/)
+  - [Conteúdo: Web APIs - Catálogo de APIs do Navegador](https://luizchaves.github.io/devlab/courses/web-api/browser/catalog/)
+  - [Conteúdo: Web APIs - Ciclo de Vida da Página](https://luizchaves.github.io/devlab/courses/web-api/browser/lifecycle/)
+  - [Conteúdo: Web APIs - Objetos do Navegador](https://luizchaves.github.io/devlab/courses/web-api/browser/objects/)
+  - [Conteúdo: Web APIs - Manipulação do DOM](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
+  - [Conteúdo: Web APIs - Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
   - [Conteúdo: Manipulação de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
+- **Exercícios de Fixação:**
+  - [Exercício: Tabela de Endereços](https://ifpb.github.io/exercises/problems/web-script-iptable/)
+
+## Exercício Avaliativo
+
+Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
 
 ## Projeto da Disciplina em Bootstrap
 
@@ -189,6 +196,8 @@ Construção de aplicações interativas no front-end com formulários HTML, man
   - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
   - [Conteúdo: Formulários](https://luizchaves.github.io/devlab/courses/css/forms/styling/)
   - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
+- **Exercícios de Fixação:**
+  - [Exercício: Tabela de Endereços](https://ifpb.github.io/exercises/problems/web-script-iptable/)
 
 ## API Rest (Fetch) e Exercício Avaliativo
 

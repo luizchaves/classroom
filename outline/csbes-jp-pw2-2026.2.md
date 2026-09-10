@@ -135,28 +135,27 @@ Continuação da manipulação de objetos e coleções em JavaScript, estrutura�
 Introdução ao ambiente do navegador, objeto `window`, `document` e interação inicial com a página web.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Web APIs](https://luizchaves.github.io/devlab/courses/web-api/)
+  - [Conteúdo: Guia Web APIs](https://luizchaves.github.io/devlab/courses/web-api/)
+  - [Conteúdo: Web APIs - O que uma Aplicação Front-end Faz?](https://luizchaves.github.io/devlab/courses/web-api/common-features/)
+  - [Conteúdo: Web APIs - Catálogo de APIs do Navegador](https://luizchaves.github.io/devlab/courses/web-api/browser/catalog/)
+  - [Conteúdo: Web APIs - Ciclo de Vida da Página](https://luizchaves.github.io/devlab/courses/web-api/browser/lifecycle/)
 - **Prática:**
-  - Exercício: List generator document.write
+  - Exercício: Acesse a documentação das Web APIs do navegador e explore algumas demonstrações para entender o propósito e funcionamento das APIs disponíveis.
 
 ## Exercício Avaliativo
 
-Avaliação prática de ECMAScript a ser publicado no horário da aula.
+Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
 
 ## Criando Elementos Dinâmicos
 
 Manipulação da árvore DOM no navegador e criação dinâmica de elementos HTML via JavaScript.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
+  - [Conteúdo: Web APIs - Objetos do Navegador](https://luizchaves.github.io/devlab/courses/web-api/browser/objects/)
+  - [Conteúdo: Web APIs - Manipulação do DOM](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
+  - [Conteúdo: Web APIs - Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
 - **Prática:**
   - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
-
-## Exercício Avaliativo
-
-Atividade prática avaliativa de manipulação do DOM e elementos dinâmicos na Web.
-
-- **Exercícios Avaliativos:**
   - [Exercício: Banderas de Países (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
   - [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
 
@@ -178,6 +177,10 @@ Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para int
 
 - **Conteúdo Teórico:**
   - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
+
+## Exercício Avaliativo
+
+Atividade prática avaliativa sobre manipulação do DOM e criação de elementos dinâmicos em aplicações Web, a ser publicada no horário da aula.
 
 ## Build Tools
 
