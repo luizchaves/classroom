@@ -142,10 +142,6 @@ Introdução ao ambiente do navegador, objeto `window`, `document` e interação
 - **Prática:**
   - Exercício: Acesse a documentação das Web APIs do navegador e explore algumas demonstrações para entender o propósito e funcionamento das APIs disponíveis.
 
-## Exercício Avaliativo
-
-Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
-
 ## Criando Elementos Dinâmicos
 
 Manipulação da árvore DOM no navegador e criação dinâmica de elementos HTML via JavaScript.
@@ -156,8 +152,11 @@ Manipulação da árvore DOM no navegador e criação dinâmica de elementos HTM
   - [Conteúdo: Web APIs - Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
 - **Prática:**
   - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
-  - [Exercício: Banderas de Países (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
-  - [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
+  - [Exercício: Banderas de Países](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
+
+## Exercício Avaliativo
+
+Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
 
 ## Projeto Definição
 
@@ -177,6 +176,10 @@ Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para int
 
 - **Conteúdo Teórico:**
   - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
+- **Prática:**
+  - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
+  - [Exercício: Banderas de Países](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
+  - [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
 
 ## Exercício Avaliativo
 
