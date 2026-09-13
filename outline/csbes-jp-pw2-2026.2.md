@@ -177,8 +177,6 @@ Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para int
 - **Conteúdo Teórico:**
   - [Conteúdo: Tratamento de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
 - **Prática:**
-  - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
-  - [Exercício: Banderas de Países](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
   - [Exercício: Cálculo de IMC](https://ifpb.github.io/exercises/problems/web-script-bmi/)
 
 ## Exercício Avaliativo
