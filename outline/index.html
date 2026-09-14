@@ -3419,11 +3419,21 @@
 
     function renderInlineMarkdown(text) {
       if (!text) return '';
-      return escapeHtml(text)
-        .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: underline;">$1</a>')
-        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.*?)\*/g, '<em>$1</em>')
-        .replace(/`(.*?)`/g, '<code style="background: #f1f5f9; padding: 0.1rem 0.3rem; border-radius: 0.25rem; font-size: 0.85em; font-family: monospace; color: #0369a1;">$1</code>');
+      // Código e links são extraídos antes da ênfase para que `_` e `*`
+      // dentro deles (ex.: snake_case em URLs) não sejam interpretados.
+      const placeholders = [];
+      const stash = (html) => {
+        placeholders.push(html);
+        return `\u0000${placeholders.length - 1}\u0000`;
+      };
+      const html = escapeHtml(text)
+        .replace(/`([^`]+)`/g, (_, code) => stash(`<code style="background: #f1f5f9; padding: 0.1rem 0.3rem; border-radius: 0.25rem; font-size: 0.85em; font-family: monospace; color: #0369a1;">${code}</code>`))
+        .replace(/\[(.*?)\]\((.*?)\)/g, (_, label, href) => stash(`<a href="${href}" target="_blank" rel="noopener noreferrer" style="color: var(--primary); font-weight: 700; text-decoration: underline;">${label}</a>`))
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/(^|[^\w])__(.+?)__(?=[^\w]|$)/g, '$1<strong>$2</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/(^|[^\w])_([^_]+?)_(?=[^\w]|$)/g, '$1<em>$2</em>');
+      return html.replace(/\u0000(\d+)\u0000/g, (_, i) => placeholders[Number(i)]);
     }
 
     function renderInlineLinks(text) {
