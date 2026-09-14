@@ -152,23 +152,7 @@ Manipulação da árvore DOM no navegador e criação dinâmica de elementos HTM
   - [Conteúdo: Web APIs - Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
 - **Prática:**
   - [Exercício: Cartão de Investimento](https://ifpb.github.io/exercises/problems/web-script-investiment-card/)
-  - [Exercício: Banderas de Países](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
-
-## Exercício Avaliativo
-
-Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
-
-## Projeto Definição
-
-Apresentação dos requisitos e diretrizes do projeto prático de Programação para Web II.
-
-- **Especificação & Acompanhamento:**
-  - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
-  - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
-
-## Apresentação da Proposta do Projeto
-
-Validação inicial das propostas de projeto dos estudantes com o professor.
+  - [Exercício: Bandeiras de Países](https://ifpb.github.io/exercises/problems/web-script-country-flags/)
 
 ## Manipulação de Eventos
 
@@ -183,6 +167,18 @@ Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para int
 
 Atividade prática avaliativa sobre manipulação do DOM e criação de elementos dinâmicos em aplicações Web, a ser publicada no horário da aula.
 
+## Projeto Definição
+
+Apresentação dos requisitos e diretrizes do projeto prático de Programação para Web II.
+
+- **Especificação & Acompanhamento:**
+  - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
+  - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
+
+## Apresentação da Proposta do Projeto
+
+Validação inicial das propostas de projeto dos estudantes com o professor.
+
 ## Build Tools
 
 Configuração e uso de empacotadores modernos front-end com Vite para projetos JavaScript.
@@ -192,7 +188,7 @@ Configuração e uso de empacotadores modernos front-end com Vite para projetos 
 - **Prática:**
   - [Exercício: Amaro Script](https://ifpb.github.io/exercises/problems/web-script-amaro/)
 
-## DOM e Local Storage (CRUD)
+## Aplicação com Local Storage (CRUD)
 
 Uso da DOM API para seleção, modificação e estruturação dinâmica de componentes em páginas web, com gerenciamento de estado e dados persistentes no navegador via _Local Storage_ (Create, Read, Update, Delete).
 
@@ -202,6 +198,15 @@ Uso da DOM API para seleção, modificação e estruturação dinâmica de compo
   - [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
 - **Local Storage:**
   - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
+
+## Expressões Regulares
+
+Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para validação de padrões de texto.
+
+- **Conteúdo Teórico:**
+  - [Conteúdo: Expressões Regulares](https://luizchaves.github.io/devlab/courses/ecmascript/stdlib/regex/)
+- **Acompanhamento:**
+  - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
 ## Projeto Acompanhamento
 
@@ -241,6 +246,10 @@ Gerenciamento de estado de componentes React com `useState` e efeitos colaterais
 - **Conteúdo Teórico:**
   - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/react/state/hooks/)
 
+## Exercício Avaliativo
+
+Avaliação prática avaliativa de React com TypeScript, a ser publicado no horário da aula.
+
 ## React - Context API
 
 Gerenciamento de estado global em aplicações React utilizando a Context API.
@@ -254,15 +263,6 @@ Construção de formulários controlados em React e implementação de operaçõ
 
 - **Conteúdo Teórico:**
   - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/react/state/hooks/)
-
-## Expressões Regulares
-
-Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para validação de padrões de texto.
-
-- **Conteúdo Teórico:**
-  - [Conteúdo: Expressões Regulares](https://luizchaves.github.io/devlab/courses/ecmascript/stdlib/regex/)
-- **Acompanhamento:**
-  - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
 ## Promises
 
