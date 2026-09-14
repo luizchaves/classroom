@@ -185,7 +185,7 @@ Construção de aplicações interativas no front-end com formulários HTML, man
 
 Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
 
-## API Rest (Fetch) e Exercício Avaliativo
+## API Rest (Fetch)
 
 Comunicação assíncrona cliente-servidor consumindo APIs REST via `fetch()`, simulação de backend com JSON Server e tratamento de dados JSON.
 
@@ -193,7 +193,7 @@ Comunicação assíncrona cliente-servidor consumindo APIs REST via `fetch()`, s
   - [Conteúdo: JSON Server](https://luizchaves.github.io/devlab/courses/packages/mock/json-server/)
   - [Conteúdo: Fetch API](https://luizchaves.github.io/devlab/courses/web-api/http/fetch/)
 - **Exercícios & Avaliações:**
-  - [Exercício: IPInfo API Table (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
+  - [Exercício: IPInfo API Table](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
   - [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
   - [Exercício: IP Table](https://ifpb.github.io/exercises/problems/web-script-iptable/)
 
