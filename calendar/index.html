@@ -93,6 +93,10 @@
       --semestre-milestone-bg: #bbf7d0;
       --semestre-milestone-border: #22c55e;
       --semestre-milestone-text: #14532d;
+
+      --aula-bg: #e0f2fe;
+      --aula-border: #7dd3fc;
+      --aula-text: #075985;
     }
 
     [data-theme="dark"] {
@@ -143,6 +147,10 @@
       --semestre-milestone-bg: rgba(34, 197, 94, 0.2);
       --semestre-milestone-border: rgba(34, 197, 94, 0.4);
       --semestre-milestone-text: #86efac;
+
+      --aula-bg: rgba(56, 189, 248, 0.18);
+      --aula-border: rgba(56, 189, 248, 0.4);
+      --aula-text: #7dd3fc;
     }
 
     [data-theme="dark"] select,
@@ -797,6 +805,7 @@
     .dot-academico { background-color: var(--academico-bg); border-color: var(--academico-border); }
     .dot-prazo { background-color: var(--prazo-bg); border-color: var(--prazo-border); }
     .dot-matricula { background-color: var(--matricula-bg); border-color: var(--matricula-border); }
+    .dot-aula { background-color: var(--aula-bg); border-color: var(--aula-border); }
 
     /* Main Grid for Months */
     .calendar-grid {
@@ -1166,6 +1175,11 @@
       background-color: var(--semestre-milestone-bg);
       border-color: var(--semestre-milestone-border);
       color: var(--semestre-milestone-text);
+    }
+    .list-event-badge.badge-aula {
+      background-color: var(--aula-bg);
+      border-color: var(--aula-border);
+      color: var(--aula-text);
     }
 
     /* Floating Tooltip Component */
@@ -1600,6 +1614,7 @@
               <option value="evento_academico">Eventos Acadêmicos</option>
               <option value="prazo_academico">Prazos Acadêmicos</option>
               <option value="ferias">Férias</option>
+              <option value="aula">Aulas</option>
             </select>
           </div>
 
@@ -1638,6 +1653,7 @@
         <div class="legend-item"><div class="legend-dot dot-academico"></div> Evento Acadêmico</div>
         <div class="legend-item"><div class="legend-dot dot-prazo"></div> Prazo Acadêmico</div>
         <div class="legend-item"><div class="legend-dot dot-matricula"></div> Matrícula</div>
+        <div class="legend-item"><div class="legend-dot dot-aula"></div> Aula</div>
       </div>
     </details>
   </div>
@@ -1732,7 +1748,8 @@
         periodo: '2026.2',
         carga_horaria: '120ha',
         professor: 'Luiz Carlos Rodrigues Chaves',
-        calendarFile: '2026.2.json'
+        calendarFile: '2026.2.json',
+        outlineFile: 'cstrc-jp-dw-2026.2.md'
       },
       {
         slug: 'csbes-jp-pw2-2026.2',
@@ -1741,7 +1758,8 @@
         periodo: '2026.2',
         carga_horaria: '80ha',
         professor: 'Francisco Dantas Nobre Neto e Luiz Carlos Rodrigues Chaves',
-        calendarFile: '2026.2.json'
+        calendarFile: '2026.2.json',
+        outlineFile: 'csbes-jp-pw2-2026.2.md'
       },
       {
         slug: 'ctii-jp-lp2-2026',
@@ -1750,7 +1768,8 @@
         periodo: '2026',
         carga_horaria: '80ha',
         professor: 'Luiz Carlos Rodrigues Chaves',
-        calendarFile: '2026.json'
+        calendarFile: '2026.json',
+        outlineFile: 'ctii-jp-lp2-2026.md'
       }
     ];
 
@@ -1831,8 +1850,181 @@
 
       if (data) {
         calendarData = data;
+        if (matchedSubject) {
+          await loadAndMergeSubjectLessons(matchedSubject);
+        }
         initCalendarApp(matchedSubject);
       }
+    }
+
+    const scheduleDayMap = {
+      domingo: 0, segunda: 1, 'terça': 2, terca: 2, quarta: 3,
+      quinta: 4, sexta: 5, 'sábado': 6, sabado: 6
+    };
+
+    function parseFrontMatterList(fmText, key) {
+      const blockRegex = new RegExp(`(?:^|\\n)${key}:\\s*\\n([\\s\\S]*?)(?=\\n[a-z_]+:|$)`, 'i');
+      const blockMatch = fmText.match(blockRegex);
+      if (!blockMatch) return [];
+
+      const items = [];
+      let current = null;
+
+      blockMatch[1].split('\n').forEach(rawLine => {
+        const line = rawLine.trim();
+        if (!line) return;
+
+        if (line.startsWith('- ')) {
+          if (current) items.push(current);
+          current = {};
+          const inlineField = line.slice(2).trim().match(/^([a-z_]+):\s*(.*)$/i);
+          if (inlineField) current[inlineField[1]] = inlineField[2].trim();
+          return;
+        }
+
+        const fieldMatch = line.match(/^([a-z_]+):\s*(.*)$/i);
+        if (fieldMatch && current) current[fieldMatch[1]] = fieldMatch[2].trim();
+      });
+
+      if (current) items.push(current);
+      return items;
+    }
+
+    function normalizeIsoDate(value) {
+      const clean = (value || '').trim();
+      const isoMatch = clean.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      if (isoMatch) return clean;
+
+      const brMatch = clean.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);
+      if (brMatch) return `${brMatch[3]}-${brMatch[2]}-${brMatch[1]}`;
+
+      const brShortMatch = clean.match(/^(\d{2})\/(\d{2})\/(\d{2})$/);
+      if (brShortMatch) return `20${brShortMatch[3]}-${brShortMatch[2]}-${brShortMatch[1]}`;
+
+      return null;
+    }
+
+    function findDayInCalendar(isoDate) {
+      if (!calendarData || !calendarData.meses) return null;
+      const month = calendarData.meses.find(m => m.ano_mes === isoDate.slice(0, 7));
+      if (!month) return null;
+      return month.dias.find(d => d.data === isoDate) || null;
+    }
+
+    // Deriva as aulas (a partir do outline da disciplina) e injeta como eventos nas datas do calendário
+    async function loadAndMergeSubjectLessons(matchedSubject) {
+      const outlineFile = matchedSubject.outlineFile || `${matchedSubject.slug}.md`;
+      const currentOrigin = window.location.origin;
+      const currentPath = window.location.pathname;
+      const dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
+
+      const outlineCandidates = [
+        `../outline/${outlineFile}`,
+        `./outline/${outlineFile}`,
+        `outline/${outlineFile}`,
+        new URL(`../outline/${outlineFile}`, currentOrigin + dirPath).href
+      ];
+
+      let rawMarkdown = '';
+      for (const url of outlineCandidates) {
+        try {
+          const res = await fetch(url, { cache: 'no-store' });
+          if (res.ok) {
+            const txt = await res.text();
+            if (txt && txt.includes('---')) {
+              rawMarkdown = txt;
+              break;
+            }
+          }
+        } catch (err) {
+          console.warn(`Outline fetch candidate ${url} failed:`, err);
+        }
+      }
+
+      if (!rawMarkdown) return;
+
+      const fmMatch = rawMarkdown.match(/^---\s*\n([\s\S]*?)\n---/);
+      if (!fmMatch) return;
+
+      const fmText = fmMatch[1];
+      const content = rawMarkdown.replace(fmMatch[0], '');
+
+      const perMatch = fmText.match(/periodo:\s*(.*)/i);
+      const periodId = perMatch ? perMatch[1].trim() : null;
+
+      const schedule = [];
+      const horariosBlock = fmText.match(/horarios:\s*\n([\s\S]*?)(?=\n[a-z_]+:|\n---|$)/i);
+      if (horariosBlock) {
+        let current = {};
+        horariosBlock[1].split('\n').forEach(l => {
+          const line = l.trim();
+          if (line.startsWith('- dia:')) {
+            if (current.dia) schedule.push(current);
+            current = { dia: line.replace('- dia:', '').trim() };
+          } else if (line.startsWith('aulas:')) {
+            current.aulas = parseInt(line.replace('aulas:', '').trim());
+          }
+        });
+        if (current.dia) schedule.push(current);
+      }
+
+      const activeDays = schedule
+        .map(s => ({ dayOfWeek: scheduleDayMap[s.dia.toLowerCase().replace('-feira', '')], aulas: s.aulas || 2 }))
+        .filter(s => s.dayOfWeek !== undefined);
+
+      if (activeDays.length === 0) return;
+
+      const skippedDates = new Map();
+      parseFrontMatterList(fmText, 'sem_aula').forEach(item => {
+        const isoDate = normalizeIsoDate(item.data);
+        if (isoDate) skippedDates.set(isoDate, item.motivo || item.descricao || 'Sem aula');
+      });
+
+      const selectedPeriod = (calendarData.periodos || []).find(p => String(p.id) === String(periodId));
+      const rangeInicio = selectedPeriod?.inicio || calendarData.metadata?.inicio || null;
+      const rangeTermino = selectedPeriod?.termino || calendarData.metadata?.termino || null;
+
+      const eligibleDates = [];
+      calendarData.meses.forEach(m => {
+        m.dias.forEach(d => {
+          if (!d.letivo) return;
+          if (rangeInicio && d.data < rangeInicio) return;
+          if (rangeTermino && d.data > rangeTermino) return;
+          if (skippedDates.has(d.data)) return;
+
+          const dayOfWeek = new Date(d.data + 'T00:00:00').getDay();
+          const matched = activeDays.find(a => a.dayOfWeek === dayOfWeek);
+          if (matched) eligibleDates.push(d.data);
+        });
+      });
+
+      let regIdx = 0;
+      content.split(/^##\s+/m).filter(b => b.trim().length > 0).forEach(block => {
+        const lines = block.trim().split('\n');
+        const rawTitleLine = lines[0].replace(/^#+\s*/, '').trim();
+        if (/^(CSTRC JP|CSBES JP|CTII JP)/.test(rawTitleLine)) return;
+
+        let cleanTitle = rawTitleLine;
+        let isoDate = null;
+
+        const dateInHeaderMatch = rawTitleLine.match(/(.*?)\s*\((.*?(\d{2}\/\d{2}\/\d{4}).*?)\)/);
+        if (dateInHeaderMatch) {
+          cleanTitle = dateInHeaderMatch[1].trim();
+          isoDate = normalizeIsoDate(dateInHeaderMatch[3]);
+        } else if (regIdx < eligibleDates.length) {
+          isoDate = eligibleDates[regIdx];
+          regIdx++;
+        }
+
+        if (!isoDate) return;
+        const day = findDayInCalendar(isoDate);
+        if (day) day.eventos.push({ descricao: cleanTitle, categoria: 'aula' });
+      });
+
+      skippedDates.forEach((reason, isoDate) => {
+        const day = findDayInCalendar(isoDate);
+        if (day) day.eventos.push({ descricao: `Aula suspensa: ${reason}`, categoria: 'aula_suspensa' });
+      });
     }
 
     function initCalendarApp(matchedSubject) {
@@ -1995,6 +2187,8 @@
       if (cat === 'ferias') return { bg: 'var(--ferias-bg)', border: 'var(--ferias-border)', text: 'var(--ferias-text)' };
       if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho') || cat.includes('bimestre')) return { bg: 'var(--prazo-bg)', border: 'var(--prazo-border)', text: 'var(--prazo-text)' };
       if (cat.includes('matricula')) return { bg: 'var(--matricula-bg)', border: 'var(--matricula-border)', text: 'var(--matricula-text)' };
+      if (cat === 'aula') return { bg: 'var(--aula-bg)', border: 'var(--aula-border)', text: 'var(--aula-text)' };
+      if (cat === 'aula_suspensa') return { bg: 'var(--ferias-bg)', border: 'var(--ferias-border)', text: 'var(--ferias-text)' };
       return { bg: 'var(--academico-bg)', border: 'var(--academico-border)', text: 'var(--academico-text)' };
     }
 
@@ -2134,6 +2328,8 @@
       if (cat === 'ferias') return 'badge-ferias';
       if (cat.includes('prazo') || cat.includes('semestre') || cat.includes('conselho') || cat.includes('bimestre')) return 'badge-prazo';
       if (cat.includes('matricula')) return 'badge-matricula';
+      if (cat === 'aula') return 'badge-aula';
+      if (cat === 'aula_suspensa') return 'badge-ferias';
       return 'badge-academico';
     }
 
