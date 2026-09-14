@@ -167,37 +167,23 @@ Integração do JavaScript com o navegador, manipulação da árvore DOM (_Docum
   - [Conteúdo: Web APIs - Ciclo de Vida da Página](https://luizchaves.github.io/devlab/courses/web-api/browser/lifecycle/)
   - [Conteúdo: Web APIs - Objetos do Navegador](https://luizchaves.github.io/devlab/courses/web-api/browser/objects/)
   - [Conteúdo: Web APIs - Manipulação do DOM](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
-  - [Conteúdo: Web APIs - Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
 - **Exercícios de Fixação:**
   - [Exercício: Tabela de Endereços](https://ifpb.github.io/exercises/problems/web-script-iptable/)
-
-## Projeto da Disciplina em Bootstrap
-
-Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integrando layout responsivo com Bootstrap.
-
-- **Conteúdo & Protótipo:**
-  - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/front-static/)
-  - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
-  - [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
-- **Código Fonte:**
-  - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
-  - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
-
-## Exercício Avaliativo
-
-Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
 
 ## JS Web: Aplicação Interativa com Formulários e Local Storage
 
 Construção de aplicações interativas no front-end com formulários HTML, manipulação dinâmica do DOM, tratamento de eventos de usuário (_click_, _submit_, _input_) e persistência local de dados com _Local Storage_.
 
 - **Conteúdo Teórico:**
-  - [Conteúdo: Manipulação de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
-  - [Conteúdo: DOM API](https://luizchaves.github.io/devlab/courses/web-api/dom/manipulation/)
-  - [Conteúdo: Formulários](https://luizchaves.github.io/devlab/courses/css/forms/styling/)
-  - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
+  - [Conteúdo: Web APIs - Elementos Dinâmicos](https://luizchaves.github.io/devlab/courses/web-api/dom/dynamic-elements/)
+  - [Conteúdo: Web APIs - Manipulação de Eventos](https://luizchaves.github.io/devlab/courses/web-api/dom/events/)
+  - [Conteúdo: Web APIs - Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
 - **Exercícios de Fixação:**
   - [Exercício: Tabela de Endereços](https://ifpb.github.io/exercises/problems/web-script-iptable/)
+
+## Exercício Avaliativo
+
+Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
 
 ## API Rest (Fetch) e Exercício Avaliativo
 
@@ -218,6 +204,18 @@ Empacotamento e automação de desenvolvimento front-end com Vite e visualizaç�
 - **Conteúdo Teórico & Ferramentas:**
   - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/packages/build/vite/)
   - [Conteúdo: Chart.js](https://luizchaves.github.io/devlab/courses/packages/ui/chartjs/)
+
+## Projeto da Disciplina em Bootstrap
+
+Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integrando layout responsivo com Bootstrap.
+
+- **Conteúdo & Protótipo:**
+  - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/front-static/)
+  - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
+  - [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
+- **Código Fonte:**
+  - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
+  - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
 
 ## Acompanhamento de Projeto
 
