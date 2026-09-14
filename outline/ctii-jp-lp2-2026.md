@@ -46,6 +46,9 @@ Prática de criação de páginas interativas dinâmicas com requisições assí
 
 Planejamento e construção da interface gráfica do projeto prático em HTML, CSS e JavaScript.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B1.1 - Front-end](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b11---front-end)
+
 ## ExpressJS e Construção de API
 
 Desenvolvimento back-end com Node.js e Express.js, manipulação de rotas, requisições HTTP e criação de Web APIs básicas.
@@ -72,6 +75,9 @@ Atividades do Sábado Letivo organizadas pelo CAEST.
 
 Orientação prática e mentoria de acompanhamento do desenvolvimento do projeto final.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B1.2 - Back-end e Integração com o Front-end](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b12---back-end-e-integração-com-o-front-end)
+
 ## Jogos Escolares (18/04/2026 - 2 aulas)
 
 Participação nas atividades dos Jogos Escolares.
@@ -83,6 +89,9 @@ Participação nas atividades dos Jogos Escolares.
 ## Apresentação de Projeto
 
 Desenvolvimento prático e integração de funcionalidades no projeto da disciplina.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B1.2 - Back-end e Integração com o Front-end](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b12---back-end-e-integração-com-o-front-end)
 
 ## Camada de Dados
 
@@ -102,9 +111,15 @@ Conexão e manipulação de bancos de dados relacionais SQL diretamente pela apl
 
 Sessão de mentoria e acompanhamento da integração da camada de dados no projeto.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B2.1 - Banco de Dados com SQL](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b21---banco-de-dados-com-sql)
+
 ## Apresentação de Projeto
 
 Continuidade do desenvolvimento do projeto integrando banco de dados relacional.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B2.1 - Banco de Dados com SQL](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b21---banco-de-dados-com-sql)
 
 ## ORM
 
@@ -130,9 +145,15 @@ Participação nas atividades da Semana do Meio Ambiente.
 
 Mentoria de acompanhamento do desenvolvimento dos modelos e cadastros no projeto.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B2.2 - Banco de Dados com Prisma](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b22---banco-de-dados-com-prisma)
+
 ## Apresentação de Projeto
 
 Evolução do projeto com cadastro de entidades e persistência de dados.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B2.2 - Banco de Dados com Prisma](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b22---banco-de-dados-com-prisma)
 
 ## Autenticação | Back-end
 
@@ -157,9 +178,15 @@ Participe das palestras e hackthon do [IFTech 2026](https://www.even3.com.br/ift
 
 Orientação técnica para autenticação e rotas protegidas no projeto.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B3.1 - Autenticação de usuário](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b31---autenticação-de-usuário)
+
 ## Apresentação de Projeto
 
 Desenvolvimento das funcionalidades de autenticação OAuth e recuperação de senhas.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B3.1 - Autenticação de usuário](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b31---autenticação-de-usuário)
 
 ## Validação de Dados
 
@@ -187,9 +214,15 @@ Participação nas atividades do evento acadêmico Pulsar.
 
 Orientação e revisão de código para integração de serviços de validação e e-mail.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B3.2 - Validação e Envio de E-mail](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b32---validação-e-envio-de-e-mail)
+
 ## Apresentação de Projeto
 
 Aprimoramento das regras de negócio e validações na aplicação.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B3.2 - Validação e Envio de E-mail](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b32---validação-e-envio-de-e-mail)
 
 ## Upload de Arquivo
 
@@ -202,9 +235,15 @@ Implementação de upload e armazenamento de arquivos e imagens na API Express.j
 
 Acompanhamento técnico na implementação de upload de arquivos no projeto.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B4.1 - Upload de Arquivos](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b41---upload-de-arquivos)
+
 ## Apresentação de Projeto
 
 Desenvolvimento final do projeto integrado.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B4.1 - Upload de Arquivos](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b41---upload-de-arquivos)
 
 ## Teste de Aplicação
 
@@ -224,9 +263,15 @@ Prática de cobertura de testes automatizados para rotas e controllers da aplica
 
 Revisão final, testes de usabilidade e preparação para entrega.
 
+- **Avaliação do Projeto:**
+  - [Projeto: B4.2 - Testes Automatizados](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b42---testes-automatizados)
+
 ## Apresentação de Projeto
 
 Apresentação e avaliação final do projeto da disciplina.
+
+- **Avaliação do Projeto:**
+  - [Projeto: B4.2 - Testes Automatizados](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b42---testes-automatizados)
 
 ## Recuperação
 
