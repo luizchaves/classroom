@@ -211,6 +211,11 @@
       border-color: transparent;
     }
 
+    [data-theme="dark"] .day-cell.is-today {
+      border-color: #fb923c !important;
+      box-shadow: 0 0 0 2px #fb923c;
+    }
+
     [data-theme="dark"] .day-cell.is-today .day-number {
       box-shadow: 0 0 0 2px #172036, 0 0 0 4px rgba(249, 115, 22, 0.45);
     }
@@ -222,6 +227,11 @@
 
     [data-theme="dark"] .list-row-item:hover {
       background-color: #1e293b;
+    }
+
+    [data-theme="dark"] .list-row-item.is-today {
+      background-color: rgba(251, 146, 60, 0.12);
+      border-left-color: #fb923c;
     }
 
     [data-theme="dark"] .list-row-status.letivo {
@@ -426,11 +436,30 @@
       display: block;
     }
 
+    .professor-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--text-muted);
+    }
+
+    .professor-link:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
     .brand-text p {
       margin-top: 0.12rem;
       font-size: 0.82rem;
       color: var(--text-muted);
       line-height: 1.35;
+    }
+
+    .brand-compact .brand-text h1 {
+      font-size: 1.1rem;
+    }
+
+    .brand-compact .brand-text p {
+      margin-top: 0.05rem;
     }
 
     /* Universal Calendar Selector Dropdown */
@@ -1019,6 +1048,11 @@
       color: var(--letivo-text);
     }
 
+    .day-cell.is-today {
+      border-color: #f97316 !important;
+      box-shadow: 0 0 0 2px #f97316;
+    }
+
     .day-cell.is-today .day-number {
       background-color: #f97316;
       color: #ffffff !important;
@@ -1091,6 +1125,25 @@
 
     .list-row-item:hover {
       background-color: #f8fafc;
+    }
+
+    .list-row-item.is-today {
+      background-color: rgba(249, 115, 22, 0.08);
+      border-left: 3px solid #f97316;
+      padding-left: calc(1.25rem - 3px);
+    }
+
+    .list-row-today-badge {
+      display: inline-block;
+      margin-left: 0.5rem;
+      padding: 0.1rem 0.45rem;
+      border-radius: 1rem;
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      background-color: #f97316;
+      color: #ffffff;
+      vertical-align: middle;
     }
 
     .list-row-date {
@@ -1322,6 +1375,43 @@
       color: var(--primary);
       text-transform: uppercase;
       margin-top: 0.25rem;
+    }
+
+    .event-item-body {
+      margin-top: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .event-item-body p {
+      margin: 0 0 0.5rem;
+    }
+
+    .event-item-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .event-item-resources {
+      margin-top: 0.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .event-item-resource-link {
+      font-size: 0.82rem;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .event-item-resource-link:hover {
+      text-decoration: underline;
+    }
+
+    .event-item-resource-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
     }
 
     /* Responsive */
@@ -1782,8 +1872,53 @@
     function getSubjectBySlug(slug) {
       if (!slug) return null;
       const cleanSlug = String(slug).trim().replace(/\.md$/i, '');
-      return staticSubjects.find(s => s.slug === cleanSlug) || null;
+      const directSubject = staticSubjects.find(s => s.slug === cleanSlug);
+      if (directSubject) return directSubject;
+
+      const professorEntry = professorDirectory[cleanSlug];
+      if (professorEntry) {
+        const cursos = [...new Set(professorEntry.subjects.map(s => s.curso))];
+        return {
+          slug: cleanSlug,
+          isProfessorView: true,
+          disciplina: `Todas as Disciplinas • Prof. ${professorEntry.name}`,
+          curso: cursos.join(' • '),
+          periodo: 'Todos os períodos',
+          professor: professorEntry.name,
+          subjects: professorEntry.subjects
+        };
+      }
+
+      return null;
     }
+
+    function normalizeSlugPart(value) {
+      return (value || '')
+        .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+    }
+
+    function getProfessorSlug(name) {
+      return normalizeSlugPart((name || '').replace(/^prof\.?\s*/i, ''));
+    }
+
+    const professorDirectory = {};
+    staticSubjects.forEach(subject => {
+      const names = subject.professor.includes(' e ')
+        ? subject.professor.split(/\s+e\s+/i)
+        : [subject.professor];
+
+      names.forEach(name => {
+        const trimmedName = name.trim();
+        const slug = getProfessorSlug(trimmedName);
+        if (!professorDirectory[slug]) {
+          professorDirectory[slug] = { name: trimmedName, subjects: [] };
+        }
+        professorDirectory[slug].subjects.push(subject);
+      });
+    });
 
     async function loadCalendarData(fileOverride) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -1808,6 +1943,15 @@
         return;
       }
 
+      if (matchedSubject && matchedSubject.isProfessorView) {
+        const aggregated = await buildProfessorCalendar(matchedSubject);
+        if (aggregated) {
+          calendarData = aggregated;
+          initCalendarApp(matchedSubject);
+        }
+        return;
+      }
+
       let fileToLoad = fileOverride;
       if (!fileToLoad) {
         if (matchedSubject) {
@@ -1821,7 +1965,18 @@
         }
       }
 
-      let data = null;
+      const data = await fetchCalendarJson(fileToLoad);
+
+      if (data) {
+        calendarData = data;
+        if (matchedSubject) {
+          await loadAndMergeSubjectLessons(matchedSubject, calendarData);
+        }
+        initCalendarApp(matchedSubject);
+      }
+    }
+
+    async function fetchCalendarJson(fileToLoad) {
       const currentOrigin = window.location.origin;
       const currentPath = window.location.pathname;
       let dirPath = currentPath.substring(0, currentPath.lastIndexOf('/') + 1);
@@ -1844,23 +1999,62 @@
           const res = await fetch(url);
           if (res.ok) {
             const parsed = await res.json();
-            if (parsed && parsed.meses) {
-              data = parsed;
-              break;
-            }
+            if (parsed && parsed.meses) return parsed;
           }
         } catch (err) {
           console.warn(`Fetch candidate ${url} failed:`, err);
         }
       }
+      return null;
+    }
 
-      if (data) {
-        calendarData = data;
-        if (matchedSubject) {
-          await loadAndMergeSubjectLessons(matchedSubject);
+    // Agrega, em um único calendário virtual, as aulas de todas as disciplinas de um professor
+    async function buildProfessorCalendar(professorEntry) {
+      const calendarCache = new Map();
+      const dateMap = new Map();
+
+      for (const subject of professorEntry.subjects) {
+        let baseCalendar = calendarCache.get(subject.calendarFile);
+        if (baseCalendar === undefined) {
+          baseCalendar = await fetchCalendarJson(subject.calendarFile);
+          calendarCache.set(subject.calendarFile, baseCalendar);
         }
-        initCalendarApp(matchedSubject);
+        if (!baseCalendar) continue;
+
+        const subjectCalendar = JSON.parse(JSON.stringify(baseCalendar));
+        await loadAndMergeSubjectLessons(subject, subjectCalendar);
+
+        subjectCalendar.meses.forEach(m => {
+          m.dias.forEach(d => {
+            let entry = dateMap.get(d.data);
+            if (!entry) {
+              entry = { data: d.data, letivo: d.letivo, eventos: [] };
+              dateMap.set(d.data, entry);
+            } else {
+              entry.letivo = entry.letivo || d.letivo;
+            }
+            d.eventos.forEach(ev => {
+              const alreadyExists = entry.eventos.some(e => e.descricao === ev.descricao && e.categoria === ev.categoria);
+              if (!alreadyExists) entry.eventos.push(ev);
+            });
+          });
+        });
       }
+
+      const mesesMap = new Map();
+      Array.from(dateMap.values())
+        .sort((a, b) => a.data.localeCompare(b.data))
+        .forEach(day => {
+          const anoMes = day.data.slice(0, 7);
+          if (!mesesMap.has(anoMes)) mesesMap.set(anoMes, { ano_mes: anoMes, dias: [] });
+          mesesMap.get(anoMes).dias.push(day);
+        });
+
+      return {
+        metadata: { titulo: `Aulas de ${professorEntry.name}` },
+        periodos: [],
+        meses: Array.from(mesesMap.values())
+      };
     }
 
     const scheduleDayMap = {
@@ -1910,15 +2104,15 @@
       return null;
     }
 
-    function findDayInCalendar(isoDate) {
-      if (!calendarData || !calendarData.meses) return null;
-      const month = calendarData.meses.find(m => m.ano_mes === isoDate.slice(0, 7));
+    function findDayInCalendar(calData, isoDate) {
+      if (!calData || !calData.meses) return null;
+      const month = calData.meses.find(m => m.ano_mes === isoDate.slice(0, 7));
       if (!month) return null;
       return month.dias.find(d => d.data === isoDate) || null;
     }
 
-    // Deriva as aulas (a partir do outline da disciplina) e injeta como eventos nas datas do calendário
-    async function loadAndMergeSubjectLessons(matchedSubject) {
+    // Deriva as aulas (a partir do outline da disciplina) e injeta como eventos nas datas do calendário informado
+    async function loadAndMergeSubjectLessons(matchedSubject, targetCalendarData) {
       const outlineFile = matchedSubject.outlineFile || `${matchedSubject.slug}.md`;
       const currentOrigin = window.location.origin;
       const currentPath = window.location.pathname;
@@ -1986,12 +2180,12 @@
         if (isoDate) skippedDates.set(isoDate, item.motivo || item.descricao || 'Sem aula');
       });
 
-      const selectedPeriod = (calendarData.periodos || []).find(p => String(p.id) === String(periodId));
-      const rangeInicio = selectedPeriod?.inicio || calendarData.metadata?.inicio || null;
-      const rangeTermino = selectedPeriod?.termino || calendarData.metadata?.termino || null;
+      const selectedPeriod = (targetCalendarData.periodos || []).find(p => String(p.id) === String(periodId));
+      const rangeInicio = selectedPeriod?.inicio || targetCalendarData.metadata?.inicio || null;
+      const rangeTermino = selectedPeriod?.termino || targetCalendarData.metadata?.termino || null;
 
       const eligibleDates = [];
-      calendarData.meses.forEach(m => {
+      targetCalendarData.meses.forEach(m => {
         m.dias.forEach(d => {
           if (!d.letivo) return;
           if (rangeInicio && d.data < rangeInicio) return;
@@ -2023,37 +2217,92 @@
         }
 
         if (!isoDate) return;
-        const day = findDayInCalendar(isoDate);
-        if (day) day.eventos.push({ descricao: cleanTitle, categoria: 'aula', sigla: matchedSubject.sigla });
+
+        const bodyTexts = [];
+        const resources = [];
+        for (let i = 1; i < lines.length; i++) {
+          const line = lines[i].trim();
+          if (line.startsWith('-')) {
+            const linkMatch = line.match(/-\s*\[(.*?)\]\((.*?)\)/);
+            if (linkMatch) {
+              const fullLabel = linkMatch[1];
+              const url = linkMatch[2];
+              let prefix = 'Link';
+              let text = fullLabel;
+              if (fullLabel.includes(':')) {
+                const parts = fullLabel.split(':');
+                prefix = parts[0].trim();
+                text = parts.slice(1).join(':').trim();
+              }
+              resources.push({ prefix, text, url });
+            } else {
+              const plainText = line.replace(/^-\s*/, '').trim();
+              if (plainText && !/^\*\*.*?\*\*:?$/.test(plainText)) {
+                resources.push({ prefix: 'Info', text: plainText, url: null });
+              }
+            }
+          } else if (line.length > 0 && !line.startsWith('#')) {
+            bodyTexts.push(line);
+          }
+        }
+
+        const day = findDayInCalendar(targetCalendarData, isoDate);
+        if (day) day.eventos.push({ descricao: cleanTitle, categoria: 'aula', sigla: matchedSubject.sigla, bodyTexts, resources });
       });
 
       skippedDates.forEach((reason, isoDate) => {
-        const day = findDayInCalendar(isoDate);
+        const day = findDayInCalendar(targetCalendarData, isoDate);
         if (day) day.eventos.push({ descricao: `Aula suspensa: ${reason}`, categoria: 'aula_suspensa' });
       });
     }
 
     function initCalendarApp(matchedSubject) {
+      const periodoPillEl = document.getElementById('calendar-header-periodo');
+      const cursoEl = document.getElementById('calendar-header-curso');
+      const profEl = document.getElementById('calendar-header-prof');
+
       if (matchedSubject) {
-        document.getElementById('calendar-header-title').textContent = matchedSubject.disciplina;
-        document.getElementById('calendar-header-periodo').textContent = matchedSubject.periodo;
-        document.getElementById('calendar-header-curso').textContent = `${matchedSubject.curso} • IFPB Campus JP`;
-        let profName = '';
-        if (Array.isArray(matchedSubject.professor)) {
-          profName = matchedSubject.professor.map(p => p.trim().startsWith('Prof.') ? p.trim() : `Prof. ${p.trim()}`).join(' e ');
-        } else if (matchedSubject.professor.includes(' e ')) {
-          profName = matchedSubject.professor.split(/\s+e\s+/).map(p => p.trim().startsWith('Prof.') ? p.trim() : `Prof. ${p.trim()}`).join(' e ');
+        document.querySelector('.brand').classList.toggle('brand-compact', !!matchedSubject.isProfessorView);
+
+        if (matchedSubject.isProfessorView) {
+          document.getElementById('calendar-header-title').textContent = 'Todas as Aulas';
+          periodoPillEl.style.display = 'none';
+          cursoEl.style.display = 'none';
+
+          const label = matchedSubject.professor.startsWith('Prof.') ? matchedSubject.professor : `Prof. ${matchedSubject.professor}`;
+          profEl.textContent = `👨‍🏫 ${label}`;
         } else {
-          profName = matchedSubject.professor.startsWith('Prof.') ? matchedSubject.professor : `Prof. ${matchedSubject.professor}`;
+          document.getElementById('calendar-header-title').textContent = matchedSubject.disciplina;
+          periodoPillEl.style.display = '';
+          periodoPillEl.textContent = matchedSubject.periodo;
+          cursoEl.style.display = '';
+          cursoEl.textContent = `${matchedSubject.curso} • IFPB Campus JP`;
+
+          const profNames = Array.isArray(matchedSubject.professor)
+            ? matchedSubject.professor
+            : matchedSubject.professor.split(/\s+e\s+/i);
+
+          const profLinksHtml = profNames.map(name => {
+            const trimmedName = name.trim();
+            const label = trimmedName.startsWith('Prof.') ? trimmedName : `Prof. ${trimmedName}`;
+            const professorSlug = getProfessorSlug(trimmedName);
+            return `<a href="?subject=${encodeURIComponent(professorSlug)}&view=${currentViewMode}" class="professor-link" title="Ver todas as aulas de ${label}">${label}</a>`;
+          }).join(' e ');
+
+          profEl.innerHTML = `👨‍🏫 ${profLinksHtml}`;
         }
-        document.getElementById('calendar-header-prof').textContent = `👨‍🏫 ${profName}`;
       } else {
+        document.querySelector('.brand').classList.remove('brand-compact');
+        periodoPillEl.style.display = '';
+        cursoEl.style.display = '';
+
         const pName = calendarData.ano_letivo ? `${calendarData.ano_letivo}.${calendarData.periodo}` : '2026.2';
         document.getElementById('calendar-header-title').textContent = 'Calendário Acadêmico';
-        document.getElementById('calendar-header-periodo').textContent = pName;
-        document.getElementById('calendar-header-curso').textContent = 'Instituto Federal da Paraíba • Campus João Pessoa';
+        periodoPillEl.textContent = pName;
+        cursoEl.textContent = 'Instituto Federal da Paraíba • Campus João Pessoa';
         document.getElementById('calendar-header-prof').textContent = '👨‍🏫 Prof. Luiz Carlos Rodrigues Chaves';
       }
+
 
       let totalLetivos = 0;
       let totalFeriados = 0;
@@ -2390,10 +2639,17 @@
           const row = document.createElement('div');
           row.className = 'list-row-item';
           row.setAttribute('data-date', day.data);
+          if (day.data === todayIsoDate) row.classList.add('is-today');
 
           const dateCol = document.createElement('div');
           dateCol.className = 'list-row-date';
           dateCol.textContent = dateStr;
+          if (day.data === todayIsoDate) {
+            const todayBadge = document.createElement('span');
+            todayBadge.className = 'list-row-today-badge';
+            todayBadge.textContent = 'Hoje';
+            dateCol.appendChild(todayBadge);
+          }
           row.appendChild(dateCol);
 
           const statusCol = document.createElement('div');
@@ -2447,10 +2703,13 @@
 
       if (day.eventos.length > 0) {
         day.eventos.forEach(ev => {
+          const catLabel = ev.categoria === 'aula' && ev.sigla
+            ? `${ev.sigla} • aula`
+            : ev.categoria.replace(/_/g, ' ');
           html += `
             <div class="tooltip-event-item">
               <div><strong>• ${ev.descricao}</strong></div>
-              <div class="tooltip-event-cat">${ev.categoria.replace(/_/g, ' ')}</div>
+              <div class="tooltip-event-cat">${catLabel}</div>
             </div>
           `;
         });
@@ -2513,9 +2772,27 @@
         day.eventos.forEach(ev => {
           const item = document.createElement('div');
           item.className = 'event-item-card';
+
+          const catLabel = ev.categoria === 'aula' && ev.sigla
+            ? `${ev.sigla} • aula`
+            : ev.categoria.replace(/_/g, ' ');
+
+          let bodyHtml = '';
+          if (ev.bodyTexts && ev.bodyTexts.length > 0) {
+            bodyHtml += `<div class="event-item-body">${ev.bodyTexts.map(t => `<p>${t}</p>`).join('')}</div>`;
+          }
+          if (ev.resources && ev.resources.length > 0) {
+            bodyHtml += '<div class="event-item-resources">' + ev.resources.map(r => (
+              r.url
+                ? `<a class="event-item-resource-link" href="${r.url}" target="_blank" rel="noopener noreferrer"><strong>${r.prefix}:</strong> ${r.text}</a>`
+                : `<div class="event-item-resource-text">${r.text}</div>`
+            )).join('') + '</div>';
+          }
+
           item.innerHTML = `
             <div class="event-item-title">${ev.descricao}</div>
-            <div class="event-item-cat">${ev.categoria.replace(/_/g, ' ')}</div>
+            <div class="event-item-cat">${catLabel}</div>
+            ${bodyHtml}
           `;
           eventsList.appendChild(item);
         });
