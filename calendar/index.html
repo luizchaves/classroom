@@ -1627,6 +1627,9 @@
               <label class="toggle-label">
                 <input type="checkbox" id="events-only-toggle"> Apenas Com Eventos
               </label>
+              <label class="toggle-label">
+                <input type="checkbox" id="aulas-only-toggle"> Apenas Com Aulas
+              </label>
             </div>
           </div>
         </div>
@@ -2086,8 +2089,10 @@
 
       const letivoOnlyToggle = document.getElementById('letivo-only-toggle');
       const eventsOnlyToggle = document.getElementById('events-only-toggle');
+      const aulasOnlyToggle = document.getElementById('aulas-only-toggle');
       letivoOnlyToggle.checked = isQueryFlagEnabled('letivo');
       eventsOnlyToggle.checked = isQueryFlagEnabled('eventos');
+      aulasOnlyToggle.checked = isQueryFlagEnabled('aulas');
 
       // Event Listeners for Filters
       monthSelect.addEventListener('change', () => {
@@ -2102,6 +2107,10 @@
       });
       eventsOnlyToggle.addEventListener('change', () => {
         updateQueryString({ eventos: eventsOnlyToggle.checked ? '1' : null });
+        renderActiveView();
+      });
+      aulasOnlyToggle.addEventListener('change', () => {
+        updateQueryString({ aulas: aulasOnlyToggle.checked ? '1' : null });
         renderActiveView();
       });
 
@@ -2158,7 +2167,7 @@
       }
     }
 
-    function filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly) {
+    function filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly) {
       let matchesCategory = true;
       if (selectedCategory !== 'all') {
         matchesCategory = day.eventos.some(e => {
@@ -2175,8 +2184,9 @@
 
       let matchesLetivo = !letivoOnly || day.letivo;
       let matchesEvents = !eventsOnly || day.eventos.length > 0;
+      let matchesAulas = !aulasOnly || day.eventos.some(e => e.categoria === 'aula');
 
-      return matchesCategory && matchesSearch && matchesLetivo && matchesEvents;
+      return matchesCategory && matchesSearch && matchesLetivo && matchesEvents && matchesAulas;
     }
 
     function getCategoryColors(cat, desc = '') {
@@ -2226,6 +2236,7 @@
       const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
       const letivoOnly = document.getElementById('letivo-only-toggle').checked;
       const eventsOnly = document.getElementById('events-only-toggle').checked;
+      const aulasOnly = document.getElementById('aulas-only-toggle').checked;
 
       const filteredMeses = calendarData.meses.filter(m => {
         if (selectedMonth !== 'all' && m.ano_mes !== selectedMonth) return false;
@@ -2272,7 +2283,7 @@
           const dateObj = new Date(day.data + 'T00:00:00');
           const dayNum = dateObj.getDate();
 
-          const isVisible = filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly);
+          const isVisible = filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly);
 
           const dayCell = document.createElement('div');
           dayCell.className = 'day-cell';
@@ -2345,6 +2356,7 @@
       const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
       const letivoOnly = document.getElementById('letivo-only-toggle').checked;
       const eventsOnly = document.getElementById('events-only-toggle').checked;
+      const aulasOnly = document.getElementById('aulas-only-toggle').checked;
 
       const filteredMeses = calendarData.meses.filter(m => {
         if (selectedMonth !== 'all' && m.ano_mes !== selectedMonth) return false;
@@ -2352,7 +2364,7 @@
       });
 
       filteredMeses.forEach(month => {
-        const visibleDays = month.dias.filter(day => filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly));
+        const visibleDays = month.dias.filter(day => filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly));
         if (visibleDays.length === 0) return;
 
         const monthCard = document.createElement('div');
