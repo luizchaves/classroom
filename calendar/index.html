@@ -1749,7 +1749,8 @@
         carga_horaria: '120ha',
         professor: 'Luiz Carlos Rodrigues Chaves',
         calendarFile: '2026.2.json',
-        outlineFile: 'cstrc-jp-dw-2026.2.md'
+        outlineFile: 'cstrc-jp-dw-2026.2.md',
+        sigla: 'DW'
       },
       {
         slug: 'csbes-jp-pw2-2026.2',
@@ -1759,7 +1760,8 @@
         carga_horaria: '80ha',
         professor: 'Francisco Dantas Nobre Neto e Luiz Carlos Rodrigues Chaves',
         calendarFile: '2026.2.json',
-        outlineFile: 'csbes-jp-pw2-2026.2.md'
+        outlineFile: 'csbes-jp-pw2-2026.2.md',
+        sigla: 'PW2'
       },
       {
         slug: 'ctii-jp-lp2-2026',
@@ -1769,7 +1771,8 @@
         carga_horaria: '80ha',
         professor: 'Luiz Carlos Rodrigues Chaves',
         calendarFile: '2026.json',
-        outlineFile: 'ctii-jp-lp2-2026.md'
+        outlineFile: 'ctii-jp-lp2-2026.md',
+        sigla: 'LP2'
       }
     ];
 
@@ -2018,7 +2021,7 @@
 
         if (!isoDate) return;
         const day = findDayInCalendar(isoDate);
-        if (day) day.eventos.push({ descricao: cleanTitle, categoria: 'aula' });
+        if (day) day.eventos.push({ descricao: cleanTitle, categoria: 'aula', sigla: matchedSubject.sigla });
       });
 
       skippedDates.forEach((reason, isoDate) => {
@@ -2400,7 +2403,10 @@
             day.eventos.forEach(ev => {
               const evLine = document.createElement('div');
               const badgeClass = getBadgeClass(ev.categoria, ev.descricao);
-              evLine.innerHTML = `<strong>• ${ev.descricao}</strong> <span class="list-event-badge ${badgeClass}">${ev.categoria.replace(/_/g, ' ')}</span>`;
+              const badgeLabel = ev.categoria === 'aula' && ev.sigla
+                ? `${ev.sigla} • aula`
+                : ev.categoria.replace(/_/g, ' ');
+              evLine.innerHTML = `<strong>• ${ev.descricao}</strong> <span class="list-event-badge ${badgeClass}">${badgeLabel}</span>`;
               eventsCol.appendChild(evLine);
             });
           }
