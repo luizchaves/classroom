@@ -286,6 +286,7 @@
     }
 
     .theme-toggle-btn,
+    .today-btn,
     .github-repo-btn,
     .github-repo-btn:visited {
       background: var(--bg-card);
@@ -304,6 +305,7 @@
     }
 
     .theme-toggle-btn:hover,
+    .today-btn:hover,
     .github-repo-btn:hover,
     .github-repo-btn:focus-visible {
       background-color: var(--bg-main);
@@ -313,6 +315,7 @@
     }
 
     [data-theme="dark"] .theme-toggle-btn,
+    [data-theme="dark"] .today-btn,
     [data-theme="dark"] .github-repo-btn,
     [data-theme="dark"] .github-repo-btn:visited {
       background-color: #172036;
@@ -321,6 +324,7 @@
     }
 
     [data-theme="dark"] .theme-toggle-btn:hover,
+    [data-theme="dark"] .today-btn:hover,
     [data-theme="dark"] .github-repo-btn:hover,
     [data-theme="dark"] .github-repo-btn:focus-visible {
       background-color: #0b1329;
@@ -329,6 +333,7 @@
     }
 
     .theme-toggle-btn svg,
+    .today-btn svg,
     .github-repo-btn svg {
       width: 1.1rem;
       height: 1.1rem;
@@ -1620,6 +1625,9 @@
         </div>
       </div>
       <div class="header-top-actions">
+        <button class="today-btn" id="go-to-today-btn" title="Ir para o dia de hoje" aria-label="Ir para o dia de hoje">
+          <i data-lucide="calendar-check"></i>
+        </button>
         <a href="https://github.com/luizchaves/classroom" target="_blank" rel="noopener noreferrer" class="github-repo-btn" title="Repositório no GitHub" aria-label="Repositório no GitHub">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -2919,6 +2927,16 @@
 
     document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
     updateThemeIcon();
+
+    document.getElementById('go-to-today-btn')?.addEventListener('click', () => {
+      const monthSelectEl = document.getElementById('month-select');
+      if (monthSelectEl && monthSelectEl.value !== 'all') {
+        monthSelectEl.value = 'all';
+        renderActiveView();
+      }
+      hasAutoScrolled = false;
+      scrollToTargetDateOrMonth(true);
+    });
 
     // Init Calendar App & Event Listeners
     const calendarSelectEl = document.getElementById('calendar-select');
