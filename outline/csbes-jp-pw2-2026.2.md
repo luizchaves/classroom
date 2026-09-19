@@ -165,7 +165,7 @@ Escuta e tratamento de eventos de usuário (_click_, _input_, _submit_) para int
 
 ## Exercício Avaliativo
 
-Atividade prática avaliativa sobre manipulação do DOM e criação de elementos dinâmicos em aplicações Web, a ser publicada no horário da aula.
+Atividade prática avaliativa sobre fundamentos de EcmaScript, a ser publicada no horário da aula no [BrainCheck](https://joaopessoa.ifpb.edu.br/braincheck/).
 
 ## Projeto Definição
 
@@ -296,7 +296,7 @@ Consumo de serviços web e APIs assíncronas utilizando `fetch()`, biblioteca Ax
 
 ## Exercício Avaliativo
 
-Avaliação prática de consumo de APIs REST assíncronas no front-end.
+Avaliação prática de consumo de APIs REST assíncronas no front-end, a ser publicada no horário da aula no [BrainCheck](https://joaopessoa.ifpb.edu.br/braincheck/).
 
 - **Exercícios Avaliativos:**
   - [Exercício: API de CEP (Avaliativo)](https://ifpb.github.io/exercises/problems/web-script-address-cep-api/)
