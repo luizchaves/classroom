@@ -208,13 +208,13 @@ Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para valid
 - **Acompanhamento:**
   - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
+## Pulsar (09/10/2026 - 3 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
+
 ## Projeto Acompanhamento
 
 Sessão de mentoria e acompanhamento do progresso de desenvolvimento dos projetos.
-
-## Pulsar (16/10/2026 - 3 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
 
 ## Pulsar (17/10/2026 - 3 aulas)
 

@@ -229,12 +229,6 @@ Entrega e avaliação da primeira etapa do projeto (interface front-end responsi
   - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/exercises/)
   - [Quiz: Quizzes](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/quizzes/)
 
-## Pulsar (09/10/2026 - 4 aulas)
-
-## Pulsar (17/10/2026 - 4 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
-
 ## NodeJS e Express
 
 Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HTTP e conceitos de roteamento com o framework Express.js.
@@ -244,6 +238,10 @@ Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HT
 - **Express:**
   - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/api/)
 
+## Pulsar (09/10/2026 - 4 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
+
 ## Exercício Backend e Exercício Avaliativo
 
 Prática de criação de rotas e manipulação de requisições/respostas HTTP em Node.js e Express.
@@ -251,6 +249,10 @@ Prática de criação de rotas e manipulação de requisições/respostas HTTP e
 - **Exercícios Avaliativos:**
   - [Exercício: Web API Basic Hello (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
   - [Exercício: Web API Utils (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-utils/)
+
+## Pulsar (17/10/2026 - 4 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
 
 ## Integrar Back e Front e Construir API Rest
 

@@ -202,14 +202,6 @@ Envio transacional de e-mails na aplicação Express (confirmação de cadastro 
 - **Conteúdo Teórico:**
   - [Conteúdo: ExpressJS E-mail](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/email/)
 
-## Pulsar (16/10/2026 - 2 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
-
-## Pulsar (17/10/2026 - 2 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
-
 ## Acompanhamento de Projeto
 
 Orientação e revisão de código para integração de serviços de validação e e-mail.
@@ -221,6 +213,7 @@ Orientação e revisão de código para integração de serviços de validação
 
 ## Apresentação de Projeto
 
+£™
 Aprimoramento das regras de negócio e validações na aplicação.
 
 - **Avaliação do Projeto:**
@@ -232,6 +225,14 @@ Implementação de upload e armazenamento de arquivos e imagens na API Express.j
 
 - **Conteúdo Teórico:**
   - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/upload/)
+
+## Pulsar (09/10/2026 - 2 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
+
+## Pulsar (17/10/2026 - 2 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
 
 ## Acompanhamento de Projeto
 
