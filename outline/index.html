@@ -24,6 +24,15 @@
   <meta name="twitter:title" content="Plano de Aulas e Conteúdo • IFPB Campus João Pessoa">
   <meta name="twitter:description" content="Plano de Aulas (Outline), cronograma, avaliações e materiais de estudo do Instituto Federal da Paraíba - Campus João Pessoa.">
   <meta name="twitter:image" content="https://luizchaves.github.io/classroom/assets/og-preview.png">
+
+  <!-- Google Analytics (GA4) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
   <!-- Inline Theme Script (FOUC Prevention) -->
   <script>
     (function() {
@@ -2251,6 +2260,10 @@
         }
         await loadCalendarJSON(calFileName);
         parseOutlineData(rawMarkdown);
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'view_subject', { subject: getSubjectSlug(fileToFetch) });
+        }
       }
     }
 
