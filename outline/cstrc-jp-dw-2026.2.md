@@ -34,7 +34,7 @@ Apresentação da disciplina, funcionamento da Web (cliente-servidor e protocolo
 - **Prática & Acompanhamento:**
   - [Exercício: HTML | Hello World em HTML](https://ifpb.github.io/exercises/problems/web-markup-hello-world/)
   - [GitHub: Código das aulas](https://github.com/luizchaves/dw-2026-2)
-  - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
+  - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
 
 ## Fundamentos de HTML
 
@@ -45,7 +45,7 @@ Sintaxe básica da HTML5, estrutura de tags, marcação semântica de conteúdo 
 - **Prática & Acompanhamento:**
   - [Exercício: HTML | Currículo Simples em HTML](https://ifpb.github.io/exercises/problems/web-markup-curriculum-simple/)
   - [GitHub: Commits](https://github.com/luizchaves/dw-2026-2/commits/main/?since=2026-08-10&until=2026-08-10)
-  - [Braincheck: Fundamentos de HTML](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-html-FisLfBWvwP)
+  - [Braincheck: Fundamentos de HTML](https://joaopessoa.ifpb.edu.br/braincheck/quiz/fundamentos-de-html-FisLfBWvwP)
 
 ## Fundamentos de CSS
 
@@ -55,7 +55,7 @@ Introdução às folhas de estilo em cascata (CSS), sintaxe de seletores, propri
   - [Conteúdo: Introdução ao CSS](https://luizchaves.github.io/devlab/courses/css/basics/syntax-cascade/)
 - **Prática & Acompanhamento:**
   - [Exercício: CSS | Seu Primeiro Estilo em CSS](https://ifpb.github.io/exercises/problems/web-style-hello-world/)
-  - [Braincheck: Fundamentos de CSS](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
+  - [Braincheck: Fundamentos de CSS](https://joaopessoa.ifpb.edu.br/braincheck/quiz/fundamentos-de-css-phYIVXB9UU)
 
 ## IFTech (14/08/2026 - 4 aulas)
 
@@ -73,7 +73,7 @@ Uso de frameworks CSS modernos (Bootstrap e Tailwind CSS) para agilizar o desenv
   - [Conteúdo: Bootstrap](https://luizchaves.github.io/devlab/courses/css/frameworks/bootstrap/)
   - [Conteúdo: Tailwind CSS](https://luizchaves.github.io/devlab/courses/css/frameworks/tailwind/)
 - **Acompanhamento:**
-  - [Braincheck: Bibliotecas de Estilo](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
+  - [Braincheck: Bibliotecas de Estilo](https://joaopessoa.ifpb.edu.br/braincheck/quiz/bibliotecas-de-estilo-BKGdeWSr8y)
 
 ## Definição de Projeto
 
@@ -84,7 +84,7 @@ Apresentação das diretrizes, escopo e requisitos do projeto final da disciplin
   - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/exercises/)
   - [Quiz: Quizzes](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/quizzes/)
 - **Acompanhamento:**
-  - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
+  - [Braincheck: Fundamentos de Web](https://joaopessoa.ifpb.edu.br/braincheck/quiz/fundamentos-de-web-G8ksYtS9Mj)
 
 ## Apresentação das Proposta de Projetos
 
@@ -116,9 +116,9 @@ Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), 
   - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/ecmascript/basics/variables/)
   - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/ecmascript/basics/operators/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-RYoy6ZC7wa)
-  - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-pWFdFradYx)
-  - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-BS0Mwh0V5u)
+  - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-fundamentos-RYoy6ZC7wa)
+  - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-tipos-de-dados-pWFdFradYx)
+  - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-variaveis-BS0Mwh0V5u)
 - **Exercícios de Fixação:**
   - [Exercício: Hello](https://ifpb.github.io/exercises/problems/basic-hello/)
   - [Exercício: Expressões](https://ifpb.github.io/exercises/problems/basic-expressions/)
@@ -129,7 +129,7 @@ Estruturas de controle de fluxo (`if/else`, `for`, `while`), expressões e opera
 
 - **Estruturas de Controle & Expressões:**
   - [Conteúdo: Comandos e Instruções](https://luizchaves.github.io/devlab/courses/ecmascript/basics/control-flow/)
-  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-lsD3Qoai6c)
+  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-expressoes-e-operadores-lsD3Qoai6c)
   - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 - **Funções:**
   - [Conteúdo: Funções](https://luizchaves.github.io/devlab/courses/ecmascript/structure/functions/)
@@ -183,7 +183,14 @@ Construção de aplicações interativas no front-end com formulários HTML, man
 
 ## Exercício Avaliativo
 
-Avaliação prática avaliativa de ECMAScript, a ser publicado no horário da aula.
+- **Exercícios de Fixação:**
+  - [Exercício: Tabela de Endereços](https://ifpb.github.io/exercises/problems/web-script-iptable/)
+- **Acompanhamento:**
+  - [Braincheck: ECMAScript | Fundamentos de ECMAScript](https://joaopessoa.ifpb.edu.br/braincheck/quiz/simulado-fundamentos-de-ecmascript-redes)
+
+## Exercício Avaliativo
+
+Avaliação prática avaliativa de ECMAScript, a ser publicada no horário da aula no [BrainCheck](https://joaopessoa.ifpb.edu.br/braincheck/).
 
 ## API Rest (Fetch)
 
@@ -196,14 +203,6 @@ Comunicação assíncrona cliente-servidor consumindo APIs REST via `fetch()`, s
   - [Exercício: IPInfo API Table](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-table/)
   - [Exercício: IPInfo API Map](https://ifpb.github.io/exercises/problems/web-script-ipinfo-api-map/)
   - [Exercício: IP Table](https://ifpb.github.io/exercises/problems/web-script-iptable/)
-
-## Build Tools e Monitor-Host
-
-Empacotamento e automação de desenvolvimento front-end com Vite e visualização gráfica de dados com Chart.js.
-
-- **Conteúdo Teórico & Ferramentas:**
-  - [Conteúdo: Vite](https://luizchaves.github.io/devlab/courses/packages/build/vite/)
-  - [Conteúdo: Chart.js](https://luizchaves.github.io/devlab/courses/packages/ui/chartjs/)
 
 ## Projeto da Disciplina em Bootstrap
 

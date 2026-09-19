@@ -30,7 +30,7 @@ Apresentação da disciplina, funcionamento das avaliações e introdução aos 
 - **Conteúdo Teórico:**
   - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/ecmascript/basics/introduction/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-fundamentos-JtstuRmQCO)
+  - [Braincheck: JavaScript | Fundamentos](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-fundamentos-JtstuRmQCO)
 
 ## Decisão e Repetição
 
@@ -40,9 +40,9 @@ Estruturas fundamentais de declaração de variáveis (`const`, `let`), tipos de
   - [Conteúdo: Variáveis](https://luizchaves.github.io/devlab/courses/ecmascript/basics/variables/)
   - [Conteúdo: Expressões e Operadores](https://luizchaves.github.io/devlab/courses/ecmascript/basics/operators/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
-  - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-variaveis-GQBuuwHpFN)
-  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-expressoes-e-operadores-EJYEO7Y3n3)
+  - [Braincheck: JavaScript | Tipos de Dados](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-tipos-de-dados-PJcreWgL93)
+  - [Braincheck: JavaScript | Variáveis](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-variaveis-GQBuuwHpFN)
+  - [Braincheck: JavaScript | Expressões e Operadores](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-expressoes-e-operadores-EJYEO7Y3n3)
 
 ## IFTech (14/08/2026 - 4 aulas)
 
@@ -61,8 +61,8 @@ Prática avançada com estruturas condicionais e laços de repetição em JavaSc
 - **Prática:**
   - [Exercício: Série de Números](https://ifpb.github.io/exercises/problems/basic-numbers-series/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | Decisão e Repetição](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-wXu0b3rLIa)
-  - [Braincheck: JavaScript | Decisão e Repetição | Prática](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-decisao-e-repeticao-pratica-GQNhdEgQQx)
+  - [Braincheck: JavaScript | Decisão e Repetição](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-decisao-e-repeticao-wXu0b3rLIa)
+  - [Braincheck: JavaScript | Decisão e Repetição | Prática](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-decisao-e-repeticao-pratica-GQNhdEgQQx)
 
 ## Função
 
@@ -80,10 +80,10 @@ Declaração de funções (parâmetros, retorno e _arrow functions_) em JavaScri
 Organização de projetos com ES Modules (`import`/`export`) e estruturação de funções em JavaScript.
 
 - **Função:**
-  - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-funcao-vLXQqFHphL)
+  - [Braincheck: JavaScript | Função](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-funcao-vLXQqFHphL)
 - **Módulos:**
   - [Conteúdo: Módulos](https://luizchaves.github.io/devlab/courses/ecmascript/structure/modules/)
-  - [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-modulos-gYh7sudsDg)
+  - [Braincheck: JavaScript | Módulos](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-modulos-gYh7sudsDg)
 
 ## Array e String
 
@@ -93,14 +93,14 @@ Criação e manipulação de vetores (_arrays_) e sequências de caracteres (_st
   - [Conteúdo: Array](https://luizchaves.github.io/devlab/courses/ecmascript/data/arrays/)
   - [Exercício: Array Util](https://ifpb.github.io/exercises/problems/array-util/)
   - [Exercício: Operações em Array](https://ifpb.github.io/exercises/problems/array-operations/)
-  - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
+  - [Braincheck: JavaScript | Array I](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-array-i-RUwwp6vzjj)
 - **String:**
   - [Conteúdo: String](https://luizchaves.github.io/devlab/courses/ecmascript/data/strings/)
   - [Exercício: Gerador de Lista de Strings](https://ifpb.github.io/exercises/problems/string-list-generator/)
   - [Exercício: String Util](https://ifpb.github.io/exercises/problems/string-util/)
   - [Exercício: Cifra de String](https://ifpb.github.io/exercises/problems/string-cipher/)
   - [Exercício: Citação de String](https://ifpb.github.io/exercises/problems/string-citation/)
-  - [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-string-RtJCE6uXz2)
+  - [Braincheck: JavaScript | String](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-string-RtJCE6uXz2)
 
 ## Array HOFs e Objetos
 
@@ -109,7 +109,7 @@ Métodos de iteração funcional em arrays (`map`, `filter`, `reduce`, `find`) e
 - **Array HOFs:**
   - [Conteúdo: Array | HOFs](https://luizchaves.github.io/devlab/courses/ecmascript/data/arrays/)
   - [Exercício: Quantidade de Produtos em Array](https://ifpb.github.io/exercises/problems/array-products-qtd/)
-  - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
+  - [Braincheck: JavaScript | Array II](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-array-ii-dtCwXVdsh3)
 - **Objetos:**
   - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
   - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
@@ -122,7 +122,7 @@ Continuação da manipulação de objetos e coleções em JavaScript, estrutura�
 - **Conteúdo Teórico:**
   - [Conteúdo: Objeto](https://luizchaves.github.io/devlab/courses/ecmascript/data/objects/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-object-bo8fwLu6mF)
+  - [Braincheck: JavaScript | Object](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-object-bo8fwLu6mF)
 - **Prática:**
   - [Exercício: Objeto Empresa](https://ifpb.github.io/exercises/problems/object-company/)
   - [Exercício: Coleção de Empresas](https://ifpb.github.io/exercises/problems/object-company-collection/)
@@ -206,7 +206,7 @@ Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para valid
 - **Conteúdo Teórico:**
   - [Conteúdo: Expressões Regulares](https://luizchaves.github.io/devlab/courses/ecmascript/stdlib/regex/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
+  - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
 ## Projeto Acompanhamento
 
@@ -271,7 +271,7 @@ Programação assíncrona em JavaScript utilizando Promises (estados, chaining, 
 - **Conteúdo Teórico:**
   - [Conteúdo: Promises](https://luizchaves.github.io/devlab/courses/ecmascript/async/promises/)
 - **Acompanhamento:**
-  - [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/login?callbackUrl=/braincheck/quiz/javascript-promises-qlyjDCgdDj)
+  - [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-promises-qlyjDCgdDj)
 
 ## Web API e Supabase API
 

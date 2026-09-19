@@ -216,6 +216,8 @@ Orientação e revisão de código para integração de serviços de validação
 
 - **Avaliação do Projeto:**
   - [Projeto: B3.2 - Validação e Envio de E-mail](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b32---validação-e-envio-de-e-mail)
+- **Acompanhamento:**
+  - [Braincheck: ExpressJS | Validação e Envio de E-mail](https://joaopessoa.ifpb.edu.br/braincheck/quiz/simulado-b32-validacao-e-envio-de-email)
 
 ## Apresentação de Projeto
 
