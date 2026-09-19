@@ -143,9 +143,14 @@
       border-color: #273554;
     }
 
-    [data-theme="dark"] .topic-card.next-up-card {
-      background-color: #0f2744;
-      border-color: #0284c7;
+    [data-theme="dark"] .topic-card.is-today-card {
+      border-color: #f97316 !important;
+      box-shadow: 0 0 0 2px #f97316, 0 4px 16px rgba(249, 115, 22, 0.25);
+    }
+
+    [data-theme="dark"] .topic-card.is-next-card {
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 0 2px #38bdf8, 0 4px 16px rgba(56, 189, 248, 0.25);
     }
 
     [data-theme="dark"] .topic-card.is-extra-card {
@@ -203,6 +208,13 @@
       color: #ffedd5;
       border-color: #f97316;
       box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.3);
+    }
+
+    [data-theme="dark"] .topic-date-badge.is-next-date:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
+      background-color: rgba(14, 165, 233, 0.22);
+      color: #e0f2fe;
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
     }
 
     [data-theme="dark"] .pill {
@@ -597,6 +609,17 @@
 
     .brand-subtitle-line {
       display: block;
+    }
+
+    .professor-link {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px dashed var(--text-muted);
+    }
+
+    .professor-link:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
     }
 
     .header-details {
@@ -1247,6 +1270,16 @@
       border-color: #cbd5e1;
     }
 
+    .topic-card.is-today-card {
+      border-color: #ea580c !important;
+      box-shadow: 0 0 0 2px #ea580c, 0 4px 12px rgba(234, 88, 12, 0.12);
+    }
+
+    .topic-card.is-next-card {
+      border-color: #0ea5e9 !important;
+      box-shadow: 0 0 0 2px #0ea5e9, 0 4px 12px rgba(14, 165, 233, 0.12);
+    }
+
     .topic-card.is-extra-card {
       border-left: 4px solid #f59e0b;
       background-color: #fffdf5;
@@ -1395,6 +1428,14 @@
       border-color: #f97316;
       font-weight: 800;
       box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.18), 0 8px 18px -12px rgba(154, 52, 18, 0.65);
+    }
+
+    .topic-date-badge.is-next-date:not(.badge-extra-label):not(.badge-project-label):not(.badge-graded-label) {
+      background-color: #f0f9ff;
+      color: #0369a1;
+      border-color: #0ea5e9;
+      font-weight: 800;
+      box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.18), 0 8px 18px -12px rgba(14, 165, 233, 0.65);
     }
 
     /* Lesson Text Content */
@@ -1953,7 +1994,7 @@
             </div>
             <p>
               <span class="brand-subtitle-line" id="meta-curso">Curso Superior de Tecnologia em Redes de Computadores • IFPB Campus JP</span>
-              <span class="brand-subtitle-line" id="meta-professor">Prof. Luiz Carlos Rodrigues Chaves</span>
+              <span class="brand-subtitle-line" id="meta-professor">👨‍🏫 <a href="../calendar/index.html?subject=luiz-carlos-rodrigues-chaves&view=list&aulas=1" class="professor-link" title="Ver todas as aulas de Prof. Luiz Carlos Rodrigues Chaves">Prof. Luiz Carlos Rodrigues Chaves</a></span>
             </p>
           </div>
         </div>
@@ -2584,8 +2625,17 @@
         }
 
         if (profNames.length > 0) {
-          const formattedNames = profNames.map(name => name.trim().startsWith('Prof.') ? name.trim() : `Prof. ${name.trim()}`);
-          document.getElementById('meta-professor').textContent = '👨‍🏫 ' + formattedNames.join(' e ');
+          const formattedLinks = profNames.map(name => {
+            const trimmedName = name.trim();
+            const label = trimmedName.startsWith('Prof.') ? trimmedName : `Prof. ${trimmedName}`;
+            const slug = (trimmedName.replace(/^prof\.?\s*/i, '') || '')
+              .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, '-')
+              .replace(/^-+|-+$/g, '');
+            return `<a href="../calendar/index.html?subject=${encodeURIComponent(slug)}&view=list&aulas=1" class="professor-link" title="Ver todas as aulas de ${label}">${label}</a>`;
+          });
+          document.getElementById('meta-professor').innerHTML = '👨‍🏫 ' + formattedLinks.join(' e ');
         }
 
         const horariosBlock = fmText.match(/horarios:\s*\n([\s\S]*?)(?=\n[a-z_]+:|\n---|$)/i);
@@ -2772,7 +2822,11 @@
       setOutlineView(currentOutlineView, { updateUrl: false });
       const handledUrlAnchor = checkUrlAnchor();
       if (!handledUrlAnchor) {
-        setTimeout(() => scrollFocusedLessonToTop(), 120);
+        if (currentOutlineView === 'calendar') {
+          setTimeout(() => scrollToCalendarCurrentOrNextMonth(false), 120);
+        } else {
+          setTimeout(() => scrollFocusedLessonToTop(), 120);
+        }
       }
     }
 
@@ -2855,11 +2909,16 @@
       const searchInput = document.getElementById('search-input');
       if (searchInput && searchInput.value.trim()) {
         searchInput.value = '';
-        renderTopics();
+        if (currentOutlineView === 'calendar') {
+          renderCalendarView();
+        } else {
+          renderTopics();
+        }
       }
 
       if (currentOutlineView === 'calendar') {
-        setOutlineView('compact');
+        scrollToCalendarCurrentOrNextMonth(true);
+        return;
       }
 
       const anchorId = getTopicAnchorId(target.topic);
@@ -2936,9 +2995,17 @@
         const isProject = titleLower.includes('projeto');
         const isGradedExercise = titleNormalized.includes('exercicio avaliativo') || titleNormalized.includes('exercicios avaliativos');
 
+        const isToday = Boolean(hasTodayTopic && topic.dateObj?.isoDate === todayIsoDate);
+        const isNext = Boolean(!hasTodayTopic && !topic.isNoClass && topic.dateObj?.isoDate === nextLessonDateIso);
+
         const card = document.createElement('div');
         card.className = 'topic-card';
         card.id = lessonAnchorId;
+        if (isToday) {
+          card.classList.add('is-today-card');
+        } else if (isNext) {
+          card.classList.add('is-next-card');
+        }
         if (topic.dateObj && topic.dateObj.isExtra) {
           card.classList.add('is-extra-card');
         }
@@ -2990,10 +3057,12 @@
 
         if (topic.dateObj) {
           const dateBadgePastClass = topic.dateObj.isoDate && topic.dateObj.isoDate < todayIsoDate ? ' is-past-date' : '';
-          const isFocusDate = topic.dateObj.isoDate
-            && ((hasTodayTopic && topic.dateObj.isoDate === todayIsoDate)
-              || (!hasTodayTopic && !topic.isNoClass && topic.dateObj.isoDate === nextLessonDateIso));
-          const dateBadgeFocusClass = isFocusDate ? ' is-focus-date' : '';
+          let dateBadgeFocusClass = '';
+          if (isToday) {
+            dateBadgeFocusClass = ' is-focus-date is-today-date';
+          } else if (isNext) {
+            dateBadgeFocusClass = ' is-focus-date is-next-date';
+          }
           if (topic.isNoClass) {
             headerHtml += `<span class="topic-date-badge${dateBadgePastClass}${dateBadgeFocusClass}">📆 ${topic.dateObj.diaSemana}, ${topic.dateObj.dateStr} (0 aulas)</span>`;
           } else {
@@ -3181,6 +3250,11 @@
       const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
       const visibleTopics = (window.topicsData || [])
         .filter(topic => topic.dateObj?.isoDate && topicMatchesSearch(topic, searchQuery));
+      const hasTodayTopic = visibleTopics.some(topic => topic.dateObj?.isoDate === todayIsoDate);
+      const nextLessonDateIso = visibleTopics
+        .filter(topic => !topic.isNoClass && topic.dateObj?.isoDate && topic.dateObj.isoDate >= todayIsoDate)
+        .map(topic => topic.dateObj.isoDate)
+        .sort()[0] || null;
 
       const topicsByDate = new Map();
       visibleTopics.forEach(topic => {
@@ -3200,6 +3274,7 @@
 
         const monthCard = document.createElement('section');
         monthCard.className = 'lesson-month-card';
+        monthCard.setAttribute('data-month', monthKey);
 
         const monthHeader = document.createElement('div');
         monthHeader.className = 'lesson-month-header';
@@ -3233,13 +3308,17 @@
           const hasClass = dayTopics.some(topic => !topic.isNoClass);
           const hasNoClass = dayTopics.some(topic => topic.isNoClass);
           const isOutsideRange = isoDate < range.inicio || isoDate > range.termino;
+          const isToday = isoDate === todayIsoDate;
+          const isNext = !hasTodayTopic && isoDate === nextLessonDateIso;
 
           const dayCell = document.createElement('div');
           dayCell.className = 'lesson-day-cell';
+          dayCell.setAttribute('data-date', isoDate);
           if (hasClass) dayCell.classList.add('has-class');
           if (hasNoClass) dayCell.classList.add('has-no-class');
           if (isOutsideRange) dayCell.classList.add('outside-range');
-          if (isoDate === todayIsoDate) dayCell.classList.add('is-today');
+          if (isToday) dayCell.classList.add('is-today');
+          if (isNext) dayCell.classList.add('is-next-date');
 
           const dayNumber = document.createElement('span');
           dayNumber.className = 'lesson-day-number';
@@ -3371,11 +3450,9 @@
       }
 
       const previousMode = currentOutlineView;
-      const preservedAnchorId = options.preserveTopLesson
-        && previousMode !== 'calendar'
-        && mode !== 'calendar'
-        ? (options.preservedAnchorId || pendingViewSwitchAnchorId || getTopVisibleLessonAnchorId({ preferAligned: true }) || getUrlLessonAnchor())
-        : null;
+      const preservedAnchorId = (options.preserveTopLesson && mode !== 'calendar')
+        ? (options.preservedAnchorId || pendingViewSwitchAnchorId || (previousMode !== 'calendar' ? getTopVisibleLessonAnchorId({ preferAligned: true }) : null) || getUrlLessonAnchor())
+        : (mode !== 'calendar' ? (options.preservedAnchorId || getUrlLessonAnchor()) : null);
       pendingViewSwitchAnchorId = null;
 
       if (mode !== 'calendar') {
@@ -3415,10 +3492,53 @@
         btnDetailed.classList.remove('active');
         btnCompact.classList.remove('active');
         renderCalendarView();
+        setTimeout(() => scrollToCalendarCurrentOrNextMonth(false), 80);
       }
 
       if (preservedAnchorId) {
         restoreLessonAtPageTop(preservedAnchorId);
+      }
+    }
+
+    function scrollToCalendarCurrentOrNextMonth(smooth = true) {
+      const target = getTodayOrNextLessonTarget();
+      const targetIso = target ? target.topic.dateObj?.isoDate : todayIsoDate;
+      const targetMonthKey = targetIso ? targetIso.slice(0, 7) : null;
+
+      let targetEl = null;
+
+      // 1. Exact day cell for today or next date
+      if (targetIso) {
+        targetEl = document.querySelector(`.lesson-day-cell[data-date="${targetIso}"], .lesson-day-cell.is-today, .lesson-day-cell.is-next-date`);
+      }
+
+      // 2. Month card containing target month
+      if (!targetEl && targetMonthKey) {
+        targetEl = document.querySelector(`.lesson-month-card[data-month="${targetMonthKey}"]`);
+      }
+
+      // 3. Month card >= current year month
+      if (!targetEl) {
+        const currentYearMonth = todayIsoDate.slice(0, 7);
+        const monthCards = Array.from(document.querySelectorAll('.lesson-month-card[data-month]'));
+        targetEl = monthCards.find(c => c.dataset.month >= currentYearMonth) || monthCards[0];
+      }
+
+      if (targetEl) {
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const stickyTools = document.querySelector('.sticky-page-tools') || document.querySelector('.controls-bar');
+        const stickyHeight = stickyTools ? stickyTools.offsetHeight : 0;
+        const offset = headerHeight + stickyHeight + 16;
+
+        const targetRect = targetEl.getBoundingClientRect();
+        const absoluteTargetTop = targetRect.top + window.pageYOffset;
+        const scrollPosition = absoluteTargetTop - offset;
+
+        window.scrollTo({
+          top: Math.max(0, scrollPosition),
+          behavior: smooth ? 'smooth' : 'auto'
+        });
       }
     }
 
@@ -3513,12 +3633,12 @@
     }
 
     function rememberTopLessonForViewSwitch() {
-      pendingViewSwitchAnchorId = getTopVisibleLessonAnchorId({ preferAligned: true }) || getUrlLessonAnchor();
+      pendingViewSwitchAnchorId = (currentOutlineView !== 'calendar' ? getTopVisibleLessonAnchorId({ preferAligned: true }) : null) || getUrlLessonAnchor();
     }
 
     function switchOutlineViewPreservingTop(mode) {
       const preservedAnchorId = pendingViewSwitchAnchorId
-        || getTopVisibleLessonAnchorId({ preferAligned: true })
+        || (currentOutlineView !== 'calendar' ? getTopVisibleLessonAnchorId({ preferAligned: true }) : null)
         || getUrlLessonAnchor();
       setOutlineView(mode, { preserveTopLesson: true, preservedAnchorId });
     }
@@ -3538,6 +3658,8 @@
           expandCompactLessonCard(el);
           scrollElementToPageTop(el, 'auto');
           updateLessonHash(anchorId);
+          el.classList.add('highlight-card');
+          setTimeout(() => el.classList.remove('highlight-card'), 2500);
         }
       };
 
@@ -3689,10 +3811,13 @@
     }
 
     function scrollFocusedLessonToTop() {
-      if (currentOutlineView === 'calendar') return;
+      if (currentOutlineView === 'calendar') {
+        scrollToCalendarCurrentOrNextMonth(false);
+        return;
+      }
 
-      const focusBadge = document.querySelector('.topic-date-badge.is-focus-date');
-      const focusCard = focusBadge ? focusBadge.closest('.topic-card') : null;
+      const focusCard = document.querySelector('.topic-card.is-today-card, .topic-card.is-next-card') ||
+                        document.querySelector('.topic-date-badge.is-focus-date')?.closest('.topic-card');
       if (focusCard) {
         expandCompactLessonCard(focusCard);
         scrollElementToPageTop(focusCard, 'auto');

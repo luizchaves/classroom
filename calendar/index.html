@@ -106,6 +106,34 @@
       --aula-bg: #e0f2fe;
       --aula-border: #7dd3fc;
       --aula-text: #075985;
+
+      --badge-dw-bg: #e0f2fe;
+      --badge-dw-text: #0369a1;
+      --badge-dw-border: #bae6fd;
+
+      --badge-github-bg: #f1f5f9;
+      --badge-github-text: #334155;
+      --badge-github-border: #cbd5e1;
+
+      --badge-braincheck-bg: #f3e8ff;
+      --badge-braincheck-text: #6b21a8;
+      --badge-braincheck-border: #e9d5ff;
+
+      --badge-exercicio-bg: #dcfce7;
+      --badge-exercicio-text: #15803d;
+      --badge-exercicio-border: #bbf7d0;
+
+      --badge-padlet-bg: #fce7f3;
+      --badge-padlet-text: #be185d;
+      --badge-padlet-border: #fbcfe8;
+
+      --badge-figma-bg: #ffedd5;
+      --badge-figma-text: #c2410c;
+      --badge-figma-border: #fed7aa;
+
+      --badge-medium-bg: #f1f5f9;
+      --badge-medium-text: #0f172a;
+      --badge-medium-border: #cbd5e1;
     }
 
     [data-theme="dark"] {
@@ -160,6 +188,34 @@
       --aula-bg: rgba(56, 189, 248, 0.18);
       --aula-border: rgba(56, 189, 248, 0.4);
       --aula-text: #7dd3fc;
+
+      --badge-dw-bg: rgba(56, 189, 248, 0.15);
+      --badge-dw-text: #7dd3fc;
+      --badge-dw-border: rgba(56, 189, 248, 0.35);
+
+      --badge-github-bg: #1e293b;
+      --badge-github-text: #cbd5e1;
+      --badge-github-border: #334155;
+
+      --badge-braincheck-bg: rgba(168, 85, 247, 0.18);
+      --badge-braincheck-text: #e9d5ff;
+      --badge-braincheck-border: rgba(168, 85, 247, 0.4);
+
+      --badge-exercicio-bg: rgba(34, 197, 94, 0.15);
+      --badge-exercicio-text: #86efac;
+      --badge-exercicio-border: rgba(34, 197, 94, 0.4);
+
+      --badge-padlet-bg: rgba(244, 114, 182, 0.18);
+      --badge-padlet-text: #fbcfe8;
+      --badge-padlet-border: rgba(244, 114, 182, 0.4);
+
+      --badge-figma-bg: rgba(249, 115, 22, 0.18);
+      --badge-figma-text: #fed7aa;
+      --badge-figma-border: rgba(249, 115, 22, 0.4);
+
+      --badge-medium-bg: #1e293b;
+      --badge-medium-text: #cbd5e1;
+      --badge-medium-border: #334155;
     }
 
     [data-theme="dark"] select,
@@ -222,11 +278,34 @@
 
     [data-theme="dark"] .day-cell.is-today {
       border-color: #fb923c !important;
-      box-shadow: 0 0 0 2px #fb923c;
+      background-color: rgba(251, 146, 60, 0.12);
+      box-shadow: 0 0 0 2px #fb923c, 0 4px 14px rgba(0, 0, 0, 0.45);
     }
 
     [data-theme="dark"] .day-cell.is-today .day-number {
+      background-color: #f97316;
       box-shadow: 0 0 0 2px #172036, 0 0 0 4px rgba(249, 115, 22, 0.45);
+    }
+
+    [data-theme="dark"] .day-today-tag {
+      background-color: #f97316;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    [data-theme="dark"] .day-cell.is-next-date {
+      border-color: #38bdf8 !important;
+      background-color: rgba(56, 189, 248, 0.12);
+      box-shadow: 0 0 0 2px #38bdf8, 0 4px 14px rgba(0, 0, 0, 0.45);
+    }
+
+    [data-theme="dark"] .day-cell.is-next-date .day-number {
+      background-color: #0284c7;
+      box-shadow: 0 0 0 2px #172036, 0 0 0 4px rgba(56, 189, 248, 0.45);
+    }
+
+    [data-theme="dark"] .day-next-tag {
+      background-color: #0284c7;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
     }
 
     [data-theme="dark"] .list-row-item {
@@ -239,8 +318,23 @@
     }
 
     [data-theme="dark"] .list-row-item.is-today {
-      background-color: rgba(251, 146, 60, 0.12);
-      border-left-color: #fb923c;
+      background-color: rgba(251, 146, 60, 0.14);
+      border-left: 4px solid #fb923c;
+      box-shadow: inset 0 0 0 1px rgba(251, 146, 60, 0.3);
+    }
+
+    [data-theme="dark"] .list-row-item.is-today .list-row-date {
+      color: #fdba74;
+    }
+
+    [data-theme="dark"] .list-row-item.is-next-date {
+      background-color: rgba(56, 189, 248, 0.12);
+      border-left: 4px solid #38bdf8;
+      box-shadow: inset 0 0 0 1px rgba(56, 189, 248, 0.25);
+    }
+
+    [data-theme="dark"] .list-row-item.is-next-date .list-row-date {
+      color: #7dd3fc;
     }
 
     [data-theme="dark"] .list-row-status.letivo {
@@ -1064,13 +1158,66 @@
 
     .day-cell.is-today {
       border-color: #f97316 !important;
-      box-shadow: 0 0 0 2px #f97316;
+      background-color: rgba(249, 115, 22, 0.07);
+      box-shadow: 0 0 0 2px #f97316, 0 4px 12px rgba(249, 115, 22, 0.18);
+      position: relative;
+      z-index: 2;
     }
 
     .day-cell.is-today .day-number {
-      background-color: #f97316;
+      background-color: #ea580c;
       color: #ffffff !important;
+      font-weight: 800;
       box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(249, 115, 22, 0.35);
+    }
+
+    .day-today-tag {
+      position: absolute;
+      top: 0.35rem;
+      right: 0.4rem;
+      font-size: 0.6rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.1rem 0.4rem;
+      border-radius: 9999px;
+      background-color: #ea580c;
+      color: #ffffff;
+      line-height: 1;
+      pointer-events: none;
+      box-shadow: 0 1px 3px rgba(234, 88, 12, 0.35);
+    }
+
+    .day-cell.is-next-date {
+      border-color: #0ea5e9 !important;
+      background-color: rgba(14, 165, 233, 0.06);
+      box-shadow: 0 0 0 2px #0ea5e9, 0 4px 12px rgba(14, 165, 233, 0.18);
+      position: relative;
+      z-index: 2;
+    }
+
+    .day-cell.is-next-date .day-number {
+      background-color: #0284c7;
+      color: #ffffff !important;
+      font-weight: 800;
+      box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px rgba(14, 165, 233, 0.35);
+    }
+
+    .day-next-tag {
+      position: absolute;
+      top: 0.35rem;
+      right: 0.4rem;
+      font-size: 0.58rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 0.08rem 0.35rem;
+      border-radius: 9999px;
+      background-color: #0284c7;
+      color: #ffffff;
+      line-height: 1;
+      pointer-events: none;
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.35);
     }
 
     .event-dots {
@@ -1142,21 +1289,60 @@
     }
 
     .list-row-item.is-today {
-      background-color: rgba(249, 115, 22, 0.08);
-      border-left: 3px solid #f97316;
-      padding-left: calc(1.25rem - 3px);
+      background-color: rgba(249, 115, 22, 0.09);
+      border-left: 4px solid #f97316;
+      padding-left: calc(1.25rem - 4px);
+      box-shadow: inset 0 0 0 1px rgba(249, 115, 22, 0.25);
+    }
+
+    .list-row-item.is-today .list-row-date {
+      color: #c2410c;
+      font-weight: 800;
+    }
+
+    .list-row-item.is-next-date {
+      background-color: rgba(14, 165, 233, 0.08);
+      border-left: 4px solid #0ea5e9;
+      padding-left: calc(1.25rem - 4px);
+      box-shadow: inset 0 0 0 1px rgba(14, 165, 233, 0.2);
+    }
+
+    .list-row-item.is-next-date .list-row-date {
+      color: #0369a1;
+      font-weight: 800;
     }
 
     .list-row-today-badge {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
       margin-left: 0.5rem;
-      padding: 0.1rem 0.45rem;
-      border-radius: 1rem;
-      font-size: 0.65rem;
+      padding: 0.12rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.68rem;
       font-weight: 800;
       text-transform: uppercase;
-      background-color: #f97316;
+      letter-spacing: 0.03em;
+      background: linear-gradient(135deg, #f97316, #ea580c);
       color: #ffffff;
+      box-shadow: 0 1px 3px rgba(234, 88, 12, 0.3);
+      vertical-align: middle;
+    }
+
+    .list-row-next-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin-left: 0.5rem;
+      padding: 0.12rem 0.5rem;
+      border-radius: 9999px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      background: linear-gradient(135deg, #0ea5e9, #0284c7);
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(2, 132, 199, 0.3);
       vertical-align: middle;
     }
 
@@ -1302,6 +1488,342 @@
       font-weight: 800;
     }
 
+    /* Calendar Week View */
+    .calendar-week-wrapper {
+      max-width: var(--content-shell-max-width);
+      margin: 0 auto;
+      padding: 0 var(--page-gutter) 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .week-nav-bar {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.85rem;
+      padding: 0.85rem 1.25rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .week-nav-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .week-nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background-color: var(--bg-main);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.45rem 0.85rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+
+    .week-nav-btn:hover:not(:disabled) {
+      background-color: #e0f2fe;
+      border-color: #7dd3fc;
+      color: #0369a1;
+    }
+
+    .week-nav-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .week-title-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.15rem;
+      flex: 1 1 auto;
+      max-width: 450px;
+    }
+
+    .week-select-dropdown {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 0.45rem 0.85rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.55rem;
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      cursor: pointer;
+      outline: none;
+      text-align: center;
+    }
+
+    .week-grid-container {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 0.75rem;
+      align-items: stretch;
+    }
+
+    .week-day-col {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      min-height: 380px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .week-day-col:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    }
+
+    .week-day-col.is-today {
+      border-color: #ea580c !important;
+      box-shadow: 0 0 0 2px #ea580c, 0 4px 12px rgba(234, 88, 12, 0.15);
+    }
+
+    .week-day-col.is-next-date {
+      border-color: #0ea5e9 !important;
+      box-shadow: 0 0 0 2px #0ea5e9, 0 4px 12px rgba(14, 165, 233, 0.15);
+    }
+
+    [data-theme="dark"] .week-day-col.is-today {
+      border-color: #f97316 !important;
+      box-shadow: 0 0 0 2px #f97316, 0 4px 16px rgba(249, 115, 22, 0.25);
+    }
+
+    [data-theme="dark"] .week-day-col.is-next-date {
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 0 2px #38bdf8, 0 4px 16px rgba(56, 189, 248, 0.25);
+    }
+
+    .week-day-header {
+      padding: 0.75rem 0.85rem;
+      border-bottom: 1px solid var(--border-color);
+      background-color: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      cursor: pointer;
+    }
+
+    [data-theme="dark"] .week-day-header {
+      background-color: #0f172a;
+    }
+
+    .week-day-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .week-day-name {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-main);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .week-day-date-number {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .week-day-col.is-today .week-day-date-number {
+      background-color: #ea580c;
+      color: #ffffff;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+
+    .week-day-col.is-next-date .week-day-date-number {
+      background-color: #0284c7;
+      color: #ffffff;
+      padding: 0.1rem 0.45rem;
+      border-radius: 999px;
+      font-size: 0.95rem;
+    }
+
+    .week-day-status-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.35rem;
+      margin-top: 0.1rem;
+    }
+
+    .week-status-pill {
+      font-size: 0.66rem;
+      font-weight: 700;
+      padding: 0.1rem 0.4rem;
+      border-radius: 0.3rem;
+    }
+
+    .week-status-pill.letivo {
+      background-color: #ecfdf5;
+      color: #047857;
+      border: 1px solid #a7f3d0;
+    }
+
+    .week-status-pill.nao-letivo {
+      background-color: #f1f5f9;
+      color: #64748b;
+      border: 1px solid #cbd5e1;
+    }
+
+    [data-theme="dark"] .week-status-pill.letivo {
+      background-color: rgba(34, 197, 94, 0.15);
+      color: #86efac;
+      border-color: rgba(34, 197, 94, 0.35);
+    }
+
+    [data-theme="dark"] .week-status-pill.nao-letivo {
+      background-color: #1e293b;
+      color: #94a3b8;
+      border-color: #334155;
+    }
+
+    .week-day-events-stream {
+      padding: 0.65rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+      flex: 1 1 auto;
+      overflow-y: auto;
+      max-height: 480px;
+    }
+
+    .week-empty-text {
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-style: italic;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .week-event-card {
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      padding: 0.6rem 0.65rem;
+      background-color: #ffffff;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+    }
+
+    [data-theme="dark"] .week-event-card {
+      background-color: #1e293b;
+      border-color: #334155;
+    }
+
+    .week-event-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+      border-color: var(--primary);
+    }
+
+    .week-lesson-card {
+      border-left: 3.5px solid var(--primary);
+      background-color: #f0f9ff;
+      border-color: #bae6fd;
+    }
+
+    [data-theme="dark"] .week-lesson-card {
+      background-color: rgba(56, 189, 248, 0.08);
+      border-color: rgba(56, 189, 248, 0.25);
+      border-left-color: #38bdf8;
+    }
+
+    .week-lesson-card.is-extra {
+      border-left-color: #f59e0b;
+      background-color: #fffdf5;
+      border-color: #fde68a;
+    }
+
+    .week-lesson-card.is-project {
+      border-left-color: #8b5cf6;
+      background-color: #faf5ff;
+      border-color: #e9d5ff;
+    }
+
+    .week-lesson-card.is-graded {
+      border-left-color: #22c55e;
+      background-color: #f0fdf4;
+      border-color: #bbf7d0;
+    }
+
+    [data-theme="dark"] .week-lesson-card.is-extra {
+      background-color: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.3);
+      border-left-color: #f59e0b;
+    }
+
+    [data-theme="dark"] .week-lesson-card.is-project {
+      background-color: rgba(168, 85, 247, 0.1);
+      border-color: rgba(168, 85, 247, 0.3);
+      border-left-color: #a855f7;
+    }
+
+    [data-theme="dark"] .week-lesson-card.is-graded {
+      background-color: rgba(34, 197, 94, 0.1);
+      border-color: rgba(34, 197, 94, 0.3);
+      border-left-color: #22c55e;
+    }
+
+    .week-event-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+    }
+
+    .week-event-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+
+    @media (max-width: 1024px) {
+      .week-grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .week-grid-container {
+        grid-template-columns: 1fr;
+      }
+      .week-day-col {
+        min-height: auto;
+      }
+      .week-day-events-stream {
+        max-height: none;
+      }
+    }
+
     /* Event Modal */
     .modal-overlay {
       position: fixed;
@@ -1329,12 +1851,13 @@
     .modal-card {
       background-color: var(--bg-card);
       border-radius: 1rem;
-      max-width: 500px;
+      max-width: 680px;
       width: 100%;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.2);
       overflow: hidden;
       transform: translateY(10px);
       transition: transform 0.2s ease;
+      border: 1px solid var(--border-color);
     }
 
     .modal-overlay.active .modal-card {
@@ -1364,68 +1887,320 @@
     }
 
     .modal-body {
-      padding: 1.5rem;
-      max-height: 60vh;
+      padding: 1.25rem 1.5rem;
+      max-height: 75vh;
       overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
     }
 
-    .event-item-card {
-      background-color: #f8fafc;
+    .modal-topic-card {
+      background-color: var(--bg-card);
       border: 1px solid var(--border-color);
-      border-radius: 0.5rem;
-      padding: 0.85rem 1rem;
-      margin-bottom: 0.75rem;
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
     }
 
-    .event-item-title {
-      font-size: 0.9rem;
+    .modal-topic-card.is-extra-card {
+      border-left: 4px solid #f59e0b;
+      background-color: #fffdf5;
+    }
+
+    .modal-topic-card.is-project-card {
+      border-left: 4px solid #8b5cf6;
+      background-color: #faf5ff;
+    }
+
+    .modal-topic-card.is-graded-card {
+      border-left: 4px solid #22c55e;
+      background-color: #f0fdf4;
+    }
+
+    [data-theme="dark"] .modal-topic-card.is-extra-card {
+      background-color: #241a06;
+      border-left-color: #f59e0b;
+    }
+
+    [data-theme="dark"] .modal-topic-card.is-project-card {
+      background-color: #201335;
+      border-left-color: #a855f7;
+    }
+
+    [data-theme="dark"] .modal-topic-card.is-graded-card {
+      background-color: rgba(34, 197, 94, 0.1);
+      border-left-color: #22c55e;
+    }
+
+    .topic-card-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
+    }
+
+    .topic-number-link {
+      background-color: #e0f2fe;
+      color: var(--primary);
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 0.4rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .topic-number-link:hover {
+      background-color: #bae6fd;
+      color: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .badge-subject-sigla {
+      background-color: #f1f5f9;
+      color: #334155;
+      border: 1px solid var(--border-color);
+      font-weight: 800;
+      font-size: 0.725rem;
+      padding: 0.18rem 0.48rem;
+      border-radius: 0.35rem;
+      white-space: nowrap;
+    }
+
+    [data-theme="dark"] .badge-subject-sigla {
+      background-color: #1e293b;
+      color: #cbd5e1;
+      border-color: #334155;
+    }
+
+    .topic-title {
+      font-size: 1rem;
       font-weight: 700;
       color: var(--text-main);
+      margin: 0;
+      line-height: 1.3;
     }
 
-    .event-item-cat {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--primary);
-      text-transform: uppercase;
-      margin-top: 0.25rem;
+    .topic-date-badge {
+      font-size: 0.725rem;
+      font-weight: 800;
+      padding: 0.15rem 0.45rem;
+      border-radius: 0.35rem;
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      border: 1px solid transparent;
     }
 
-    .event-item-body {
-      margin-top: 0.6rem;
-      font-size: 0.85rem;
+    .badge-extra-label {
+      background-color: #fef3c7;
+      color: #92400e;
+      border-color: #fde68a;
+    }
+
+    .badge-project-label {
+      background-color: #f3e8ff;
+      color: #6b21a8;
+      border-color: #d8b4fe;
+    }
+
+    .badge-graded-label {
+      background-color: #dcfce7;
+      color: #15803d;
+      border-color: #bbf7d0;
+    }
+
+    .badge-aulas-count {
+      background-color: #f1f5f9;
       color: var(--text-muted);
-      line-height: 1.5;
+      border-color: var(--border-color);
     }
 
-    .event-item-body p {
-      margin: 0 0 0.5rem;
+    [data-theme="dark"] .badge-extra-label {
+      background-color: rgba(245, 158, 11, 0.2);
+      color: #fef08a;
+      border-color: rgba(245, 158, 11, 0.4);
     }
 
-    .event-item-body p:last-child {
+    [data-theme="dark"] .badge-project-label {
+      background-color: rgba(168, 85, 247, 0.2);
+      color: #e9d5ff;
+      border-color: rgba(168, 85, 247, 0.4);
+    }
+
+    [data-theme="dark"] .badge-graded-label {
+      background-color: rgba(34, 197, 94, 0.2);
+      color: #86efac;
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+
+    [data-theme="dark"] .badge-aulas-count {
+      background-color: #1e293b;
+      color: #94a3b8;
+      border-color: #334155;
+    }
+
+    .topic-body-text {
+      font-size: 0.88rem;
+      color: var(--text-main);
+      line-height: 1.55;
+    }
+
+    .topic-body-text p {
+      margin: 0 0 0.4rem;
+    }
+
+    .topic-body-text p:last-child {
       margin-bottom: 0;
     }
 
-    .event-item-resources {
-      margin-top: 0.6rem;
+    .resources-list {
       display: flex;
       flex-direction: column;
+      gap: 0.45rem;
+      margin-top: 0.25rem;
+    }
+
+    .resource-category-header {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      margin-top: 0.5rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .resource-category-header:first-child {
+      margin-top: 0;
+    }
+
+    .resource-plain-text {
+      font-size: 0.85rem;
+      color: var(--text-main);
+      line-height: 1.45;
+      margin: 0.1rem 0 0.2rem 0.2rem;
+    }
+
+    .resource-link {
+      display: inline-flex;
+      align-items: center;
       gap: 0.4rem;
-    }
-
-    .event-item-resource-link {
-      font-size: 0.82rem;
-      color: var(--primary);
       text-decoration: none;
+      padding: 0.35rem 0.65rem;
+      border-radius: 0.45rem;
+      border: 1px solid var(--border-color);
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: all 0.18s ease;
+      width: fit-content;
     }
 
-    .event-item-resource-link:hover {
+    .resource-link:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+    }
+
+    .badge-prefix {
+      font-size: 0.68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      opacity: 0.85;
+    }
+
+    /* Category Badge Colors in Modal */
+    .badge-dw {
+      background-color: var(--badge-dw-bg, #e0f2fe);
+      color: var(--badge-dw-text, #0369a1);
+      border-color: var(--badge-dw-border, #bae6fd);
+    }
+    .badge-dw:hover { background-color: #bae6fd; color: #0369a1; }
+
+    .badge-github {
+      background-color: var(--badge-github-bg, #f1f5f9);
+      color: var(--badge-github-text, #334155);
+      border-color: var(--badge-github-border, #cbd5e1);
+    }
+    .badge-github:hover { background-color: #e2e8f0; color: #0f172a; }
+
+    .badge-braincheck {
+      background-color: var(--badge-braincheck-bg, #f3e8ff);
+      color: var(--badge-braincheck-text, #6b21a8);
+      border-color: var(--badge-braincheck-border, #e9d5ff);
+    }
+    .badge-braincheck:hover { background-color: #d8b4fe; color: #6b21a8; }
+
+    .badge-exercicio {
+      background-color: var(--badge-exercicio-bg, #dcfce7);
+      color: var(--badge-exercicio-text, #15803d);
+      border-color: var(--badge-exercicio-border, #bbf7d0);
+    }
+    .badge-exercicio:hover { background-color: #86efac; color: #15803d; }
+
+    .badge-padlet {
+      background-color: var(--badge-padlet-bg, #fce7f3);
+      color: var(--badge-padlet-text, #be185d);
+      border-color: var(--badge-padlet-border, #fbcfe8);
+    }
+    .badge-padlet:hover { background-color: #fbcfe8; color: #be185d; }
+
+    .badge-figma {
+      background-color: var(--badge-figma-bg, #ffedd5);
+      color: var(--badge-figma-text, #c2410c);
+      border-color: var(--badge-figma-border, #fed7aa);
+    }
+    .badge-figma:hover { background-color: #fed7aa; color: #c2410c; }
+
+    .badge-medium {
+      background-color: var(--badge-medium-bg, #f1f5f9);
+      color: var(--badge-medium-text, #0f172a);
+      border-color: var(--badge-medium-border, #cbd5e1);
+    }
+    .badge-medium:hover { background-color: #e2e8f0; color: #0f172a; }
+
+    /* Inline code & links inside modal */
+    .inline-code {
+      background: #f1f5f9;
+      padding: 0.1rem 0.3rem;
+      border-radius: 0.25rem;
+      font-size: 0.85em;
+      font-family: monospace;
+      color: var(--primary);
+    }
+
+    [data-theme="dark"] .inline-code {
+      background: #1e293b;
+      color: #38bdf8;
+    }
+
+    .inline-link {
+      color: var(--primary);
+      font-weight: 700;
       text-decoration: underline;
     }
 
-    .event-item-resource-text {
-      font-size: 0.82rem;
-      color: var(--text-muted);
+    .event-non-lesson-card {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 0.6rem;
+      padding: 0.85rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    [data-theme="dark"] .event-non-lesson-card {
+      background-color: #1e293b;
+      border-color: #334155;
     }
 
     /* Responsive */
@@ -1629,12 +2404,12 @@
           </div>
           <p>
             <span class="brand-subtitle-line" id="calendar-header-curso">Curso Superior de Tecnologia em Redes de Computadores • IFPB Campus JP</span>
-            <span class="brand-subtitle-line" id="calendar-header-prof">👨‍🏫 Prof. Luiz Carlos Rodrigues Chaves</span>
+            <span class="brand-subtitle-line" id="calendar-header-prof">👨‍🏫 <a href="?subject=luiz-carlos-rodrigues-chaves&view=list&aulas=1" class="professor-link" title="Ver todas as aulas de Prof. Luiz Carlos Rodrigues Chaves">Prof. Luiz Carlos Rodrigues Chaves</a></span>
           </p>
         </div>
       </div>
       <div class="header-top-actions">
-        <button class="today-btn" id="go-to-today-btn" title="Ir para o dia de hoje" aria-label="Ir para o dia de hoje">
+        <button class="today-btn" id="go-to-today-btn" title="Ir para o dia de hoje (⌘T)" aria-label="Ir para o dia de hoje">
           <i data-lucide="calendar-check"></i>
         </button>
         <a href="https://github.com/luizchaves/classroom" target="_blank" rel="noopener noreferrer" class="github-repo-btn" title="Repositório no GitHub" aria-label="Repositório no GitHub">
@@ -1675,11 +2450,14 @@
     </div>
 
     <div class="view-switcher-group">
-      <button id="view-list-btn" class="view-btn" title="Exibir em Lista">
+      <button id="view-list-btn" class="view-btn" title="Exibir em Lista (⌘1)">
         <i data-lucide="list"></i> <span class="view-btn-label">Lista</span>
       </button>
-      <button id="view-grid-btn" class="view-btn active" title="Exibir em Calendário">
-        <i data-lucide="calendar-days"></i> <span class="view-btn-label">Calendário</span>
+      <button id="view-week-btn" class="view-btn" title="Exibir em Semana (⌘2)">
+        <i data-lucide="calendar-range"></i> <span class="view-btn-label">Semana</span>
+      </button>
+      <button id="view-grid-btn" class="view-btn active" title="Exibir em Mês (⌘3)">
+        <i data-lucide="calendar-days"></i> <span class="view-btn-label">Mês</span>
       </button>
     </div>
   </div>
@@ -1773,6 +2551,11 @@
     <!-- Rendered dynamically -->
   </main>
 
+  <!-- Calendar Week View Container -->
+  <main class="calendar-week-wrapper" id="calendar-week-container" style="display: none;">
+    <!-- Rendered dynamically -->
+  </main>
+
   <!-- Calendar List View Container -->
   <main class="calendar-list-wrapper" id="calendar-list-container" style="display: none;">
     <!-- Rendered dynamically -->
@@ -1796,7 +2579,14 @@
 
   <script>
     let calendarData = null;
-    let currentViewMode = new URLSearchParams(window.location.search).get('view') === 'list' ? 'list' : 'grid';
+    let currentViewMode = (() => {
+      const v = new URLSearchParams(window.location.search).get('view');
+      if (v === 'list') return 'list';
+      if (v === 'week') return 'week';
+      return 'grid';
+    })();
+    let calendarWeeks = [];
+    let currentWeekIndex = -1;
     const tooltipEl = document.getElementById('floating-tooltip');
 
     const monthNamesList = [
@@ -2051,11 +2841,35 @@
               entry.letivo = entry.letivo || d.letivo;
             }
             d.eventos.forEach(ev => {
-              const alreadyExists = entry.eventos.some(e => e.descricao === ev.descricao && e.categoria === ev.categoria);
+              let alreadyExists = false;
+              if (ev.categoria === 'aula') {
+                const evKey = ev.sigla || ev.disciplina || '';
+                alreadyExists = entry.eventos.some(e =>
+                  e.categoria === 'aula' &&
+                  e.descricao === ev.descricao &&
+                  (e.sigla || e.disciplina || '') === evKey
+                );
+              } else {
+                const normEv = normalizeEventDescription(ev.descricao);
+                alreadyExists = entry.eventos.some(e =>
+                  e.categoria === ev.categoria &&
+                  (e.descricao === ev.descricao || normalizeEventDescription(e.descricao) === normEv)
+                );
+              }
               if (!alreadyExists) entry.eventos.push(ev);
             });
           });
         });
+      }
+
+      function normalizeEventDescription(desc) {
+        return (desc || '')
+          .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase()
+          .replace(/\b(de|da|do|dos|das|e|o|a|em)\b/g, ' ')
+          .replace(/[^a-z0-9]+/g, ' ')
+          .replace(/\s+/g, ' ')
+          .trim();
       }
 
       const mesesMap = new Map();
@@ -2216,6 +3030,7 @@
       });
 
       let regIdx = 0;
+      let lessonCounter = 0;
       content.split(/^##\s+/m).filter(b => b.trim().length > 0).forEach(block => {
         const lines = block.trim().split('\n');
         const rawTitleLine = lines[0].replace(/^#+\s*/, '').trim();
@@ -2223,17 +3038,37 @@
 
         let cleanTitle = rawTitleLine;
         let isoDate = null;
+        let isExtra = false;
+        let extraInfoStr = '';
+        let aulasCount = 2;
 
         const dateInHeaderMatch = rawTitleLine.match(/(.*?)\s*\((.*?(\d{2}\/\d{2}\/\d{4}).*?)\)/);
         if (dateInHeaderMatch) {
           cleanTitle = dateInHeaderMatch[1].trim();
           isoDate = normalizeIsoDate(dateInHeaderMatch[3]);
+          extraInfoStr = dateInHeaderMatch[2];
+          isExtra = true;
+          const aulasMatch = extraInfoStr.match(/(\d+)\s*aulas?/);
+          if (aulasMatch) {
+            aulasCount = parseInt(aulasMatch[1]);
+          } else {
+            aulasCount = 4;
+          }
         } else if (regIdx < eligibleDates.length) {
           isoDate = eligibleDates[regIdx];
+          const matchedDayOfWeek = new Date(isoDate + 'T00:00:00').getDay();
+          const matchedSchedule = activeDays.find(a => a.dayOfWeek === matchedDayOfWeek);
+          aulasCount = matchedSchedule?.aulas || 2;
           regIdx++;
         }
 
         if (!isoDate) return;
+
+        let lessonNumber = null;
+        if (!isExtra) {
+          lessonCounter++;
+          lessonNumber = lessonCounter;
+        }
 
         const bodyTexts = [];
         const resources = [];
@@ -2254,8 +3089,9 @@
               resources.push({ prefix, text, url });
             } else {
               const plainText = line.replace(/^-\s*/, '').trim();
-              if (plainText && !/^\*\*.*?\*\*:?$/.test(plainText)) {
-                resources.push({ prefix: 'Info', text: plainText, url: null });
+              if (plainText) {
+                const isCategoryHeader = /^\*\*.*?\*\*:?$/.test(plainText);
+                resources.push({ prefix: 'Info', text: plainText, url: null, isHeader: isCategoryHeader });
               }
             }
           } else if (line.length > 0 && !line.startsWith('#')) {
@@ -2264,7 +3100,18 @@
         }
 
         const day = findDayInCalendar(targetCalendarData, isoDate);
-        if (day) day.eventos.push({ descricao: cleanTitle, categoria: 'aula', sigla: matchedSubject.sigla, bodyTexts, resources });
+        if (day) day.eventos.push({
+          descricao: cleanTitle,
+          categoria: 'aula',
+          sigla: matchedSubject.sigla,
+          disciplina: matchedSubject.disciplina,
+          subjectSlug: matchedSubject.slug,
+          lessonNumber,
+          isExtra,
+          aulasCount,
+          bodyTexts,
+          resources
+        });
       });
 
       skippedDates.forEach((reason, isoDate) => {
@@ -2287,7 +3134,8 @@
           cursoEl.style.display = 'none';
 
           const label = matchedSubject.professor.startsWith('Prof.') ? matchedSubject.professor : `Prof. ${matchedSubject.professor}`;
-          profEl.textContent = `👨‍🏫 ${label}`;
+          const professorSlug = getProfessorSlug(matchedSubject.professor);
+          profEl.innerHTML = `👨‍🏫 <a href="?subject=${encodeURIComponent(professorSlug)}&view=list&aulas=1" class="professor-link" title="Ver todas as aulas de ${label}">${label}</a>`;
         } else {
           document.getElementById('calendar-header-title').textContent = matchedSubject.disciplina;
           periodoPillEl.style.display = '';
@@ -2303,7 +3151,7 @@
             const trimmedName = name.trim();
             const label = trimmedName.startsWith('Prof.') ? trimmedName : `Prof. ${trimmedName}`;
             const professorSlug = getProfessorSlug(trimmedName);
-            return `<a href="?subject=${encodeURIComponent(professorSlug)}&view=${currentViewMode}" class="professor-link" title="Ver todas as aulas de ${label}">${label}</a>`;
+            return `<a href="?subject=${encodeURIComponent(professorSlug)}&view=list&aulas=1" class="professor-link" title="Ver todas as aulas de ${label}">${label}</a>`;
           }).join(' e ');
 
           profEl.innerHTML = `👨‍🏫 ${profLinksHtml}`;
@@ -2317,7 +3165,7 @@
         document.getElementById('calendar-header-title').textContent = 'Calendário Acadêmico';
         periodoPillEl.textContent = pName;
         cursoEl.textContent = 'Instituto Federal da Paraíba • Campus João Pessoa';
-        document.getElementById('calendar-header-prof').textContent = '👨‍🏫 Prof. Luiz Carlos Rodrigues Chaves';
+        document.getElementById('calendar-header-prof').innerHTML = '👨‍🏫 <a href="?subject=luiz-carlos-rodrigues-chaves&view=list&aulas=1" class="professor-link" title="Ver todas as aulas de Prof. Luiz Carlos Rodrigues Chaves">Prof. Luiz Carlos Rodrigues Chaves</a>';
       }
 
 
@@ -2360,8 +3208,14 @@
       eventsOnlyToggle.checked = isQueryFlagEnabled('eventos');
       aulasOnlyToggle.checked = isQueryFlagEnabled('aulas');
 
+      buildCalendarWeeks();
+      currentWeekIndex = getDefaultWeekIndex();
+
       // Event Listeners for Filters
       monthSelect.addEventListener('change', () => {
+        if (currentViewMode === 'week' && monthSelect.value !== 'all') {
+          jumpToMonthInWeekView(monthSelect.value);
+        }
         renderActiveView();
         scrollToTargetDateOrMonth(true);
       });
@@ -2381,8 +3235,9 @@
       });
 
       // View Switcher Handlers
-      document.getElementById('view-grid-btn').addEventListener('click', () => setViewMode('grid'));
-      document.getElementById('view-list-btn').addEventListener('click', () => setViewMode('list'));
+      document.getElementById('view-grid-btn')?.addEventListener('click', () => setViewMode('grid'));
+      document.getElementById('view-week-btn')?.addEventListener('click', () => setViewMode('week'));
+      document.getElementById('view-list-btn')?.addEventListener('click', () => setViewMode('list'));
 
       // Modal Close Listeners
       document.getElementById('modal-close-btn').addEventListener('click', closeModal);
@@ -2406,21 +3261,19 @@
       }
 
       const gridBtn = document.getElementById('view-grid-btn');
+      const weekBtn = document.getElementById('view-week-btn');
       const listBtn = document.getElementById('view-list-btn');
       const gridContainer = document.getElementById('calendar-container');
+      const weekContainer = document.getElementById('calendar-week-container');
       const listContainer = document.getElementById('calendar-list-container');
 
-      if (mode === 'grid') {
-        gridBtn.classList.add('active');
-        listBtn.classList.remove('active');
-        gridContainer.style.display = 'grid';
-        listContainer.style.display = 'none';
-      } else {
-        listBtn.classList.add('active');
-        gridBtn.classList.remove('active');
-        gridContainer.style.display = 'none';
-        listContainer.style.display = 'flex';
-      }
+      if (gridBtn) gridBtn.classList.toggle('active', mode === 'grid');
+      if (weekBtn) weekBtn.classList.toggle('active', mode === 'week');
+      if (listBtn) listBtn.classList.toggle('active', mode === 'list');
+
+      if (gridContainer) gridContainer.style.display = mode === 'grid' ? 'grid' : 'none';
+      if (weekContainer) weekContainer.style.display = mode === 'week' ? 'flex' : 'none';
+      if (listContainer) listContainer.style.display = mode === 'list' ? 'flex' : 'none';
 
       renderActiveView();
     }
@@ -2428,6 +3281,8 @@
     function renderActiveView() {
       if (currentViewMode === 'grid') {
         renderCalendarGrid();
+      } else if (currentViewMode === 'week') {
+        renderCalendarWeek();
       } else {
         renderCalendarList();
       }
@@ -2453,6 +3308,22 @@
       let matchesAulas = !aulasOnly || day.eventos.some(e => e.categoria === 'aula');
 
       return matchesCategory && matchesSearch && matchesLetivo && matchesEvents && matchesAulas;
+    }
+
+    function sortDayEvents(eventos) {
+      if (!eventos || eventos.length <= 1) return eventos || [];
+      return [...eventos].sort((a, b) => {
+        const isAulaA = a.categoria === 'aula';
+        const isAulaB = b.categoria === 'aula';
+        if (!isAulaA && isAulaB) return -1;
+        if (isAulaA && !isAulaB) return 1;
+        if (isAulaA && isAulaB) {
+          const siglaA = a.sigla || '';
+          const siglaB = b.sigla || '';
+          return siglaA.localeCompare(siglaB);
+        }
+        return 0;
+      });
     }
 
     function getCategoryColors(cat, desc = '') {
@@ -2509,6 +3380,21 @@
         return true;
       });
 
+      const allGridVisibleDays = [];
+      filteredMeses.forEach(month => {
+        month.dias.forEach(day => {
+          if (filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly)) {
+            allGridVisibleDays.push(day);
+          }
+        });
+      });
+
+      const hasTodayGridVisible = allGridVisibleDays.some(d => d.data === todayIsoDate);
+      const upcomingGridDays = allGridVisibleDays.filter(d => d.data >= todayIsoDate);
+      const nextClosestGridDateIso = !hasTodayGridVisible && upcomingGridDays.length > 0
+        ? upcomingGridDays[0].data
+        : null;
+
       filteredMeses.forEach(month => {
         const [year, monthNum] = month.ano_mes.split('-').map(Number);
         const firstDayOfWeek = new Date(year, monthNum - 1, 1).getDay();
@@ -2556,25 +3442,38 @@
           dayCell.setAttribute('data-date', day.data);
           if (day.letivo) dayCell.classList.add('is-letivo');
           if (day.eventos.length > 0) dayCell.classList.add('has-event');
-          if (day.data === todayIsoDate) dayCell.classList.add('is-today');
+
+          const isToday = day.data === todayIsoDate;
+          const isNext = !hasTodayGridVisible && day.data === nextClosestGridDateIso;
+
+          if (isToday) {
+            dayCell.classList.add('is-today');
+            const todayTag = document.createElement('span');
+            todayTag.className = 'day-today-tag';
+            todayTag.textContent = 'Hoje';
+            dayCell.appendChild(todayTag);
+          } else if (isNext) {
+            dayCell.classList.add('is-next-date');
+          }
 
           const dayNumSpan = document.createElement('span');
           dayNumSpan.className = 'day-number';
           dayNumSpan.textContent = dayNum;
           dayCell.appendChild(dayNumSpan);
 
-          if (day.eventos.length > 0) {
-            applyMultiCategoryStyle(dayCell, dayNumSpan, day.eventos);
+          const sortedEvents = sortDayEvents(day.eventos);
+          if (sortedEvents.length > 0) {
+            applyMultiCategoryStyle(dayCell, dayNumSpan, sortedEvents);
           }
 
           if (!isVisible) {
             dayCell.style.opacity = '0.2';
           }
 
-          if (day.eventos.length > 0) {
+          if (sortedEvents.length > 0) {
             const dotsContainer = document.createElement('div');
             dotsContainer.className = 'event-dots';
-            day.eventos.forEach(ev => {
+            sortedEvents.forEach(ev => {
               const dot = document.createElement('div');
               dot.className = 'dot';
               const colors = getCategoryColors(ev.categoria);
@@ -2629,6 +3528,21 @@
         return true;
       });
 
+      const allListVisibleDays = [];
+      filteredMeses.forEach(month => {
+        month.dias.forEach(day => {
+          if (filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly)) {
+            allListVisibleDays.push(day);
+          }
+        });
+      });
+
+      const hasTodayListVisible = allListVisibleDays.some(d => d.data === todayIsoDate);
+      const upcomingListDays = allListVisibleDays.filter(d => d.data >= todayIsoDate);
+      const nextClosestListDateIso = !hasTodayListVisible && upcomingListDays.length > 0
+        ? upcomingListDays[0].data
+        : null;
+
       filteredMeses.forEach(month => {
         const visibleDays = month.dias.filter(day => filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly));
         if (visibleDays.length === 0) return;
@@ -2656,16 +3570,30 @@
           const row = document.createElement('div');
           row.className = 'list-row-item';
           row.setAttribute('data-date', day.data);
-          if (day.data === todayIsoDate) row.classList.add('is-today');
+
+          const isToday = day.data === todayIsoDate;
+          const isNext = !hasTodayListVisible && day.data === nextClosestListDateIso;
+
+          if (isToday) {
+            row.classList.add('is-today');
+          } else if (isNext) {
+            row.classList.add('is-next-date');
+          }
 
           const dateCol = document.createElement('div');
           dateCol.className = 'list-row-date';
           dateCol.textContent = dateStr;
-          if (day.data === todayIsoDate) {
+
+          if (isToday) {
             const todayBadge = document.createElement('span');
             todayBadge.className = 'list-row-today-badge';
             todayBadge.textContent = 'Hoje';
             dateCol.appendChild(todayBadge);
+          } else if (isNext) {
+            const nextBadge = document.createElement('span');
+            nextBadge.className = 'list-row-next-badge';
+            nextBadge.textContent = 'Próxima';
+            dateCol.appendChild(nextBadge);
           }
           row.appendChild(dateCol);
 
@@ -2682,10 +3610,12 @@
           const eventsCol = document.createElement('div');
           eventsCol.className = 'list-events-cell';
 
-          if (day.eventos.length === 0) {
+          const sortedEvents = sortDayEvents(day.eventos);
+
+          if (sortedEvents.length === 0) {
             eventsCol.innerHTML = '<span style="color: var(--text-muted); font-style: italic;">Sem eventos cadastrados</span>';
           } else {
-            day.eventos.forEach(ev => {
+            sortedEvents.forEach(ev => {
               const evLine = document.createElement('div');
               const badgeClass = getBadgeClass(ev.categoria, ev.descricao);
               const badgeLabel = ev.categoria === 'aula' && ev.sigla
@@ -2707,6 +3637,390 @@
       });
     }
 
+    function buildCalendarWeeks() {
+      if (!calendarData || !calendarData.meses || calendarData.meses.length === 0) {
+        calendarWeeks = [];
+        return;
+      }
+
+      const dayMap = new Map();
+      calendarData.meses.forEach(m => {
+        m.dias.forEach(d => {
+          dayMap.set(d.data, d);
+        });
+      });
+
+      const allDates = Array.from(dayMap.keys()).sort();
+      if (allDates.length === 0) {
+        calendarWeeks = [];
+        return;
+      }
+
+      const firstDate = new Date(allDates[0] + 'T00:00:00');
+      const lastDate = new Date(allDates[allDates.length - 1] + 'T00:00:00');
+
+      // Start at the Sunday of firstDate's week
+      const startDate = new Date(firstDate);
+      startDate.setDate(startDate.getDate() - startDate.getDay());
+
+      // End at the Saturday of lastDate's week
+      const endDate = new Date(lastDate);
+      endDate.setDate(endDate.getDate() + (6 - endDate.getDay()));
+
+      const weeks = [];
+      let curr = new Date(startDate);
+      let weekNum = 1;
+
+      while (curr <= endDate) {
+        const weekDays = [];
+        const weekSunday = new Date(curr);
+
+        for (let i = 0; i < 7; i++) {
+          const y = curr.getFullYear();
+          const m = String(curr.getMonth() + 1).padStart(2, '0');
+          const d = String(curr.getDate()).padStart(2, '0');
+          const iso = `${y}-${m}-${d}`;
+
+          const existingDay = dayMap.get(iso);
+          if (existingDay) {
+            weekDays.push(existingDay);
+          } else {
+            weekDays.push({
+              data: iso,
+              letivo: false,
+              eventos: [],
+              isOutOfRange: true
+            });
+          }
+          curr.setDate(curr.getDate() + 1);
+        }
+
+        const weekSaturday = new Date(curr);
+        weekSaturday.setDate(weekSaturday.getDate() - 1);
+
+        const startDayStr = String(weekSunday.getDate()).padStart(2, '0');
+        const startMonthStr = String(weekSunday.getMonth() + 1).padStart(2, '0');
+        const endDayStr = String(weekSaturday.getDate()).padStart(2, '0');
+        const endMonthStr = String(weekSaturday.getMonth() + 1).padStart(2, '0');
+        const yearStr = weekSaturday.getFullYear();
+
+        const label = `Semana ${weekNum} (${startDayStr}/${startMonthStr} a ${endDayStr}/${endMonthStr}/${yearStr})`;
+
+        weeks.push({
+          index: weeks.length,
+          weekNum: weekNum,
+          startIso: weekDays[0].data,
+          endIso: weekDays[6].data,
+          label: label,
+          days: weekDays
+        });
+
+        weekNum++;
+      }
+
+      calendarWeeks = weeks;
+    }
+
+    function getDefaultWeekIndex() {
+      if (!calendarWeeks || calendarWeeks.length === 0) return 0;
+
+      const todayIdx = calendarWeeks.findIndex(w => w.startIso <= todayIsoDate && todayIsoDate <= w.endIso);
+      if (todayIdx !== -1) return todayIdx;
+
+      const nextIdx = calendarWeeks.findIndex(w => w.endIso >= todayIsoDate);
+      if (nextIdx !== -1) return nextIdx;
+
+      return 0;
+    }
+
+    function jumpToMonthInWeekView(anoMes) {
+      if (!anoMes || anoMes === 'all' || !calendarWeeks || calendarWeeks.length === 0) return;
+      const targetIdx = calendarWeeks.findIndex(w => w.startIso.startsWith(anoMes) || w.endIso.startsWith(anoMes));
+      if (targetIdx !== -1) {
+        currentWeekIndex = targetIdx;
+      }
+    }
+
+    function renderCalendarWeek() {
+      const container = document.getElementById('calendar-week-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      if (!calendarWeeks || calendarWeeks.length === 0) {
+        buildCalendarWeeks();
+      }
+
+      if (calendarWeeks.length === 0) {
+        container.innerHTML = '<div class="week-empty-text">Nenhuma semana disponível para o período selecionado.</div>';
+        return;
+      }
+
+      if (currentWeekIndex < 0 || currentWeekIndex >= calendarWeeks.length) {
+        currentWeekIndex = getDefaultWeekIndex();
+      }
+
+      const week = calendarWeeks[currentWeekIndex];
+      const selectedCategory = document.getElementById('category-select').value;
+      const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+      const letivoOnly = document.getElementById('letivo-only-toggle').checked;
+      const eventsOnly = document.getElementById('events-only-toggle').checked;
+      const aulasOnly = document.getElementById('aulas-only-toggle').checked;
+
+      const allWeekVisibleDays = [];
+      calendarWeeks.forEach(w => {
+        w.days.forEach(d => {
+          if (!d.isOutOfRange && filterCheck(d, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly)) {
+            allWeekVisibleDays.push(d);
+          }
+        });
+      });
+
+      const hasTodayVisible = allWeekVisibleDays.some(d => d.data === todayIsoDate);
+      const upcomingWeekDays = allWeekVisibleDays.filter(d => d.data >= todayIsoDate);
+      const nextClosestWeekDateIso = !hasTodayVisible && upcomingWeekDays.length > 0
+        ? upcomingWeekDays[0].data
+        : null;
+
+      // 1. Navigation Bar
+      const navBar = document.createElement('div');
+      navBar.className = 'week-nav-bar';
+
+      const controlsDiv = document.createElement('div');
+      controlsDiv.className = 'week-nav-controls';
+
+      const prevBtn = document.createElement('button');
+      prevBtn.className = 'week-nav-btn';
+      prevBtn.id = 'week-prev-btn';
+      prevBtn.title = 'Semana Anterior (← ou P)';
+      prevBtn.disabled = currentWeekIndex === 0;
+      prevBtn.innerHTML = '<i data-lucide="chevron-left"></i> Anterior';
+      prevBtn.addEventListener('click', handleNavigatePrevious);
+      controlsDiv.appendChild(prevBtn);
+
+      const todayBtn = document.createElement('button');
+      todayBtn.className = 'week-nav-btn';
+      todayBtn.id = 'week-today-btn';
+      todayBtn.title = 'Ir para a Semana Atual (⌘T ou T)';
+      todayBtn.innerHTML = '<i data-lucide="calendar"></i> Esta Semana';
+      todayBtn.addEventListener('click', handleGoToToday);
+      controlsDiv.appendChild(todayBtn);
+
+      const nextBtn = document.createElement('button');
+      nextBtn.className = 'week-nav-btn';
+      nextBtn.id = 'week-next-btn';
+      nextBtn.title = 'Próxima Semana (→ ou N)';
+      nextBtn.disabled = currentWeekIndex === calendarWeeks.length - 1;
+      nextBtn.innerHTML = 'Próxima <i data-lucide="chevron-right"></i>';
+      nextBtn.addEventListener('click', handleNavigateNext);
+      controlsDiv.appendChild(nextBtn);
+
+      navBar.appendChild(controlsDiv);
+
+      const titleGroup = document.createElement('div');
+      titleGroup.className = 'week-title-group';
+
+      const selectDropdown = document.createElement('select');
+      selectDropdown.className = 'week-select-dropdown';
+      selectDropdown.id = 'week-select-dropdown';
+      selectDropdown.setAttribute('aria-label', 'Selecionar Semana');
+
+      calendarWeeks.forEach((w, idx) => {
+        const opt = document.createElement('option');
+        opt.value = idx;
+        opt.textContent = w.label;
+        if (idx === currentWeekIndex) opt.selected = true;
+        selectDropdown.appendChild(opt);
+      });
+
+      selectDropdown.addEventListener('change', (e) => {
+        currentWeekIndex = parseInt(e.target.value, 10);
+        renderCalendarWeek();
+        scrollToTargetDateOrMonth(true);
+      });
+
+      titleGroup.appendChild(selectDropdown);
+      navBar.appendChild(titleGroup);
+      container.appendChild(navBar);
+
+      // 2. Week Grid (7 days: Dom-Sáb)
+      const gridContainer = document.createElement('div');
+      gridContainer.className = 'week-grid-container';
+
+      week.days.forEach(day => {
+        const dateObj = new Date(day.data + 'T00:00:00');
+        const dayOfWeek = dateObj.getDay();
+        const dayNum = dateObj.getDate();
+        const isVisible = filterCheck(day, selectedCategory, searchQuery, letivoOnly, eventsOnly, aulasOnly);
+
+        const col = document.createElement('div');
+        col.className = 'week-day-col';
+        col.setAttribute('data-date', day.data);
+
+        const isToday = day.data === todayIsoDate;
+        const isNext = !hasTodayVisible && day.data === nextClosestWeekDateIso;
+
+        if (isToday) {
+          col.classList.add('is-today');
+        } else if (isNext) {
+          col.classList.add('is-next-date');
+        }
+
+        if (!isVisible && !day.isOutOfRange) {
+          col.style.opacity = '0.35';
+        } else if (day.isOutOfRange) {
+          col.style.opacity = '0.4';
+        }
+
+        // Header
+        const headerDiv = document.createElement('div');
+        headerDiv.className = 'week-day-header';
+
+        const titleRow = document.createElement('div');
+        titleRow.className = 'week-day-title-row';
+
+        const nameSpan = document.createElement('span');
+        nameSpan.className = 'week-day-name';
+        nameSpan.textContent = weekdaysNames[dayOfWeek];
+
+        const numSpan = document.createElement('span');
+        numSpan.className = 'week-day-date-number';
+        numSpan.textContent = dayNum;
+
+        titleRow.appendChild(nameSpan);
+        titleRow.appendChild(numSpan);
+        headerDiv.appendChild(titleRow);
+
+        const statusRow = document.createElement('div');
+        statusRow.className = 'week-day-status-row';
+
+        const statusPill = document.createElement('span');
+        if (day.isOutOfRange) {
+          statusPill.className = 'week-status-pill nao-letivo';
+          statusPill.textContent = 'Fora do Período';
+        } else if (day.letivo) {
+          statusPill.className = 'week-status-pill letivo';
+          statusPill.textContent = '✓ Letivo';
+        } else {
+          statusPill.className = 'week-status-pill nao-letivo';
+          statusPill.textContent = '✕ Não Letivo';
+        }
+        statusRow.appendChild(statusPill);
+
+        if (isToday) {
+          const todayBadge = document.createElement('span');
+          todayBadge.className = 'list-row-today-badge';
+          todayBadge.style.margin = '0';
+          todayBadge.textContent = 'Hoje';
+          statusRow.appendChild(todayBadge);
+        }
+
+        headerDiv.appendChild(statusRow);
+        headerDiv.addEventListener('click', () => {
+          if (!day.isOutOfRange) openModal(day, dateObj);
+        });
+        col.appendChild(headerDiv);
+
+        // Events Stream
+        const streamDiv = document.createElement('div');
+        streamDiv.className = 'week-day-events-stream';
+
+        const sortedEvents = sortDayEvents(day.eventos);
+
+        if (day.isOutOfRange) {
+          const emptySpan = document.createElement('div');
+          emptySpan.className = 'week-empty-text';
+          emptySpan.textContent = 'Fora do período';
+          streamDiv.appendChild(emptySpan);
+        } else if (sortedEvents.length === 0) {
+          const emptySpan = document.createElement('div');
+          emptySpan.className = 'week-empty-text';
+          emptySpan.textContent = 'Sem eventos';
+          streamDiv.appendChild(emptySpan);
+        } else {
+          sortedEvents.forEach(ev => {
+            const card = document.createElement('div');
+            card.className = 'week-event-card';
+
+            if (ev.categoria === 'aula') {
+              card.classList.add('week-lesson-card');
+              const titleLower = (ev.descricao || '').toLowerCase();
+              const titleNormalized = titleLower.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+              const isProject = titleLower.includes('projeto');
+              const isGraded = titleNormalized.includes('exercicio avaliativo') || titleNormalized.includes('exercicios avaliativos');
+
+              if (ev.isExtra) card.classList.add('is-extra');
+              if (isProject) card.classList.add('is-project');
+              if (isGraded) card.classList.add('is-graded');
+
+              const lessonNumStr = ev.lessonNumber ? String(ev.lessonNumber).padStart(2, '0') : '';
+              const lessonLabel = ev.lessonNumber ? `Aula ${lessonNumStr}` : (ev.isExtra ? 'Aula Extra' : 'Aula');
+
+              const cardHeader = document.createElement('div');
+              cardHeader.className = 'week-event-header';
+
+              let headerHtml = '';
+              if (ev.sigla) {
+                headerHtml += `<span class="badge-subject-sigla" style="font-size: 0.68rem; padding: 0.1rem 0.35rem;">${escapeHtml(ev.sigla)}</span>`;
+              }
+              headerHtml += `<span style="font-size: 0.72rem; font-weight: 800; color: var(--primary);">${escapeHtml(lessonLabel)}</span>`;
+
+              if (ev.aulasCount) {
+                headerHtml += `<span class="topic-date-badge badge-aulas-count" style="font-size: 0.62rem; padding: 0.05rem 0.3rem;">${ev.aulasCount}h</span>`;
+              }
+
+              cardHeader.innerHTML = headerHtml;
+              card.appendChild(cardHeader);
+
+              const titleEl = document.createElement('div');
+              titleEl.className = 'week-event-title';
+              titleEl.textContent = ev.descricao;
+              card.appendChild(titleEl);
+            } else {
+              // Non-lesson event
+              const badgeClass = getBadgeClass(ev.categoria, ev.descricao);
+              const catLabel = ev.categoria ? ev.categoria.replace(/_/g, ' ') : 'Evento';
+
+              const cardHeader = document.createElement('div');
+              cardHeader.className = 'week-event-header';
+              cardHeader.innerHTML = `<span class="list-event-badge ${badgeClass}" style="margin: 0; font-size: 0.65rem; padding: 0.1rem 0.35rem;">${catLabel}</span>`;
+              card.appendChild(cardHeader);
+
+              const titleEl = document.createElement('div');
+              titleEl.className = 'week-event-title';
+              titleEl.textContent = ev.descricao;
+              card.appendChild(titleEl);
+            }
+
+            card.addEventListener('click', (e) => {
+              e.stopPropagation();
+              openModal(day, dateObj);
+            });
+
+            streamDiv.appendChild(card);
+          });
+        }
+
+        col.appendChild(streamDiv);
+
+        col.addEventListener('mouseenter', (e) => {
+          if (!day.isOutOfRange) showTooltip(e, day, dateObj);
+        });
+        col.addEventListener('mousemove', moveTooltip);
+        col.addEventListener('mouseleave', hideTooltip);
+        col.addEventListener('click', () => {
+          if (!day.isOutOfRange) openModal(day, dateObj);
+        });
+
+        gridContainer.appendChild(col);
+      });
+
+      container.appendChild(gridContainer);
+
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
     function showTooltip(e, day, dateObj) {
       const dayParts = day.data.split('-');
       const formattedDateStr = `${dayParts[2]}/${dayParts[1]}/${dayParts[0]} (${weekdaysFullNames[dateObj.getDay()]})`;
@@ -2718,8 +4032,9 @@
         html += `<div class="tooltip-status nao-letivo">✕ Dia Não Letivo</div>`;
       }
 
-      if (day.eventos.length > 0) {
-        day.eventos.forEach(ev => {
+      const sortedEvents = sortDayEvents(day.eventos);
+      if (sortedEvents.length > 0) {
+        sortedEvents.forEach(ev => {
           const catLabel = ev.categoria === 'aula' && ev.sigla
             ? `${ev.sigla} • aula`
             : ev.categoria.replace(/_/g, ' ');
@@ -2756,13 +4071,48 @@
     }
 
     function hideTooltip() {
-      tooltipEl.classList.remove('active');
+      if (tooltipEl) tooltipEl.classList.remove('active');
+    }
+
+    function escapeHtml(value) {
+      return String(value || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function renderInlineMarkdown(text) {
+      if (!text) return '';
+      const placeholders = [];
+      const stash = (html) => {
+        placeholders.push(html);
+        return `\u0000${placeholders.length - 1}\u0000`;
+      };
+      const html = escapeHtml(text)
+        .replace(/`([^`]+)`/g, (_, code) => stash(`<code class="inline-code">${code}</code>`))
+        .replace(/\[(.*?)\]\((.*?)\)/g, (_, label, href) => stash(`<a href="${href}" target="_blank" rel="noopener noreferrer" class="inline-link">${label}</a>`))
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        .replace(/(^|[^\w])__(.+?)__(?=[^\w]|$)/g, '$1<strong>$2</strong>')
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/(^|[^\w])_([^_]+?)_(?=[^\w]|$)/g, '$1<em>$2</em>');
+      return html.replace(/\u0000(\d+)\u0000/g, (_, i) => placeholders[Number(i)]);
+    }
+
+    function renderInlineLinks(text) {
+      return renderInlineMarkdown(text);
     }
 
     function openModal(day, dateObj) {
       hideTooltip();
 
-      const formattedDate = dateObj.toLocaleDateString('pt-BR', {
+      if (!day) return;
+
+      const validDateObj = (dateObj instanceof Date && !isNaN(dateObj))
+        ? dateObj
+        : (day && day.data ? new Date(day.data + 'T00:00:00') : new Date());
+
+      const formattedDate = validDateObj.toLocaleDateString('pt-BR', {
         weekday: 'long',
         year: 'numeric',
         month: 'long',
@@ -2783,35 +4133,129 @@
       const eventsList = document.getElementById('modal-events-list');
       eventsList.innerHTML = '';
 
-      if (day.eventos.length === 0) {
+      const sortedEvents = sortDayEvents(day.eventos);
+
+      if (sortedEvents.length === 0) {
         eventsList.innerHTML = '<div class="no-events-text">Nenhum evento registrado nesta data.</div>';
       } else {
-        day.eventos.forEach(ev => {
-          const item = document.createElement('div');
-          item.className = 'event-item-card';
+        sortedEvents.forEach(ev => {
+          if (ev.categoria === 'aula') {
+            const card = document.createElement('div');
+            card.className = 'modal-topic-card';
 
-          const catLabel = ev.categoria === 'aula' && ev.sigla
-            ? `${ev.sigla} • aula`
-            : ev.categoria.replace(/_/g, ' ');
+            const titleLower = (ev.descricao || '').toLowerCase();
+            const titleNormalized = titleLower.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            const isProject = titleLower.includes('projeto');
+            const isGradedExercise = titleNormalized.includes('exercicio avaliativo') || titleNormalized.includes('exercicios avaliativos');
 
-          let bodyHtml = '';
-          if (ev.bodyTexts && ev.bodyTexts.length > 0) {
-            bodyHtml += `<div class="event-item-body">${ev.bodyTexts.map(t => `<p>${t}</p>`).join('')}</div>`;
+            if (ev.isExtra) card.classList.add('is-extra-card');
+            if (isProject) card.classList.add('is-project-card');
+            if (isGradedExercise) card.classList.add('is-graded-card');
+
+            const lessonNumStr = ev.lessonNumber ? String(ev.lessonNumber).padStart(2, '0') : '';
+            const lessonLabel = ev.lessonNumber ? `Aula ${lessonNumStr}` : (ev.isExtra ? 'Aula Extra' : 'Aula');
+            const lessonAnchor = lessonNumStr ? `aula-${lessonNumStr}` : '';
+            const outlineUrl = ev.subjectSlug
+              ? `../outline/index.html?subject=${encodeURIComponent(ev.subjectSlug)}${lessonAnchor ? '#' + lessonAnchor : ''}`
+              : null;
+
+            // Header
+            const header = document.createElement('div');
+            header.className = 'topic-card-header';
+
+            let headerHtml = '';
+            if (outlineUrl) {
+              headerHtml += `<a href="${outlineUrl}" class="topic-number-link" target="_blank" rel="noopener noreferrer" title="Abrir ${lessonLabel} no Plano de Aulas">${lessonLabel}</a>`;
+            } else {
+              headerHtml += `<span class="topic-number-link">${lessonLabel}</span>`;
+            }
+
+            if (ev.sigla) {
+              headerHtml += `<span class="badge-subject-sigla" title="${escapeHtml(ev.disciplina || ev.sigla)}">${escapeHtml(ev.sigla)}</span>`;
+            }
+
+            headerHtml += `<h4 class="topic-title">${escapeHtml(ev.descricao)}</h4>`;
+
+            if (ev.isExtra) {
+              headerHtml += `<span class="topic-date-badge badge-extra-label">⚡ AULA EXTRA</span>`;
+            }
+            if (isProject) {
+              headerHtml += `<span class="topic-date-badge badge-project-label">🚀 PROJETO</span>`;
+            }
+            if (isGradedExercise) {
+              headerHtml += `<span class="topic-date-badge badge-graded-label">📝 VALE NOTA</span>`;
+            }
+            if (ev.aulasCount) {
+              headerHtml += `<span class="topic-date-badge badge-aulas-count">${ev.aulasCount} aulas</span>`;
+            }
+
+            header.innerHTML = headerHtml;
+            card.appendChild(header);
+
+            // Body texts
+            if (ev.bodyTexts && ev.bodyTexts.length > 0) {
+              const bodyDiv = document.createElement('div');
+              bodyDiv.className = 'topic-body-text';
+              bodyDiv.innerHTML = ev.bodyTexts.map(t => `<p>${renderInlineLinks(t)}</p>`).join('');
+              card.appendChild(bodyDiv);
+            }
+
+            // Resources
+            if (ev.resources && ev.resources.length > 0) {
+              const resList = document.createElement('div');
+              resList.className = 'resources-list';
+
+              ev.resources.forEach(r => {
+                let badgeClass = 'badge-dw';
+                const pLower = (r.prefix || '').toLowerCase();
+                if (pLower.includes('github')) badgeClass = 'badge-github';
+                else if (pLower.includes('braincheck') || pLower.includes('quiz')) badgeClass = 'badge-braincheck';
+                else if (pLower.includes('exercício') || pLower.includes('exercicio')) badgeClass = 'badge-exercicio';
+                else if (pLower.includes('padlet')) badgeClass = 'badge-padlet';
+                else if (pLower.includes('figma')) badgeClass = 'badge-figma';
+                else if (pLower.includes('medium')) badgeClass = 'badge-medium';
+
+                if (r.url) {
+                  const a = document.createElement('a');
+                  a.href = r.url;
+                  a.target = '_blank';
+                  a.rel = 'noopener noreferrer';
+                  a.className = `resource-link ${badgeClass}`;
+                  a.innerHTML = `<span class="badge-prefix">${escapeHtml(r.prefix)}</span> <span>${renderInlineMarkdown(r.text)}</span>`;
+                  resList.appendChild(a);
+                } else if (r.isHeader) {
+                  const div = document.createElement('div');
+                  div.className = 'resource-category-header';
+                  div.innerHTML = renderInlineMarkdown(r.text);
+                  resList.appendChild(div);
+                } else {
+                  const p = document.createElement('p');
+                  p.className = 'resource-plain-text';
+                  p.innerHTML = renderInlineMarkdown(r.text);
+                  resList.appendChild(p);
+                }
+              });
+
+              card.appendChild(resList);
+            }
+
+            eventsList.appendChild(card);
+          } else {
+            // Non-lesson event (holiday, academic deadline, etc.)
+            const card = document.createElement('div');
+            card.className = 'event-non-lesson-card';
+
+            const badgeClass = getBadgeClass(ev.categoria, ev.descricao);
+            const catLabel = ev.categoria ? ev.categoria.replace(/_/g, ' ') : 'Evento';
+
+            card.innerHTML = `
+              <div class="topic-card-header">
+                <span class="list-event-badge ${badgeClass}" style="margin-left: 0;">${catLabel}</span>
+                <h4 class="topic-title" style="font-size: 0.95rem;">${escapeHtml(ev.descricao)}</h4>
+              </div>
+            `;
+            eventsList.appendChild(card);
           }
-          if (ev.resources && ev.resources.length > 0) {
-            bodyHtml += '<div class="event-item-resources">' + ev.resources.map(r => (
-              r.url
-                ? `<a class="event-item-resource-link" href="${r.url}" target="_blank" rel="noopener noreferrer"><strong>${r.prefix}:</strong> ${r.text}</a>`
-                : `<div class="event-item-resource-text">${r.text}</div>`
-            )).join('') + '</div>';
-          }
-
-          item.innerHTML = `
-            <div class="event-item-title">${ev.descricao}</div>
-            <div class="event-item-cat">${catLabel}</div>
-            ${bodyHtml}
-          `;
-          eventsList.appendChild(item);
         });
       }
 
@@ -2837,7 +4281,11 @@
 
       let targetEl = null;
 
-      if (currentViewMode === 'list') {
+      if (currentViewMode === 'week') {
+        targetEl = document.querySelector('.week-day-col.is-today') ||
+                   document.querySelector('.week-day-col.is-next-date') ||
+                   document.getElementById('calendar-week-container');
+      } else if (currentViewMode === 'list') {
         // --- LIST VIEW: Target specific DATE row ---
         if (selectedMonth && selectedMonth !== 'all') {
           targetEl = document.querySelector(`.list-row-item[data-date^="${selectedMonth}"]`) ||
@@ -2937,15 +4385,127 @@
     document.getElementById('theme-toggle-btn')?.addEventListener('click', toggleTheme);
     updateThemeIcon();
 
-    document.getElementById('go-to-today-btn')?.addEventListener('click', () => {
+    function handleGoToToday() {
       const monthSelectEl = document.getElementById('month-select');
       if (monthSelectEl && monthSelectEl.value !== 'all') {
         monthSelectEl.value = 'all';
-        renderActiveView();
       }
+      if (currentViewMode === 'week') {
+        currentWeekIndex = getDefaultWeekIndex();
+      }
+      renderActiveView();
       hasAutoScrolled = false;
       scrollToTargetDateOrMonth(true);
-    });
+    }
+
+    function handleNavigatePrevious() {
+      if (currentViewMode === 'week') {
+        if (currentWeekIndex > 0) {
+          currentWeekIndex--;
+          renderCalendarWeek();
+          scrollToTargetDateOrMonth(true);
+        }
+      } else {
+        const monthSelectEl = document.getElementById('month-select');
+        if (monthSelectEl && monthSelectEl.options.length > 1) {
+          const curIdx = monthSelectEl.selectedIndex;
+          if (curIdx > 0) {
+            monthSelectEl.selectedIndex = curIdx - 1;
+            renderActiveView();
+            scrollToTargetDateOrMonth(true);
+          }
+        }
+      }
+    }
+
+    function handleNavigateNext() {
+      if (currentViewMode === 'week') {
+        if (calendarWeeks && currentWeekIndex < calendarWeeks.length - 1) {
+          currentWeekIndex++;
+          renderCalendarWeek();
+          scrollToTargetDateOrMonth(true);
+        }
+      } else {
+        const monthSelectEl = document.getElementById('month-select');
+        if (monthSelectEl && monthSelectEl.options.length > 1) {
+          const curIdx = monthSelectEl.selectedIndex;
+          if (curIdx < monthSelectEl.options.length - 1) {
+            monthSelectEl.selectedIndex = curIdx + 1;
+            renderActiveView();
+            scrollToTargetDateOrMonth(true);
+          }
+        }
+      }
+    }
+
+    function handleCalendarKeyboardNavigation(e) {
+      if (e.key === 'Escape') {
+        const modal = document.getElementById('event-modal');
+        if (modal && modal.classList.contains('active')) {
+          closeModal();
+          return;
+        }
+      }
+
+      const activeEl = document.activeElement;
+      const isInputFocused = activeEl && (activeEl.tagName === 'INPUT' || activeEl.tagName === 'TEXTAREA' || activeEl.isContentEditable);
+
+      // Meta (Cmd on Mac) or Ctrl (Windows/Linux) shortcuts
+      if (e.metaKey || e.ctrlKey) {
+        const key = e.key.toLowerCase();
+        if (key === '1') {
+          e.preventDefault();
+          setViewMode('list');
+          return;
+        } else if (key === '2') {
+          e.preventDefault();
+          setViewMode('week');
+          return;
+        } else if (key === '3') {
+          e.preventDefault();
+          setViewMode('grid');
+          return;
+        } else if (key === 't') {
+          e.preventDefault();
+          handleGoToToday();
+          return;
+        } else if (key === 'arrowleft' || key === '[') {
+          e.preventDefault();
+          handleNavigatePrevious();
+          return;
+        } else if (key === 'arrowright' || key === ']') {
+          e.preventDefault();
+          handleNavigateNext();
+          return;
+        }
+      }
+
+      // Standalone single-key navigation when NOT typing in an input
+      if (!isInputFocused && !e.metaKey && !e.ctrlKey && !e.altKey) {
+        if (e.key === 'ArrowLeft' || e.key === '[' || e.key === 'p' || e.key === 'P') {
+          e.preventDefault();
+          handleNavigatePrevious();
+        } else if (e.key === 'ArrowRight' || e.key === ']' || e.key === 'n' || e.key === 'N') {
+          e.preventDefault();
+          handleNavigateNext();
+        } else if (e.key === 't' || e.key === 'T') {
+          e.preventDefault();
+          handleGoToToday();
+        } else if (e.key === '1') {
+          e.preventDefault();
+          setViewMode('list');
+        } else if (e.key === '2') {
+          e.preventDefault();
+          setViewMode('week');
+        } else if (e.key === '3') {
+          e.preventDefault();
+          setViewMode('grid');
+        }
+      }
+    }
+
+    document.getElementById('go-to-today-btn')?.addEventListener('click', handleGoToToday);
+    window.addEventListener('keydown', handleCalendarKeyboardNavigation);
 
     // Init Calendar App & Event Listeners
     const calendarSelectEl = document.getElementById('calendar-select');
