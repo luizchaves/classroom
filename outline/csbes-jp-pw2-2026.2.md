@@ -172,12 +172,10 @@ Atividade prática avaliativa sobre fundamentos de EcmaScript, a ser publicada n
 Apresentação dos requisitos e diretrizes do projeto prático de Programação para Web II.
 
 - **Especificação & Acompanhamento:**
-  - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
-  - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
-
-## Apresentação da Proposta do Projeto
-
-Validação inicial das propostas de projeto dos estudantes com o professor.
+  - [Especificação: Projeto de PW2](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/project/#diretrizes-de-entrega-e-apresenta%C3%A7%C3%A3o)
+  - [ifpb/projects](https://ifpb.github.io/projects/)
+    - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
+    - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
 
 ## Build Tools
 
@@ -198,6 +196,16 @@ Uso da DOM API para seleção, modificação e estruturação dinâmica de compo
   - [Exercício: Calculadora Script](https://ifpb.github.io/exercises/problems/web-script-calculator/)
 - **Local Storage:**
   - [Conteúdo: Local Storage](https://luizchaves.github.io/devlab/courses/web-api/storage/local-storage/)
+
+## Apresentação da Proposta do Projeto
+
+Validação inicial das propostas de projeto dos estudantes com o professor.
+
+- **Especificação & Acompanhamento:**
+  - [Especificação: Projeto de PW2](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/project/#diretrizes-de-entrega-e-apresenta%C3%A7%C3%A3o)
+  - [ifpb/projects](https://ifpb.github.io/projects/)
+    - [Github: Projetos de PW2 2026.2](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.2/1/)
+    - [Github: Alunos com Projeto de PW2 2026.2](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.2/1/)
 
 ## Expressões Regulares
 
