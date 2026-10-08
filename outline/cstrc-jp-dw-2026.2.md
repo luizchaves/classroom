@@ -208,9 +208,6 @@ Desenvolvimento prático de protótipo de aplicação web (Monitor-app) integran
   - [Conteúdo: Monitor-app | Bootstrap](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/front-static/)
   - [Figma: Monitor-app](https://www.figma.com/file/3rWtag6oLh0amk2wS0XQH1/monitor-app/duplicate)
   - [Medium: Prototipação](https://medium.com/@nativasconcelos/conectando-estabelecimentos-de-beleza-a-clientes-durante-a-quarentena-com-seguran%C3%A7a-ebf0584b1de1)
-- **Código Fonte:**
-  - [GitHub: Monitor-app (CDN)](https://github.com/ifpb/dw/tree/main/public/codes/package/bootstrap/monitor-app-cdn)
-  - [GitHub: Monitor-app (Backend)](https://github.com/ifpb/dw/tree/main/public/codes/expressjs/monitor-app-prismajs-auth)
 
 ## Acompanhamento de Projeto
 
