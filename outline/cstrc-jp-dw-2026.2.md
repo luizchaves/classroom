@@ -92,8 +92,6 @@ Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e valida�
 
 - **Especificação & Roteiro do Pitch:**
   - [Projeto: Especificação do Projeto > Estrutura do Pitch (5 Minutos)](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/project/#estrutura-do-pitch-5-minutos)
-  - [Github: Projetos de DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
-  - [Github: Alunos com Projeto de DW 2026.2](https://ifpb.github.io/projects/people/dw-cstrc-jp-2026.2/1/)
 - **Orientações e Estrutura do Pitch (5 Minutos):**
   - **Duração & Integrantes:** Apresentação de até 5 minutos estritos, com fala obrigatória de todos os membros do grupo (requer treino prévio).
   - **Pré-requisito:** PR no portal `ifpb/projects` enviado e aprovado com antecedência.
@@ -108,8 +106,6 @@ Apresentação oral em formato Pitch (máximo de 5 minutos por equipe) e valida�
 Apresentação oral das propostas de projeto das equipes remanescentes (Pitch), análise das sugestões de correção para as equipes que já apresentaram (com foco na conversão de dados fictícios para dados reais, ajustes na interface se necessário e no `README`), e introdução à linguagem JavaScript (ECMAScript), tipos de dados fundamentais e declaração de variáveis (`const`, `let`).
 
 - **Apresentação & Feedback de Projetos:**
-  - [Github: Projetos de DW 2026.2](https://ifpb.github.io/projects/codes/dw-cstrc-jp-2026.2/1/)
-  - [Github: Alunos com Projeto de DW 2026.2](https://ifpb.github.io/projects/people/dw-cstrc-jp-2026.2/1/)
   - **Ajustes & Correções:** Apresentação dos grupos remanescentes e revisão das recomendações de melhoria nos projetos apresentados (estratégias para dados reais vs. mock, ajustes na interface se necessário e refinamento da documentação no `README`).
 - **Conteúdo Teórico:**
   - [Conteúdo: Introdução ao ECMA](https://luizchaves.github.io/devlab/courses/ecmascript/basics/introduction/)

@@ -173,9 +173,6 @@ Apresentação dos requisitos e diretrizes do projeto prático de Programação 
 
 - **Especificação & Acompanhamento:**
   - [Especificação: Projeto de PW2](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/project/#diretrizes-de-entrega-e-apresenta%C3%A7%C3%A3o)
-  - [ifpb/projects](https://ifpb.github.io/projects/)
-    - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
-    - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
 
 ## Build Tools
 
@@ -203,9 +200,6 @@ Validação inicial das propostas de projeto dos estudantes com o professor.
 
 - **Especificação & Acompanhamento:**
   - [Especificação: Projeto de PW2](https://luizchaves.github.io/devlab/courses/pw2-csbes-jp/project/#diretrizes-de-entrega-e-apresenta%C3%A7%C3%A3o)
-  - [ifpb/projects](https://ifpb.github.io/projects/)
-    - [Github: Projetos de PW2 2026.2](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.2/1/)
-    - [Github: Alunos com Projeto de PW2 2026.2](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.2/1/)
 
 ## Expressões Regulares
 
@@ -235,10 +229,6 @@ Sessão de mentoria e acompanhamento do progresso de desenvolvimento dos projeto
 ## Apresentação do Projeto (Etapa I)
 
 Apresentação e avaliação da primeira entrega parcial do projeto (Interface Front-end).
-
-- **Projeto & Acompanhamento:**
-  - [Github: Projetos de PW2 2026.1](https://ifpb.github.io/projects/codes/pw2-csbes-jp-2026.1/1/)
-  - [Github: Alunos com Projeto de PW2 2026.1](https://ifpb.github.io/projects/people/pw2-csbes-jp-2026.1/1/)
 
 ## TypeScript
 
