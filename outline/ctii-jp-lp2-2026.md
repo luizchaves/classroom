@@ -213,7 +213,6 @@ Orientação e revisão de código para integração de serviços de validação
 
 ## Apresentação de Projeto
 
-£™
 Aprimoramento das regras de negócio e validações na aplicação.
 
 - **Avaliação do Projeto:**
@@ -226,11 +225,11 @@ Implementação de upload e armazenamento de arquivos e imagens na API Express.j
 - **Conteúdo Teórico:**
   - [Conteúdo: ExpressJS Upload de Arquivo](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/upload/)
 
-## Pulsar (09/10/2026 - 2 aulas)
+## Pulsar (15/10/2026 - 2 aulas)
 
 Participação nas atividades do evento acadêmico Pulsar.
 
-## Pulsar (17/10/2026 - 2 aulas)
+## Pulsar (16/10/2026 - 2 aulas)
 
 Participação nas atividades do evento acadêmico Pulsar.
 
@@ -248,14 +247,11 @@ Desenvolvimento final do projeto integrado.
 - **Avaliação do Projeto:**
   - [Projeto: B4.1 - Upload de Arquivos](https://luizchaves.github.io/devlab/courses/lp2-ctii-jp/project/#b41---upload-de-arquivos)
 
+## Apresentar Área da Computação
+
+Convidar um aluno que já terminou o curso para apresentar a área da computação.
+
 ## Teste de Aplicação
-
-Conceitos e escrita de testes automatizados de unidade e integração no Express.js.
-
-- **Conteúdo Teórico:**
-  - [Conteúdo: ExpressJS Teste de Software](https://luizchaves.github.io/devlab/courses/expressjs/practice/investapp/testing/)
-
-## Teste de Aplicação (Prática)
 
 Prática de cobertura de testes automatizados para rotas e controllers da aplicação.
 

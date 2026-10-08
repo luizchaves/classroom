@@ -229,6 +229,23 @@ Entrega e avaliação da primeira etapa do projeto (interface front-end responsi
   - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/exercises/)
   - [Quiz: Quizzes](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/quizzes/)
 
+## Projeto Etapa I (Continuação)
+
+Entrega e avaliação da primeira etapa do projeto (interface front-end responsiva e integrada a APIs).
+
+- **Avaliações & Entregas:**
+  - [Projeto: Especificação do Projeto](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/project/)
+  - [Exercício: Lista de exercícios](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/exercises/)
+  - [Quiz: Quizzes](https://luizchaves.github.io/devlab/courses/dw-cstrc-jp/extra/quizzes/)
+
+## Pulsar
+
+Participação nas atividades do evento acadêmico Pulsar.
+
+## Pulsar (16/10/2026 - 4 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
+
 ## NodeJS e Express
 
 Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HTTP e conceitos de roteamento com o framework Express.js.
@@ -238,22 +255,6 @@ Introdução ao desenvolvimento Back-end com Node.js, criação de servidores HT
 - **Express:**
   - [Conteúdo: Introdução ao Express](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/api/)
 
-## Pulsar (09/10/2026 - 4 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
-
-## Exercício Backend e Exercício Avaliativo
-
-Prática de criação de rotas e manipulação de requisições/respostas HTTP em Node.js e Express.
-
-- **Exercícios Avaliativos:**
-  - [Exercício: Web API Basic Hello (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
-  - [Exercício: Web API Utils (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-utils/)
-
-## Pulsar (17/10/2026 - 4 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
-
 ## Integrar Back e Front e Construir API Rest
 
 Arquitetura de APIs RESTful no Express, padrão de projeto MVC (Model-View-Controller) e chamadas de sistema no servidor.
@@ -262,7 +263,10 @@ Arquitetura de APIs RESTful no Express, padrão de projeto MVC (Model-View-Contr
   - [Conteúdo: System Call](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/ping/)
   - [Conteúdo: API REST](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/api/)
   - [Conteúdo: MVC](https://luizchaves.github.io/devlab/courses/expressjs/practice/monitorapp/typescript/)
-- Escolha algum comando ou arquivo para ser acessado ou manipulado usando o express.
+- **Exercícios Avaliativos:**
+  - [Exercício: Web API Basic Hello (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-basic-hello/)
+  - [Exercício: Web API Utils (Avaliativo)](https://ifpb.github.io/exercises/problems/web-api-utils/)
+  - Escolha algum comando ou arquivo para ser acessado ou manipulado usando o express.
 
 ## Banco de Dados e SQL
 

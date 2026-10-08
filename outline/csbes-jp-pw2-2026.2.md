@@ -216,17 +216,21 @@ Sintaxe e aplicação de Expressões Regulares (RegExp) em JavaScript para valid
 - **Acompanhamento:**
   - [Braincheck: JavaScript | RegExp](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-regexp-ddTjYSYKmU)
 
-## Pulsar (09/10/2026 - 3 aulas)
+## Pulsar
+
+Participação nas atividades do evento acadêmico Pulsar.
+
+## Pulsar (15/10/2026 - 3 aulas)
+
+Participação nas atividades do evento acadêmico Pulsar.
+
+## Pulsar (16/10/2026 - 3 aulas)
 
 Participação nas atividades do evento acadêmico Pulsar.
 
 ## Projeto Acompanhamento
 
 Sessão de mentoria e acompanhamento do progresso de desenvolvimento dos projetos.
-
-## Pulsar (17/10/2026 - 3 aulas)
-
-Participação nas atividades do evento acadêmico Pulsar.
 
 ## Apresentação do Projeto (Etapa I)
 
@@ -272,18 +276,13 @@ Construção de formulários controlados em React e implementação de operaçõ
 - **Conteúdo Teórico:**
   - [Conteúdo: React Hooks](https://luizchaves.github.io/devlab/courses/react/state/hooks/)
 
-## Promises
-
-Programação assíncrona em JavaScript utilizando Promises (estados, chaining, `catch`).
-
-- **Conteúdo Teórico:**
-  - [Conteúdo: Promises](https://luizchaves.github.io/devlab/courses/ecmascript/async/promises/)
-- **Acompanhamento:**
-  - [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-promises-qlyjDCgdDj)
-
 ## Web API e Supabase API
 
 Conceitos de arquitetura REST API e introdução ao Backend-as-a-Service com Supabase API.
+
+- **Promise:**
+  - [Conteúdo: Promises](https://luizchaves.github.io/devlab/courses/ecmascript/async/promises/)
+  - [Braincheck: JavaScript | Promises](https://joaopessoa.ifpb.edu.br/braincheck/quiz/javascript-promises-qlyjDCgdDj)
 
 - **REST API:**
   - [Conteúdo: REST API](https://luizchaves.github.io/devlab/courses/web-api/http/rest/)
